@@ -1,0 +1,4 @@
+php artisan make:job 'Email\ProcessNotifyCollect'
+php artisan make:job 'Email\ProcessNotifyMailer'
+
+php artisan make:job 'Email\ProcessNotifyResetPassword'

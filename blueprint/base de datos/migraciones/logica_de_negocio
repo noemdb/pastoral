@@ -1,0 +1,127 @@
+tablas para la logica del sistema
+
+Detalles del Pastoral
+	php artisan make:model 'app\Pastoral' -m -a
+	php artisan make:model 'app\Pastoral\Tauthority' -m -a
+	php artisan make:model 'app\Pastoral\Authority' -m -a
+	php artisan make:model 'app\Pastoral\Classroom' -m -a
+
+Detalles del Pescolar
+	php artisan make:model 'app\Pescolar' -m -a
+	php artisan make:model 'app\Pescolar\Scale' -m -a
+	php artisan make:model 'app\Pescolar\Noun' -m -a
+	php artisan make:model 'app\Pescolar\Curriculum' -m -a
+	php artisan make:model 'app\Pescolar\Lapse' -m -a
+	php artisan make:model 'app\Pescolar\Level' -m -a
+	php artisan make:model 'app\Pescolar\Section' -m -a
+	php artisan make:model 'app\Pescolar\Course' -m -a
+	php artisan make:model 'app\Pescolar\Pensum' -m -a
+
+Detalles del Estudiants
+	php artisan make:model 'app\Estudiant' -m -a
+	php artisan make:model 'app\Estudiant\Citype' -m -a
+	php artisan make:model 'app\Estudiant\Representant' -m -a
+	php artisan make:model 'app\Estudiant\Tinscription' -m -a
+	php artisan make:model 'app\Estudiant\Enrollment' -m -a
+	php artisan make:model 'app\Estudiant\Inscription' -m -a
+	php artisan make:model 'app\Estudiant\Withdrawal' -m -a
+	php artisan make:model 'app\Estudiant\Grade' -m -a
+	php artisan make:model 'app\Estudiant\GradeFix' -m -a
+	php artisan make:model 'app\Estudiant\GradeRepair' -m -a
+	php artisan make:model 'app\Estudiant\Title' -m -a 
+
+Detalles del Teachers
+	php artisan make:model 'app\Teacher' -m -a
+	php artisan make:model 'app\Teacher\Documento' -m -a
+	php artisan make:model 'app\Teacher\Publicaciones' -m -a
+
+	php artisan make:model 'app\Teacher\Pevaluacion' -m -a
+	php artisan make:model 'app\Teacher\Evaluacion' -m -a
+
+
+/***********Bot**********/
+	php artisan make:model 'app\Bot\Bmain' -m -a
+	php artisan make:model 'app\Bot\Boption' -m -a
+	php artisan make:model 'app\Bot\Bmessege' -m -a
+
+/***********Attendance**********/
+	php artisan make:model 'app\Asistent\AssitAttendance' -m
+	php artisan make:model 'app\Asistent\AssitPermission' -m
+	php artisan make:model 'app\Asistent\AssitObservation' -m
+
+
+
+
+
+
+
+/*************************************************************************************
+/*************************************************************************************
+/*************************************************************************************
+/*************************************************************************************
+/*************************************************************************************
+/*************************************************************************************
+
+
+php artisan make:migration add_work_id_to_users_table --table=users
+php artisan make:migration add_card_id_to_users_table --table=users
+php artisan make:migration add_ident_to_users_table --table=users
+
+
+php artisan make:migration add_type_to_assit_hours_table --table=assit_hours
+php artisan make:migration add_assit_schedule_id_to_rols_table --table=rols
+php artisan make:migration add_assit_schedule_id_to_assit_days_table --table=assit_days
+php artisan make:migration add_assit_week_id_to_assit_days_table --table=assit_days
+php artisan make:migration add_forgering_assit_week_id_to_assit_days_table --table=assit_days
+php artisan make:migration del_assit_schedule_id_to_assit_days_table --table=assit_days
+
+php artisan make:migration add_assit_cargo_id_to_rols_table --table=rols
+
+php artisan make:migration add_worker_order_to_users_table --table=users
+
+---------------------------------------------------------------------------------------------------------
+
+php artisan make:migration add_area_to_bmains_table --table=bmains
+php artisan make:migration add_bmain_id_to_bmesseges_table --table=bmesseges
+
+php artisan make:migration add_status_late_payment_to_ingresos_table --table=ingresos
+php artisan make:migration add_exchange_ammount_late_payment_to_ingresos_table --table=ingresos
+php artisan make:migration add_date_reported_to_ingresos_table --table=ingresos
+
+php artisan make:migration add_date_status_blacklist_to_estudiants_table --table=estudiants
+php artisan make:migration add_date_status_blacklist_to_representants_table --table=representants
+
+
+php artisan make:migration add_date_cutnote_to_lapsos_table --table=lapsos
+
+---------------------------------------------------------------------------------------------------------
+
+php artisan make:model 'app\SenderMailer\Mailer' -m
+php artisan make:model 'app\SenderMailer\Mailed' -m
+
+
+php artisan make:migration add_mail_username_to_users_table --table=users
+php artisan make:migration add_mail_password_to_users_table --table=users
+php artisan make:migration add_mail_cc_address_to_users_table --table=users
+
+MAIL_USERNAME
+mail_username
+mail_password
+mail_cc_address
+
+php artisan make:migration add_status_adviders_to_representants_table --table=representants
+php artisan make:migration add_available_at_to_maileds_table --table=maileds
+php artisan make:migration add_pestudio_id_to_mailers_table --table=mailers
+
+
+
+
+php artisan make:migration add_observations_user_to_credito_a_favors_table --table=credito_a_favors
+
+
+php artisan make:migration drop_date_from_mailers_table --table=mailers
+
+php artisan make:migration add_observations_user_to_credito_a_favors_table --table=credito_a_favors
+
+
+php artisan make:migration add_status_bad_to_cuentaxpagars_table --table=cuentaxpagars

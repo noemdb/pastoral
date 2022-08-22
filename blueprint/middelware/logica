@@ -1,0 +1,24 @@
+Implementacion de Middleware
+php artisan make:middleware 'Admin\IsAdmin'
+php artisan make:middleware 'Expediente\IsExpediente'
+php artisan make:middleware 'App\Http\Middleware\Admin\IsAdmon' &&
+php artisan make:middleware 'App\Http\Middleware\Admin\IsControl'
+php artisan make:middleware 'App\Http\Middleware\Admin\IsCommon'
+php artisan make:middleware 'App\Http\Middleware\Admin\IsProfesor'
+php artisan make:middleware 'App\Http\Middleware\Admin\IsDirector'
+php artisan make:middleware 'App\Http\Middleware\Admin\IsControls'
+php artisan make:middleware 'App\Http\Middleware\Admin\IsAcademico'
+php artisan make:middleware 'App\Http\Middleware\Admin\IsAdmons'
+php artisan make:middleware 'App\Http\Middleware\Admin\IsRepresentant' &&
+php artisan make:middleware 'App\Http\Middleware\Admin\IsEstudiant'
+
+registrar Middleware en kernel.php (variable: protected $routeMiddleware)
+'is_admin'=> 'App\Http\Middleware\Admin\IsAdmin',
+'is_admon'=> 'App\Http\Middleware\App\IsAdmon',
+'is_control'=> 'App\Http\Middleware\App\IsControl',
+'is_common'=> 'App\Http\Middleware\App\IsCommon',
+'is_profesor'=> 'App\Http\Middleware\App\IsProfesor',
+'is_director'=> 'App\Http\Middleware\App\IsDirector',
+'is_academico'=> 'App\Http\Middleware\App\IsAcademico',
+'is_representant'=> 'App\Http\Middleware\App\IsRepresentant',
+'is_estudiant'=> 'App\Http\Middleware\App\IsEstudiant',

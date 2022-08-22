@@ -1,0 +1,7 @@
+php artisan make:controller 'Director\HomeController' &&
+php artisan make:controller 'Director\Tab\AdministracionController' &&
+php artisan make:controller 'Director\Tab\ControlController' &&
+php artisan make:controller 'Director\Tab\AuditController' &&
+php artisan make:controller 'Director\Tab\UserController' &&
+
+php artisan make:controller 'Director\Tab\CollPoliticalController' &&

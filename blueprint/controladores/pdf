@@ -1,0 +1,36 @@
+php artisan make:controller 'Administracion\PDF\InscripcionController'
+php artisan make:controller 'Administracion\PDF\PreinscripcionController'
+php artisan make:controller 'Administracion\PDF\AdministrativaController'
+php artisan make:controller 'Administracion\PDF\BancoController'
+php artisan make:controller 'Administracion\PDF\CreditoAFavorController'
+php artisan make:controller 'Administracion\PDF\EstudiantController'
+php artisan make:controller 'Administracion\PDF\RepresentantController'
+php artisan make:controller 'Administracion\PDF\BoletinController'
+php artisan make:controller 'Administracion\PDF\BoletinRevisionController'
+php artisan make:controller 'Administracion\PDF\EDescriptivaController'
+php artisan make:controller 'Administracion\PDF\IngresoController'
+php artisan make:controller 'Administracion\PDF\HistoricoNotaController'
+php artisan make:controller 'Administracion\PDF\PensumNotaController'
+php artisan make:controller 'Administracion\PDF\RegistroTituloController'
+php artisan make:controller 'Administracion\PDF\RegistroTituloController'
+php artisan make:controller 'Administracion\PDF\TituloController'
+php artisan make:controller 'Administracion\PDF\AbonoController'
+php artisan make:controller 'Administracion\PDF\EnrollmentController'
+php artisan make:controller 'Administracion\PDF\CollectionPoliticalController'
+php artisan make:controller 'Administracion\PDF\ReciboController'
+php artisan make:controller 'Administracion\PDF\AssitAttendanceController'
+
+
+
+/*************************PROFESOR**************************************/
+php artisan make:controller 'Profesor\PDF\BoletinController'
+php artisan make:controller 'Profesor\PDF\EDescriptivaController'
+php artisan make:controller 'Profesor\PDF\ProfesorGuiaController'
+/*************************Representant**************************************/
+php artisan make:controller 'Representant\PDF\InscripcionController' &&
+php artisan make:controller 'Representant\PDF\BoletinController' &&
+php artisan make:controller 'Representant\PDF\EDescriptivaController' &&
+php artisan make:controller 'Representant\PDF\RegistroPagoController'
+/*************************PROFESOR**************************************/
+/*************************PROFESOR**************************************/
+/*************************PROFESOR**************************************/

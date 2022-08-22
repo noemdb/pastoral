@@ -1,0 +1,62 @@
+php artisan make:livewire 'Administracion/ExchangeRate/ListComponent'
+
+php artisan make:livewire 'Administracion/AssistControl/AssitAttendance/workerComponent'
+
+
+php artisan make:livewire 'Administracion/AssistControl/AssitSchedules/MainComponent'
+php artisan make:livewire 'Administracion/AssistControl/AssitSchedules/NavBarComponent'
+php artisan make:livewire 'Administracion/AssistControl/AssitSchedules/NavContentComponent'
+
+php artisan make:livewire 'Administracion/AssistControl/AssitSchedules/ListComponent'
+php artisan make:livewire 'Administracion/AssistControl/AssitSchedules/IndexComponent'
+php artisan make:livewire 'Administracion/AssistControl/AssitSchedules/NameComponent'
+php artisan make:livewire 'Administracion/AssistControl/AssitSchedules/FormComponent'
+php artisan make:livewire 'Administracion/AssistControl/AssitSchedules/CreateComponent'
+
+
+php artisan make:livewire 'Administracion/AssistControl/AssitWeek/MainComponent'
+php artisan make:livewire 'Administracion/AssistControl/AssitWeek/NavBarComponent'
+php artisan make:livewire 'Administracion/AssistControl/AssitWeek/NavContentComponent'
+php artisan make:livewire 'Administracion/AssistControl/AssitWeek/FormComponent'
+
+
+php artisan make:livewire 'Administracion/AssistControl/AssitWeek/IndexComponent'
+php artisan make:livewire 'Administracion/AssistControl/AssitWeek/UpdateComponent'
+php artisan make:livewire 'Administracion/AssistControl/AssitWeek/NameComponent'
+
+php artisan make:livewire 'Administracion/AssistControl/AssitDay/IndexComponent'
+php artisan make:livewire 'Administracion/AssistControl/AssitDay/UpdateComponent'
+php artisan make:livewire 'Administracion/AssistControl/AssitDay/NameComponent'
+
+php artisan make:livewire 'Administracion/AssistControl/AssitDay/MainComponent'
+php artisan make:livewire 'Administracion/AssistControl/AssitDay/NavBarComponent'
+php artisan make:livewire 'Administracion/AssistControl/AssitDay/NavContentComponent'
+php artisan make:livewire 'Administracion/AssistControl/AssitDay/FormComponent'
+
+
+php artisan make:livewire 'Administracion/AssistControl/AssitTurn/IndexComponent'
+php artisan make:livewire 'Administracion/AssistControl/AssitTurn/UpdateComponent'
+php artisan make:livewire 'Administracion/AssistControl/AssitTurn/NameComponent'
+
+php artisan make:livewire 'Administracion/AssistControl/AssitHour/IndexComponent'
+php artisan make:livewire 'Administracion/AssistControl/AssitHour/UpdateComponent'
+php artisan make:livewire 'Administracion/AssistControl/AssitHour/NameComponent'
+
+php artisan make:livewire 'Administracion/AssistControl/AssitWorker/UpdateComponent'
+php artisan make:livewire 'Administracion/AssistControl/AssitWorker/NameComponent'
+
+
+php artisan make:livewire 'Academico/Mailer/IndexComponent'
+php artisan make:livewire 'Academico/Mailer/CreateComponent'
+php artisan make:livewire 'Academico/Mailer/EditComponent'
+php artisan make:livewire 'Academico/Mailer/DeleteComponent'
+
+
+
+php artisan make:livewire 'Administracion/Refund/IndexComponent'
+
+
+php artisan make:livewire 'Administracion/Mailer/IndexComponent'
+php artisan make:livewire 'Administracion/Mailer/CreateComponent'
+php artisan make:livewire 'Administracion/Mailer/EditComponent'
+php artisan make:livewire 'Administracion/Mailer/DeleteComponent'

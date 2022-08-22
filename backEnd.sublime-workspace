@@ -1,0 +1,453 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"con",
+				"console"
+			],
+			[
+				"alert",
+				"alert-secondary"
+			],
+			[
+				"text",
+				"text-left"
+			],
+			[
+				"d-",
+				"d-flex"
+			],
+			[
+				"cla",
+				"colspan"
+			],
+			[
+				"dis",
+				"display"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": ".env",
+			"settings":
+			{
+				"buffer_size": 995,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+	],
+	"file_history":
+	[
+		"/home/nuser/code/s2223/.env",
+		"/home/nuser/code/s2223/app/Http/Controllers/Admin/Fix/DB/HomeController.php",
+		"/home/nuser/code/s2223/app/Models/app/Planpago/Functions/Cuentaxpagar/Relations.php",
+		"/home/nuser/code/s2223/app/Models/app/Estudiante/Functions/Representants/Exchanges.php",
+		"/home/nuser/code/s2223/database/migrations/2022_08_08_092647_add_status_bad_to_cuentaxpagars_table.php",
+		"/home/nuser/code/s2223/app/Http/Controllers/Administracion/Tab/RepresentantsController.php",
+		"/home/nuser/code/s2223/app/Models/app/Estudiante/Functions/Estudiant/Exchanges.php",
+		"/home/nuser/code/s2223/routes/web.php",
+		"/home/nuser/code/s2223/app/Models/app/Planpago/Cuentaxpagar.php",
+		"/home/nuser/code/s2223/blueprint/base de datos/migraciones/logica_de_negocio",
+		"/home/nuser/code/s2223/config/session.php",
+		"/tmp/fz3temp-2/.env",
+		"/tmp/fz3temp-2/.env 2",
+		"/home/nuser/code/swi/resources/js/Pages/Storage/Storage.js",
+		"/home/nuser/code/swi/resources/js/Pages/Storage/hooks/useStorage.js",
+		"/home/nuser/code/swi/resources/js/Pages/Storage/components/ItemsList/ItemsList.js",
+		"/home/nuser/code/swi/resources/js/Pages/Storage/components/Folder/Folder.js",
+		"/home/nuser/code/swi/resources/js/Pages/Storage/components/File/File.js",
+		"/tmp/fz3temp-2/.env 3",
+		"/home/nuser/code/swi/resources/js/Pages/Storage/components/Modals/MoveToModal/MoveToModal.js",
+		"/home/nuser/code/swi/resources/js/Pages/Storage/services/Storage/move.js",
+		"/home/nuser/code/swi/resources/js/Pages/Storage/services/Storage/index.js",
+		"/home/nuser/code/swi/app/Http/Controllers/DashboardController.php",
+		"/home/nuser/code/swi/app/Models/User.php",
+		"/home/nuser/code/swi/resources/js/Pages/Storage/services/Storage/load.js",
+		"/home/nuser/code/s2122/resources/views/administracion/boletins/crud_ajuste.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/boletins/ajustes.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/boletins/table/crud_ajuste.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/boletins/partials/search_ajuste_crud.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/datatables/exportBootstrap.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/boletins/partials/search_ajuste.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/boletins/table/positions.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/boletins/positions.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/configuraciones/asignaturas/index.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/configuraciones/asignaturas/table/index.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/mailers/index.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/administracion/mailer/index-component.blade.php",
+		"/home/nuser/code/s2122/resources/views/email/mailers/control/messege.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/administracion/mailer/menu/index.blade.php",
+		"/home/nuser/code/s2122/resources/views/academicos/layouts/app.blade.php",
+		"/home/nuser/code/s2122/resources/views/academicos/mailers/index.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/layouts/app.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/administracion/mailer/table/mailer.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/index-component.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/table/mailer.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/layouts/dashboard/navbar/app.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/layouts/dashboard/navbar/access/mailers.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/layouts/dashboard/navbar/partials/mailers.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/layouts/dashboard/sidebar/partials/mailers.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/layouts/dashboard/sidebar/app.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/layouts/dashboard/navbar/partials/academicas.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/layouts/dashboard/sidebar/partials/academicas.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/table/show.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/edit-component.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/table/partials/btnMode.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/table/partials/btnModeIndex.blade.php",
+		"/home/nuser/code/s2122/resources/views/academicos/tables/controls/estudiants/static.blade.php",
+		"/home/nuser/code/s2122/resources/views/academicos/home/partials/indicadores.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/inscripciones/book/table/statics.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/inscripciones/book/tab/pestudios.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/boletins/pdf/partials/31059/posiciones.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/boletins/pdf/table/tbody/31059.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/inscripciones/book.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/asisst_controls/assit_attendances/pdf/partials/assit_hours.blade.php",
+		"/home/nuser/code/s2122/app/Helpers/Convertidor.php",
+		"/home/nuser/code/s2122/Find Results change or",
+		"/home/nuser/code/s2122/resources/views/administracion/inscripciones/book/table/pestudios.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/inscripciones/book/table/tinscripcions.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/refunds/index.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/registropagos/form/asistent/sweetalerts/refund.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/registropagos/form/asistent/sweetalerts/questions.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/registropagos/asistent_representant_create.blade.php",
+		"/home/nuser/Descargas/sql/JNn83GeS->s2122-2022-05-11.sql",
+		"/home/nuser/Descargas/sql/default.sql",
+		"/home/nuser/code/s2122/resources/views/administracion/registropagos/crud.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/registropagos/table/crud.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/creditoafavors/table/crud.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/index-component.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/table/index.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/form/fields.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/form/partials/ingresos.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/form/partials/general.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/creditoafavors/form/omit/fields.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/form/create.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/form/partials/ingresos.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/representants/table/list.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/administracion/assist-control/assit-worker/table/workers.blade.php",
+		"/home/nuser/code/s2122/resources/lang/es/validation.php",
+		"/home/nuser/code/s2122/resources/views/administracion/registropagos/show/modal.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/representants/table/historico.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/modals/info.blade.php",
+		"/home/nuser/code/s2122/resources/views/representants/boletins/table/crud.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/representants/historico.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/autoresponders/boptions/form/fields.blade.php",
+		"/home/nuser/code/s2122/app/Http/Controllers/Administracion/Tab/Functions/RegistroPago/Create.php",
+		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/partials/create.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/refunds/menus/index.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/refunds/table/crud.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/refunds/form/search.blade.php",
+		"/home/nuser/code/s2122/resources/views/academicos/boletins/table/carga.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/ingresos/form/fields.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/ingresos/index.blade.php",
+		"/home/nuser/Descargas/sql/JNn83GeS->s2122-2022-05-01.sql",
+		"/home/nuser/code/s2122/resources/views/administracion/representants/recibo/pdf.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/representants/recibo/partials/footer.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/representants/recibo/partials/bills.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/representants/recibo/partials/ingresos.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/menu/index.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/form/fields.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/modals/helps.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/helps/main.blade.php",
+		"/home/nuser/code/s2122/resources/views/email/mailers/messege.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/create-component.blade.php",
+		"/home/nuser/code/s2122/resources/views/representants/registropagos/form/payments/modals/anyErrors.blade.php",
+		"/home/nuser/code/s2122/resources/views/academicos/layouts/dashboard/navbar/app.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/form/create.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/form/edit.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/table/partials/btnModeOthers.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/form/delete.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/table/partials/btnModeCreate.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/form/partials/group.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/form/partials/general.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/form/partials/messege.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/form/partials/body.blade.php",
+		"/home/nuser/code/s2122/resources/views/academicos/mailers/table/index.blade.php",
+		"/home/nuser/code/s2122/resources/views/academicos/mailers/table/crud.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/representants/table/crud.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/representants/form/fields.blade.php"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 98.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"SESSION_DOMAIN"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "/home/nuser/code/pastoral"
+		},
+		{
+			"path": "/home/nuser/code/pastoral/app"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": ".env",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 995,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								143,
+								143
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 203.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

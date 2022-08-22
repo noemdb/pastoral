@@ -1,0 +1,237 @@
+-. pastoral
+  • id
+  • name
+  • code
+  • description
+  • observations
+  • header 
+  • body
+  • footer
+
+-. pescolars
+  • id
+  • pastoralid
+  • name
+  • code
+  • description
+  • observations
+  • header 
+  • body
+  • footer
+
+-. citypes
+  • id
+  • name
+  • description
+  • observations
+  • header 
+  • body
+  • footer
+
+-. representants
+  • id
+  • citype_id
+  • ci
+  • name
+  • lastname
+  • borndate
+  • country
+  • state
+  • city
+  • street
+
+-. estudiants
+  • id
+  • representant_id
+  • name
+  • lastname
+  • ci
+  • citype_id
+  • borndate
+  • country
+  • state
+  • city
+  • street
+
+-. scales
+  • id
+  • name
+  • code
+  • minimum
+  • maximum
+  • description
+  • observations
+  • header 
+  • body
+  • footer
+
+-. baremos
+  • id
+  • scale_id
+  • name
+  • code
+  • minimum
+  • maximum
+  • literal
+  • description
+  • observations
+  • header 
+  • body
+  • footer
+
+-. pestudios
+  • id
+  • pescolar_id
+  • escala_id
+  • name
+  • code
+  • alias
+  • color
+  • bgcolor
+  • class
+  • header 
+  • body
+  • footer
+  • contract
+  • description
+  • observations
+  • finial 
+  • ffinal
+  • fecha_document
+  • fecha_format
+
+-. lapsos
+  • id
+  • name
+  • code
+  • alias
+  • short
+  • color
+  • bgcolor
+  • class
+  • header 
+  • body
+  • footer
+  • description
+  • observations
+  • finial 
+  • ffinal
+  • date_corte
+
+-. grados
+  • id
+  • pestudio_id
+  • name
+  • code
+  • alias
+  • short
+  • color
+  • bgcolor
+  • class
+  • header 
+  • body
+  • footer
+  • description
+  • observations
+
+-. seccions
+  • id
+  • name
+  • code
+  • alias
+  • short
+  • color
+  • bgcolor
+  • class
+  • header 
+  • body
+  • footer
+  • description
+  • observations
+
+-. asignaturas
+  • id
+  • name
+  • code
+  • alias
+  • hteoric
+  • hpractice
+  • prelaciones
+  • ucreditos
+  • header 
+  • body
+  • footer
+  • description
+  • observations
+
+-. pensums
+  • id
+  • asignatura_id
+  • grado_id
+  • color
+  • bgcolor
+  • class
+  • header 
+  • body
+  • footer
+  • description
+  • observations
+  • status_index
+  • status_baremo
+
+-. teachers
+  • id
+  • name
+  • lastname
+  • ci
+  • citype_id
+  • borndate
+  • country
+  • state
+  • city
+  • street
+
+-. inscriptions
+  • id
+  • estudiant_id
+  • grago_id
+  • seccion_id
+  • user_id
+
+-. preinscriptions
+  • id
+  • representant_id
+  • estudiant_id
+  • grago_id
+  • seccion_id
+
+-. pevaluacions
+  • id
+  • grado_id
+  • seccion_id
+  • lapso_id
+  • pensum_id
+  • teacher_id
+  • color
+  • bgcolor
+  • class
+  • body
+  • description
+  • observations
+
+-. evaluacions
+  • id
+  • pevaluacion_id
+  • description
+  • observations
+
+-. notas
+  • id
+  • evaluacion_id 
+  • estudiant_id 
+  • number
+  • description
+  • observations
+
+
+

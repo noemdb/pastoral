@@ -1,0 +1,10 @@
+php artisan make:controller 'Email\ContactController'
+php artisan make:controller 'Administracion\Email\CollectionController'
+
+
+php artisan make:mail 'Queue\Collection\EmailForQueuing'
+php artisan make:mail 'Queue\Bot\EmailForQueuing'
+php artisan make:mail 'Queue\Mailer\EmailForQueuing'
+
+php artisan make:controller 'Academico\Email\MailerController'
+php artisan make:controller 'Administracion\Email\MailerController'
