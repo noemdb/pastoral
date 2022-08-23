@@ -21,7 +21,6 @@ class CreateWithdrawalsTable extends Migration
             $table->timestamps();
             $table->foreign('estudiant_id')->references('id')->on('estudiants')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->timestamps();
         });
     }
 

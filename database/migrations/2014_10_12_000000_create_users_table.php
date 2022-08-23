@@ -27,6 +27,10 @@ return new class extends Migration
             $table->timestamp('last_login_at')->nullable();
             $table->timestamp('last_loginout_at')->nullable();
             $table->string('last_login_ip')->nullable();
+
+            $table->string('work_id')->unique()->nullable();
+            $table->string('card_id')->unique()->nullable();
+            $table->string('biometric_id')->unique()->nullable();
             $table->timestamps();
         });
     }

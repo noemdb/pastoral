@@ -15,7 +15,11 @@ class CreateAssitObservationsTable extends Migration
     {
         Schema::create('assit_observations', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('assit_attendance_id');
+            $table->string('description')->comment('Descripción');
+            $table->text('attachment')->nullable();
             $table->timestamps();
+            $table->foreign('assit_attendance_id')->references('id')->on('assit_attendances')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

@@ -31,15 +31,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": ".env",
-			"settings":
-			{
-				"buffer_size": 995,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -77,9 +68,75 @@
 	},
 	"expanded_folders":
 	[
+		"/home/nuser/code/pastoral/database"
 	],
 	"file_history":
 	[
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_194900_create_poll_groups_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_204906_create_inscriptions_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_204913_create_withdrawals_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_204942_create_titles_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_014809_create_documents_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_014817_create_publications_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_014824_create_pevaluations_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_193338_create_maileds_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_194938_create_poll_options_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_194945_create_poll_answers_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_194931_create_poll_questions_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_194924_create_poll_tokens_table.php",
+		"/home/nuser/code/pastoral/blueprint/base de datos/migraciones/logica_de_negocio",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_194910_create_poll_mains_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_193319_create_mailers_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_015428_create_assit_attendances_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_015436_create_assit_permissions_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_015443_create_assit_observations_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_015402_create_bmains_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_015410_create_boptions_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_015417_create_bmesseges_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_014845_create_grade_fixes_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_014850_create_grade_repairs_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_204843_create_representants_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_014839_create_tableclasses_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_014840_create_grades_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_23_014831_create_evaluations_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_192225_create_sections_table.php",
+		"/home/nuser/code/pastoral/blueprint/base de datos/migraciones/borrador",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_204858_create_enrollments_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_204845_create_estudiants_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_204851_create_tinscriptions_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_204836_create_citypes_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_192235_create_pensums_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_192232_create_courses_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_192159_create_levels_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_192158_create_lapses_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_192157_create_curricula_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_192143_create_scales_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_192150_create_nouns_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_190910_create_pescolars_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_190906_create_classrooms_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_190900_create_authorities_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_190852_create_tauthorities_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_184100_create_pescolars_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_184107_create_estudiants_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_184053_create_pastorals_table.php",
+		"/home/nuser/code/pastoral/blueprint/base de datos/migraciones/sistema",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_174512_create_messeges_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_174505_create_channels_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_182923_add_last_login_ip_to_users_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_175022_add_last_last_login_ip_to_users_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_175015_add_last_loginout_at_to_users_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_175002_add_is_active_to_users_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_175008_add_last_login_at_to_users_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_174546_create_select_opts_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_174539_create_settings_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_174533_create_logdbs_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_174526_create_loginouts_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_174519_create_alerts_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_174458_create_tasks_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_174432_create_profiles_table.php",
+		"/home/nuser/code/pastoral/database/migrations/2022_08_22_174451_create_rols_table.php",
+		"/home/nuser/code/pastoral/.env",
 		"/home/nuser/code/s2223/.env",
 		"/home/nuser/code/s2223/app/Http/Controllers/Admin/Fix/DB/HomeController.php",
 		"/home/nuser/code/s2223/app/Models/app/Planpago/Functions/Cuentaxpagar/Relations.php",
@@ -142,76 +199,11 @@
 		"/home/nuser/code/s2122/resources/views/administracion/inscripciones/book/tab/pestudios.blade.php",
 		"/home/nuser/code/s2122/resources/views/administracion/boletins/pdf/partials/31059/posiciones.blade.php",
 		"/home/nuser/code/s2122/resources/views/administracion/boletins/pdf/table/tbody/31059.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/inscripciones/book.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/asisst_controls/assit_attendances/pdf/partials/assit_hours.blade.php",
-		"/home/nuser/code/s2122/app/Helpers/Convertidor.php",
-		"/home/nuser/code/s2122/Find Results change or",
-		"/home/nuser/code/s2122/resources/views/administracion/inscripciones/book/table/pestudios.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/inscripciones/book/table/tinscripcions.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/refunds/index.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/registropagos/form/asistent/sweetalerts/refund.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/registropagos/form/asistent/sweetalerts/questions.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/registropagos/asistent_representant_create.blade.php",
-		"/home/nuser/Descargas/sql/JNn83GeS->s2122-2022-05-11.sql",
-		"/home/nuser/Descargas/sql/default.sql",
-		"/home/nuser/code/s2122/resources/views/administracion/registropagos/crud.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/registropagos/table/crud.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/creditoafavors/table/crud.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/index-component.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/table/index.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/form/fields.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/form/partials/ingresos.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/form/partials/general.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/creditoafavors/form/omit/fields.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/form/create.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/form/partials/ingresos.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/representants/table/list.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/administracion/assist-control/assit-worker/table/workers.blade.php",
-		"/home/nuser/code/s2122/resources/lang/es/validation.php",
-		"/home/nuser/code/s2122/resources/views/administracion/registropagos/show/modal.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/representants/table/historico.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/modals/info.blade.php",
-		"/home/nuser/code/s2122/resources/views/representants/boletins/table/crud.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/representants/historico.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/autoresponders/boptions/form/fields.blade.php",
-		"/home/nuser/code/s2122/app/Http/Controllers/Administracion/Tab/Functions/RegistroPago/Create.php",
-		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/partials/create.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/refunds/menus/index.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/refunds/table/crud.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/refunds/form/search.blade.php",
-		"/home/nuser/code/s2122/resources/views/academicos/boletins/table/carga.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/ingresos/form/fields.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/ingresos/index.blade.php",
-		"/home/nuser/Descargas/sql/JNn83GeS->s2122-2022-05-01.sql",
-		"/home/nuser/code/s2122/resources/views/administracion/representants/recibo/pdf.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/representants/recibo/partials/footer.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/representants/recibo/partials/bills.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/representants/recibo/partials/ingresos.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/menu/index.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/form/fields.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/modals/helps.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/helps/main.blade.php",
-		"/home/nuser/code/s2122/resources/views/email/mailers/messege.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/create-component.blade.php",
-		"/home/nuser/code/s2122/resources/views/representants/registropagos/form/payments/modals/anyErrors.blade.php",
-		"/home/nuser/code/s2122/resources/views/academicos/layouts/dashboard/navbar/app.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/form/create.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/form/edit.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/table/partials/btnModeOthers.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/form/delete.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/table/partials/btnModeCreate.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/form/partials/group.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/form/partials/general.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/form/partials/messege.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/form/partials/body.blade.php",
-		"/home/nuser/code/s2122/resources/views/academicos/mailers/table/index.blade.php",
-		"/home/nuser/code/s2122/resources/views/academicos/mailers/table/crud.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/representants/table/crud.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/representants/form/fields.blade.php"
+		"/home/nuser/code/s2122/resources/views/administracion/inscripciones/book.blade.php"
 	],
 	"find":
 	{
-		"height": 38.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -225,6 +217,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			" &&",
+			"Models\\",
+			"Institucion",
+			"Estudiante\\",
+			"'Models\\",
 			"SESSION_DOMAIN"
 		],
 		"highlight": true,
@@ -233,6 +230,10 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
+			"Pastoral",
+			"Estudiant\\",
+			"'"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -247,116 +248,16 @@
 		},
 		{
 			"path": "/home/nuser/code/pastoral/app"
+		},
+		{
+			"path": "/home/nuser/code/pastoral/database"
 		}
 	],
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": ".env",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 995,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								143,
-								143
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content"
-							],
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -366,7 +267,7 @@
 	},
 	"input":
 	{
-		"height": 34.0
+		"height": 35.0
 	},
 	"layout":
 	{
@@ -445,7 +346,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 203.0,
+	"side_bar_width": 242.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

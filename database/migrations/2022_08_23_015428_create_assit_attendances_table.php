@@ -15,7 +15,18 @@ class CreateAssitAttendancesTable extends Migration
     {
         Schema::create('assit_attendances', function (Blueprint $table) {
             $table->id();
+            $table->integer('pevaluacion_id')->nullable()->unsigned()->comment('Plan de Evalaución');
+            $table->integer('user_id')->unsigned();
+            $table->string('work_id')->comment('Identificador del Trabajado');
+            $table->string('card_id')->comment('Num. de Tarjeta');
+            $table->string('biometric_id')->comment('Num. de Tarjeta');
+            $table->string('date')->comment('fecha');
+            $table->string('time')->comment('fecha');
+            $table->string('in_out')->comment('Entrada/Salida');
+            $table->string('event_code')->comment('Evento');
             $table->timestamps();
+            $table->foreign('pevaluacion_id')->references('id')->on('pevaluacions')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
