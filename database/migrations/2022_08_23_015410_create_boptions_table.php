@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTinscriptionsTable extends Migration
+class CreateBoptionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateTinscriptionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tinscriptions', function (Blueprint $table) {
+        Schema::create('boptions', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->comment('Nombre');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ class CreateTinscriptionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tinscriptions');
+        Schema::dropIfExists('boptions');
     }
 }

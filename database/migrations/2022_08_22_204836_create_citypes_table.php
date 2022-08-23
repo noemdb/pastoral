@@ -15,6 +15,10 @@ class CreateCitypesTable extends Migration
     {
         Schema::create('citypes', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->comment('Nombre del Tipo de identificación');
+            $table->string('code')->comment('Código del Tipo de identificación');
+            $table->string('code2')->comment('Código2 del Tipo de identificación');
+            $table->string('code3')->comment('Código3 del Tipo de identificación');
             $table->timestamps();
         });
     }

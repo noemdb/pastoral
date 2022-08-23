@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGradeFixesTable extends Migration
+class CreateAssitObservationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateGradeFixesTable extends Migration
      */
     public function up()
     {
-        Schema::create('grade_fixes', function (Blueprint $table) {
+        Schema::create('assit_observations', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateGradeFixesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('grade_fixes');
+        Schema::dropIfExists('assit_observations');
     }
 }

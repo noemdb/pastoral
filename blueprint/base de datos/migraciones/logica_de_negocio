@@ -32,11 +32,12 @@ Detalles del Estudiants
 
 Detalles del Teachers
 	php artisan make:model 'app\Teacher' -m -a
-	php artisan make:model 'app\Teacher\Documento' -m -a
-	php artisan make:model 'app\Teacher\Publicaciones' -m -a
+	php artisan make:model 'app\Teacher\Document' -m -a
+	php artisan make:model 'app\Teacher\Publication' -m -a
 
-	php artisan make:model 'app\Teacher\Pevaluacion' -m -a
-	php artisan make:model 'app\Teacher\Evaluacion' -m -a
+	php artisan make:model 'app\Teacher\Pevaluation' -m -a
+	php artisan make:model 'app\Teacher\Evaluation' -m -a
+	php artisan make:model 'app\Teacher\Tableclass' -m -a
 
 
 /***********Bot**********/

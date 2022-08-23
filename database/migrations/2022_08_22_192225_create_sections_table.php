@@ -28,7 +28,7 @@ class CreateSectionsTable extends Migration
             $table->text('header')->nullable();
             $table->text('body')->nullable();
             $table->text('footer')->nullable();
-            $table->boolean('status')->comment('Estado');
+            $table->boolean('status')->default(true)->comment('Estado');
 
             $table->timestamps();
             $table->foreign('level_id')->references('id')->on('levels')->onDelete('cascade')->onUpdate('cascade');
