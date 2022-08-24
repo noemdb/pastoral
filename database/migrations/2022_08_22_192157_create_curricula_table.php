@@ -19,6 +19,7 @@ class CreateCurriculaTable extends Migration
             $table->string('code')->nullable()->comment('Código');
             $table->string('name')->comment('Nombre');
             $table->integer('order')->comment('Orden de presentación');
+            $table->integer('capacity')->comment('Capacidad máxima');
             $table->string('description')->nullable();
             $table->string('observations')->nullable();
             $table->boolean('status_build_promotion')->comment('Genera promoción');

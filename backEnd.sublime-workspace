@@ -68,7 +68,8 @@
 	},
 	"expanded_folders":
 	[
-		"/home/nuser/code/pastoral/database"
+		"/home/nuser/code/pastoral/database",
+		"/home/nuser/code/pastoral/database/migrations"
 	],
 	"file_history":
 	[
@@ -203,7 +204,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 22.0
 	},
 	"find_in_files":
 	{
@@ -236,8 +237,10 @@
 			"'"
 		],
 		"reverse": false,
+		"scrollbar_highlights": true,
 		"show_context": true,
 		"use_buffer2": true,
+		"use_gitignore": true,
 		"whole_word": false,
 		"wrap": true
 	},
@@ -263,7 +266,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 22.0
 	},
 	"input":
 	{
@@ -308,7 +311,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 42.0
+		"height": 40.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -346,7 +349,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 242.0,
+	"side_bar_width": 506.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

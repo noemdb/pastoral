@@ -15,7 +15,7 @@ class CreateTableclassesTable extends Migration
     {
         Schema::create('tableclasses', function (Blueprint $table) {
             $table->id();
-            $table->integer('pevaluacion_id')->unsigned()->comment('Plan de Evalaución');
+            $table->integer('evaluacion_id')->unsigned()->comment('Plan de Evalaución');
             $table->integer('publication_id')->unsigned()->comment('Publicación');
 
             $table->text('title')->nullable();
@@ -24,7 +24,7 @@ class CreateTableclassesTable extends Migration
 
             $table->timestamps();
 
-            $table->foreign('pevaluacion_id')->references('id')->on('pevaluacions')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('evaluacion_id')->references('id')->on('evaluacions')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('publication_id')->references('id')->on('publications')->onDelete('cascade')->onUpdate('cascade');
         });
     }
