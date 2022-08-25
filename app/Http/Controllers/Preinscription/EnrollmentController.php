@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Preinscription;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Enrollment\StoreEnrollmentRequest;
+use App\Models\app\Estudiant\Enrollment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class EnrollmentController extends Controller
 {
@@ -14,7 +17,8 @@ class EnrollmentController extends Controller
      */
     public function index()
     {
-        return view('enrollments.index');
+        $comment_enrollment = Enrollment::COLUMN_COMMENTS;
+        return view('enrollments.index',compact('comment_enrollment'));
     }
 
     /**
@@ -35,7 +39,10 @@ class EnrollmentController extends Controller
      */
     public function store(StoreEnrollmentRequest $request)
     {
-        //
+        $enrollment = Enrollment::create($request->all());
+
+        Session::flash('operp_ok','Registro guardado exitosamente');
+        return redirect()->route('welcome');
     }
 
     /**

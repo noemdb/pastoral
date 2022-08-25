@@ -16,9 +16,14 @@ use App\Http\Controllers\Preinscription\EnrollmentController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
-Route::get('/enrollments', [EnrollmentController::class, 'index'])->name('enrollments.index');
+// Route::get('/enrollments', [EnrollmentController::class, 'index'])->name('enrollments.index');
+// Route::post('/enrollments/store', [EnrollmentController::class, 'store'])->name('enrollments.store');
+
+Route::resource('enrollments', EnrollmentController::class)->only([
+    'index', 'store'
+]);
 
 Route::middleware([
     'auth:sanctum',

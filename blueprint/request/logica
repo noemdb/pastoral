@@ -114,6 +114,13 @@ php artisan make:request 'Administracion\CreatePrepagoRequest' &&
 php artisan make:request 'Administracion\UpdatePrepagoRequest' &&
 
 
+
 php artisan make:request 'Administracion\Collection\CreateAsistentRequest' &&
 php artisan make:request 'Administracion\Collection\CreateCollPoliticallRequest' &&
 php artisan make:request 'Administracion\Collection\CreateCollMessegeRequest' &&
+
+
+
+
+php artisan make:request 'Enrollment\StoreEnrollmentRequest' &&
+StoreEnrollmentRequest
