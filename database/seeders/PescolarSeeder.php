@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
+use DB;
+
 class PescolarSeeder extends Seeder
 {
     /**
@@ -13,6 +15,6 @@ class PescolarSeeder extends Seeder
      */
     public function run()
     {
-        //
+        
     }
 }

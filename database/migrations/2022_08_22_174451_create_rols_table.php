@@ -16,6 +16,7 @@ class CreateRolsTable extends Migration
         Schema::create('rols', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id')->unsigned();
+            $table->integer('pastoral_id')->unsigned();
             $table->enum('area',['SISTEMA','DIRECCION','AUTORIDAD','CONTROL ESTUDIO','PROFESORADO','ESTUDIANTIL','REPRESENTANTE','INIVITADO']);
             $table->enum('rol',['DIRECTOR','AUTORIDAD1','AUTORIDAD2','AUTORIDAD3','AUTORIDAD4','ADMINISTRADOR','COORDINADOR','SUPERVISOR','PROFESOR','ASISTENTE','USUARIO','ESTUDIANTE','REPRESENTANTE','INIVITADO']);
             $table->string('description');
@@ -24,6 +25,7 @@ class CreateRolsTable extends Migration
             $table->date('ffinal');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('pastoral_id')->references('id')->on('pastorals')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

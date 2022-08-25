@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Preinscription\EnrollmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/enrollments', function () {
-    return view('enrollments');
-});
+Route::get('/enrollments', [EnrollmentController::class, 'index'])->name('enrollments.index');
 
 Route::middleware([
     'auth:sanctum',
