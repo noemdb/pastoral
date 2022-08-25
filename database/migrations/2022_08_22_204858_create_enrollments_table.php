@@ -15,7 +15,7 @@ class CreateEnrollmentsTable extends Migration
     {
         Schema::create('enrollments', function (Blueprint $table) {
             $table->id();
-            $table->integer('pastoral_id')->unsigned();
+            $table->integer('pastoral_id')->default(1)->unsigned();
             $table->string('name')->comment('Nombres');
             $table->string('lastname')->comment('Apellidos');
             $table->integer('citype_id')->unsigned()->default(1)->comment('Tipo de identificación');
