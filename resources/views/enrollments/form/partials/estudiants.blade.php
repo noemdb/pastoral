@@ -7,6 +7,12 @@
 <hr class=" my-1">
 
 <div>
+    <x-jet-label for="pastoral_id" value="{{ __($comment_enrollment['pastoral_id']) }}" />
+    {{-- <x-jet-input id="name" class="block mt-1 w-full" type="name" name="name" :value="old('name')" required autofocus /> --}}
+    <x-elements.form.select-option name="pastoral_id" :value="old('pastoral_id')"/>
+</div>
+
+<div>
     <x-jet-label for="name" value="{{ __($comment_enrollment['name']) }}" />
     <x-jet-input id="name" class="block mt-1 w-full" type="name" name="name" :value="old('name')" required autofocus />
 </div>
