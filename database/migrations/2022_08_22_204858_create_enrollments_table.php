@@ -29,7 +29,7 @@ class CreateEnrollmentsTable extends Migration
             $table->string('state_birth')->nullable()->comment('Estado de nacimiento');
             $table->string('country_birth')->nullable()->comment('País de nacimiento');
             $table->string('dir_address')->nullable()->comment('Dirección de residencia');
-            $table->string('phone')->nullable()->comment('Número de teléfono fijo');
+            $table->string('phone')->nullable()->comment('Número de teléfono');
             $table->string('email')->nullable()->comment('Correo electrónico');
             $table->string('twitter')->nullable()->comment('Twitter');
             $table->string('instagram')->nullable()->comment('Instagram');

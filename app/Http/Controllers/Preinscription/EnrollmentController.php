@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Preinscription;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Enrollment\StoreEnrollmentRequest;
 use App\Models\app\Estudiant\Enrollment;
+use App\Models\app\Pastoral;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -15,10 +16,15 @@ class EnrollmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $selectedPastoralId = (!empty($request->selectedPastoralId)) ? : null ;
+        // $pastorals = Pastoral::all();
+        $pastorals_list = Pastoral::all()->pluck('name','id')->toArray(); //dd($pastorals_list);
+        $citype_list = ['1'=>'Cédula de Identidad','2'=>'Cédula Escolar','3'=>'Otro'];
+        $gender_list = ['1'=>'Femenino','2'=>'Masculino'];
         $comment_enrollment = Enrollment::COLUMN_COMMENTS;
-        return view('enrollments.index',compact('comment_enrollment'));
+        return view('enrollments.index',compact('comment_enrollment','pastorals_list','selectedPastoralId','citype_list','gender_list'));
     }
 
     /**

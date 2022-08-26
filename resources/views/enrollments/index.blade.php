@@ -31,15 +31,21 @@
                             <form method="POST" action="{{ route('enrollments.store') }}">
                                 @csrf
 
+                                <x-jet-validation-errors class="mb-4" />
+
+                                {{-- @include('enrollments.form.partials.stepper') --}}
+
+                                <hr class="mb-4 mt-4">
+
                                 @include('enrollments.form.partials.pastorals')
 
-                                <hr class="mb-2">
+                                <hr class="mb-4 mt-4">
 
                                 @include('enrollments.form.partials.estudiants')
 
-                                {{-- <hr> --}}
+                                <hr class="mb-4 mt-4">
 
-                                {{-- @include('enrollments.form.partials.estudiants') --}}
+                                @include('enrollments.form.partials.patologies')
 
                                 <div class="flex items-center justify-end mt-4">
                                     <x-jet-button class="ml-4">
@@ -59,7 +65,7 @@
         {{-- </div> --}}
     {{-- </div> --}}
 
-    
+
 
 
     {{-- <div x-data="{ show: false }">

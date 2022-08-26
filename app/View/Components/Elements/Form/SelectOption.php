@@ -6,14 +6,15 @@ use Illuminate\View\Component;
 
 class SelectOption extends Component
 {
+    public $options;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($options)
     {
-        //
+        $this->options = $options;
     }
 
     /**
@@ -24,5 +25,10 @@ class SelectOption extends Component
     public function render()
     {
         return view('components.elements.form.select-option');
+    }
+
+    public function isSelected($option)
+    {
+        return $option === $this->selected;
     }
 }
