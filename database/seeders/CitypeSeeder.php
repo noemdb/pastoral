@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class CitypeSeeder extends Seeder
 {
@@ -16,13 +16,13 @@ class CitypeSeeder extends Seeder
     public function run()
     {
         DB::table('citypes')->insert(
-            [  
+            [
                 "name"=>"Cédula de Identidad",
                 "code"=>"CI:",
                 "code2"=>"CI-",
                 "code3"=>"C.I.",
-            ], 
-            [  
+            ],
+            [
                 "name"=>"Cédula de Identidad Temporal",
                 "code"=>"CI-T:",
                 "code2"=>"CIT-",

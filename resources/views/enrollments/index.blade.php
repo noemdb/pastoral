@@ -28,12 +28,14 @@
 
                         <div class="w-full sm:max-w-xl mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
 
-                            <form method="POST" action="{{ route('enrollments.store') }}">
+                            {{-- <h1 class="animate__animated animate__fadeIn">An animated element</h1> --}}
+
+                            <livewire:preincription.enrollment.list-component />
+
+                            {{-- <form method="POST" action="{{ route('enrollments.store') }}">
                                 @csrf
 
                                 <x-jet-validation-errors class="mb-4" />
-
-                                {{-- @include('enrollments.form.partials.stepper') --}}
 
                                 <hr class="mb-4 mt-4">
 
@@ -52,7 +54,7 @@
                                         {{ __('Registrar') }}
                                     </x-jet-button>
                                 </div>
-                            </form>
+                            </form> --}}
 
                         </div>
 

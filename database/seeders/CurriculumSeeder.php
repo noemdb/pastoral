@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CurriculumSeeder extends Seeder
 {
@@ -13,6 +14,27 @@ class CurriculumSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('curricula')->insert(
+            [
+                "pescolar_id"=>1,
+                "code"=>"3200",
+                "name"=>"Comunión",
+                "order"=>"1",
+                "capacity"=>"30",
+                "title"=>"1ra Comunión",
+                "status"=>true,
+                "status_build_promotion"=>true,
+            ],
+            [
+                "pescolar_id"=>1,
+                "code"=>"3300",
+                "name"=>"Confirmación",
+                "order"=>"1",
+                "capacity"=>"30",
+                "title"=>"Confirmación",
+                "status"=>true,
+                "status_build_promotion"=>true,
+            ],
+        );
     }
 }

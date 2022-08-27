@@ -4,7 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-use DB;
+// use DB;
+use Illuminate\Support\Facades\DB;
 
 class PastoralSeeder extends Seeder
 {
@@ -15,7 +16,7 @@ class PastoralSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('pastorals')->insert([            
+        DB::table('pastorals')->insert([
             "name"=>"PASTORAL FRAY LUIS AMIGÓ",
             "legalname"=>"ASOCIACION DE TERCIARIOS CAPUCHINOS DE VENEZUELA",
             "code"=>"J-00057016-7",
