@@ -16,11 +16,13 @@ class CreateEnrollmentsTable extends Migration
         Schema::create('enrollments', function (Blueprint $table) {
             $table->id();
             $table->integer('pastoral_id')->default(1)->unsigned();
+            $table->string('representant_name')->comment('Nombre del representante');
+            $table->string('representant_ci')->comment('CI del representante');
             $table->string('name')->comment('Nombres');
             $table->string('lastname')->comment('Apellidos');
             $table->integer('citype_id')->unsigned()->default(1)->comment('Tipo de identificación');
             $table->string('ci')->comment('N. de Identificación');
-            $table->string('levels')->comment('Nivel');
+            $table->integer('curriculum_id')->unsigned()->comment('Plan de Estudio');
             $table->enum('gender',['Masculino', 'Femenino'])->nullable()->comment('Genero');//Másculino,Femenino
             $table->enum('laterality',['Izquierda(o)', 'Derecha(o)'])->nullable()->comment('Lateralidad');//Másculino,Femenino
             $table->date('date_birth')->nullable()->comment('Fecha de nacimiento');
@@ -45,6 +47,7 @@ class CreateEnrollmentsTable extends Migration
             $table->timestamps();
             $table->foreign('citype_id')->references('id')->on('citypes')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('pastoral_id')->references('id')->on('pastorals')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('curriculum_id')->references('id')->on('curricula')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

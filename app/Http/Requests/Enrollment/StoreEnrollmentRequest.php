@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreEnrollmentRequest extends FormRequest
 {
-    protected $stopOnFirstFailure = false;
+    // protected $stopOnFirstFailure = false;
 
     /**
      * Determine if the user is authorized to make this request.
@@ -59,9 +59,9 @@ class StoreEnrollmentRequest extends FormRequest
             'pastoral_id' => 'Institución',
             'name' => 'Nombres',
             'lastname' => 'Apellidos',
-            'citype_id' => 'Tipo de Identifica',
-            'ci' => 'N.Identifica',
-            'gender' => 'N.Identifica',
+            'citype_id' => 'Tipo de Identificación',
+            'ci' => 'N.Identificación',
+            'gender' => 'Genero',
             'date_birth' => 'Fecha de nacimiento',
             'city_birth' => 'Ciudad de nacimiento',
             'town_hall_birth' => 'Municipio de nacimiento',

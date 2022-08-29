@@ -24,7 +24,10 @@ class CurriculumSeeder extends Seeder
                 "title"=>"1ra Comunión",
                 "status"=>true,
                 "status_build_promotion"=>true,
-            ],
+            ]
+        );
+
+        DB::table('curricula')->insert(
             [
                 "pescolar_id"=>1,
                 "code"=>"3300",

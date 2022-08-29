@@ -12,19 +12,21 @@ class Enrollment extends Model
     protected $dates = ['created_at','updated_at'];
 
     protected $fillable = [
-        'pastoral_id','citype_id','laterality','twitter','whatsapp','facebook','ci','patology','lastname','name','gender',
+        'pastoral_id','representant_name','representant_ci','citype_id','laterality','twitter','whatsapp','facebook','ci','patology','lastname','name','curriculum_id','gender',
         'date_birth','city_birth','town_hall_birth','state_birth','country_birth','dir_address','phone','email','observations',
-        'status','status_nacionality','description'
+        'status','status_nacionality','status_patology','description'
     ];
 
     const COLUMN_COMMENTS = [
         'pastoral_id' => 'Institución',
+        'representant_ci' => 'CI del representante',
+        'representant_name' => 'Nombre del representante',
         'citype_id' => 'Tipo de identificación',
         'ci'=>'N. de Identificación',
         'name'=>'Nombres',
         'lastname'=>'Apellidos',
         'fullname'=>'Nombre',
-        'levels'=>'Nivel',
+        'curriculum_id'=>'Plan de Estudio',
         'gender'=>'Genero',
         'laterality'=>'Lateralidad',
         'date_birth'=>'Fecha de nacimiento',
@@ -51,7 +53,7 @@ $table->string('name')->comment('Nombres');
 $table->string('lastname')->comment('Apellidos');
 $table->integer('citype_id')->unsigned()->default(1)->comment('Tipo de identificación');
 $table->string('ci')->comment('N. de Identificación');
-$table->string('levels')->comment('Nivel');
+$table->string('curriculum_id')->comment('Nivel');
 $table->enum('gender',['Masculino', 'Femenino'])->nullable()->comment('Genero');//Másculino,Femenino
 $table->enum('laterality',['Izquierda(o)', 'Derecha(o)'])->nullable()->comment('Genero');//Másculino,Femenino
 $table->date('date_birth')->nullable()->comment('Fecha de nacimiento');
