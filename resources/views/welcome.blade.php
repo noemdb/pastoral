@@ -41,6 +41,8 @@
                     <img style="max-width:100%;max-height:100%;display:block;margin:auto auto;" src="{{ asset('images/logo.svg') }}">
                 </div>
 
+                <div> @if (session()->has('message')) <div class="bg-purple-100 rounded-lg py-5 px-6 mb-4 text-base text-purple-700 mb-3" role="alert"> {{ session('message') }} </div> @endif  </div>
+
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="p-6">

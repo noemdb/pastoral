@@ -15,6 +15,19 @@
 
         <x-jet-validation-errors class="mb-4" />
 
+        <div>
+            @if (session()->has('message'))
+                <div class="alert alert-success">
+                    {{ session('message') }}
+                </div>
+            @endif
+        </div>
+
+    <div class="bg-green-100 rounded-lg py-5 px-6 mb-4 text-base text-green-700 mb-3" role="alert">
+      A simple success alert - check it out!
+    </div>
+
+
         @switch($step)
             @case(1)            
                 @include('livewire.preincription.enrollment.steps.home')
@@ -41,9 +54,9 @@
                 <h1>Hello World n!</h1>
         @endswitch
 
-        <div class="flex items-center justify-center mb-3 mt-4">
+        <div class="flex items-left justify-left mb-3 mt-4">
             <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
-                <x-jet-button type="button" class="ml-1 bg-blue-500 " wire:click="home" > {{ __('Inicio') }} </x-jet-button>
+                <x-jet-button type="button" class="mr-auto ml-1 bg-blue-500 " wire:click="home" > {{ __('Inicio') }} </x-jet-button>
                 @if (!$status_first)
                     <x-jet-button type="button" class="ml-1" wire:click="back" :disabled="$status_first"> {{ __('Anterior') }} </x-jet-button>
                 @endif
