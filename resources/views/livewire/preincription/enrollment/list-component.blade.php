@@ -6,7 +6,11 @@
             Paso {{$step ?? null}}
             {{-- <span>{{ round(100 * $step / $limit_step, 2) }} %</span> --}}
             {{-- <x-jet-button type="button" class="inline">{{ round(100 * $step / $limit_step, 2) }} %</x-jet-button> --}}
-            <p class="text-right bg-gray-100 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">{{ round(100 * $step / $limit_step) }} %</p>
+            {{-- <p class="text-right bg-gray-100 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">{{ $porcentage ?? null }} %</p> --}}
+
+            <div class="w-full bg-gray-200 h-1">
+              <div class="bg-blue-600 h-1" style="width: {{ $porcentage ?? null }}%"></div>
+            </div>
         </div>
 
         <x-jet-validation-errors class="mb-4" />
@@ -37,13 +41,29 @@
                 <h1>Hello World n!</h1>
         @endswitch
 
-        <div class="flex items-center justify-end mt-4">
-            <x-jet-button type="button" class="ml-2" wire:click="home" > {{ __('Inicio') }} </x-jet-button>
-            <x-jet-button type="button" class="ml-2" wire:click="back" :disabled="$status_first"> {{ __('Anterior') }} </x-jet-button>
-            <x-jet-button type="button" class="ml-2" wire:click="next" :disabled="$status_last"> {{ __('Siguiente') }} </x-jet-button>
-            <x-jet-button type="button" class="ml-2" wire:click="save" :disabled="!$status_last"> {{ __('Registrar') }} </x-jet-button>
+        <div class="flex items-center justify-center mb-3 mt-4">
+            <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
+                <x-jet-button type="button" class="ml-1 bg-blue-500 " wire:click="home" > {{ __('Inicio') }} </x-jet-button>
+                @if (!$status_first)
+                    <x-jet-button type="button" class="ml-1" wire:click="back" :disabled="$status_first"> {{ __('Anterior') }} </x-jet-button>
+                @endif
+                @if (!$status_last)
+                    <x-jet-button type="button" class="ml-1" wire:click="next" :disabled="$status_last"> {{ __('Siguiente') }} </x-jet-button>
+                @endif
+                @if ($status_last)
+                    <x-jet-button type="button" class="ml-1 bg-green-500 " wire:click="save" :disabled="!$status_last"> {{ __('Registrar') }} </x-jet-button>
+                @endif
+            </div>
             {{-- <button>Save</button> --}}
         </div>
+
+{{-- <div class="flex items-center justify-center mb-3">
+  <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
+    <button type="button" class="rounded-l inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase hover:bg-green-600 focus:bg-green-600 focus:outline-none focus:ring-0 active:bg-green-700 transition duration-150 ease-in-out">Left</button>
+    <button type="button" class="inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase hover:bg-green-600 focus:bg-green-600 focus:outline-none focus:ring-0 active:bg-green-700 transition duration-150 ease-in-out">Middle</button>
+    <button type="button" class="rounded-r inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase hover:bg-green-600 focus:bg-green-600 focus:outline-none focus:ring-0 active:bg-green-700 transition duration-150 ease-in-out">Right</button>
+  </div>
+</div> --}}
 
 
     </form>

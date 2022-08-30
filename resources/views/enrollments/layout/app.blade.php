@@ -12,6 +12,10 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Styles -->
+
+        <link rel="stylesheet" href="{{ asset('vendor/tw-starter/1.0.0/css/index.min.css') }}" />
+        {{-- vendor/tw-starter/1.0.0/css/index.min.css --}}
+
         {{-- @fcStyles --}}
         @livewireStyles
 
@@ -40,10 +44,14 @@
 
         <script src="{{ asset('js/app.js') }}"></script>
 
+        <script type="text/javascript" src="{{ asset('vendor/tw-starter/1.0.0/js/index.min.js') }}"></script>
+
         @stack('scripts')
 
         @livewireScripts
 
         {{-- @fcScripts --}}
+
+
     </body>
 </html>

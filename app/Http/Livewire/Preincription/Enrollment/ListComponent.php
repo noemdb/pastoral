@@ -16,6 +16,7 @@ class ListComponent extends Component
     public $pastoral_id,$representant_ci,$representant_name,$citype_id,$laterality,$twitter,$whatsapp,$facebook,$ci,$patology,$lastname,$name,$curriculum_id;
     public $gender,$date_birth,$city_birth,$town_hall_birth,$state_birth,$country_birth,$dir_address,$phone;
     public $email,$observations,$status,$status_nacionality,$status_patology,$description;
+    public $porcentage;
 
     public $step,$limit_step=7;
     public $comment_enrollment,$pastorals_list,$pescolars_list,$curriculum_list,$citype_list,$gender_list,$laterality_list;
@@ -78,12 +79,13 @@ class ListComponent extends Component
 
     public function render()
     {
+        $this->porcentage = round(100 * $this->step / $this->limit_step);
         return view('livewire.preincription.enrollment.list-component');
     }
 
     public function save()
     // public function save(StoreEnrollmentRequest $request)
-    {   
+   {   
         $validatedData = $this->validate(
 
              [
