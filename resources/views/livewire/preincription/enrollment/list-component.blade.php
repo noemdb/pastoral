@@ -1,5 +1,7 @@
 <div>
 
+    <h1 class="block font-semibold text-lg text-gray-700">Asistente para registrar tu preinscripción</h1>
+
     <form wire:submit.prevent="save">
 
         <div class="py-4 font-semibold">
@@ -8,24 +10,12 @@
             {{-- <x-jet-button type="button" class="inline">{{ round(100 * $step / $limit_step, 2) }} %</x-jet-button> --}}
             {{-- <p class="text-right bg-gray-100 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">{{ $porcentage ?? null }} %</p> --}}
 
-            <div class="w-full bg-gray-200 h-1">
-              <div class="bg-blue-600 h-1" style="width: {{ $porcentage ?? null }}%"></div>
+            <div class="w-full bg-gray-200 h-5 mb-4">
+              <div class="bg-blue-600 h-5 text-white font-semibold text-center " style="width: {{ $porcentage ?? null }}%"> {{ $porcentage ?? null }}% </div>
             </div>
         </div>
 
-        <x-jet-validation-errors class="mb-4" />
-
-        {{-- <div>
-            @if (session()->has('message'))
-                <div class="alert alert-success">
-                    {{ session('message') }}
-                </div>
-            @endif
-        </div> --}}
-
-        {{-- <div class="bg-green-100 rounded-lg py-5 px-6 mb-4 text-base text-green-700 mb-3" role="alert">
-          A simple success alert - check it out!
-        </div> --}}
+        <x-jet-validation-errors class="mb-4" />        
 
         <div> @if (session()->has('message')) <div class=" text-center bg-green-100 rounded-lg py-5 px-6 mb-4 text-base text-green-700 mb-3" role="alert"> {{ session('message') }} </div> @endif  </div>
 
