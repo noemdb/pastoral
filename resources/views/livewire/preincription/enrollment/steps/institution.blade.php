@@ -6,7 +6,7 @@
     
     {{-- <hr class=" my-1"> --}}
     
-    <div>
+    <div class="mb-4">
         <x-jet-label for="pastoral_id" value="{{ __($comment_enrollment['pastoral_id']) }}" />    
         <x-select name="pastoral_id" id="pastoral_id" wire:model="pastoral_id" wire:change="loadInstitution($event.target.value)" :options="$pastorals_list" class=" w-full @error('pastoral_id') is-invalid @else is-valid @enderror" />
         @error('pastoral_id') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
@@ -19,7 +19,7 @@
             <div>{{ $pastoral->rif_institution }}</div>
             <div>{{ $pastoral->address }}</div>
         </div>
-        <div>
+        <div class="mb-4">
             <x-jet-label for="curriculum_id" value="{{ __($comment_enrollment['curriculum_id']) }}" />    
             <x-select name="curriculum_id" id="curriculum_id" wire:model="curriculum_id" wire:change="loadCurriculum($event.target.value)" :options="$curriculum_list" class=" w-full @error('curriculum_id') is-invalid @else is-valid @enderror" />
             @error('curriculum_id') <span class="text-sm text-red-600">{{ $message }}</span> @enderror

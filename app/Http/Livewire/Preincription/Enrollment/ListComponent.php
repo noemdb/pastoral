@@ -98,11 +98,11 @@ class ListComponent extends Component
                 'pastoral_id'=>'required',
                 'curriculum_id'=>'required',
                 'name'=>'required',
-                'representant_ci'=>'required',
+                'representant_ci'=>'required|numeric',
                 'representant_name'=>'required',
                 'lastname'=>'required',
                 'citype_id'=>'required',
-                'ci'=>'required',
+                'ci'=>'required|unique:enrollments|numeric',
                 'gender'=>'required',
                 'date_birth'=>'required|date',
                 'city_birth'=>'required',
@@ -143,7 +143,7 @@ class ListComponent extends Component
         $this->inputClean();
         $this->mount();
         session()->flash('message', 'Su preinscripción fué registrada satisfactoriamente.');
-        return redirect()->route('welcome');
+        // return redirect()->route('welcome');
     }
 
     public function inputClean()

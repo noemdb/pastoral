@@ -15,17 +15,19 @@
 
         <x-jet-validation-errors class="mb-4" />
 
-        <div>
+        {{-- <div>
             @if (session()->has('message'))
                 <div class="alert alert-success">
                     {{ session('message') }}
                 </div>
             @endif
-        </div>
+        </div> --}}
 
-    <div class="bg-green-100 rounded-lg py-5 px-6 mb-4 text-base text-green-700 mb-3" role="alert">
-      A simple success alert - check it out!
-    </div>
+        {{-- <div class="bg-green-100 rounded-lg py-5 px-6 mb-4 text-base text-green-700 mb-3" role="alert">
+          A simple success alert - check it out!
+        </div> --}}
+
+        <div> @if (session()->has('message')) <div class=" text-center bg-green-100 rounded-lg py-5 px-6 mb-4 text-base text-green-700 mb-3" role="alert"> {{ session('message') }} </div> @endif  </div>
 
 
         @switch($step)

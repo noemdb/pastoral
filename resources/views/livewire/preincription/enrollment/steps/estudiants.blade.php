@@ -6,13 +6,13 @@
 
 <div class="mb-4">
     <x-jet-label for="name" value="{{ __($comment_enrollment['name']) }}" />
-    <x-jet-input wire:model="name" id="name" class="block mt-1 w-full @error('email') is-invalid @else is-valid @enderror" type="name" name="name" :value="old('name')"  />
+    <x-input wire:model="name" name="name" class="block mt-1 w-full @error('name') is-invalid @else is-valid @enderror" />
     @error('name') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
 </div>
 
 <div class="mb-4">
     <x-jet-label for="lastname" value="{{ __($comment_enrollment['lastname']) }}" />
-    <x-jet-input wire:model="lastname" id="lastname" class="block mt-1 w-full @error('lastname') is-invalid @else is-valid @enderror" type="lastname" name="lastname" :value="old('lastname')" />
+    <x-input wire:model="lastname" name="lastname" class="block mt-1 w-full @error('lastname') is-invalid @else is-valid @enderror" />
     @error('lastname') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
 </div>
 
@@ -24,7 +24,7 @@
 
 <div class="mb-4">
     <x-jet-label for="ci" value="{{ __($comment_enrollment['ci']) }}" />
-    <x-jet-input wire:model="ci" id="ci" class="block mt-1 w-full @error('ci') is-invalid @else is-valid @enderror" type="ci" name="ci" :value="old('ci')"   />
+    <x-input wire:model="ci" name="ci" class="block mt-1 w-full @error('ci') is-invalid @else is-valid @enderror" />
     @error('ci') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
 </div>
 
@@ -43,7 +43,7 @@
 
 <div class="mb-4">
     <x-jet-label for="date_birth" value="{{ __($comment_enrollment['date_birth']) }}" />
-    <x-jet-input wire:model="date_birth" id="date_birth" class="block mt-1 w-full @error('date_birth') is-invalid @else is-valid @enderror" type="date" name="date_birth" :value="old('date_birth')"   />
+    <x-input type="date" wire:model="date_birth" name="date_birth" class="block mt-1 w-full @error('date_birth') is-invalid @else is-valid @enderror" />
     @error('date_birth') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
 </div>
 
