@@ -23,10 +23,9 @@ class CreateEstudiantsTable extends Migration
             $table->string('lastname')->nullable()->comment('Apellidos');
             $table->enum('gender',['Masculino', 'Femenino'])->nullable()->comment('Genero');//Másculino,Femenino
             $table->date('date_birth')->nullable()->comment('Fecha de nacimiento');
-            $table->string('city_birth')->nullable()->comment('Ciudad de nacimiento');
-            $table->string('town_hall_birth')->nullable()->comment('Municipio de nacimiento');
-            $table->string('state_birth')->nullable()->comment('Estado de nacimiento');
-            $table->string('country_birth')->nullable()->comment('País de nacimiento');
+            $table->string('country_id')->nullable()->comment('País de nacimiento');
+            $table->string('state_id')->nullable()->comment('Estado de nacimiento');
+            $table->string('city_id')->nullable()->comment('Ciudad de nacimiento');
             $table->string('dir_address')->nullable()->comment('Dirección de residencia');
             $table->string('phone')->nullable()->comment('Número de teléfono fijo');
             $table->string('email')->nullable()->comment('Correo electrónico');
@@ -37,6 +36,9 @@ class CreateEstudiantsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('representant_id')->references('id')->on('representants')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('citype_id')->references('id')->on('citypes')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('state_id')->references('id')->on('states')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

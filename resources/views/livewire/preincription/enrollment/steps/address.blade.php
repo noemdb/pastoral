@@ -4,37 +4,66 @@
 
 
 <div class="mb-4">
-    <x-jet-label for="city_birth" value="{{ __($comment_enrollment['city_birth']) }}" />
-    <x-input wire:model="city_birth" id="city_birth" name="city_birth" class="block mt-1 w-full @error('city_birth') is-invalid @else is-valid @enderror" />
-    @error('city_birth') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+    <x-jet-label for="country_id" value="{{ __($comment_enrollment['country_id']) }}" />    
+    <x-select name="country_id" id="country_id" wire:model="country_id" wire:change="loadState($event.target.value)" :options="$country_list" class=" w-full @error('country_id') is-invalid @else is-valid @enderror" />
+    @error('country_id') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+</div>
+
+@if ($country)
+    <div class="mb-4">
+        <x-jet-label for="state_id" value="{{ __($comment_enrollment['state_id']) }}" />    
+        <x-select name="state_id" id="state_id" wire:model="state_id" wire:change="loadCity($event.target.value)" :options="$state_list" class=" w-full @error('state_id') is-invalid @else is-valid @enderror" />
+        @error('state_id') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+    </div>
+
+    @if ($state)
+
+        <div class="mb-4">
+            <x-jet-label for="city_id" value="{{ __($comment_enrollment['city_id']) }}" />    
+            <x-select name="city_id" id="city_id" wire:model="city_id"  :options="$city_list" class=" w-full @error('city_id') is-invalid @else is-valid @enderror" />
+            @error('city_id') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+        </div>
+
+        <div class="mb-4">
+            <x-jet-label for="dir_address" value="{{ __($comment_enrollment['dir_address']) }}" />
+            <x-input wire:model="dir_address" name="dir_address" class="block mt-1 w-full @error('dir_address') is-invalid @else is-valid @enderror" />
+            @error('dir_address') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+        </div>
+
+        <div class="mb-4">
+            <x-jet-label for="status_nacionality" value="{{ __($comment_enrollment['status_nacionality']) }}" class="inline" />
+            <x-select wire:model="status_nacionality" name="status_nacionality"  :options="[1=>'SI',0=>'NO']" class=" w-full @error('status_nacionality') is-invalid @else is-valid @enderror" />
+            @error('status_nacionality') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+        </div>
+
+    @endif
+@endif
+
+{{-- 
+<div class="mb-4">
+    <x-jet-label for="city_id" value="{{ __($comment_enrollment['city_id']) }}" />
+    <x-input wire:model="city_id" id="city_id" name="city_id" class="block mt-1 w-full @error('city_id') is-invalid @else is-valid @enderror" />
+    @error('city_id') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
 </div>
 
 <div class="mb-4">
-    <x-jet-label for="town_hall_birth" value="{{ __($comment_enrollment['town_hall_birth']) }}" />
-    <x-input wire:model="town_hall_birth" id="town_hall_birth" name="town_hall_birth" class="block mt-1 w-full @error('town_hall_birth') is-invalid @else is-valid @enderror" />
-    @error('town_hall_birth') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+    <x-jet-label for="town_hall_id" value="{{ __($comment_enrollment['town_hall_id']) }}" />
+    <x-input wire:model="town_hall_id" id="town_hall_id" name="town_hall_id" class="block mt-1 w-full @error('town_hall_id') is-invalid @else is-valid @enderror" />
+    @error('town_hall_id') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
 </div>
 
 <div class="mb-4">
-    <x-jet-label for="state_birth" value="{{ __($comment_enrollment['state_birth']) }}" />
-    <x-input wire:model="state_birth" id="state_birth" name="state_birth" class="block mt-1 w-full @error('state_birth') is-invalid @else is-valid @enderror" />
-    @error('state_birth') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+    <x-jet-label for="state_id" value="{{ __($comment_enrollment['state_id']) }}" />
+    <x-input wire:model="state_id" id="state_id" name="state_id" class="block mt-1 w-full @error('state_id') is-invalid @else is-valid @enderror" />
+    @error('state_id') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
 </div>
 
 <div class="mb-4">
-    <x-jet-label for="country_birth" value="{{ __($comment_enrollment['country_birth']) }}" />
-    <x-input wire:model="country_birth" name="country_birth" class="block mt-1 w-full @error('country_birth') is-invalid @else is-valid @enderror" />
-    @error('country_birth') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
-</div>
+    <x-jet-label for="country_id" value="{{ __($comment_enrollment['country_id']) }}" />
+    <x-input wire:model="country_id" name="country_id" class="block mt-1 w-full @error('country_id') is-invalid @else is-valid @enderror" />
+    @error('country_id') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+</div> 
 
-<div class="mb-4">
-    <x-jet-label for="status_nacionality" value="{{ __($comment_enrollment['status_nacionality']) }}" class="inline" />
-    <x-select wire:model="status_nacionality" name="status_nacionality"  :options="[1=>'SI',0=>'NO']" class=" w-full @error('status_nacionality') is-invalid @else is-valid @enderror" />
-        @error('status_nacionality') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
-</div>
+--}}
 
-<div class="mb-4">
-    <x-jet-label for="dir_address" value="{{ __($comment_enrollment['dir_address']) }}" />
-    <x-input wire:model="dir_address" name="dir_address" class="block mt-1 w-full @error('dir_address') is-invalid @else is-valid @enderror" />
-    @error('dir_address') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
-</div>
+

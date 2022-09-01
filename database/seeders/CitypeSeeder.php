@@ -21,14 +21,23 @@ class CitypeSeeder extends Seeder
                 "code"=>"CI:",
                 "code2"=>"CI-",
                 "code3"=>"C.I.",
-            ],
+            ]
+        );
+        DB::table('citypes')->insert(
             [
                 "name"=>"Cédula de Identidad Temporal",
                 "code"=>"CI-T:",
                 "code2"=>"CIT-",
                 "code3"=>"C.I.T.",
-            ],
-
-    );
+            ]
+        );
+        DB::table('citypes')->insert(
+            [
+                "name"=>"Otros",
+                "code"=>".",
+                "code2"=>".",
+                "code3"=>".",
+            ]
+        );
     }
 }

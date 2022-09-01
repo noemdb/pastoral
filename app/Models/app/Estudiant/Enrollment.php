@@ -13,7 +13,7 @@ class Enrollment extends Model
 
     protected $fillable = [
         'pastoral_id','representant_name','representant_ci','citype_id','laterality','twitter','whatsapp','facebook','ci','patology','lastname','name','curriculum_id','gender',
-        'date_birth','city_birth','town_hall_birth','state_birth','country_birth','dir_address','phone','email','observations',
+        'date_birth','city_birth','state_birth','country_birth','dir_address','phone','email','observations',
         'status','status_nacionality','status_patology','description'
     ];
 
@@ -30,10 +30,9 @@ class Enrollment extends Model
         'gender'=>'Genero',
         'laterality'=>'Lateralidad',
         'date_birth'=>'Fecha de nacimiento',
-        'city_birth'=>'Ciudad de nacimiento',
-        'town_hall_birth'=>'Municipio de nacimiento',
-        'state_birth'=>'Estado de nacimiento',
-        'country_birth'=>'País de nacimiento',
+        'city_id'=>'Ciudad de nacimiento',
+        'state_id'=>'Estado de nacimiento',
+        'country_id'=>'País de nacimiento',
         'dir_address'=>'Dirección de residencia',
         'phone'=>'Número de teléfono',
         'email'=>'Correo electrónico',

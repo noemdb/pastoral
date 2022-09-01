@@ -56,13 +56,18 @@ Detalles del Teachers
 	php artisan make:model 'app\SenderMailer\Mailed' -m
 
 
-php artisan make:model 'app\Poll\PollMain' -m
-php artisan make:model 'app\Poll\PollGroup' -m
-php artisan make:model 'app\Poll\PollToken' -m
-php artisan make:model 'app\Poll\PollQuestion' -m
-php artisan make:model 'app\Poll\PollOption' -m
-php artisan make:model 'app\Poll\PollAnswer' -m
+/***********Poll**********/
+	php artisan make:model 'app\Poll\PollMain' -m
+	php artisan make:model 'app\Poll\PollGroup' -m
+	php artisan make:model 'app\Poll\PollToken' -m
+	php artisan make:model 'app\Poll\PollQuestion' -m
+	php artisan make:model 'app\Poll\PollOption' -m
+	php artisan make:model 'app\Poll\PollAnswer' -m
 
+/***********Word**********/
+	php artisan make:model 'app\Word\Country' -m -a
+	php artisan make:model 'app\Word\State' -m -a
+	php artisan make:model 'app\Word\City' -m -a
 
 /*************************************************************************************
 /*************************************************************************************
