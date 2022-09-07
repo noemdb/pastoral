@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Preinscription\EnrollmentController;
+use App\Http\Controllers\Admin\Institution\PastoralController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,8 @@ Route::get('/', function () {
 Route::resource('enrollments', EnrollmentController::class)->only([
     'index', 'store'
 ]);
+
+Route::resource('pastoral', PastoralController::class)->middleware(['auth:sanctum']);
 
 Route::middleware([
     'auth:sanctum',

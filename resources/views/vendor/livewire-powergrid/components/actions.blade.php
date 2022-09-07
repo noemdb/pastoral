@@ -8,7 +8,8 @@
 <div>
     @if(isset($actions) && count($actions) && $row !== '')
         @foreach($actions as $key => $action)
-            <td class="pg-actions {{ $theme->table->tdBodyClass }}"
+            {{-- <td class="pg-actions {{ $theme->table->tdBodyClass }}" --}}
+            <td class="pg-actions"
                 style="{{ $theme->table->tdBodyStyle }}">
                 @php
                     $actionClass = new \PowerComponents\LivewirePowerGrid\Helpers\Actions(

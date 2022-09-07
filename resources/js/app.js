@@ -4,10 +4,10 @@ import '../css/app.css';
 
 import 'animate.css';
 
-import Alpine from 'alpinejs';
+// import Alpine from 'alpinejs';
 
-window.Alpine = Alpine;
+// window.Alpine = Alpine;
 
-Alpine.start();
+// Alpine.start();
 
 import 'tw-elements';

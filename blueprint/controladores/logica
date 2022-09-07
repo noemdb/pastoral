@@ -100,3 +100,4 @@ php artisan make:controller 'Administracion\Assistcontrol\AssitPermissionControl
 
 
 
+php artisan make:controller 'Admin\Institution\PastoralController' --resource &&

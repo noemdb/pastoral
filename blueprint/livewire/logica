@@ -1,3 +1,7 @@
 php artisan make:livewire 'Preincription/Enrollment/ListComponent'
 
 php artisan make:livewire 'Administracion/AssistControl/AssitAttendance/workerComponent'
+
+
+php artisan make:livewire 'institutions/pastorals/modals/edit'
+

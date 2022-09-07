@@ -50,6 +50,9 @@
 
         @livewireScripts
 
+        {{-- livewire-ui-modal --}}
+        @livewire('livewire-ui-modal')
+
         {{-- @fcScripts --}}
 
 
