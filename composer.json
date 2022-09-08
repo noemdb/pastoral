@@ -15,7 +15,6 @@
         "laravel/tinker": "^2.5",
         "laraveles/spanish": "^1.5",
         "livewire/livewire": "^2.5",
-        "power-components/livewire-powergrid": "^3.2",
         "rawilk/laravel-form-components": "^2.0"
     },
     "require-dev": {
@@ -38,7 +37,7 @@
         "psr-4": {
             "Tests\\": "tests/"
         },
-         "files":[
+        "files":[
             "app/Support/herpers.php"
         ]
     },
@@ -66,8 +65,7 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true,
-        "platform-check": false
+        "sort-packages": true
     },
     "minimum-stability": "dev",
     "prefer-stable": true
