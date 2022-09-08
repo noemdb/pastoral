@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Powergrid\Institutions;
 
 use App\Models\app\Pastoral;
 use Illuminate\Support\Carbon;

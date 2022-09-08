@@ -21,6 +21,12 @@
 
                 <!-- Pastorals Settings -->
                 <x-jet-dropdown-link href="{{ route('pastoral.index', Auth::user()->currentTeam->id) }}">
+                    {{-- {!! $icon_menus['institution'] ?? null !!} --}}
+
+                    {{-- <x-icon-camera class="w-6 h-6" /> --}}
+
+                    {{-- <x-bi-bell-fill/> --}}
+                    
                     {{ __('Instituciones') }}
                 </x-jet-dropdown-link>
 

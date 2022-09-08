@@ -1,0 +1,7 @@
+php artisan powergrid:create
+
+Powergrid/Institutions/PastoralTable
+
+M
+
+App\Models\app\Pastoral

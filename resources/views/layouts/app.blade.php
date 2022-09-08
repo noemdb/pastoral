@@ -47,6 +47,6 @@
 
         @livewireScripts
         @powerGridScripts
-        @livewire('livewire-ui-modal')
+        {{-- @livewire('livewire-ui-modal') --}}
     </body>
 </html>
