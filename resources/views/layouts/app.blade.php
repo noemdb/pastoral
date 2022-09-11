@@ -12,7 +12,7 @@
 
         <!-- Styles -->
         @livewireStyles
-        @powerGridStyles
+        {{-- @powerGridStyles --}}
 
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
@@ -43,10 +43,12 @@
 
         @stack('modals')
 
-        <script src="{{ asset('js/app.js') }}"></script>
 
         @livewireScripts
-        @powerGridScripts
+
+        <script src="{{ asset('js/app.js') }}"></script>
+        
+        {{-- @powerGridScripts --}}
         {{-- @livewire('livewire-ui-modal') --}}
     </body>
 </html>
