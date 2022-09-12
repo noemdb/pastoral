@@ -44,14 +44,14 @@
 
         <script src="{{ asset('js/app.js') }}"></script>
 
-        <script type="text/javascript" src="{{ asset('vendor/tw-starter/1.0.0/js/index.min.js') }}"></script>
+        {{-- <script type="text/javascript" src="{{ asset('vendor/tw-starter/1.0.0/js/index.min.js') }}"></script> --}}
 
         @stack('scripts')
 
         @livewireScripts
 
         {{-- livewire-ui-modal --}}
-        @livewire('livewire-ui-modal')
+        {{-- @livewire('livewire-ui-modal') --}}
 
         {{-- @fcScripts --}}
 
