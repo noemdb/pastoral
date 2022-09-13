@@ -1569,11 +1569,21 @@ textarea.form-control.is-invalid {
   user-select: none;
   opacity: 0.25;
 }
+.modal {
+  z-index: 1055;
+}
+.modal.fade .modal-dialog {
+  transition: transform 0.3s ease-out;
+  transform: translate(0, -50px);
+}
 .modal.show .modal-dialog {
   transform: none;
 }
 .modal.\!show .modal-dialog {
   transform: none !important;
+}
+.modal.modal-static .modal-dialog {
+  transform: scale(1.02);
 }
 .modal-backdrop.show {
   opacity: 0.5;
@@ -3547,6 +3557,14 @@ textarea.form-control.is-invalid {
   --tw-bg-opacity: 1;
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
 }
+.bg-blue-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
+.bg-green-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 252 231 / var(--tw-bg-opacity));
+}
 .bg-blue-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
@@ -3578,14 +3596,6 @@ textarea.form-control.is-invalid {
 .bg-emerald-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(16 185 129 / var(--tw-bg-opacity));
-}
-.bg-blue-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
-}
-.bg-green-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 252 231 / var(--tw-bg-opacity));
 }
 .bg-purple-100 {
   --tw-bg-opacity: 1;
@@ -3923,6 +3933,10 @@ textarea.form-control.is-invalid {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
 }
+.text-green-700 {
+  --tw-text-opacity: 1;
+  color: rgb(21 128 61 / var(--tw-text-opacity));
+}
 .text-yellow-700 {
   --tw-text-opacity: 1;
   color: rgb(161 98 7 / var(--tw-text-opacity));
@@ -3938,10 +3952,6 @@ textarea.form-control.is-invalid {
 .text-slate-300 {
   --tw-text-opacity: 1;
   color: rgb(203 213 225 / var(--tw-text-opacity));
-}
-.text-green-700 {
-  --tw-text-opacity: 1;
-  color: rgb(21 128 61 / var(--tw-text-opacity));
 }
 .text-purple-700 {
   --tw-text-opacity: 1;
