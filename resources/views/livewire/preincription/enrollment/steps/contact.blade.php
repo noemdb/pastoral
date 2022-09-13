@@ -15,7 +15,8 @@
 
         <div class="mb-4">
             <x-jet-label for="email" value="{{ __($comment_enrollment['email']) }}" />
-            <x-input wire:model="email" name="email" class="block mt-1 w-full @error('email') is-invalid @else is-valid @enderror" />
+            {{-- <x-input wire:model="email" name="email" class="block mt-1 w-full {{ ($errors->has('email')) ? "is-invalid" : "is-valid" }} " /> --}}
+            <x-input wire:model="email" name="email" class="block mt-1 w-full" />
             @error('email') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
 
