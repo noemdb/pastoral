@@ -30,7 +30,7 @@
 
                 <div class="mb-4">
                     <x-jet-label for="dir_address" value="{{ __($comment_enrollment['dir_address']) }}" />
-                    <x-input wire:model="dir_address" name="dir_address" class="block mt-1 w-full @error('dir_address') is-invalid @else is-valid @enderror" />
+                    <x-input wire:model.defer="dir_address" name="dir_address" class="block mt-1 w-full @error('dir_address') is-invalid @else is-valid @enderror" />
                     @error('dir_address') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
                 </div>
 

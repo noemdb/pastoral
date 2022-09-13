@@ -12,76 +12,19 @@
         <x-app-logo />
     </x-slot>
 
+    <div>
 
-    {{-- <div class="py-12"> --}}
-        {{-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8"> --}}
-            {{-- <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg"> --}}
+    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+            <x-app-logo />
 
+        <div class="w-full sm:max-w-xl mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg border-solid border-4 border-light-blue-500">
 
+            <livewire:preincription.enrollment.list-component />
 
-                {{-- <x-jet-authentication-card> --}}
+        </div>
 
-                    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-                        {{-- <x-slot name="logo"> --}}
-                            <x-app-logo />
-                        {{-- </x-slot> --}}
-
-                        <div class="w-full sm:max-w-xl mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-
-                            {{-- <h1 class="animate__animated animate__fadeIn">An animated element</h1> --}}
-
-                            <livewire:preincription.enrollment.list-component />
-
-                            {{-- <form method="POST" action="{{ route('enrollments.store') }}">
-                                @csrf
-
-                                <x-jet-validation-errors class="mb-4" />
-
-                                <hr class="mb-4 mt-4">
-
-                                @include('enrollments.form.partials.pastorals')
-
-                                <hr class="mb-4 mt-4">
-
-                                @include('enrollments.form.partials.estudiants')
-
-                                <hr class="mb-4 mt-4">
-
-                                @include('enrollments.form.partials.patologies')
-
-                                <div class="flex items-center justify-end mt-4">
-                                    <x-jet-button class="ml-4">
-                                        {{ __('Registrar') }}
-                                    </x-jet-button>
-                                </div>
-                            </form> --}}
-
-                        </div>
-
-
-
-                    </div>
-
-                {{-- </x-jet-authentication-card> --}}
-            {{-- </div> --}}
-        {{-- </div> --}}
-    {{-- </div> --}}
-
-
-
-
-    {{-- <div x-data="{ show: false }">
-        <button @click="show = !show">Show</button>
-        <h1 x-show="show">Alpine Js is working !</h1>
     </div>
-    <hr>
-
-    <div x-data>
-        <button @click="alert('Alpine Js is working !')">Click</button>
-    </div> --}}
 
 
 </x-enrollment.app-layout>
-
-
 

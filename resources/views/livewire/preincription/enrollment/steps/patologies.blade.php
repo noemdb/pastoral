@@ -8,7 +8,7 @@
 
         <div class="mb-4">
             <x-jet-label for="patology" value="{{ __($comment_enrollment['patology']) }}" />
-            <x-input wire:model="patology" name="patology" id="patology" class="block mt-1 w-full @error('patology') is-invalid @else is-valid @enderror" />
+            <x-input wire:model.defer="patology" name="patology" id="patology" class="block mt-1 w-full @error('patology') is-invalid @else is-valid @enderror" />
             @error('patology') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
         {{--  --}}

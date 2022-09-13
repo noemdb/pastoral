@@ -12,10 +12,15 @@ use App\Models\app\Word\Country;
 use App\Models\app\Word\State;
 use App\Models\app\Word\City;
 
+use Jantinnerezo\LivewireAlert\LivewireAlert;
+
 use Livewire\Component;
 
 class ListComponent extends Component
 {
+
+    use LivewireAlert;
+
     public $pastoral,$curriculum,$country,$state,$city,$country_id,$state_id,$city_id;
 
     public $pastoral_id,$representant_ci,$representant_name,$citype_id,$laterality,$twitter,$whatsapp,$facebook,$ci,$patology,$lastname,$name,$curriculum_id;
@@ -29,6 +34,8 @@ class ListComponent extends Component
     public $country_list,$state_list,$city_list;
 
     public $status_last,$status_first;
+
+    protected $listeners = [ 'confirmed' ];
 
     public function mount()
     {
@@ -63,8 +70,7 @@ class ListComponent extends Component
     {
         $this->step++;
         $this->step = ($this->step > $this->limit_step) ? 1 : $this->step ;
-        $this->status();        
-        // $this->emit('updated');
+        $this->status();
     }
 
     public function status()
@@ -96,6 +102,7 @@ class ListComponent extends Component
 
     public function render()
     {
+
         $this->porcentage = round(100 * $this->step / $this->limit_step);
         return view('livewire.preincription.enrollment.list-component');
     }
@@ -152,8 +159,17 @@ class ListComponent extends Component
         Enrollment::create($validatedData);
         $this->inputClean();
         $this->mount();
-        session()->flash('message', 'Su preinscripción fué registrada satisfactoriamente.');
+        // session()->flash('message', 'Su preinscripción fué registrada satisfactoriamente.');
         // return redirect()->route('welcome');
+        $this->alert('success', 'Su preinscripción fué registrada satisfactoriamente!',
+            [
+                'toast' => false,
+                'position' => 'center',
+                'showConfirmButton' => true,
+                'timer'=>null,
+                'onConfirmed' => 'confirmed' 
+            ]
+        );
     }
 
     public function inputClean()
@@ -201,6 +217,14 @@ class ListComponent extends Component
         $this->state = State::find($id);
         $this->state_id = ($this->state) ? $this->state->id : null ;
         $this->city_list = ($this->state) ? City::where('state_id',$id)->orderBy('name')->pluck('name','id')->toArray() : null ;
+    }
+
+    public function confirmed()
+    {
+        // Do something
+        //$password = null;
+        //$this->flash('success', 'Successfully submitted form', [], '/');
+        redirect()->route('welcome');
     }
 
 }
