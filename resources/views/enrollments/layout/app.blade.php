@@ -40,9 +40,7 @@
             {{ $slot }}
         </main>
 
-        @stack('modals')
-
-        <script src="{{ asset('js/app.js') }}"></script>
+        @stack('modals')        
 
         <script type="text/javascript" src="{{ asset('vendor/tw-starter/1.0.0/js/index.min.js') }}"></script>
 
@@ -51,6 +49,8 @@
         @livewireScripts
 
         {{-- @fcScripts --}}
+
+        <script src="{{ asset('js/app.js') }}"></script>
 
 
     </body>
