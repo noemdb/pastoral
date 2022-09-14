@@ -10,13 +10,13 @@
 
         <div class="mb-4">
             <x-jet-label for="name" value="{{ __($comment_enrollment['name']) }}" />
-            <x-input wire:model.defer="name" name="name" class="block mt-1 w-full @error('name') is-invalid @else is-valid @enderror" />
+            <x-input wire:model.lazy="name" name="name" class="block mt-1 w-full @error('name') is-invalid @else is-valid @enderror" />
             @error('name') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
 
         <div class="mb-4">
             <x-jet-label for="lastname" value="{{ __($comment_enrollment['lastname']) }}" />
-            <x-input wire:model.defer="lastname" name="lastname" class="block mt-1 w-full @error('lastname') is-invalid @else is-valid @enderror" />
+            <x-input wire:model.lazy="lastname" name="lastname" class="block mt-1 w-full @error('lastname') is-invalid @else is-valid @enderror" />
             @error('lastname') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
 
@@ -28,7 +28,7 @@
 
         <div class="mb-4">
             <x-jet-label for="ci" value="{{ __($comment_enrollment['ci']) }}" />
-            <x-input wire:model.defer="ci" name="ci" class="block mt-1 w-full @error('ci') is-invalid @else is-valid @enderror" />
+            <x-input wire:model.lazy="ci" name="ci" class="block mt-1 w-full @error('ci') is-invalid @else is-valid @enderror" />
             @error('ci') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
 
@@ -41,13 +41,13 @@
 
         <div class="mb-4">
             <x-jet-label for="laterality" value="{{ __($comment_enrollment['laterality']) }}" />
-            <x-select name="laterality" wire:model="laterality" id="laterality" wire:model.defer="laterality" :options="$laterality_list" class="w-full @error('laterality') is-invalid @else is-valid @enderror" />
+            <x-select name="laterality" wire:model="laterality" id="laterality" wire:model.lazy="laterality" :options="$laterality_list" class="w-full @error('laterality') is-invalid @else is-valid @enderror" />
             @error('laterality') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
 
         <div class="mb-4">
             <x-jet-label for="date_birth" value="{{ __($comment_enrollment['date_birth']) }}" />
-            <x-input type="date" wire:model.defer="date_birth" name="date_birth" class="block mt-1 w-full @error('date_birth') is-invalid @else is-valid @enderror" />
+            <x-input type="date" wire:model.lazy="date_birth" name="date_birth" class="block mt-1 w-full @error('date_birth') is-invalid @else is-valid @enderror" />
             @error('date_birth') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
 

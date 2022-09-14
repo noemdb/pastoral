@@ -37,6 +37,51 @@ class ListComponent extends Component
 
     protected $listeners = [ 'confirmed' ];
 
+    protected $rules = [
+                    'pastoral_id'=>'required',
+                    'curriculum_id'=>'required',
+                    'name'=>'required',
+                    'representant_ci'=>'required|numeric',
+                    'representant_name'=>'required',
+                    'lastname'=>'required',
+                    'citype_id'=>'required',
+                    'ci'=>'required|unique:enrollments|numeric',
+                    'gender'=>'required',
+                    'date_birth'=>'required|date',
+                    'city_id'=>'required',
+                    'state_id'=>'required',
+                    'country_id'=>'required',
+                    'dir_address'=>'required',
+                    'phone'=>'required',
+                    'email'=>'required|email',
+                    'status_nacionality'=>'required',
+                    'status_patology'=>'required',
+    ];
+
+    protected function validationAttributes()
+    {
+        return [
+                'pastoral_id' => $this->comment_enrollment['pastoral_id'],
+                'curriculum_id' => $this->comment_enrollment['curriculum_id'],
+                'representant_ci'=>$this->comment_enrollment['representant_ci'],
+                'representant_name'=>$this->comment_enrollment['representant_name'],
+                'name' =>$this->comment_enrollment['name'],
+                'lastname' =>$this->comment_enrollment['lastname'],
+                'citype_id' =>$this->comment_enrollment['citype_id'],
+                'ci' =>$this->comment_enrollment['ci'],
+                'gender' =>$this->comment_enrollment['gender'],
+                'date_birth' =>$this->comment_enrollment['date_birth'],
+                'city_id' =>$this->comment_enrollment['city_id'],
+                'state_id' =>$this->comment_enrollment['state_id'],
+                'country_id' =>$this->comment_enrollment['country_id'],
+                'dir_address' =>$this->comment_enrollment['dir_address'],
+                'phone' =>$this->comment_enrollment['phone'],
+                'email' =>$this->comment_enrollment['email'],
+                'status_nacionality' =>$this->comment_enrollment['status_nacionality'],
+                'status_patology' =>$this->comment_enrollment['status_patology'],
+        ];
+    }
+
     public function mount()
     {
         $this->step = 1;
@@ -107,60 +152,17 @@ class ListComponent extends Component
         return view('livewire.preincription.enrollment.list-component');
     }
 
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
     public function save()
    {   
-        $validatedData = $this->validate(
-
-             [
-                'pastoral_id'=>'required',
-                'curriculum_id'=>'required',
-                'name'=>'required',
-                'representant_ci'=>'required|numeric',
-                'representant_name'=>'required',
-                'lastname'=>'required',
-                'citype_id'=>'required',
-                'ci'=>'required|unique:enrollments|numeric',
-                'gender'=>'required',
-                'date_birth'=>'required|date',
-                'city_id'=>'required',
-                'state_id'=>'required',
-                'country_id'=>'required',
-                'dir_address'=>'required',
-                'phone'=>'required',
-                'email'=>'required|email',
-                'status_nacionality'=>'required',
-                'status_patology'=>'required',
-            ],
-
-            [],
-
-            [
-                'pastoral_id' => $this->comment_enrollment['pastoral_id'],
-                'curriculum_id' => $this->comment_enrollment['curriculum_id'],
-                'representant_ci'=>$this->comment_enrollment['representant_ci'],
-                'representant_name'=>$this->comment_enrollment['representant_name'],
-                'name' =>$this->comment_enrollment['name'],
-                'lastname' =>$this->comment_enrollment['lastname'],
-                'citype_id' =>$this->comment_enrollment['citype_id'],
-                'ci' =>$this->comment_enrollment['ci'],
-                'gender' =>$this->comment_enrollment['gender'],
-                'date_birth' =>$this->comment_enrollment['date_birth'],
-                'city_id' =>$this->comment_enrollment['city_id'],
-                'state_id' =>$this->comment_enrollment['state_id'],
-                'country_id' =>$this->comment_enrollment['country_id'],
-                'dir_address' =>$this->comment_enrollment['dir_address'],
-                'phone' =>$this->comment_enrollment['phone'],
-                'email' =>$this->comment_enrollment['email'],
-                'status_nacionality' =>$this->comment_enrollment['status_nacionality'],
-                'status_patology' =>$this->comment_enrollment['status_patology'],
-            ]
-
-        );     
+        $validatedData = $this->validate();     
         Enrollment::create($validatedData);
-        $this->inputClean();
+        $this->reset();
         $this->mount();
-        // session()->flash('message', 'Su preinscripción fué registrada satisfactoriamente.');
-        // return redirect()->route('welcome');
         $this->alert('success', 'Su preinscripción fué registrada satisfactoriamente!',
             [
                 'toast' => false,
@@ -174,34 +176,35 @@ class ListComponent extends Component
 
     public function inputClean()
     {
-        $this->pastoral_id = null;
-        $this->representant_ci = null;
-        $this->representant_name = null;
-        $this->citype_id = null;
-        $this->ci= null;
-        $this->name= null;
-        $this->lastname= null;
-        $this->fullname= null;
-        $this->curriculum_id= null;
-        $this->gender= null;
-        $this->laterality= null;
-        $this->date_birth= null;
-        $this->city_birth= null;
-        $this->town_hall_birth= null;
-        $this->state_birth= null;
-        $this->country_birth= null;
-        $this->dir_address= null;
-        $this->phone= null;
-        $this->email= null;
-        $this->twitter= null;
-        $this->whatsapp= null;
-        $this->facebook= null;
-        $this->patology= null;
-        $this->status_nacionality= null;
-        $this->status_patology= null;
-        $this->status= null;
-        $this->description= null;
-        $this->observations= null;        
+        // $this->pastoral_id = null;
+        // $this->representant_ci = null;
+        // $this->representant_name = null;
+        // $this->citype_id = null;
+        // $this->ci= null;
+        // $this->name= null;
+        // $this->lastname= null;
+        // $this->fullname= null;
+        // $this->curriculum_id= null;
+        // $this->gender= null;
+        // $this->laterality= null;
+        // $this->date_birth= null;
+        // $this->city_birth= null;
+        // $this->town_hall_birth= null;
+        // $this->state_birth= null;
+        // $this->country_birth= null;
+        // $this->dir_address= null;
+        // $this->phone= null;
+        // $this->email= null;
+        // $this->twitter= null;
+        // $this->whatsapp= null;
+        // $this->facebook= null;
+        // $this->patology= null;
+        // $this->status_nacionality= null;
+        // $this->status_patology= null;
+        // $this->status= null;
+        // $this->description= null;
+        // $this->observations= null;        
+        $this->reset();
     }
 
     public function loadState($id)
@@ -213,7 +216,6 @@ class ListComponent extends Component
 
     public function loadCity($id)
     {
-        // dd($id);
         $this->state = State::find($id);
         $this->state_id = ($this->state) ? $this->state->id : null ;
         $this->city_list = ($this->state) ? City::where('state_id',$id)->orderBy('name')->pluck('name','id')->toArray() : null ;
@@ -221,9 +223,6 @@ class ListComponent extends Component
 
     public function confirmed()
     {
-        // Do something
-        //$password = null;
-        //$this->flash('success', 'Successfully submitted form', [], '/');
         redirect()->route('welcome');
     }
 
