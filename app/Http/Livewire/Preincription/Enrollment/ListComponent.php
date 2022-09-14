@@ -159,6 +159,7 @@ class ListComponent extends Component
 
     public function save()
    {   
+        $this->home();
         $validatedData = $this->validate();     
         Enrollment::create($validatedData);
         $this->reset();
