@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Preinscription\EnrollmentController;
+use App\Http\Controllers\Institution\PastoralController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,10 @@ Route::get('/', function () {
 
 // Route::get('/enrollments', [EnrollmentController::class, 'index'])->name('enrollments.index');
 // Route::post('/enrollments/store', [EnrollmentController::class, 'store'])->name('enrollments.store');
+
+Route::resource('pastorals', EnrollmentController::class)->only([
+    'index', 'store'
+]);
 
 Route::resource('enrollments', EnrollmentController::class)->only([
     'index', 'store'

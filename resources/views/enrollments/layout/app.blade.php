@@ -16,6 +16,9 @@
         <link rel="stylesheet" href="{{ asset('vendor/tw-starter/1.0.0/css/index.min.css') }}" />
         {{-- vendor/tw-starter/1.0.0/css/index.min.css --}}
 
+        {{-- @bukStyles --}}
+
+
         {{-- @fcStyles --}}
         @livewireStyles
 
@@ -44,7 +47,9 @@
             {{ $slot }}
         </main>
 
-        @stack('modals')        
+        @stack('modals')  
+
+        {{-- @bukScripts       --}}
 
         {{-- <script type="text/javascript" src="{{ asset('vendor/tw-starter/1.0.0/js/index.min.js') }}"></script> --}}
 

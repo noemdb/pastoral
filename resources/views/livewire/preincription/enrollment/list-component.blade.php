@@ -1,6 +1,8 @@
 <div>   
 
 
+
+
             <form wire:submit.prevent="save">
 
                 <div id="transition_institution"  x-data="{ open: false }" >
@@ -37,7 +39,7 @@
                               position: 'top-end',
                               showConfirmButton: false,
                               timer: 3000,
-                              // timerProgressBar: true,
+                              timerProgressBar: true,
                               didOpen: (toast) => {
                                 toast.addEventListener('mouseenter', Swal.stopTimer)
                                 toast.addEventListener('mouseleave', Swal.resumeTimer)
@@ -51,11 +53,6 @@
                         </script>
 
                     @endif
-
-                    {{-- <x-jet-validation-errors class="mb-4" />         --}}
-
-                    {{-- <div> @if (session()->has('message')) <div class=" text-center bg-green-100 rounded-lg py-5 px-6 mb-4 text-base text-green-700 mb-3" role="alert"> {{ session('message') }} </div> @endif  </div> --}}
-
 
                     @switch($step)
                         @case(1)            

@@ -172,6 +172,7 @@ class ListComponent extends Component
                 'onConfirmed' => 'confirmed' 
             ]
         );
+        
     }
 
     public function inputClean()
