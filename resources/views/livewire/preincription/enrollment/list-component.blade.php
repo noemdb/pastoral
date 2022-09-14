@@ -16,7 +16,10 @@
                         x-transition:leave-end="opacity-0 scale-90" --}}
                     >
 
-                    <h1 class="block font-semibold text-lg text-gray-700">Asistente para registrar tu preinscripción</h1>
+                        <div class="flex justify-between">
+                            <h1 class="block font-semibold text-lg text-gray-700">Asistente para registrar tu preinscripción </h1>
+                            <div wire:loading class="text-gray-400 text-sm"> Cargando... </div>
+                        </div>
 
                     <div class="py-4 font-semibold">
 
