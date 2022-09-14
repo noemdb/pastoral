@@ -102,16 +102,6 @@
 
             </form> 
 
-            @if ($errors->any())
-
-                <hr>
-
-                <div class="w-full sm:max-w-xl mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg border-solid border-4 border-light-red-500">
-
-                <x-jet-validation-errors class="mb-4" />  
-
-                </div> 
-
-            @endif  
+            <x-jet-validation-errors class="mb-4" />  
 
 </div>

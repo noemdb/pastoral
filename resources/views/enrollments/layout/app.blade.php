@@ -51,17 +51,13 @@
 
         {{-- @bukScripts       --}}
 
-        {{-- <script type="text/javascript" src="{{ asset('vendor/tw-starter/1.0.0/js/index.min.js') }}"></script> --}}
+        <script type="text/javascript" src="{{ asset('vendor/tw-starter/1.0.0/js/index.min.js') }}"></script>
 
         @stack('scripts')
 
         @livewireScripts
 
         {{-- @fcScripts --}}
-
-        {{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
-
-        {{-- vendor/livewire-alert/livewire-alert.js --}}
 
         <script type="text/javascript" src="{{ asset('vendor/livewire-alert/sweetalert2.js') }}"></script>
   

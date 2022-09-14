@@ -10,44 +10,58 @@
 
         <div class="mb-4">
             <x-jet-label for="name" value="{{ __($comment_enrollment['name']) }}" />
+            <div class="@error('name') p-2 border-2 rounded  border-rose-600 bg-red-50 @enderror">
             <x-input wire:model.lazy="name" name="name" class="block mt-1 w-full @error('name') is-invalid @else is-valid @enderror" />
+            </div>
             @error('name') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
 
         <div class="mb-4">
             <x-jet-label for="lastname" value="{{ __($comment_enrollment['lastname']) }}" />
+            <div class="@error('lastname') p-2 border-2 rounded  border-rose-600 bg-red-50 @enderror">
             <x-input wire:model.lazy="lastname" name="lastname" class="block mt-1 w-full @error('lastname') is-invalid @else is-valid @enderror" />
+            </div>
             @error('lastname') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
 
         <div class="mb-4">
             <x-jet-label for="citype_id" value="{{ __($comment_enrollment['citype_id']) }}" />
+            <div class="@error('citype_id') p-2 border-2 rounded  border-rose-600 bg-red-50 @enderror">
             <x-select  wire:model="citype_id" name="citype_id" class="w-full @error('citype_id') is-invalid @else is-valid @enderror" :options="$citype_list" />
+            </div>
             @error('citype_id') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
 
         <div class="mb-4">
             <x-jet-label for="ci" value="{{ __($comment_enrollment['ci']) }}" />
+            <div class="@error('ci') p-2 border-2 rounded  border-rose-600 bg-red-50 @enderror">
             <x-input wire:model.lazy="ci" name="ci" class="block mt-1 w-full @error('ci') is-invalid @else is-valid @enderror" />
+            </div>
             @error('ci') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
 
         <div class="mb-4">
             <x-jet-label for="gender" value="{{ __($comment_enrollment['gender']) }}" />
+            <div class="@error('gender') p-2 border-2 rounded  border-rose-600 bg-red-50 @enderror">
             <x-select name="gender" wire:model="gender" :options="$gender_list" class="w-full @error('gender') is-invalid @else is-valid @enderror" />
+            </div>
             @error('gender') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
 
 
         <div class="mb-4">
             <x-jet-label for="laterality" value="{{ __($comment_enrollment['laterality']) }}" />
+            <div class="@error('laterality') p-2 border-2 rounded  border-rose-600 bg-red-50 @enderror">
             <x-select name="laterality" wire:model="laterality" id="laterality" wire:model.lazy="laterality" :options="$laterality_list" class="w-full @error('laterality') is-invalid @else is-valid @enderror" />
+            </div>
             @error('laterality') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
 
         <div class="mb-4">
             <x-jet-label for="date_birth" value="{{ __($comment_enrollment['date_birth']) }}" />
+            <div class="@error('date_birth') p-2 border-2 rounded  border-rose-600 bg-red-50 @enderror">
             <x-input type="date" wire:model.lazy="date_birth" name="date_birth" class="block mt-1 w-full @error('date_birth') is-invalid @else is-valid @enderror" />
+            </div>
             @error('date_birth') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
 
