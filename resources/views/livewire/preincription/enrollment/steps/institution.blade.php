@@ -11,10 +11,10 @@
         
         {{-- <hr class=" my-1"> --}}
         
-        <div class="mb-4">
+        <div class="mb-4 ">
             <x-jet-label for="pastoral_id" value="{{ __($comment_enrollment['pastoral_id']) }}" /> 
             <div wire:loading wire:target="loadInstitution" class=" text-gray-400 text-sm">Procesando {{ __($comment_enrollment['pastoral_id']) }}...</div>
-            <x-select name="pastoral_id" id="pastoral_id" wire:model="pastoral_id" wire:change="loadInstitution($event.target.value)" :options="$pastorals_list" class=" w-full" />
+            <x-select name="pastoral_id" id="pastoral_id" wire:model="pastoral_id" wire:change="loadInstitution($event.target.value)" :options="$pastorals_list" class=" w-full " />
             @error('pastoral_id') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
 
