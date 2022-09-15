@@ -2,7 +2,7 @@
 
 	<div class="animate__animated animate__fadeIn" >
 
-		<div class="font-semibold text-xl text-gray-800 leading-tight mb-4">
+		<div class="font-semibold text-xl text-gray-800 leading-tight mb-4 dark:text-gray-100">
 		    Representante
 		</div>
 		<div class="mb-4">

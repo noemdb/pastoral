@@ -5,7 +5,7 @@
 
     {{-- <div  > --}}
 
-        <div class="mb-4 ml-4 text-lg leading-7 font-semibold">
+        <div class="mb-4 ml-4 text-lg leading-7 font-semibold dark:text-gray-100">
             Institución
         </div>
         

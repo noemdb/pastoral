@@ -2,7 +2,7 @@
 
     <div class="animate__animated animate__fadeIn" >
 
-        <div class="font-semibold text-xl text-gray-800 leading-tight">
+        <div class="font-semibold text-xl text-gray-800 leading-tight dark:text-gray-100">
             Condición Médica
         </div>
 

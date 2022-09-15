@@ -2,11 +2,11 @@
 
     <div class="animate__animated animate__fadeIn" >
 
-        <div class="font-semibold text-xl text-gray-800 leading-tight">
+        <div class="font-semibold text-xl text-gray-800 leading-tight dark:text-gray-100">
             Datos del Estudiante
         </div>
 
-        <hr class=" my-1">
+        {{-- <hr class=" my-1"> --}}
 
         <div class="mb-4">
             <x-jet-label for="name" value="{{ __($comment_enrollment['name']) }}" />
