@@ -19,16 +19,16 @@
                     >
 
                         <div class="flex justify-between">
-                            <h1 class="block font-semibold text-lg text-gray-700">Asistente para registrar tu preinscripción </h1>
+                            <h1 class="block font-semibold text-lg text-gray-700 dark:text-gray-100">Asistente para registrar tu preinscripción </h1>
                             <div wire:loading class="text-gray-400 text-sm"> Cargando... </div>
                         </div>
 
                     <div class="py-4 font-semibold">
 
-                        Paso {{$step ?? null}}
+                        <span class="{{ ( $errors->any() ) ? 'text-red-600' : null}}"> Paso {{$step ?? null}} </span>                        
 
-                        <div class="w-full bg-gray-200 h-5 mb-4">
-                          <div class="bg-blue-600 h-5 text-white font-semibold text-center " style="width: {{ $porcentage ?? null }}%"> {{ $porcentage ?? null }}% </div>
+                        <div class="w-full bg-gray-200 h-5 mb-4 rounded-md">
+                          <div class="h-5 text-white font-semibold text-center rounded-sm {{ ( $errors->any() ) ? ' bg-red-600 ' : ' bg-blue-900 ' }}" style="width: {{ $porcentage ?? null }}%"> {{ $porcentage ?? null }}% </div>
                         </div>
                     </div>
                     @if ($errors->any() && $saveInto)

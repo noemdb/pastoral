@@ -14,9 +14,7 @@
         <div class="mb-4">
             <x-jet-label for="pastoral_id" value="{{ __($comment_enrollment['pastoral_id']) }}" /> 
             <div wire:loading wire:target="loadInstitution" class=" text-gray-400 text-sm">Procesando {{ __($comment_enrollment['pastoral_id']) }}...</div>
-            <div class="@error('pastoral_id') p-2 border-2 rounded  border-rose-600 bg-red-50 @enderror">
-                <x-select name="pastoral_id" id="pastoral_id" wire:model="pastoral_id" wire:change="loadInstitution($event.target.value)" :options="$pastorals_list" class=" w-full" />
-            </div>
+            <x-select name="pastoral_id" id="pastoral_id" wire:model="pastoral_id" wire:change="loadInstitution($event.target.value)" :options="$pastorals_list" class=" w-full" />
             @error('pastoral_id') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
 
@@ -30,9 +28,7 @@
             <div class="mb-4">
                 <div wire:loading wire:target="loadCurriculum" class=" text-gray-400 text-sm">Procesando {{ __($comment_enrollment['curriculum_id']) }}...</div>
                 <x-jet-label for="curriculum_id" value="{{ __($comment_enrollment['curriculum_id']) }}" />    
-                <div class="@error('curriculum_id') p-2 border-2 rounded border-rose-600 bg-red-50 @enderror">
-                    <x-select name="curriculum_id" id="curriculum_id" wire:model="curriculum_id" wire:change="loadCurriculum($event.target.value)" :options="$curriculum_list" class=" w-full " />
-                </div>
+                <x-select name="curriculum_id" id="curriculum_id" wire:model="curriculum_id" wire:change="loadCurriculum($event.target.value)" :options="$curriculum_list" class=" w-full " />
                 @error('curriculum_id') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
             </div>
 
