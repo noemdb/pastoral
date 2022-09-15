@@ -31,7 +31,7 @@
                           <div class="bg-blue-600 h-5 text-white font-semibold text-center " style="width: {{ $porcentage ?? null }}%"> {{ $porcentage ?? null }}% </div>
                         </div>
                     </div>
-                    @if ($errors->any())
+                    @if ($errors->any() && $saveInto)
 
                         <script type="text/javascript">
                             const Toast = Swal.mixin({

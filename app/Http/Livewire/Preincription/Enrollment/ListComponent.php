@@ -33,7 +33,7 @@ class ListComponent extends Component
     public $comment_enrollment,$pastorals_list,$pescolars_list,$curriculum_list,$citype_list,$gender_list,$laterality_list;
     public $country_list,$state_list,$city_list;
 
-    public $status_last,$status_first;
+    public $status_last,$status_first,$saveInto;
 
     protected $listeners = [ 'confirmed' ];
 
@@ -84,6 +84,7 @@ class ListComponent extends Component
 
     public function mount()
     {
+        $this->saveInto = false;
         $this->step = 1;
         $this->status_first = true;
         $this->status_last = false;
@@ -130,6 +131,7 @@ class ListComponent extends Component
         $this->step = ($this->step < 1) ? $this->limit_step : $this->step ;
         $this->status();
     }
+
     public function loadInstitution($id)
     {
         $this->pastoral = Pastoral::find($id);
@@ -147,7 +149,6 @@ class ListComponent extends Component
 
     public function render()
     {
-
         $this->porcentage = round(100 * $this->step / $this->limit_step);
         return view('livewire.preincription.enrollment.list-component');
     }
@@ -158,12 +159,13 @@ class ListComponent extends Component
     }
 
     public function save()
-   {   
+    {   
         $this->home();
+        $this->saveInto = true;
         $validatedData = $this->validate();     
         Enrollment::create($validatedData);
         $this->reset();
-        $this->mount();
+        $this->mount();        
         $this->alert('success', 'Su preinscripción fué registrada satisfactoriamente!',
             [
                 'toast' => false,
@@ -172,40 +174,11 @@ class ListComponent extends Component
                 'timer'=>null,
                 'onConfirmed' => 'confirmed' 
             ]
-        );
-        
+        );   
     }
 
     public function inputClean()
     {
-        // $this->pastoral_id = null;
-        // $this->representant_ci = null;
-        // $this->representant_name = null;
-        // $this->citype_id = null;
-        // $this->ci= null;
-        // $this->name= null;
-        // $this->lastname= null;
-        // $this->fullname= null;
-        // $this->curriculum_id= null;
-        // $this->gender= null;
-        // $this->laterality= null;
-        // $this->date_birth= null;
-        // $this->city_birth= null;
-        // $this->town_hall_birth= null;
-        // $this->state_birth= null;
-        // $this->country_birth= null;
-        // $this->dir_address= null;
-        // $this->phone= null;
-        // $this->email= null;
-        // $this->twitter= null;
-        // $this->whatsapp= null;
-        // $this->facebook= null;
-        // $this->patology= null;
-        // $this->status_nacionality= null;
-        // $this->status_patology= null;
-        // $this->status= null;
-        // $this->description= null;
-        // $this->observations= null;        
         $this->reset();
     }
 
