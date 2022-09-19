@@ -2,6 +2,8 @@ php artisan make:component Enrollment/AppLayout
 php artisan make:component Elements/Form/Dropdown
 php artisan make:component Elements/Form/SelectOption
 
+php artisan make:component Elements/Stepper/ProgressBar
+
 
 
 php artisan make:component ModeDarkBtn

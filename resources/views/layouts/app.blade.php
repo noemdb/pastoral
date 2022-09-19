@@ -40,10 +40,10 @@
             </main>
         </div>
 
-        @stack('modals')
-
-        <script src="{{ asset('js/app.js') }}"></script>
+        @stack('modals')        
 
         @livewireScripts
+
+        <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>

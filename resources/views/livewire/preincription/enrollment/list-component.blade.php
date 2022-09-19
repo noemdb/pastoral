@@ -25,11 +25,19 @@
 
                     <div class="py-4 font-semibold">
 
-                        <span class="{{ ( $errors->any() ) ? 'text-red-600' : null}}"> Paso {{$step ?? null}} </span>                        
+                        <span class="{{ ( $errors->any() ) ? 'text-red-600' : null}}"> Paso {{$step ?? null}} </span>     
+
+                        {{-- <x-elements.stepper.progress-bar  :porcentage={{$porcentage ?? null}} :error={{ ($errors->any() ) ? true :false }} />     --}}
+
+                            <x-jet-action-message class="mr-3" on="saved">
+                                {{ __('Saved.') }}
+                            </x-jet-action-message>
+
 
                         <div class="w-full bg-gray-200 h-5 mb-4 rounded-md  dark:bg-gray-900 dark:border-gray-700">
                           <div class="h-5 text-white font-semibold text-center rounded-sm {{ ( $errors->any() ) ? ' bg-red-600 ' : ' bg-blue-900 ' }}" style="width: {{ $porcentage ?? null }}%"> {{ $porcentage ?? null }}% </div>
                         </div>
+
                     </div>
                     @if ($errors->any() && $saveInto)
 
@@ -51,6 +59,10 @@
                               title: 'Upsss! Algunas cosas estan mal.'
                             })
                         </script>
+
+                        {{-- <x-jet-action-message class="mr-3" on="saved">
+                            {{ __('Upsss! Algunas cosas estan mal.') }}
+                        </x-jet-action-message> --}}
 
                     @endif
 
