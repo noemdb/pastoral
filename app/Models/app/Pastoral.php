@@ -13,6 +13,16 @@ class Pastoral extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+            'name', 'legalname', 'code', 'code_official', 'code_private', 'description', 'observations', 'header', 'body', 'footer', 'rif_institution', 'phone', 'address', 'city', 'state_code', 'country', 'email_institution', 'password', 'txt_contract_study'
+    ];
+
+    const COLUMN_COMMENTS = [
+        'name' => 'Nombre',
+        'legalname' => 'Nombre Legal',
+        'description'=>'Descripción',
+        'observations'=>'Observaciones'
+    ];
 
     public function curriculum_list() /* usada para llenar los objetos de formularios select*/
     {

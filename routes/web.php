@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Preinscription\EnrollmentController;
 use App\Http\Controllers\Institution\PastoralController;
+use App\Http\Controllers\Admin\InstitutionController;
+use App\Http\Controllers\Admin\Institution\AuthorityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,13 +21,6 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-// Route::get('/enrollments', [EnrollmentController::class, 'index'])->name('enrollments.index');
-// Route::post('/enrollments/store', [EnrollmentController::class, 'store'])->name('enrollments.store');
-
-Route::resource('pastorals', EnrollmentController::class)->only([
-    'index', 'store'
-]);
-
 Route::resource('enrollments', EnrollmentController::class)->only([
     'index', 'store'
 ]);
@@ -35,7 +30,12 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::resource('institutions', InstitutionController::class)->only([ 'index']);
+    Route::resource('authorities', AuthorityController::class)->only([ 'index']);
+
 });

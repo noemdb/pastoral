@@ -1,0 +1,10 @@
+php artisan make:controller 'Institution\PastoralController' &&
+
+
+php artisan make:controller 'Admin\InstitutionController'
+
+
+php artisan make:controller 'Admin\Institution\PastoralController' --resource
+
+
+php artisan make:controller 'Admin\Institution\AuthorityController'
