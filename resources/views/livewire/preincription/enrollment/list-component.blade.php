@@ -1,4 +1,4 @@
-<div>   
+<div>
 
 
 
@@ -7,7 +7,7 @@
 
                 <div id="transition_institution"  x-data="{ open: false }" >
 
-                    <div 
+                    <div
                         {{-- x-init="$nextTick( () => open = true )"
                         x-show="open"
                         x-transition:enter="transition ease-out duration-300"
@@ -25,7 +25,7 @@
 
                     <div class="py-4 font-semibold">
 
-                        <span class="{{ ( $errors->any() ) ? 'text-red-600' : null}}"> Paso {{$step ?? null}} </span>     
+                        <span class="{{ ( $errors->any() ) ? 'text-red-600' : null}}"> Paso {{$step ?? null}} </span>
 
                         {{-- <x-elements.stepper.progress-bar  :porcentage={{$porcentage ?? null}} :error={{ ($errors->any() ) ? true :false }} />     --}}
 
@@ -38,27 +38,27 @@
 
                         <script type="text/javascript">
                             const Toast = Swal.mixin({
-                              toast: true,
-                              position: 'top-end',
-                              showConfirmButton: false,
-                              timer: 3000,
-                              timerProgressBar: true,
-                              didOpen: (toast) => {
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
                                 toast.addEventListener('mouseenter', Swal.stopTimer)
                                 toast.addEventListener('mouseleave', Swal.resumeTimer)
-                              }
+                            }
                             })
 
                             Toast.fire({
-                              icon: 'error',
-                              title: 'Upsss! Algunas cosas estan mal.'
+                            icon: 'error',
+                            title: 'Upsss! Algunas cosas estan mal.'
                             })
                         </script>
 
                     @endif
 
                     @switch($step)
-                        @case(1)            
+                        @case(1)
                             @include('livewire.preincription.enrollment.steps.home')
                             @break
                         @case(2)
@@ -79,7 +79,7 @@
                         @case(7)
                             @include('livewire.preincription.enrollment.steps.patologies')
                             @break
-                        
+
                         @default
                             <h1>...</h1>
                     @endswitch
@@ -103,8 +103,8 @@
                     </div>
                 </div>
 
-            </form> 
+            </form>
 
-            <x-jet-validation-errors class="mb-4" />  
+            <x-jet-validation-errors class="mb-4" />
 
 </div>

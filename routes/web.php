@@ -30,11 +30,11 @@ Route::middleware( [ 'auth:sanctum',config('jetstream.auth_session'),'verified']
 
 	Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
 
-	Route::prefix('admin')->group(function () {
-	    Route::resource('institutions', InstitutionController::class)->only([ 'index']);
-	    Route::prefix('institutions')->group(function () {
-    		Route::resource('authorities', AuthorityController::class)->only([ 'index']);
-		});
-	});   
+    Route::prefix('admin')->group(function () {
+        Route::resource('institutions', InstitutionController::class)->only([ 'index']);
+        Route::prefix('institutions')->group(function () {
+            Route::resource('authorities', AuthorityController::class)->only([ 'index']);
+        });
+    });
 
 });

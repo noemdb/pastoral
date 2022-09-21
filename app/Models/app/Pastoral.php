@@ -14,14 +14,28 @@ class Pastoral extends Model
     use HasFactory;
 
     protected $fillable = [
-            'name', 'legalname', 'code', 'code_official', 'code_private', 'description', 'observations', 'header', 'body', 'footer', 'rif_institution', 'phone', 'address', 'city', 'state_code', 'country', 'email_institution', 'password', 'txt_contract_study'
+        'name', 'legalname', 'code', 'code_official', 'code_private', 'description', 'observations', 'header', 'body', 'footer', 'rif_institution', 'phone', 'address', 'city', 'state_code', 'country', 'email_institution', 'password', 'txt_contract_study'
     ];
 
     const COLUMN_COMMENTS = [
         'name' => 'Nombre',
+        'code' => 'Código',
         'legalname' => 'Nombre Legal',
         'description'=>'Descripción',
-        'observations'=>'Observaciones'
+        'observations'=>'Observaciones',
+        'code_official'=>'COD Oficial',
+        'code_private'=>'COD privado',
+        'header'=>'Encabezado HTML',
+        'body'=>'Cuerpo HTML',
+        'footer'=>'pie de página HTML',
+        'rif_institution'=>'RIF',
+        'phone'=>'Teléfono',
+        'address'=>'Dirección',
+        'state_code'=>'COD Postal',
+        'country'=>'COD Postal',
+        'email_institution'=>'Correo Electrónico',
+        'password'=>'Contraseña',
+        'txt_contract_study'=>'Contrato de Estudio',
     ];
 
     public function curriculum_list() /* usada para llenar los objetos de formularios select*/
