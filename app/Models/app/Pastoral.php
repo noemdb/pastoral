@@ -31,6 +31,7 @@ class Pastoral extends Model
         'rif_institution'=>'RIF',
         'phone'=>'Teléfono',
         'address'=>'Dirección',
+        'city'=>'Ciudad',
         'state_code'=>'COD Postal',
         'country'=>'COD Postal',
         'email_institution'=>'Correo Electrónico',

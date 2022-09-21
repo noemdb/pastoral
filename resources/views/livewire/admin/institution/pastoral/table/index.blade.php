@@ -35,7 +35,7 @@
 
                 <td class="{{ $class_action ?? '' }}">
 
-                    <div class="flex items-center justify-center mb-3">
+                    <div class="flex items-center justify-center mb-3 shadow">
                         <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
                             <button type="button" wire:click="edit({{ $pastoral->id }})" class="rounded-l inline-block px-2 py-2.5 bg-blue-500 text-white font-medium text-xs leading-tight uppercase hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-0 active:bg-blue-800 transition duration-150 ease-in-out">Editar</button>
                             <button type="button" wire:click="delete({{ $pastoral->id }})" class="rounded-r inline-block px-2 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase hover:bg-red-700 focus:bg-red-700 focus:outline-none focus:ring-0 active:bg-red-800 transition duration-150 ease-in-out">Eliminar</button>

@@ -8,10 +8,13 @@ use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 use App\Models\app\Pastoral;
 
+use Livewire\WithPagination;
+
 class ListComponent extends Component
 {
 
-     use LivewireAlert;
+    use WithPagination;
+    use LivewireAlert;
 
     public Pastoral $pastoral;
 
@@ -41,13 +44,28 @@ class ListComponent extends Component
     {
         return [
             'pastoral.name' => $this->list_comment['name'],
-            'pastoral.code' => $this->list_comment['code'],
+            'pastoral.code' => $this->list_comment['legalname'],
+            'pastoral.legalname' => $this->list_comment['code'],
+            'pastoral.code_official' => $this->list_comment['code_official'],
+            'pastoral.code_private' => $this->list_comment['code_private'],
+            'pastoral.description' => $this->list_comment['description'],
+            'pastoral.observations' => $this->list_comment['observations'],
+            'pastoral.header' => $this->list_comment['header'],
+            'pastoral.body' => $this->list_comment['body'],
+            'pastoral.footer' => $this->list_comment['footer'],
+            'pastoral.rif_institution' => $this->list_comment['rif_institution'],
+            'pastoral.phone' => $this->list_comment['phone'],
+            'pastoral.address' => $this->list_comment['address'],
+            'pastoral.city' => $this->list_comment['city'],
+            'pastoral.state_code' => $this->list_comment['state_code'],
+            'pastoral.country' => $this->list_comment['country'],
+            'pastoral.email_institution' => $this->list_comment['email_institution'],
+            'pastoral.password' => $this->list_comment['password'],
+            'pastoral.txt_contract_study' => $this->list_comment['txt_contract_study'],
         ];
     }
 
-    //public $name,$legalname,$code,$code_official,$code_private,$description,$observations,$header,$body,$footer,$rif_institution,$phone,$address,$city,$state_code,$country,$email_institution,$password,$txt_contract_study;
-
-    public $pastorals,$pastoral_id;
+    public $pastoral_id;
 
     public $modeEdit;
 
@@ -55,7 +73,7 @@ class ListComponent extends Component
 
     public $status_last,$status_first,$saveInto;
 
-    protected $listeners = [ 'confirmed' ];
+    protected $listeners = [ 'remove' ];
 
     public function mount()
     {
@@ -65,8 +83,12 @@ class ListComponent extends Component
 
     public function render()
     {
-        $this->pastorals = Pastoral::all();
-        return view('livewire.admin.institution.pastoral.list-component');
+        // $this->pastorals = Pastoral::all();
+        // return view('livewire.admin.institution.pastoral.list-component');
+
+        return view('livewire.admin.institution.pastoral.list-component', [
+            'pastorals' => Pastoral::paginate(10),
+        ]);
     }
 
     public function updated($propertyName)
@@ -79,7 +101,6 @@ class ListComponent extends Component
         $this->pastoral = Pastoral::find($id); //dd($this->pastoral->toArray());
         $this->pastoral_id = ($this->pastoral) ? $this->pastoral->id:null;
         $this->modeEdit = ($this->pastoral) ? true:false;
-        //dd($this->name);
     }
 
     public function save()
@@ -97,5 +118,26 @@ class ListComponent extends Component
     {
         $this->pastoral_id = false;
         $this->modeEdit = false;
+    }
+
+    public function delete ($id)
+    {
+        $pastoral = Pastoral::find($id);
+        if ($pastoral) {
+            $this->pastoral = $pastoral;
+            $this->alert('warning', 'Estas seguro de realizar esta acción?', [
+                'showConfirmButton' => true,
+                'showCancelButton' => true,
+                'timer' => null,
+                'confirmButtonText' => 'Eliminar',
+                'onConfirmed' => 'remove'
+            ]);
+        }
+    }
+
+    public function remove ()
+    {
+        $this->pastoral->delete();
+        $this->alert('success', 'Los datos fueron eliminados satisfactoriamente!');
     }
 }
