@@ -18,13 +18,14 @@ class EnrollmentController extends Controller
      */
     public function index(Request $request)
     {
-        $selectedPastoralId = (!empty($request->selectedPastoralId)) ? : null ;
+        // $selectedPastoralId = (!empty($request->selectedPastoralId)) ? : null ;
         // $pastorals = Pastoral::all();
-        $pastorals_list = Pastoral::all()->pluck('name','id')->toArray(); //dd($pastorals_list);
-        $citype_list = ['1'=>'Cédula de Identidad','2'=>'Cédula Escolar','3'=>'Otro'];
-        $gender_list = ['1'=>'Femenino','2'=>'Masculino'];
-        $comment_enrollment = Enrollment::COLUMN_COMMENTS;
-        return view('institutions.pastoral.index',compact('comment_enrollment','pastorals_list','selectedPastoralId','citype_list','gender_list'));
+        // $pastorals_list = Pastoral::all()->pluck('name','id')->toArray(); //dd($pastorals_list);
+        // $citype_list = ['1'=>'Cédula de Identidad','2'=>'Cédula Escolar','3'=>'Otro'];
+        // $gender_list = ['1'=>'Femenino','2'=>'Masculino'];
+        // $comment_enrollment = Enrollment::COLUMN_COMMENTS;
+        // return view('institutions.pastoral.index',compact('comment_enrollment','pastorals_list','selectedPastoralId','citype_list','gender_list'));
+        return view('enrollments.index');
     }
 
     /**
