@@ -9,12 +9,14 @@ use Jantinnerezo\LivewireAlert\LivewireAlert;
 use App\Models\app\Pastoral;
 
 use Livewire\WithPagination;
+use App\Http\Livewire\traits\WithSortingTrait;
 
 class ListComponent extends Component
 {
 
     use WithPagination;
     use LivewireAlert;
+    use WithSortingTrait;
 
     public Pastoral $pastoral;
 
@@ -67,6 +69,8 @@ class ListComponent extends Component
 
     public $pastoral_id;
 
+    public $search = '';
+
     public $modeEdit,$modeCreate;
 
     public $list_comment;
@@ -80,20 +84,35 @@ class ListComponent extends Component
         $this->modeCreate = false;
         $this->modeEdit = false;
         $this->list_comment = Pastoral::COLUMN_COMMENTS;
+
+        $this->sortBy = 'name';
+        $this->sortDirection = 'desc';
     }
 
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName);
     }
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
 
     public function render()
     {
-        // $this->pastorals = Pastoral::all();
-        // return view('livewire.admin.institution.pastoral.list-component');
+
+        $search = $this->search; 
+
+        $pastorals = Pastoral::latest();  
+
+        $pastorals = (!empty($search)) ? $pastorals->orWhere( function($query) use ($search) {$query->orWhere('name','like', '%'.$search.'%')->orWhere('legalname','like','%'.$search.'%')->orWhere('description','like','%'.$search.'%');}) : $pastorals ;     
+
+        $pastorals = ($this->sortBy && $this->sortDirection) ? $pastorals->orderBy($this->sortBy,$this->sortDirection) : $pastorals;
+        
+        $pastorals = $pastorals->paginate(5);
 
         return view('livewire.admin.institution.pastoral.list-component', [
-            'pastorals' => Pastoral::paginate(10),
+            'pastorals' => $pastorals,
         ]);
     }
 
