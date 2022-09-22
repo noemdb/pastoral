@@ -4,10 +4,6 @@
 		"selected_items":
 		[
 			[
-				"jus",
-				"justify-between"
-			],
-			[
 				"con",
 				"console"
 			],
@@ -36,94 +32,22 @@
 	"buffers":
 	[
 		{
-			"file": "resources/views/layouts/app.blade.php",
+			"file": "resources/views/admin/institutions/index.blade.php",
 			"settings":
 			{
-				"buffer_size": 1406,
+				"buffer_size": 482,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/views/navigation-menu.blade.php",
+			"file": "resources/views/livewire/admin/institution/pastoral/table/index.blade.php",
 			"settings":
 			{
-				"buffer_size": 12144,
+				"buffer_size": 3390,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			},
-			"undo_stack":
-			[
-				[
-					5,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AwAAAL0CAAAAAAAAvgIAAAAAAAAAAAAAvgIAAAAAAADOAgAAAAAAAAAAAADOAgAAAAAAANICAAAAAAAAAAAAAA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAvQIAAAAAAAC9AgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					10,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AwAAAG8EAAAAAAAAcAQAAAAAAAAAAAAAcAQAAAAAAACABAAAAAAAAAAAAAC+AgAAAAAAAL4CAAAAAAAAFAAAACAgICAgICAgICAgICAgICAgICAg",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAbwQAAAAAAABvBAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					13,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AwAAABMBAAAAAAAAFAEAAAAAAAAAAAAAFAEAAAAAAAAkAQAAAAAAAAAAAABtBAAAAAAAAG0EAAAAAAAAEAAAACAgICAgICAgICAgICAgICA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAEwEAAAAAAAATAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					15,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AwAAAAYBAAAAAAAABwEAAAAAAAAAAAAABwEAAAAAAAAXAQAAAAAAAAAAAAAlAQAAAAAAACUBAAAAAAAAEAAAACAgICAgICAgICAgICAgICA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAABgEAAAAAAAAGAQAAAAAAAAAAAAAAAEhA"
-				],
-				[
-					18,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AwAAANYAAAAAAAAA1wAAAAAAAAAAAAAA1wAAAAAAAADfAAAAAAAAAAAAAADfAAAAAAAAAOMAAAAAAAAAAAAAAA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAA1gAAAAAAAADWAAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					21,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"BAAAAKYAAAAAAAAApwAAAAAAAAAAAAAApwAAAAAAAACrAAAAAAAAAAAAAACrAAAAAAAAAK8AAAAAAAAAAAAAAOAAAAAAAAAA4AAAAAAAAAAMAAAAICAgICAgICAgICAg",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAApgAAAAAAAACmAAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					3,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AgAAAGogAAAAAAAAayAAAAAAAAAAAAAAayAAAAAAAAB3IAAAAAAAAAAAAAA",
-					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAGogAAAAAAAAaiAAAAAAAAAAAAAAAADwvw"
-				]
-			]
+			}
 		}
 	],
 	"build_system": "",
@@ -163,53 +87,45 @@
 	"expanded_folders":
 	[
 		"/home/nuser/code/pastoral/resources/views",
-		"/home/nuser/code/pastoral/resources/views/enrollments",
-		"/home/nuser/code/pastoral/resources/views/enrollments/layout",
-		"/home/nuser/code/pastoral/resources/views/layouts",
-		"/home/nuser/code/pastoral/resources/views/livewire",
-		"/home/nuser/code/pastoral/resources/views/livewire/preincription",
+		"/home/nuser/code/pastoral/resources/views/admin",
+		"/home/nuser/code/pastoral/resources/views/admin/institutions",
 		"/home/nuser/code/pastoral/resources/views/vendor",
-		"/home/nuser/code/pastoral/resources/views/livewire",
-		"/home/nuser/code/pastoral/resources/views/livewire/preincription"
+		"/home/nuser/code/pastoral/resources/views/vendor/jetstream",
+		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components"
 	],
 	"file_history":
 	[
+		"/home/nuser/code/pastoral/resources/views/admin/elements/navbar.blade.php",
+		"/home/nuser/code/pastoral/resources/views/layouts/partials/navigation-links.blade.php",
 		"/home/nuser/code/pastoral/resources/views/welcome.blade.php",
-		"/home/nuser/code/pastoral/resources/views/dashboard.blade.php",
+		"/home/nuser/code/pastoral/resources/views/partials/navbar/navigation-menu.blade.php",
+		"/home/nuser/code/pastoral/resources/views/navigation-menu.blade.php",
+		"/home/nuser/code/pastoral/resources/views/enrollments/layout/app.blade.php",
 		"/home/nuser/code/pastoral/resources/views/enrollments/index.blade.php",
-		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/institution.blade.php",
 		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/list-component.blade.php",
-		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/estudiants.blade.php",
-		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/patologies.blade.php",
-		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/representants.blade.php",
 		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components/validation-errors.blade.php",
 		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/address.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/representants.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/patologies.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/estudiants.blade.php",
 		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/contact.blade.php",
-		"/home/nuser/code/pastoral/resources/views/navigation-menu.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/institution.blade.php",
+		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components/secondary-button.blade.php",
 		"/home/nuser/code/pastoral/resources/views/vendor/form-components/components/inputs/input.blade.php",
-		"/home/nuser/code/pastoral/resources/views/enrollments/layout/app.blade.php",
-		"/home/nuser/code/pastoral/resources/views/components/mode-dark-btn.blade.php",
-		"/home/nuser/code/pastoral/resources/views/vendor/form-components/components/inputs/select.blade.php",
-		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components/input.blade.php",
-		"/home/nuser/code/pastoral/resources/views/enrollments/layout/navbar.html",
-		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/<x-app-layout>.html",
-		"/home/nuser/code/pastoral/resources/views/default/layaout.html",
-		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components/label.blade.php",
-		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components/dialog-modal.blade.php",
-		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/home.blade.php",
-		"/home/nuser/code/pastoral/public/vendor/livewire-alert/sweetalert2.js",
 		"/home/nuser/code/pastoral/resources/js/app.js",
-		"/home/nuser/code/pastoral/resources/views/layouts/app.blade.php",
-		"/home/nuser/code/pastoral/resources/views/layouts/guest.blade.php",
-		"/home/nuser/code/pastoral/resources/views/livewire/institutions/pastorals/list-component.blade.php",
-		"/home/nuser/code/pastoral/resources/views/institutions/pastorals/index.blade.php",
 		"/home/nuser/code/pastoral/resources/views/navigation-menu/links/pastorals.blade.php",
+		"/home/nuser/code/pastoral/resources/views/institutions/pastorals/index.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/institutions/pastorals/list-component.blade.php",
+		"/home/nuser/code/pastoral/resources/views/layouts/app.blade.php",
 		"/home/nuser/code/pastoral/resources/views/livewire/institutions/pastorals/form/fields.blade.php",
+		"/home/nuser/code/pastoral/resources/views/dashboard.blade.php",
 		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/partials/header.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/home.blade.php",
 		"/home/nuser/code/pastoral/resources/views/profile/update-profile-information-form.blade.php",
 		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components/action-message.blade.php",
 		"/home/nuser/code/pastoral/resources/views/profile/logout-other-browser-sessions-form.blade.php",
 		"/home/nuser/code/pastoral/resources/views/profile/update-password-form.blade.php",
+		"/home/nuser/code/pastoral/resources/views/vendor/form-components/components/inputs/select.blade.php",
 		"/home/nuser/code/pastoral/resources/views/enrollments/form/partials/estudiants.blade.php",
 		"/home/nuser/code/pastoral/resources/views/auth/login.blade.php",
 		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components/authentication-card-logo.blade.php",
@@ -301,7 +217,12 @@
 		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/form/create.blade.php",
 		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/form/partials/ingresos.blade.php",
 		"/home/nuser/code/s2122/resources/views/administracion/representants/table/list.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/administracion/assist-control/assit-worker/table/workers.blade.php"
+		"/home/nuser/code/s2122/resources/views/livewire/administracion/assist-control/assit-worker/table/workers.blade.php",
+		"/home/nuser/code/s2122/resources/lang/es/validation.php",
+		"/home/nuser/code/s2122/resources/views/administracion/registropagos/show/modal.blade.php",
+		"/home/nuser/code/s2122/resources/views/administracion/representants/table/historico.blade.php",
+		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/modals/info.blade.php",
+		"/home/nuser/code/s2122/resources/views/representants/boletins/table/crud.blade.php"
 	],
 	"find":
 	{
@@ -317,14 +238,10 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": true,
+		"case_sensitive": false,
 		"find_history":
 		[
-			"text-gray-500",
-			"mode-dark-btn",
-			"algo",
-			"wire:model.defer",
-			"wire:model",
+			"border px-4 py-2",
 			"legalname",
 			"phone",
 			"date-picker",
@@ -337,19 +254,14 @@
 		"regex": false,
 		"replace_history":
 		[
-			"text-black",
-			"wire:model.lazy",
-			"wire:model.defer",
-			"'wire:model.defer",
+			"px-6 py-4 border-b border-gray-200",
 			"name",
 			"legalname",
 			"id"
 		],
 		"reverse": false,
-		"scrollbar_highlights": true,
 		"show_context": true,
 		"use_buffer2": true,
-		"use_gitignore": true,
 		"whole_word": false,
 		"wrap": true
 	},
@@ -371,24 +283,24 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "resources/views/layouts/app.blade.php",
-					"selected": true,
+					"file": "resources/views/admin/institutions/index.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1406,
+						"buffer_size": 482,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								585,
-								528
+								320,
+								320
 							]
 						],
 						"settings":
@@ -400,135 +312,15 @@
 								{
 									"1":
 									[
-										529,
-										533
+										320,
+										321
 									]
 								},
 								"icon":
 								{
 									"1":
 									[
-										"Packages/BracketHighlighter/icons/tag.png",
-										"region.orangish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										529,
-										533
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content"
-							],
-							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 117.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "resources/views/navigation-menu.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 12144,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8554,
-								8556
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										8563,
-										8564
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/single_quote.png",
+										"Packages/BracketHighlighter/icons/double_quote.png",
 										"region.greenish"
 									]
 								},
@@ -536,8 +328,8 @@
 								{
 									"1":
 									[
-										8553,
-										8554
+										315,
+										316
 									]
 								},
 								"unmatched":
@@ -546,41 +338,31 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
@@ -591,27 +373,153 @@
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "resources/views/livewire/admin/institution/pastoral/table/index.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3390,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3032,
+								3032
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										3052,
+										3053
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"region.yellowish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										3032,
+										3033
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_regex_content"
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
 							],
 							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1630.0,
+						"translation.y": 64.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
-					"stack_multiselect": false,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -664,7 +572,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 40.0
+		"height": 68.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -702,7 +610,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 294.0,
+	"side_bar_width": 247.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

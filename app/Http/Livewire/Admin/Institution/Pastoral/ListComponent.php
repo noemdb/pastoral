@@ -21,23 +21,23 @@ class ListComponent extends Component
     protected $rules = [
         'pastoral.name' => 'required|string|min:6',
         'pastoral.code' => 'required|string',
-        'pastoral.legalname' => 'required|string',
-        'pastoral.code_official' => 'string',
-        'pastoral.code_private' => 'string',
-        'pastoral.description' => 'string',
-        'pastoral.observations' => 'string',
-        'pastoral.header' => 'string',
-        'pastoral.body' => 'string',
-        'pastoral.footer' => 'string',
-        'pastoral.rif_institution' => 'string',
-        'pastoral.phone' => 'string',
-        'pastoral.address' => 'string',
-        'pastoral.city' => 'string',
-        'pastoral.state_code' => 'string',
-        'pastoral.country' => 'string',
-        'pastoral.email_institution' => 'string',
-        'pastoral.password' => 'string',
-        'pastoral.txt_contract_study' => 'string',
+        'pastoral.legalname' => 'required|required|string',
+        'pastoral.code_official' => 'string|nullable', //
+        'pastoral.code_private' => 'string|nullable', //
+        'pastoral.description' => 'required|string',
+        'pastoral.observations' => 'nullable', //
+        'pastoral.header' => 'nullable', //
+        'pastoral.body' => 'nullable', //
+        'pastoral.footer' => 'nullable', //
+        'pastoral.rif_institution' => 'required|string',
+        'pastoral.phone' => 'required|string',
+        'pastoral.address' => 'required|string',
+        'pastoral.city' => 'required|string',
+        'pastoral.state_code' => 'nullable', //
+        'pastoral.country' => 'required|string',
+        'pastoral.email_institution' => 'nullable',
+        'pastoral.password' => 'nullable',
+        'pastoral.txt_contract_study' => 'required|string',
     ];
 
     protected function validationAttributes()
@@ -67,7 +67,7 @@ class ListComponent extends Component
 
     public $pastoral_id;
 
-    public $modeEdit;
+    public $modeEdit,$modeCreate;
 
     public $list_comment;
 
@@ -77,8 +77,14 @@ class ListComponent extends Component
 
     public function mount()
     {
+        $this->modeCreate = false;
         $this->modeEdit = false;
         $this->list_comment = Pastoral::COLUMN_COMMENTS;
+    }
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
     }
 
     public function render()
@@ -91,9 +97,18 @@ class ListComponent extends Component
         ]);
     }
 
-    public function updated($propertyName)
+    public function create()
     {
-        $this->validateOnly($propertyName);
+        $this->pastoral = new Pastoral;
+        $this->modeCreate = true;
+    }
+
+    public function store()
+    {
+        $validatedData = $this->validate();
+        $this->pastoral->save();
+        $this->alert('success', 'Los datos fueron almacenados satisfactoriamente!');
+        $this->modeCreate = false;
     }
 
     public function edit($id)
@@ -118,6 +133,11 @@ class ListComponent extends Component
     {
         $this->pastoral_id = false;
         $this->modeEdit = false;
+    }
+
+    public function closeCreateMode()
+    {
+        $this->modeCreate = false;
     }
 
     public function delete ($id)

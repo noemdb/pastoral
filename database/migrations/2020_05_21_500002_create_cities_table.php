@@ -25,8 +25,8 @@ class CreateCitiesTable extends Migration
             $table->boolean('flag')->default(1);
             $table->string('wikiDataId',255)->nullable()->default(NULL);
             $table->timestamps();
-            $table->foreign('state_id')->references('id')->on('states')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('state_id')->references('id')->on('states')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

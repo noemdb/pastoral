@@ -27,9 +27,9 @@ class CreateAuthoritiesTable extends Migration
             $table->date('finicial')->nullable();
             $table->date('ffinal')->nullable();
             $table->timestamps();
-            $table->foreign('tauthority_id')->references('id')->on('tautoridads')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('pescolar_id')->references('id')->on('pescolars')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('pastoral_id')->references('id')->on('pastorals')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('tauthority_id')->references('id')->on('tautoridads')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('pescolar_id')->references('id')->on('pescolars')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('pastoral_id')->references('id')->on('pastorals')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

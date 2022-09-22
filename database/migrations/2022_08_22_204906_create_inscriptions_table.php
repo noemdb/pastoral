@@ -20,9 +20,9 @@ class CreateInscriptionsTable extends Migration
             $table->bigInteger('estudiant_id')->unique()->unsigned()->comment('Estudiante');
             $table->string('observations')->nullable()->comment('Observaciones');
             $table->timestamps();
-            $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('estudiant_id')->references('id')->on('estudiants')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('tinscription_id')->references('id')->on('tinscripcions')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('estudiant_id')->references('id')->on('estudiants')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('tinscription_id')->references('id')->on('tinscripcions')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

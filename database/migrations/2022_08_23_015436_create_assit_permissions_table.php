@@ -20,7 +20,7 @@ class CreateAssitPermissionsTable extends Migration
             $table->string('observation')->comment('Observación');
             $table->text('attachment')->nullable();
             $table->timestamps();
-            $table->foreign('assit_attendance_id')->references('id')->on('assit_attendances')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('assit_attendance_id')->references('id')->on('assit_attendances')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

@@ -30,7 +30,7 @@ class CreateBmessegesTable extends Migration
             $table->string('accept_encoding')->nullable();
             $table->string('connection')->nullable();
             $table->timestamps();
-            $table->foreign('bmain_id')->references('id')->on('bmains')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('bmain_id')->references('id')->on('bmains')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

@@ -25,8 +25,8 @@ class CreateAssitAttendancesTable extends Migration
             $table->string('in_out')->comment('Entrada/Salida');
             $table->string('event_code')->comment('Evento');
             $table->timestamps();
-            $table->foreign('pevaluacion_id')->references('id')->on('pevaluacions')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('pevaluacion_id')->references('id')->on('pevaluacions')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

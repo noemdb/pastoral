@@ -49,4 +49,11 @@
         </tbody>
 
     </table>
+
+    {{-- paginations --}}
+
+    <hr class="my-2">
+
+    {{ $pastorals->links() }}
+
 </div>

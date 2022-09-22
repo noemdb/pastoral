@@ -29,7 +29,7 @@ class CreateEvaluationsTable extends Migration
 
             $table->timestamps();
             
-            $table->foreign('pevaluacion_id')->references('id')->on('pevaluacions')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('pevaluacion_id')->references('id')->on('pevaluacions')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

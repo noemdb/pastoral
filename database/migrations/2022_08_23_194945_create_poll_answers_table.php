@@ -19,8 +19,8 @@ class CreatePollAnswersTable extends Migration
             $table->smallinteger('poll_option_id')->unsigned()->comment('Opción');
             $table->string('token');
             $table->timestamps();
-            $table->foreign('poll_question_id')->references('id')->on('poll_questions')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('poll_option_id')->references('id')->on('poll_options')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('poll_question_id')->references('id')->on('poll_questions')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('poll_option_id')->references('id')->on('poll_options')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

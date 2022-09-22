@@ -27,8 +27,8 @@ class CreateRepresentantsTable extends Migration
             $table->string('instagram')->nullable();
             $table->boolean('status_adviders')->default(false)->comment('Delegado');
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('citype_id')->references('id')->on('citypes')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('citype_id')->references('id')->on('citypes')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

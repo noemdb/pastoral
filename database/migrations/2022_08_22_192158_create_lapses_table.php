@@ -32,7 +32,7 @@ class CreateLapsesTable extends Migration
             $table->text('footer')->nullable();
 
             $table->timestamps();
-            $table->foreign('curriculum_id')->references('id')->on('curricula')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('curriculum_id')->references('id')->on('curricula')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

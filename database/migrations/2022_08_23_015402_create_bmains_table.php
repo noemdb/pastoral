@@ -37,7 +37,7 @@ class CreateBmainsTable extends Migration
             $table->boolean('status')->default(true)->comment('Estado');
             
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

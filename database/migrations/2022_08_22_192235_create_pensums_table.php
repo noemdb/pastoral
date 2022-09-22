@@ -25,8 +25,8 @@ class CreatePensumsTable extends Migration
             $table->integer('approved_credit_unir')->nullable()->comment('Unidades de Crédito Aprobadas');
             $table->boolean('enable_academic_index')->nullable()->comment('Tomada en cuenta para índice o promedio académico');
             $table->timestamps();
-            $table->foreign('level_id')->references('id')->on('levels')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('level_id')->references('id')->on('levels')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

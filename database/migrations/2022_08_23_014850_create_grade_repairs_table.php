@@ -21,8 +21,8 @@ class CreateGradeRepairsTable extends Migration
             $table->string('description')->nullable()->comment('Descripción');
             $table->string('observations')->nullable()->comment('Observaciones');
             $table->timestamps();
-            $table->foreign('estudiant_id')->references('id')->on('estudiants')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('pevaluation_id')->references('id')->on('pevaluations')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('estudiant_id')->references('id')->on('estudiants')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('pevaluation_id')->references('id')->on('pevaluations')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

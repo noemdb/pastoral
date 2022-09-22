@@ -21,8 +21,8 @@ class CreateGradesTable extends Migration
             $table->string('description')->nullable()->comment('Descripción');
             $table->string('observations')->nullable()->comment('Observaciones');
             $table->timestamps();
-            $table->foreign('estudiant_id')->references('id')->on('estudiants')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('evaluation_id')->references('id')->on('evaluations')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('estudiant_id')->references('id')->on('estudiants')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('evaluation_id')->references('id')->on('evaluations')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

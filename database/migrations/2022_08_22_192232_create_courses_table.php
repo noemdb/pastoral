@@ -30,7 +30,7 @@ class CreateCoursesTable extends Migration
             $table->boolean('status')->comment('Estado');
 
             $table->timestamps();
-            $table->foreign('curriculum_id')->references('id')->on('curricula')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('curriculum_id')->references('id')->on('curricula')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

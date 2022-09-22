@@ -27,8 +27,6 @@ class CreateTeachersTable extends Migration
             $table->string('cellphone')->nullable()->comment('Número de teléfono celular');
             $table->string('email')->nullable()->comment('Correo electrónico');
             $table->boolean('status')->default(true)->comment('Estado');
-
-            $table->softDeletes();
             $table->timestamps();
         });
     }

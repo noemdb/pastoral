@@ -21,7 +21,7 @@ class CreateBoptionsTable extends Migration
             $table->string('text')->nullable();
 
             $table->timestamps();
-            $table->foreign('bmain_id')->references('id')->on('bmains')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('bmain_id')->references('id')->on('bmains')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

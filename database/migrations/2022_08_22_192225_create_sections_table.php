@@ -31,7 +31,7 @@ class CreateSectionsTable extends Migration
             $table->boolean('status')->default(true)->comment('Estado');
 
             $table->timestamps();
-            $table->foreign('level_id')->references('id')->on('levels')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('level_id')->references('id')->on('levels')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

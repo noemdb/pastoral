@@ -23,8 +23,8 @@ class CreateMailedsTable extends Migration
             $table->timestamp('available_at')->nullable();
             $table->timestamps();
             
-            $table->foreign('mailer_id')->references('id')->on('mailers')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('representant_id')->references('id')->on('representants')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('mailer_id')->references('id')->on('mailers')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('representant_id')->references('id')->on('representants')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

@@ -19,7 +19,7 @@ class CreateSettingsTable extends Migration
             $table->string('name');
             $table->string('value');
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');           
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');           
         });
     }
 

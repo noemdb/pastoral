@@ -27,7 +27,7 @@ class CreatePescolarsTable extends Migration
             $table->text('body')->nullable();
             $table->text('footer')->nullable();
             $table->timestamps();
-            $table->foreign('pastoral_id')->references('id')->on('pastorals')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('pastoral_id')->references('id')->on('pastorals')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

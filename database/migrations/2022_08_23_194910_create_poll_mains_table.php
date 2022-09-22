@@ -22,8 +22,8 @@ class CreatePollMainsTable extends Migration
             $table->date('finicial')->comment('Fecha inicial');
             $table->time('time')->comment('Hora');
             $table->date('ffinal')->comment('Fecha final');
-            $table->foreign('poll_group_id')->references('id')->on('poll_groups')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
+            // $table->foreign('poll_group_id')->references('id')->on('poll_groups')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

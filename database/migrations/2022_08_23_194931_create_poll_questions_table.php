@@ -21,7 +21,7 @@ class CreatePollQuestionsTable extends Migration
             $table->string('observations')->nullable()->comment('Observaciones de la encuesta');
             $table->text('body')->nullable();
             $table->timestamps();
-            $table->foreign('poll_main_id')->references('id')->on('poll_mains')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('poll_main_id')->references('id')->on('poll_mains')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

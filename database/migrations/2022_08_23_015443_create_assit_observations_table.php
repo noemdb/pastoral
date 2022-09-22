@@ -19,7 +19,7 @@ class CreateAssitObservationsTable extends Migration
             $table->string('description')->comment('Descripción');
             $table->text('attachment')->nullable();
             $table->timestamps();
-            $table->foreign('assit_attendance_id')->references('id')->on('assit_attendances')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('assit_attendance_id')->references('id')->on('assit_attendances')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

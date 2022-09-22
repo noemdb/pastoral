@@ -16,16 +16,22 @@
             <x-input wire:model.lazy="{{$model}}" name="{{$model}}" class="block mt-1 w-full" />
             @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
-    </div>
-    <div>
         <div class="mb-4">
             @php $name = 'code'; $model = 'pastoral.'.$name; @endphp
             <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
             <x-input wire:model.lazy="{{$model}}" name="{{$model}}" class="block mt-1 w-full" />
             @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
+    </div>
+    <div>        
         <div class="mb-4">
             @php $name = 'code_official'; $model = 'pastoral.'.$name; @endphp
+            <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
+            <x-input wire:model.lazy="{{$model}}" name="{{$model}}" class="block mt-1 w-full" />
+            @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+        </div>
+        <div class="mb-4">
+            @php $name = 'code_private'; $model = 'pastoral.'.$name; @endphp
             <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
             <x-input wire:model.lazy="{{$model}}" name="{{$model}}" class="block mt-1 w-full" />
             @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
@@ -76,16 +82,17 @@
             <x-textarea wire:model.lazy="{{$model}}" name="{{$model}}" class="block mt-1 w-full" rows="4"/>
             @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
+
         <div class="mb-4">
-            @php $name = 'city'; $model = 'pastoral.'.$name; @endphp
+            @php $name = 'state_code'; $model = 'pastoral.'.$name; @endphp
             <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
             <x-input wire:model.lazy="{{$model}}" name="{{$model}}" class="block mt-1 w-full" />
             @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
     </div>
-    <div>
+    <div>        
         <div class="mb-4">
-            @php $name = 'state_code'; $model = 'pastoral.'.$name; @endphp
+            @php $name = 'city'; $model = 'pastoral.'.$name; @endphp
             <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
             <x-input wire:model.lazy="{{$model}}" name="{{$model}}" class="block mt-1 w-full" />
             @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror

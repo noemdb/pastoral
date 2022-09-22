@@ -27,7 +27,7 @@ class CreateScalesTable extends Migration
             $table->text('body')->nullable();
             $table->text('footer')->nullable();
             $table->timestamps();
-            $table->foreign('pescolar_id')->references('id')->on('pescolars')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('pescolar_id')->references('id')->on('pescolars')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

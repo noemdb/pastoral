@@ -21,9 +21,9 @@ class CreateGradeFixesTable extends Migration
             $table->string('description')->nullable()->comment('Descripción');
             $table->integer('user_id')->unsigned();
             $table->timestamps();
-            $table->foreign('pevaluation_id')->references('id')->on('pevaluations')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('estudiant_id')->references('id')->on('estudiants')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('pevaluation_id')->references('id')->on('pevaluations')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('estudiant_id')->references('id')->on('estudiants')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

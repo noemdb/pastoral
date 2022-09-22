@@ -20,7 +20,7 @@ class CreateProfilesTable extends Migration
             $table->string('lastname',50);
             $table->string('url_img',255)->nullable();
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
