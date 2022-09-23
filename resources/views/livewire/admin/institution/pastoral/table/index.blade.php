@@ -8,17 +8,17 @@
     $table_id = 'table_id';
 @endphp
 
-{{$sortBy}}
-{{$sortDirection}}
 
 <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
 
     <div class="mb-4">
         @php $name = 'search'; $model = 'pastoral.'.$name; @endphp
-        <x-jet-label for="{{$name}}" value="Buscar" />
+        <div class="flex justify-between">
+            <x-jet-label for="{{$name}}" value="Buscar" />
+            <div wire:loading class="text-gray-400 text-sm"> Cargando... </div>
+        </div>        
         <x-input wire:model.debounce.500ms="{{$name}}" name="{{$name}}" class="block mt-1 w-full" />
     </div>
-
 
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -31,16 +31,8 @@
                 </th>
                 <th class="{{ $class['name'] ?? ''}}">
                     <div class="flex  justify-between">
-                        <div>
-                            {{$list_comment['name'] ?? ''}}
-                        </div>
-                        <div>
-                            @if ($sortBy== 'name' && $sortDirection=="asc")
-                                    @if($sortDirection=="asc") <x-fas-arrow-down class="w-4 h-4 text-gray-400" /> @else <x-fas-arrow-up class="w-4 h-4 text-gray-400" /> @endif                                
-                            @else
-                                <x-fas-arrow-up class="w-4 h-4 text-gray-400" />
-                            @endif
-                        </div>
+                        <div> {{$list_comment['name'] ?? ''}} </div>
+                        <x-elements.crud.sort-by field="name" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                     </div>
                 </th>
                 <th class="{{ $class['legalname'] ?? ''}}">
@@ -48,13 +40,7 @@
                         <div>
                             {{$list_comment['legalname'] ?? ''}}
                         </div>
-                        <div>
-                            @if ($sortBy== 'legalname' && $sortDirection=="asc")
-                                <x-fas-arrow-down class="w-4 h-4 text-gray-400" />
-                            @else
-                                <x-fas-arrow-up class="w-4 h-4 text-gray-400" />
-                            @endif
-                        </div>
+                        <x-elements.crud.sort-by field="legalname" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                     </div>
                 </th>
                 <th class="{{ $class['description'] ?? ''}}">
@@ -62,13 +48,7 @@
                         <div>
                             {{$list_comment['description'] ?? ''}}
                         </div>
-                        <div>
-                            @if ($sortBy== 'name' && $sortDirection=="asc")
-                                <x-fas-arrow-down class="w-4 h-4 text-gray-400" />
-                            @else
-                                <x-fas-arrow-up class="w-4 h-4 text-gray-400" />
-                            @endif
-                        </div>
+                        <x-elements.crud.sort-by field="description" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                     </div>
                 </th>
                 <th class="{{ $class['action'] ?? ''}}">Acciones</th>

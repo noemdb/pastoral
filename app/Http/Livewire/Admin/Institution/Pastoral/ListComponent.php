@@ -86,7 +86,7 @@ class ListComponent extends Component
         $this->list_comment = Pastoral::COLUMN_COMMENTS;
 
         $this->sortBy = 'name';
-        $this->sortDirection = 'desc';
+        $this->sortDirection = 'asc';
     }
 
     public function updated($propertyName)
@@ -114,6 +114,12 @@ class ListComponent extends Component
         return view('livewire.admin.institution.pastoral.list-component', [
             'pastorals' => $pastorals,
         ]);
+    }
+
+    public function getSortBy ($sortBy,$sortDirection)
+    {
+        $this->sortBy = $sortBy;
+        $this->sortDirection = ($sortDirection == 'asc') ? 'desc':'asc';
     }
 
     public function create()
