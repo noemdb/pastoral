@@ -18,15 +18,8 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex dark:text-white">
 
-                    @include('layouts.partials.navigation-links') {{-- views/layouts/partials/navigation-links.blade.php --}}
-
-                    {{-- <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-jet-nav-link>
-
-                    <x-jet-nav-link href="{{ route('institutions.index') }}" :active="request()->routeIs('institutions.index')">
-                        Instituciones
-                    </x-jet-nav-link> --}}
+                    @include('layouts.partials.navigation-links') 
+                    
                 </div>
 
             </div>

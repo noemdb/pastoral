@@ -6,6 +6,8 @@ trait WithSortingTrait
 {
     public $sortBy = '';
     public $sortDirection = 'asc';
+    public $paginate = 10;
+    public $paginate_list = ['5'=>'5','10'=>'10','20'=>'20','50'=>'50','100'=>'100'];
  
     public function sortBy($field)
     {

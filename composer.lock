@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "24e661655bf66b73ce548348d78ccf83",
+    "content-hash": "b513e750c16693b5e3f91eaaf9e41348",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -256,78 +256,6 @@
                 }
             ],
             "time": "2021-08-15T20:50:18+00:00"
-        },
-        {
-            "name": "codeat3/blade-prime-icons",
-            "version": "1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/codeat3/blade-prime-icons.git",
-                "reference": "b89438a0dfbbb1c0ad52e3cc63566451752de337"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/codeat3/blade-prime-icons/zipball/b89438a0dfbbb1c0ad52e3cc63566451752de337",
-                "reference": "b89438a0dfbbb1c0ad52e3cc63566451752de337",
-                "shasum": ""
-            },
-            "require": {
-                "blade-ui-kit/blade-icons": "^1.1",
-                "illuminate/support": "^8.0|^9.0",
-                "php": "^7.4|^8.0"
-            },
-            "require-dev": {
-                "codeat3/blade-icon-generation-helpers": "^0.1",
-                "codeat3/phpcs-styles": "^1.0",
-                "orchestra/testbench": "^6.0|^7.0",
-                "phpunit/phpunit": "^9.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Codeat3\\BladePrimeicons\\BladePrimeiconsServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Codeat3\\BladePrimeicons\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Swapnil Sarwe",
-                    "homepage": "https://swapnilsarwe.com"
-                },
-                {
-                    "name": "Dries Vints",
-                    "homepage": "https://driesvints.com"
-                }
-            ],
-            "description": "A package to easily make use of Prime Icons in your Laravel Blade views.",
-            "homepage": "https://github.com/codeat3/blade-prime-icons",
-            "keywords": [
-                "blade",
-                "icons",
-                "laravel",
-                "prime"
-            ],
-            "support": {
-                "issues": "https://github.com/codeat3/blade-prime-icons/issues",
-                "source": "https://github.com/codeat3/blade-prime-icons/tree/1.3.0"
-            },
-            "funding": [
-                {
-                    "url": "https://www.buymeacoffee.com/swapnilsarwe",
-                    "type": "custom"
-                }
-            ],
-            "time": "2022-02-05T11:51:56+00:00"
         },
         {
             "name": "dasprid/enum",
@@ -3259,66 +3187,6 @@
                 "source": "https://github.com/opis/closure/tree/3.6.3"
             },
             "time": "2022-01-27T09:35:39+00:00"
-        },
-        {
-            "name": "owenvoke/blade-fontawesome",
-            "version": "v1.10.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/owenvoke/blade-fontawesome.git",
-                "reference": "4d9a8518a51fb13559428ae09e9d7c6924631286"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/owenvoke/blade-fontawesome/zipball/4d9a8518a51fb13559428ae09e9d7c6924631286",
-                "reference": "4d9a8518a51fb13559428ae09e9d7c6924631286",
-                "shasum": ""
-            },
-            "require": {
-                "blade-ui-kit/blade-icons": "^1.1.0",
-                "illuminate/support": "^8.0",
-                "php": "^7.4 || ^8.0"
-            },
-            "require-dev": {
-                "orchestra/testbench": "^6.0",
-                "pestphp/pest": "^1.8",
-                "phpstan/phpstan": "^0.12.82",
-                "spatie/pest-plugin-snapshots": "^1.0.1",
-                "symfony/var-dumper": "^5.1"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "OwenVoke\\BladeFontAwesome\\BladeFontAwesomeServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "OwenVoke\\BladeFontAwesome\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A package to easily make use of Font Awesome in your Laravel Blade views",
-            "support": {
-                "issues": "https://github.com/owenvoke/blade-fontawesome/issues",
-                "source": "https://github.com/owenvoke/blade-fontawesome/tree/v1.10.0"
-            },
-            "funding": [
-                {
-                    "url": "https://ecologi.com/owenvoke?gift-trees",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/owenvoke",
-                    "type": "github"
-                }
-            ],
-            "time": "2021-10-20T12:06:31+00:00"
         },
         {
             "name": "paragonie/constant_time_encoding",

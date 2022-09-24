@@ -6,9 +6,9 @@
         <div class="max-w-7xl  mx-auto sm:px-6 lg:px-8 border-gray-900 ">
             <div class="bg-white  sm:rounded-lg border-gray-900 dark:bg-gray-800">
 
-                <div>Autoridades</div>
+                {{-- <div>Autoridades</div> --}}
 
-                {{-- <livewire:admin.institution.pastoral.list-component /> --}}
+                <livewire:admin.institution.authority.list-component />
 
             </div>
         </div>

@@ -84,9 +84,6 @@ class ListComponent extends Component
         $this->modeCreate = false;
         $this->modeEdit = false;
         $this->list_comment = Pastoral::COLUMN_COMMENTS;
-
-        $this->sortBy = 'name';
-        $this->sortDirection = 'asc';
     }
 
     public function updated($propertyName)
@@ -109,7 +106,7 @@ class ListComponent extends Component
 
         $pastorals = ($this->sortBy && $this->sortDirection) ? $pastorals->orderBy($this->sortBy,$this->sortDirection) : $pastorals;
         
-        $pastorals = $pastorals->paginate(5);
+        $pastorals = $pastorals->paginate($this->paginate);
 
         return view('livewire.admin.institution.pastoral.list-component', [
             'pastorals' => $pastorals,
