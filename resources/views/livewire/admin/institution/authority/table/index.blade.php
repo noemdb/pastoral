@@ -1,9 +1,12 @@
+{{-- 'tauthority_id','pescolar_id','pastoral_id','name','lastname','ci','position','profile_professional','photo','finicial','ffinal', --}}
 @php
     $class['iteration']="text-left px-4";
+    $class['tauthority_id']="hidden md:table-cell text-left px-4";
+    $class['pescolar_id']="hidden md:table-cell text-left px-4";
+    $class['pastoral_id']="hidden lg:table-cell text-left px-4";
     $class['name']="text-left px-4";
-    $class['legalname']="hidden md:table-cell text-left px-4";
-    $class['description']="hidden lg:table-cell text-left px-4";
-    $class['assit_schedule']="hidden lg:table-cell text-left px-4";
+    $class['lastname']="text-left px-4";
+    $class['position']="text-left px-4";
     $class['action']="text-left px-4";
     $table_id = 'table_id';
 @endphp
@@ -35,42 +38,63 @@
                          N
                     </div>
                 </th>
+                <th class="{{ $class['tauthority_id'] ?? ''}}">
+                    <div class="flex  justify-between">
+                        <div> {{$list_comment['tauthority_id'] ?? ''}} </div>
+                        @if($authorities->isNotEmpty())
+                            <x-elements.crud.sort-by field="tauthority_id" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        @endif
+                    </div>
+                </th>
+                <th class="{{ $class['pescolar_id'] ?? ''}}">
+                    <div class="flex  justify-between">
+                        <div> {{$list_comment['pescolar_id'] ?? ''}} </div>
+                        @if($authorities->isNotEmpty())
+                            <x-elements.crud.sort-by field="pescolar_id" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        @endif
+                    </div>
+                </th>
+                <th class="{{ $class['pastoral_id'] ?? ''}}">
+                    <div class="flex  justify-between">
+                        <div> {{$list_comment['pastoral_id'] ?? ''}} </div>
+                        @if($authorities->isNotEmpty())
+                            <x-elements.crud.sort-by field="pastoral_id" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        @endif
+                    </div>
+                </th>
                 <th class="{{ $class['name'] ?? ''}}">
                     <div class="flex  justify-between">
                         <div> {{$list_comment['name'] ?? ''}} </div>
-                        <x-elements.crud.sort-by field="name" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        @if($authorities->isNotEmpty())
+                            <x-elements.crud.sort-by field="name" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        @endif
                     </div>
                 </th>
-                <th class="{{ $class['legalname'] ?? ''}}">
+                <th class="{{ $class['position'] ?? ''}}">
                     <div class="flex  justify-between">
-                        <div>
-                            {{$list_comment['legalname'] ?? ''}}
-                        </div>
-                        <x-elements.crud.sort-by field="legalname" :sortBy="$sortBy" :sortDirection="$sortDirection" />
-                    </div>
-                </th>
-                <th class="{{ $class['description'] ?? ''}}">
-                    <div class="flex  justify-between">
-                        <div>
-                            {{$list_comment['description'] ?? ''}}
-                        </div>
-                        <x-elements.crud.sort-by field="description" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        <div> {{$list_comment['position'] ?? ''}} </div>
+                        @if($authorities->isNotEmpty())
+                            <x-elements.crud.sort-by field="position" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        @endif
                     </div>
                 </th>
                 <th class="{{ $class['action'] ?? ''}}">Acciones</th>
             </tr>
+
         </thead>
 
         <tbody id="tdatos">
-        @foreach($authorities as $authority)
+        @forelse($authorities as $authority)
 
-            {{-- 'name', 'legalname', 'code', 'code_official', 'code_private', 'description', 'observations', 'header', 'body', 'footer', 'rif_institution', 'phone', 'address', 'city', 'state_code', 'country', 'email_institution', 'password', 'txt_contract_study' --}}
+            {{-- 'tauthority_id','pescolar_id','pastoral_id','name','lastname','ci','position','profile_professional','photo','finicial','ffinal', --}}
 
             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($authority->id == $authority_id) ? 'bg-gray-200' : null}}">
                 <td class="{{ $class['iteration'] ?? ''}}">{{$loop->iteration}}</td>
-                <td class="{{ $class['name'] ?? ''}}">{{$authority->name ?? ''}}</td>
-                <td class="{{ $class['legalname'] ?? ''}}">{{$authority->legalname ?? ''}}</td>
-                <td class="{{ $class['description'] ?? ''}}">{{$authority->description ?? ''}}</td>
+                <td class="{{ $class['tauthority_id'] ?? ''}}">{{$authority->tauthority->name ?? ''}}</td>
+                <td class="{{ $class['pescolar_id'] ?? ''}}">{{$authority->pescolar->name ?? ''}}</td>
+                <td class="{{ $class['pastoral_id'] ?? ''}}">{{$authority->pastoral->name ?? ''}}</td>
+                <td class="{{ $class['name'] ?? ''}}">{{$authority->fullname ?? ''}}</td>
+                <td class="{{ $class['position'] ?? ''}}">{{$authority->position ?? ''}}</td>
 
                 <td class="{{ $class['action'] ?? '' }}">
 
@@ -83,7 +107,11 @@
 
                 </td>
             </tr>
-        @endforeach
+        @empty
+            <tr>
+                <td colspan="7" class="text-center my-4 py-4">No hay datos.<td>
+            </tr>
+        @endforelse
 
         </tbody>
 
@@ -93,6 +121,6 @@
 
     {{-- <hr class="my-2"> --}}
 
-    {{ $authoritys->links() }}
+    {{ $authorities->links() }}
 
 </div>

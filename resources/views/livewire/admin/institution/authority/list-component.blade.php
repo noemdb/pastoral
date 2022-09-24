@@ -15,14 +15,15 @@
 
     </div>
 
-{{--     @if ($modeEdit)
+    @if ($modeEdit)
 
         <div class="mb-4 pb-4"> 
-            @include('livewire.admin.institution.pastoral.form.edit')
+            @include('livewire.admin.institution.authority.form.edit')
         </div>
 
     @endif
-
+    
+{{-- 
     @if ($modeCreate)
 
         <div class="mb-4 pb-4">

@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
+use Illuminate\Support\Facades\DB;
+
 class TauthoritySeeder extends Seeder
 {
     /**
@@ -13,6 +15,17 @@ class TauthoritySeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('tauthorities')->insert([
+			'name' => 'PRESIDENTE'
+        ]);        
+        DB::table('tauthorities')->insert([
+			'name' => 'DIRECTOR'
+        ]);
+        DB::table('tauthorities')->insert([
+			'name' => 'SECRETARIO'
+        ]);
+        DB::table('tauthorities')->insert([
+			'name' => 'COORDINADOR'
+        ]);
     }
 }

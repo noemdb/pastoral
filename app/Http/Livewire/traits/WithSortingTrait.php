@@ -24,6 +24,12 @@ trait WithSortingTrait
             ? 'desc'
             : 'asc';
     }
+
+    public function getSortBy ($sortBy,$sortDirection)
+    {
+        $this->sortBy = $sortBy;
+        $this->sortDirection = ($sortDirection == 'asc') ? 'desc':'asc';
+    }
 }
 
 ?>

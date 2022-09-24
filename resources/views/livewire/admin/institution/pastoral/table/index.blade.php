@@ -37,24 +37,26 @@
                 </th>
                 <th class="{{ $class['name'] ?? ''}}">
                     <div class="flex  justify-between">
-                        <div> {{$list_comment['name'] ?? ''}} </div>
-                        <x-elements.crud.sort-by field="name" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        <div>{{$list_comment['name'] ?? ''}}</div>
+                        @if($pastorals->isNotEmpty())
+                            <x-elements.crud.sort-by field="name" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        @endif
                     </div>
                 </th>
                 <th class="{{ $class['legalname'] ?? ''}}">
                     <div class="flex  justify-between">
-                        <div>
-                            {{$list_comment['legalname'] ?? ''}}
-                        </div>
-                        <x-elements.crud.sort-by field="legalname" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        <div>{{$list_comment['legalname'] ?? ''}}</div>
+                        @if($pastorals->isNotEmpty())
+                            <x-elements.crud.sort-by field="legalname" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        @endif
                     </div>
                 </th>
                 <th class="{{ $class['description'] ?? ''}}">
                     <div class="flex  justify-between">
-                        <div>
-                            {{$list_comment['description'] ?? ''}}
-                        </div>
-                        <x-elements.crud.sort-by field="description" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        <div>{{$list_comment['description'] ?? ''}}</div>
+                        @if($pastorals->isNotEmpty())
+                            <x-elements.crud.sort-by field="description" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        @endif
                     </div>
                 </th>
                 <th class="{{ $class['action'] ?? ''}}">Acciones</th>
@@ -62,7 +64,7 @@
         </thead>
 
         <tbody id="tdatos">
-        @foreach($pastorals as $pastoral)
+        @forelse($pastorals as $pastoral)
 
             {{-- 'name', 'legalname', 'code', 'code_official', 'code_private', 'description', 'observations', 'header', 'body', 'footer', 'rif_institution', 'phone', 'address', 'city', 'state_code', 'country', 'email_institution', 'password', 'txt_contract_study' --}}
 
@@ -83,7 +85,9 @@
 
                 </td>
             </tr>
-        @endforeach
+        @empty
+            <tr><td colspan="7">No hay datos.<td></tr>
+        @endforelse
 
         </tbody>
 

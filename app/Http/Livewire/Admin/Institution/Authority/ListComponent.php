@@ -6,7 +6,7 @@ use Livewire\Component;
 
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 
-use App\Models\app\Pastoral;
+use App\Models\app\Pastoral\Authority;
 
 use Livewire\WithPagination;
 use App\Http\Livewire\traits\WithSortingTrait;
@@ -18,56 +18,42 @@ class ListComponent extends Component
     use LivewireAlert;
     use WithSortingTrait;
 
-   public Pastoral $pastoral;
+   public Authority $authority;
+
+   //'tauthority_id','pescolar_id','pastoral_id','name','lastname','ci','position','profile_professional','photo','finicial','ffinal',
 
     protected $rules = [
-        'pastoral.name' => 'required|string|min:6',
-        'pastoral.code' => 'required|string',
-        'pastoral.legalname' => 'required|required|string',
-        'pastoral.code_official' => 'string|nullable', //
-        'pastoral.code_private' => 'string|nullable', //
-        'pastoral.description' => 'required|string',
-        'pastoral.observations' => 'nullable', //
-        'pastoral.header' => 'nullable', //
-        'pastoral.body' => 'nullable', //
-        'pastoral.footer' => 'nullable', //
-        'pastoral.rif_institution' => 'required|string',
-        'pastoral.phone' => 'required|string',
-        'pastoral.address' => 'required|string',
-        'pastoral.city' => 'required|string',
-        'pastoral.state_code' => 'nullable', //
-        'pastoral.country' => 'required|string',
-        'pastoral.email_institution' => 'nullable',
-        'pastoral.password' => 'nullable',
-        'pastoral.txt_contract_study' => 'required|string',
+        'authority.tauthority_id' => 'required|integer|min:6',
+        'authority.pescolar_id' => 'required|integer',
+        'authority.pastoral_id' => 'required|integer',
+        'authority.name' => 'required|string', //
+        'authority.lastname' => 'required|string', //
+        'authority.ci' => 'required|integer',
+        'authority.position' => 'required', //
+        'authority.profile_professional' => 'required', //
+        'authority.photo' => 'nullable', //
+        'authority.finicial' => 'required|date', //
+        'authority.ffinal' => 'required|date',
     ];
 
     protected function validationAttributes()
     {
         return [
-            'pastoral.name' => $this->list_comment['name'],
-            'pastoral.code' => $this->list_comment['legalname'],
-            'pastoral.legalname' => $this->list_comment['code'],
-            'pastoral.code_official' => $this->list_comment['code_official'],
-            'pastoral.code_private' => $this->list_comment['code_private'],
-            'pastoral.description' => $this->list_comment['description'],
-            'pastoral.observations' => $this->list_comment['observations'],
-            'pastoral.header' => $this->list_comment['header'],
-            'pastoral.body' => $this->list_comment['body'],
-            'pastoral.footer' => $this->list_comment['footer'],
-            'pastoral.rif_institution' => $this->list_comment['rif_institution'],
-            'pastoral.phone' => $this->list_comment['phone'],
-            'pastoral.address' => $this->list_comment['address'],
-            'pastoral.city' => $this->list_comment['city'],
-            'pastoral.state_code' => $this->list_comment['state_code'],
-            'pastoral.country' => $this->list_comment['country'],
-            'pastoral.email_institution' => $this->list_comment['email_institution'],
-            'pastoral.password' => $this->list_comment['password'],
-            'pastoral.txt_contract_study' => $this->list_comment['txt_contract_study'],
+            'authority.tauthority_id' => $this->list_comment['tauthority_id'],
+            'authority.pescolar_id' => $this->list_comment['pescolar_id'],
+            'authority.pastoral_id' => $this->list_comment['pastoral_id'],
+            'authority.name' => $this->list_comment['name'],
+            'authority.lastname' => $this->list_comment['lastname'],
+            'authority.ci' => $this->list_comment['ci'],
+            'authority.position' => $this->list_comment['position'],
+            'authority.profile_professional' => $this->list_comment['profile_professional'],
+            'authority.photo' => $this->list_comment['photo'],
+            'authority.finicial' => $this->list_comment['finicial'],
+            'authority.ffinal' => $this->list_comment['ffinal']
         ];
     }
 
-    public $pastoral_id;
+    public $authority_id;
 
     public $search = '';
 
@@ -77,13 +63,17 @@ class ListComponent extends Component
 
     public $status_last,$status_first,$saveInto;
 
+    public $tauthority_list;
+
     protected $listeners = [ 'remove' ];
 
     public function mount()
     {
         $this->modeCreate = false;
         $this->modeEdit = false;
-        $this->list_comment = Pastoral::COLUMN_COMMENTS;
+        $this->list_comment = Authority::COLUMN_COMMENTS;
+        $this->pastorals_list = Authority::pastorals_list(); //dd($this->pastorals_list);
+        $this->tauthority_list = Authority::tauthority_list(); //dd($this->tauthority_list);
     }
 
     public function updated($propertyName)
@@ -97,6 +87,68 @@ class ListComponent extends Component
 
     public function render()
     {
-        return view('livewire.admin.institution.authority.list-component');
+        $search = $this->search; 
+
+        $authorities = Authority::latest();  
+
+        $authorities = (!empty($search)) ? $authorities->orWhere( function($query) use ($search) {$query->orWhere('name','like', '%'.$search.'%')->orWhere('legalname','like','%'.$search.'%')->orWhere('description','like','%'.$search.'%');}) : $authorities ;     
+
+        $authorities = ($this->sortBy && $this->sortDirection) ? $authorities->orderBy($this->sortBy,$this->sortDirection) : $authorities;
+        
+        $authorities = $authorities->paginate($this->paginate);
+
+        return view('livewire.admin.institution.authority.list-component', [
+            'authorities' => $authorities,
+        ]);
+    }
+
+    public function edit($id)
+    {
+        $this->authority = Authority::find($id); //dd($this->authority->toArray());
+        $this->authority_id = ($this->authority) ? $this->authority->id:null;
+        $this->modeEdit = ($this->authority) ? true:false;
+    }
+
+    public function save()
+    {
+        $this->validate();
+        $this->authority->save();
+
+        $this->alert('success', 'Los datos fueron almacenados satisfactoriamente!');
+
+        $this->modeEdit = false;
+        $this->reset(['pastoral_id']);
+    }
+
+    public function closeEditMode()
+    {
+        $this->authority_id = false;
+        $this->modeEdit = false;
+    }
+
+    public function closeCreateMode()
+    {
+        $this->modeCreate = false;
+    }
+
+    public function delete ($id)
+    {
+        $authority = Authority::find($id);
+        if ($authority) {
+            $this->authority = $authority;
+            $this->alert('warning', 'Estas seguro de realizar esta acción?', [
+                'showConfirmButton' => true,
+                'showCancelButton' => true,
+                'timer' => null,
+                'confirmButtonText' => 'Eliminar',
+                'onConfirmed' => 'remove'
+            ]);
+        }
+    }
+
+    public function remove ()
+    {
+        $this->authority->delete();
+        $this->alert('success', 'Los datos fueron eliminados satisfactoriamente!');
     }
 }
