@@ -20,9 +20,9 @@ class PescolarSeeder extends Seeder
             [
                 "pastoral_id"=>1,
                 "code"=>"0001",
-                "name"=>"1re Período",
-                "finicial"=>Carbon::now()->startOfYear(),
-                "ffinal"=>Carbon::now()->endOfYear(),
+                "name"=>"1er 22-23",
+                "finicial"=>Carbon::now()->startOfYear()->format('Y-m-d'),
+                "ffinal"=>Carbon::now()->endOfYear()->format('Y-m-d'),
                 "description"=>"1re Período",
             ]
         );

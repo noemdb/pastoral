@@ -1,0 +1,56 @@
+crear controladores
+php artisan make:controller 'Admin\Institution\PescolarController'Z
+
+define ruta
+Route::resource('authorities', PescolarController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Institution/Pescolar/ListComponent'
+
+crear los traits
+Livewiere
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Institution/Pescolar/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Institution/Pescolar/Traits/PescolarRules.php'
+
+Model
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Pescolar/Traits/Pescolar'
+touch '/home/nuser/code/pastoral/app/Models/app/Pescolar/Traits/Pescolar/Relations.php'
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+------------------------------------------------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Institution\CurriculumController'
+
+define ruta
+Route::resource('curricula', CurriculumController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Institution/Curriculum/ListComponent'
+
+crear los traits
+Livewiere
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Institution/Curriculum/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Institution/Curriculum/Traits/CurriculumRules.php'
+
+Model
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Pescolar/Traits/Curriculum'
+touch '/home/nuser/code/pastoral/app/Models/app/Pescolar/Traits/Curriculum/CurriculumRelations.php'
+
+composer dump-autoload
+
+copia codigo en backend
+-CurriculumRelations
+-CurriculumRules
+
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar

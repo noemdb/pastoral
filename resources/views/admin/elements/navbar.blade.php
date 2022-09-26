@@ -11,11 +11,11 @@
                 <x-icon-stop class="w-6 h-6 mr-0.5" />
                 <div class="mr-0.5 hidden md:flex">{{ __('Autoridades') }} </div> 
             </x-jet-nav-link>
-            <x-jet-nav-link class="shadow py-2 rounded dark:border-gray-400" title="Perídos Educativo"  href="{{ route('institutions.index') }}" :active="request()->routeIs('*pescolars*')">
+            <x-jet-nav-link class="shadow py-2 rounded dark:border-gray-400" title="Perídos Educativo"  href="{{ route('pescolars.index') }}" :active="request()->routeIs('*pescolars*')">
                 <x-icon-calendar class="w-6 h-6 mr-0.5" />
                 <div class="mr-0.5 hidden md:flex">{{ __('Perídos') }} </div>
             </x-jet-nav-link>
-            <x-jet-nav-link class="shadow py-2 rounded dark:border-gray-400" title="Planes de Educativos" href="{{ route('institutions.index') }}" :active="request()->routeIs('*curricula*')">
+            <x-jet-nav-link class="shadow py-2 rounded dark:border-gray-400" title="Planes de Educativos" href="{{ route('curricula.index') }}" :active="request()->routeIs('*curricula*')">
                 <x-icon-table class="w-6 h-6 mr-0.5" />
                 <div class="mr-0.5 hidden md:flex">{{ __('Planes') }} </div>
             </x-jet-nav-link>

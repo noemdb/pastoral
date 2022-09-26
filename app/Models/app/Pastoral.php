@@ -17,6 +17,8 @@ class Pastoral extends Model
         'name', 'legalname', 'code', 'code_official', 'code_private', 'description', 'observations', 'header', 'body', 'footer', 'rif_institution', 'phone', 'address', 'city', 'state_code', 'country', 'email_institution', 'password', 'txt_contract_study'
     ];
 
+    protected $dates = ['finicial','ffinal','created_at','updated_at'];
+
     const COLUMN_COMMENTS = [
         'name' => 'Nombre',
         'code' => 'Código',
@@ -39,9 +41,14 @@ class Pastoral extends Model
         'txt_contract_study'=>'Contrato de Estudio',
     ];
 
+    public static function pastorals_list() 
+    {
+        return Pastoral::pluck('name','id');
+    }
+
     public function curriculum_list() /* usada para llenar los objetos de formularios select*/
     {
-    	$list = Curriculum::select('curricula.*')
+        $list = Curriculum::select('curricula.*')
             ->join('pescolars', 'pescolars.id', '=', 'curricula.pescolar_id')
             ->join('pastorals', 'pastorals.id', '=', 'pescolars.pastoral_id')
             ->Where('pastorals.id', '=', $this->id)

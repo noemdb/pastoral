@@ -39,13 +39,13 @@ return [
              * This icon will show when the password is masked and show toggle is enabled.
              * Can be overridden individually as well.
              */
-            'show_password_icon' => 'heroicon-s-eye',
+            'show_password_icon' => 'icon-s-eye',
 
             /*
              * This icon will show when the password is un-masked and show toggle is enabled.
              * Can be overridden individually as well.
              */
-            'hide_password_icon' => 'heroicon-o-eye-off',
+            'hide_password_icon' => 'icon-o-eye-off',
         ],
 
         'textarea' => [
@@ -73,20 +73,20 @@ return [
             'view' => 'form-components::components.inputs.custom-select',
 
             // This icon will be shown on an option when it is selected.
-            'selected_icon' => 'heroicon-s-check',
+            'selected_icon' => 'icon-s-check',
 
             /*
              * This icon will be shown on a selected option on a select
              * that allows clearing the value to indicate the option
              * can be de-selected.
              */
-            'uncheck_icon' => 'heroicon-o-x-circle',
+            'uncheck_icon' => 'icon-o-x-circle',
 
             /*
              * This icon will be shown when an option is selected
              * and the "optional" attribute is set to true.
              */
-            'clear_icon' => 'heroicon-o-x',
+            'clear_icon' => 'icon-o-x',
         ],
 
         'label' => [
@@ -121,13 +121,13 @@ return [
             /*
              * This icon will be shown as a "toggle button" for the date picker.
              */
-            'icon' => 'heroicon-s-calendar',
+            'icon' => 'icon-calendar',
 
             /*
              * This icon will be shown when there is a value, and will allow you
              * to clear the input.
              */
-            'clear_icon' => 'heroicon-s-x',
+            'clear_icon' => 'icon-times',
         ],
 
         'file-upload' => [

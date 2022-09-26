@@ -100,7 +100,7 @@ class ListComponent extends Component
 
         $search = $this->search; 
 
-        $pastorals = Pastoral::latest();  
+        $pastorals = Pastoral::select('pastorals.*');  
 
         $pastorals = (!empty($search)) ? $pastorals->orWhere( function($query) use ($search) {$query->orWhere('name','like', '%'.$search.'%')->orWhere('legalname','like','%'.$search.'%')->orWhere('description','like','%'.$search.'%');}) : $pastorals ;     
 

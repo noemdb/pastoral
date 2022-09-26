@@ -4,3 +4,4 @@ php artisan make:livewire 'Administracion/AssistControl/AssitAttendance/workerCo
 
 php artisan make:livewire 'Admin/Institution/Pastoral/ListComponent'
 php artisan make:livewire 'Admin/Institution/Authority/ListComponent'
+php artisan make:livewire 'Admin/Institution/Pescolar/ListComponent'

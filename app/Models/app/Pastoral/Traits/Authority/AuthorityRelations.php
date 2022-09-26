@@ -2,7 +2,7 @@
 namespace App\Models\app\Pastoral\Traits\Authority;
 //app/Models/app/Pastoral/Traits/Authority/Relations.php
 
-trait Relations {
+trait AuthorityRelations {
 
     public function tauthority()
     {
@@ -22,8 +22,5 @@ trait Relations {
     }
     ///////////////////////////////////////////////////////////////////////////////////
 
-    public function getFullNameAttribute()
-    {
-        return "{$this->lastname} {$this->name}";
-    }
+    
 }

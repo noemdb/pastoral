@@ -5,6 +5,8 @@ use App\Http\Controllers\Preinscription\EnrollmentController;
 use App\Http\Controllers\Institution\PastoralController;
 use App\Http\Controllers\Admin\InstitutionController;
 use App\Http\Controllers\Admin\Institution\AuthorityController;
+use App\Http\Controllers\Admin\Institution\PescolarController;
+use App\Http\Controllers\Admin\Institution\CurriculumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +36,8 @@ Route::middleware( [ 'auth:sanctum',config('jetstream.auth_session'),'verified']
         Route::resource('institutions', InstitutionController::class)->only([ 'index']);
         Route::prefix('institutions')->group(function () {
             Route::resource('authorities', AuthorityController::class)->only([ 'index']);
+            Route::resource('pescolars', PescolarController::class)->only([ 'index']);
+            Route::resource('curricula', CurriculumController::class)->only([ 'index']);
         });
     });
 

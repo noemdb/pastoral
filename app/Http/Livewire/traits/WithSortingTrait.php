@@ -30,6 +30,11 @@ trait WithSortingTrait
         $this->sortBy = $sortBy;
         $this->sortDirection = ($sortDirection == 'asc') ? 'desc':'asc';
     }
+
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
 }
 
 ?>

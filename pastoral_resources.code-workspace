@@ -1,10 +1,18 @@
 {
 	"folders": [
 		{
+			"name": "public",
+			"path": "public"
+		},
+		{
+			"name": "resources",
 			"path": "resources"
 		},
 		{
-			"path": "public"
+			"path": "resources/views"
+		},
+		{
+			"path": "resources/views/livewire"
 		}
 	],
 	"settings": {}

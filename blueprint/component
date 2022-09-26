@@ -1,6 +1,14 @@
 php artisan make:component Enrollment/AppLayout
 php artisan make:component Elements/Form/Dropdown
 php artisan make:component Elements/Form/SelectOption
+php artisan make:component Elements/Form/button
+
+php artisan make:component Elements/Form/button-edit
+php artisan make:component Elements/Form/button-del
+
+php artisan make:component Elements/Form/button-ini
+php artisan make:component Elements/Form/button-mid
+php artisan make:component Elements/Form/button-end
 
 php artisan make:component Elements/Stepper/ProgressBar
 

@@ -76,12 +76,16 @@
 
                 <td class="{{ $class['action'] ?? '' }}">
 
-                    <div class="flex items-center justify-center justify-between mb-3 shadow">
-                        <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
-                            <button type="button" wire:key="pastoral-edit-{{$pastoral->id}}" wire:click="edit({{ $pastoral->id }})" class="rounded-l inline-block px-2 py-2.5 bg-blue-500 text-white font-medium text-xs leading-tight uppercase hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-0 active:bg-blue-800 transition duration-150 ease-in-out">Editar</button>
-                            <button type="button" wire:key="pastoral-delete-{{$pastoral->id}}" wire:click="delete({{ $pastoral->id }})" class="rounded-r inline-block px-2 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase hover:bg-red-700 focus:bg-red-700 focus:outline-none focus:ring-0 active:bg-red-800 transition duration-150 ease-in-out">Eliminar</button>
+                        <div class="flex items-center justify-center justify-between mb-3 shadow">
+                            <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
+                                <x-elements.form.button-edit wire:key="pastoral-edit-{{$pastoral->id}}" wire:click="edit({{ $pastoral->id }})" >
+                                    <x-icon-pen class="w-4 h-4 mr-0.5" />
+                                </x-elements.form.button>
+                                <x-elements.form.button-del wire:key="pastoral-delete-{{$pastoral->id}}" wire:click="delete({{ $pastoral->id }})" >
+                                    <x-icon-trash-can class="w-4 h-4 mr-0.5" />
+                                </x-elements.form.button>
+                            </div>
                         </div>
-                    </div>
 
                 </td>
             </tr>

@@ -5,7 +5,7 @@
     $class['pescolar_id']="hidden md:table-cell text-left px-4";
     $class['pastoral_id']="hidden lg:table-cell text-left px-4";
     $class['name']="text-left px-4";
-    $class['lastname']="text-left px-4";
+    $class['ci']="text-left px-4";
     $class['position']="text-left px-4";
     $class['action']="text-left px-4";
     $table_id = 'table_id';
@@ -17,9 +17,10 @@
     <div class="mb-4 flex justify-between">
         <div class="w-3/4">
             @php $name = 'search'; $model = 'authority.'.$name; @endphp
-            <div class="flex justify-between">
-                <x-jet-label for="{{$name}}" value="Buscar" />
-                <div wire:loading class="text-gray-400 text-sm"> Cargando... </div>
+            <div class="flex justify-start">
+                <x-jet-label for="{{$name}}" value="Buscar:" />
+                <span class="text-gray-400 mx-2 font-medium">nombre, ci</span>                
+                {{-- <div wire:loading class="text-gray-400 text-sm"> Cargando... </div> --}}
             </div>        
             <x-input wire:model.debounce.500ms="{{$name}}" name="{{$name}}" class="block w-full" />
         </div>
@@ -47,7 +48,7 @@
                     </div>
                 </th>
                 <th class="{{ $class['pescolar_id'] ?? ''}}">
-                    <div class="flex  justify-between">
+                    <div class="flex justify-between">
                         <div> {{$list_comment['pescolar_id'] ?? ''}} </div>
                         @if($authorities->isNotEmpty())
                             <x-elements.crud.sort-by field="pescolar_id" :sortBy="$sortBy" :sortDirection="$sortDirection" />
@@ -55,7 +56,7 @@
                     </div>
                 </th>
                 <th class="{{ $class['pastoral_id'] ?? ''}}">
-                    <div class="flex  justify-between">
+                    <div class="flex justify-between">
                         <div> {{$list_comment['pastoral_id'] ?? ''}} </div>
                         @if($authorities->isNotEmpty())
                             <x-elements.crud.sort-by field="pastoral_id" :sortBy="$sortBy" :sortDirection="$sortDirection" />
@@ -63,15 +64,23 @@
                     </div>
                 </th>
                 <th class="{{ $class['name'] ?? ''}}">
-                    <div class="flex  justify-between">
+                    <div class="flex justify-between">
                         <div> {{$list_comment['name'] ?? ''}} </div>
                         @if($authorities->isNotEmpty())
                             <x-elements.crud.sort-by field="name" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                         @endif
                     </div>
                 </th>
+                <th class="{{ $class['ci'] ?? ''}}">
+                    <div class="flex justify-between">
+                        <div> {{$list_comment['ci'] ?? ''}} </div>
+                        @if($authorities->isNotEmpty())
+                            <x-elements.crud.sort-by field="ci" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        @endif
+                    </div>
+                </th>
                 <th class="{{ $class['position'] ?? ''}}">
-                    <div class="flex  justify-between">
+                    <div class="flex justify-between">
                         <div> {{$list_comment['position'] ?? ''}} </div>
                         @if($authorities->isNotEmpty())
                             <x-elements.crud.sort-by field="position" :sortBy="$sortBy" :sortDirection="$sortDirection" />
@@ -94,14 +103,19 @@
                 <td class="{{ $class['pescolar_id'] ?? ''}}">{{$authority->pescolar->name ?? ''}}</td>
                 <td class="{{ $class['pastoral_id'] ?? ''}}">{{$authority->pastoral->name ?? ''}}</td>
                 <td class="{{ $class['name'] ?? ''}}">{{$authority->fullname ?? ''}}</td>
+                <td class="{{ $class['ci'] ?? ''}}">{{$authority->ci ?? ''}}</td>
                 <td class="{{ $class['position'] ?? ''}}">{{$authority->position ?? ''}}</td>
 
                 <td class="{{ $class['action'] ?? '' }}">
 
                     <div class="flex items-center justify-center justify-between mb-3 shadow">
                         <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
-                            <button type="button" wire:key="authority-edit-{{$authority->id}}" wire:click="edit({{ $authority->id }})" class="rounded-l inline-block px-2 py-2.5 bg-blue-500 text-white font-medium text-xs leading-tight uppercase hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-0 active:bg-blue-800 transition duration-150 ease-in-out">Editar</button>
-                            <button type="button" wire:key="authority-delete-{{$authority->id}}" wire:click="delete({{ $authority->id }})" class="rounded-r inline-block px-2 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase hover:bg-red-700 focus:bg-red-700 focus:outline-none focus:ring-0 active:bg-red-800 transition duration-150 ease-in-out">Eliminar</button>
+                            <x-elements.form.button-edit wire:key="authority-edit-{{$authority->id}}" wire:click="edit({{ $authority->id }})" >
+                                <x-icon-pen class="w-4 h-4 mr-0.5" />
+                            </x-elements.form.button-edit>
+                            <x-elements.form.button-del wire:key="authority-delete-{{$authority->id}}" wire:click="delete({{ $authority->id }})" >
+                                <x-icon-trash-can class="w-4 h-4 mr-0.5" />
+                            </x-elements.form.button-del>
                         </div>
                     </div>
 

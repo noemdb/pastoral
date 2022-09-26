@@ -6,56 +6,27 @@ use Livewire\Component;
 
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 
+use App\Models\app\Pescolar;
+use App\Models\app\Pastoral;
+use App\Models\app\Pastoral\Tauthority;
 use App\Models\app\Pastoral\Authority;
 
 use Livewire\WithPagination;
 use App\Http\Livewire\traits\WithSortingTrait;
+use App\Http\Livewire\Admin\Institution\Authority\Traits\RulesAuthority;
 
 class ListComponent extends Component
 {
-
     use WithPagination;
     use LivewireAlert;
     use WithSortingTrait;
+    use RulesAuthority;
 
    public Authority $authority;
 
-   //'tauthority_id','pescolar_id','pastoral_id','name','lastname','ci','position','profile_professional','photo','finicial','ffinal',
-
-    protected $rules = [
-        'authority.tauthority_id' => 'required|integer|min:6',
-        'authority.pescolar_id' => 'required|integer',
-        'authority.pastoral_id' => 'required|integer',
-        'authority.name' => 'required|string', //
-        'authority.lastname' => 'required|string', //
-        'authority.ci' => 'required|integer',
-        'authority.position' => 'required', //
-        'authority.profile_professional' => 'required', //
-        'authority.photo' => 'nullable', //
-        'authority.finicial' => 'required|date', //
-        'authority.ffinal' => 'required|date',
-    ];
-
-    protected function validationAttributes()
-    {
-        return [
-            'authority.tauthority_id' => $this->list_comment['tauthority_id'],
-            'authority.pescolar_id' => $this->list_comment['pescolar_id'],
-            'authority.pastoral_id' => $this->list_comment['pastoral_id'],
-            'authority.name' => $this->list_comment['name'],
-            'authority.lastname' => $this->list_comment['lastname'],
-            'authority.ci' => $this->list_comment['ci'],
-            'authority.position' => $this->list_comment['position'],
-            'authority.profile_professional' => $this->list_comment['profile_professional'],
-            'authority.photo' => $this->list_comment['photo'],
-            'authority.finicial' => $this->list_comment['finicial'],
-            'authority.ffinal' => $this->list_comment['ffinal']
-        ];
-    }
-
     public $authority_id;
 
-    public $search = '';
+    public $search = ''; //'name','ci','lastname','profile_professional',
 
     public $modeEdit,$modeCreate;
 
@@ -63,7 +34,7 @@ class ListComponent extends Component
 
     public $status_last,$status_first,$saveInto;
 
-    public $tauthority_list;
+    public $tauthority_list,$pastorals_list,$pescolars_list;
 
     protected $listeners = [ 'remove' ];
 
@@ -71,27 +42,24 @@ class ListComponent extends Component
     {
         $this->modeCreate = false;
         $this->modeEdit = false;
-        $this->list_comment = Authority::COLUMN_COMMENTS;
-        $this->pastorals_list = Authority::pastorals_list(); //dd($this->pastorals_list);
-        $this->tauthority_list = Authority::tauthority_list(); //dd($this->tauthority_list);
-    }
-
-    public function updated($propertyName)
-    {
-        $this->validateOnly($propertyName);
-    }
-    public function updatingSearch()
-    {
-        $this->resetPage();
+        $this->list_comment = Authority::COLUMN_COMMENTS; 
+        $this->tauthority_list = Tauthority::tauthority_list()->toArray(); //dd($this->tauthority_list);
+        $this->pescolars_list = Pescolar::pescolars_list()->toArray(); 
+        $this->pastorals_list = Pastoral::pastorals_list()->toArray(); 
     }
 
     public function render()
     {
         $search = $this->search; 
 
-        $authorities = Authority::latest();  
+        $authorities = Authority::select('authorities.*');  
 
-        $authorities = (!empty($search)) ? $authorities->orWhere( function($query) use ($search) {$query->orWhere('name','like', '%'.$search.'%')->orWhere('legalname','like','%'.$search.'%')->orWhere('description','like','%'.$search.'%');}) : $authorities ;     
+        $authorities = (!empty($search)) ? $authorities->orwhere(
+            function($query) use ($search) {
+                $query->orWhere('name','like', '%'.$search.'%')
+                ->orWhere('lastname','like','%'.$search.'%')
+                ->orWhere('ci','like','%'.$search.'%');}) 
+                : $authorities ; //dd($authorities);    
 
         $authorities = ($this->sortBy && $this->sortDirection) ? $authorities->orderBy($this->sortBy,$this->sortDirection) : $authorities;
         
@@ -102,11 +70,20 @@ class ListComponent extends Component
         ]);
     }
 
+    public function create()
+    {
+        $this->authority = new Authority;
+        $this->authority_id = null;
+        $this->modeCreate = true;
+        $this->modeEdit = false;
+    }
+
     public function edit($id)
     {
-        $this->authority = Authority::find($id); //dd($this->authority->toArray());
+        $this->authority = Authority::find($id);
         $this->authority_id = ($this->authority) ? $this->authority->id:null;
-        $this->modeEdit = ($this->authority) ? true:false;
+        $this->modeEdit = true;
+        $this->modeCreate = false;
     }
 
     public function save()
@@ -116,8 +93,10 @@ class ListComponent extends Component
 
         $this->alert('success', 'Los datos fueron almacenados satisfactoriamente!');
 
+        $this->modeCreate = false;
         $this->modeEdit = false;
-        $this->reset(['pastoral_id']);
+        $this->authority = new Authority;
+        $this->reset(['authority_id']);
     }
 
     public function closeEditMode()

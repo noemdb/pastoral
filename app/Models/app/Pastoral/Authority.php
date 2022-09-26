@@ -5,7 +5,7 @@ namespace App\Models\app\Pastoral;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\app\Pastoral\Traits\Authority\Relations;
+use App\Models\app\Pastoral\Traits\Authority\AuthorityRelations;
 
 use App\Models\app\Pastoral;
 use App\Models\app\Pastoral\Tauthority;
@@ -13,35 +13,33 @@ use App\Models\app\Pastoral\Tauthority;
 class Authority extends Model
 {
     use HasFactory;
-    use Relations;
+
+    use AuthorityRelations;
 
     protected $fillable = [
         'tauthority_id','pescolar_id','pastoral_id','name','lastname','ci','position','profile_professional','photo','finicial','ffinal'
-    ];
+	];
+	
+	protected $dates = ['finicial','ffinal','created_at','updated_at'];
 
     const COLUMN_COMMENTS = [
-		'tauthority_id' => 'Autoridad',
+		'tauthority_id' => 'Tipo',
 		'pescolar_id' => 'P.Escolar',
 		'pastoral_id' => 'Institución',
 		'name' => 'Nombres',
 		'lastname' => 'Apellidos',
-		'ci' => 'CI Identificador',
+		'ci' => 'CI.Ident.',
 		'position' => 'Posición',
 		'profile_professional' => 'Perfil Profesional',
 		'photo' => 'Foto',
 		'finicial' => 'Fecha Inicial',
 		'ffinal' => 'Fecha Final',
-    ];
-
-    public static function pastorals_list() 
-	{
-		return Pastoral::pluck('name','id');
-	}
-
-	public static function tauthority_list() 
-	{
-		return Tauthority::pluck('name','id');
-	}
+	];
+	
+	public function getFullNameAttribute()
+    {
+        return "{$this->name} {$this->lastname}";
+    }
 }
 
 

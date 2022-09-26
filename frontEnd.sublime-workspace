@@ -32,36 +32,46 @@
 	"buffers":
 	[
 		{
-			"file": "resources/views/livewire/admin/institution/pastoral/list-component.blade.php",
+			"file": "resources/views/livewire/admin/institution/authority/list-component.blade.php",
 			"settings":
 			{
-				"buffer_size": 1165,
+				"buffer_size": 1020,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/views/livewire/admin/institution/pastoral/table/index.blade.php",
+			"file": "resources/views/livewire/admin/institution/authority/form/edit.blade.php",
 			"settings":
 			{
-				"buffer_size": 5034,
+				"buffer_size": 1493,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "<!-- component -->\n<body class=\"flex items-center justify-center\">\n\t<div class=\"container\">\n\t\t<table class=\"w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5\">\n\t\t\t<thead class=\"text-white\">\n\t\t\t\t<tr class=\"bg-teal-400 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0\">\n\t\t\t\t\t<th class=\"p-3 text-left\">Name</th>\n\t\t\t\t\t<th class=\"p-3 text-left\">Email</th>\n\t\t\t\t\t<th class=\"p-3 text-left\" width=\"110px\">Actions</th>\n\t\t\t\t</tr>\n\t\t\t\t<tr class=\"bg-teal-400 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0\">\n\t\t\t\t\t<th class=\"p-3 text-left\">Name</th>\n\t\t\t\t\t<th class=\"p-3 text-left\">Email</th>\n\t\t\t\t\t<th class=\"p-3 text-left\" width=\"110px\">Actions</th>\n\t\t\t\t</tr>\n                <tr class=\"bg-teal-400 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0\">\n                  <th class=\"p-3 text-left\">Name</th>\n                  <th class=\"p-3 text-left\">Email</th>\n                  <th class=\"p-3 text-left\" width=\"110px\">Actions</th>\n              </tr>\n                <tr class=\"bg-teal-400 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0\">\n                  <th class=\"p-3 text-left\">Name</th>\n                  <th class=\"p-3 text-left\">Email</th>\n                  <th class=\"p-3 text-left\" width=\"110px\">Actions</th>\n              </tr>\n\t\t\t</thead>\n\t\t\t<tbody class=\"flex-1 sm:flex-none\">\n\t\t\t\t<tr class=\"flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0\">\n\t\t\t\t\t<td class=\"border-grey-light border hover:bg-gray-100 p-3\">John Covv</td>\n\t\t\t\t\t<td class=\"border-grey-light border hover:bg-gray-100 p-3 truncate\">contato@johncovv.com</td>\n\t\t\t\t\t<td class=\"border-grey-light border hover:bg-gray-100 p-3 text-red-400 hover:text-red-600 hover:font-medium cursor-pointer\">Delete</td>\n\t\t\t\t</tr>\n\t\t\t\t<tr class=\"flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0\">\n\t\t\t\t\t<td class=\"border-grey-light border hover:bg-gray-100 p-3\">Michael Jackson</td>\n\t\t\t\t\t<td class=\"border-grey-light border hover:bg-gray-100 p-3 truncate\">m_jackson@mail.com</td>\n\t\t\t\t\t<td class=\"border-grey-light border hover:bg-gray-100 p-3 text-red-400 hover:text-red-600 hover:font-medium cursor-pointer\">Delete</td>\n\t\t\t\t</tr>\n        <tr class=\"flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0\">\n            <td class=\"border-grey-light border hover:bg-gray-100 p-3\">Julia</td>\n            <td class=\"border-grey-light border hover:bg-gray-100 p-3 truncate\">julia@mail.com</td>\n            <td class=\"border-grey-light border hover:bg-gray-100 p-3 text-red-400 hover:text-red-600 hover:font-medium cursor-pointer\">Delete</td>\n        </tr>\n        <tr class=\"flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0\">\n          <td class=\"border-grey-light border hover:bg-gray-100 p-3\">Martin Madrazo</td>\n          <td class=\"border-grey-light border hover:bg-gray-100 p-3 truncate\">martin.madrazo@mail.com</td>\n          <td class=\"border-grey-light border hover:bg-gray-100 p-3 text-red-400 hover:text-red-600 hover:font-medium cursor-pointer\">Delete</td>\n        </tr>\n\t\t\t</tbody>\n\t\t</table>\n\t</div>\n</body>\n\n<style>\n  html,\n  body {\n    height: 100%;\n  }\n\n  @media (min-width: 640px) {\n    table {\n      display: inline-table !important;\n    }\n\n    thead tr:not(:first-child) {\n      display: none;\n    }\n  }\n\n  td:not(:last-child) {\n    border-bottom: 0;\n  }\n\n  th:not(:last-child) {\n    border-bottom: 2px solid rgba(0, 0, 0, .1);\n  }\n</style>",
+			"file": "resources/views/livewire/admin/institution/authority/form/fields.blade.php",
 			"settings":
 			{
-				"buffer_size": 3479,
+				"buffer_size": 1795,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/views/livewire/preincription/enrollment/steps/estudiants.blade.php",
+			"file": "resources/views/vendor/form-components/components/inputs/select.blade.php",
 			"settings":
 			{
-				"buffer_size": 2624,
+				"buffer_size": 1245,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/enrollments/form/partials/estudiants.blade.php",
+			"settings":
+			{
+				"buffer_size": 6883,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -111,24 +121,27 @@
 	"expanded_folders":
 	[
 		"/home/nuser/code/pastoral/resources/views",
-		"/home/nuser/code/pastoral/resources/views/livewire",
-		"/home/nuser/code/pastoral/resources/views/livewire/preincription",
-		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment",
-		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps"
+		"/home/nuser/code/pastoral/resources/views/vendor",
+		"/home/nuser/code/pastoral/resources/views/vendor/form-components",
+		"/home/nuser/code/pastoral/resources/views/vendor/form-components/components",
+		"/home/nuser/code/pastoral/resources/views/vendor/form-components/components/inputs"
 	],
 	"file_history":
 	[
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pastoral/table/index.blade.php",
+		"/home/nuser/code/pastoral/resources/views/vendor/form-components/components/inputs/textarea.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/authority/table/index.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pastoral/form/edit.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pastoral/list-component.blade.php",
+		"/home/nuser/code/pastoral/resources/views/admin/authorities/index.blade.php",
+		"/home/nuser/code/pastoral/resources/views/layouts/partials/navigation-links.blade.php",
+		"/home/nuser/code/pastoral/resources/views/navigation-menu.blade.php",
+		"/home/nuser/code/pastoral/resources/views/admin/elements/navbar.blade.php",
 		"/home/nuser/code/pastoral/resources/views/components/elements/crud/sort-by.blade.php",
 		"/home/nuser/code/pastoral/resources/svg/align-center.svg",
-		"/home/nuser/code/pastoral/resources/views/navigation-menu.blade.php",
-		"/home/nuser/code/pastoral/resources/views/layouts/partials/navigation-links.blade.php",
 		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pastoral/form/create.blade.php",
 		"/home/nuser/code/pastoral/resources/views/admin/institutions/index.blade.php",
-		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pastoral/list-component.blade.php",
-		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pastoral/table/index.blade.php",
 		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pastoral/form/fields.blade.php",
-		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pastoral/form/edit.blade.php",
-		"/home/nuser/code/pastoral/resources/views/admin/elements/navbar.blade.php",
 		"/home/nuser/code/pastoral/resources/views/welcome.blade.php",
 		"/home/nuser/code/pastoral/resources/views/partials/navbar/navigation-menu.blade.php",
 		"/home/nuser/code/pastoral/resources/views/enrollments/layout/app.blade.php",
@@ -242,10 +255,7 @@
 		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/index-component.blade.php",
 		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/table/index.blade.php",
 		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/form/fields.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/form/partials/ingresos.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/form/partials/general.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/creditoafavors/form/omit/fields.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/form/create.blade.php"
+		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/form/partials/ingresos.blade.php"
 	],
 	"find":
 	{
@@ -264,6 +274,19 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"authorities",
+			"$class['assit_schedule']=",
+			"$class['description']=",
+			"$class['legalname']=",
+			"$class['name']=",
+			"pastoral",
+			"lg:flex",
+			"mr-2 hidden",
+			"w-6 h-6 mr-1",
+			"md:",
+			"mr-2",
+			"cloc",
+			"th-large",
 			"evenodd",
 			"M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10",
 			"click",
@@ -280,6 +303,19 @@
 		"regex": false,
 		"replace_history":
 		[
+			"pastorals",
+			"$class['name']=",
+			"$class['pastoral_id']=",
+			"$class['pescolar_id']=",
+			"$class['tauthority_id']=",
+			"authority",
+			"md:flex",
+			"mr-0.5 hidden",
+			"w-6 h-6 mr-0.5",
+			"lg:",
+			"mr-2 hidden md:table-cell",
+			"stop",
+			"large",
 			"px-6 py-4 border-b border-gray-200",
 			"name",
 			"legalname",
@@ -309,24 +345,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "resources/views/livewire/admin/institution/pastoral/list-component.blade.php",
+					"file": "resources/views/livewire/admin/institution/authority/list-component.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1165,
+						"buffer_size": 1020,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5,
-								5
+								985,
+								985
 							]
 						],
 						"settings":
@@ -338,24 +374,24 @@
 								{
 									"1":
 									[
-										430,
-										433
+										997,
+										998
 									]
 								},
 								"icon":
 								{
 									"1":
 									[
-										"Packages/BracketHighlighter/icons/tag.png",
-										"region.orangish"
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"region.greenish"
 									]
 								},
 								"open":
 								{
 									"1":
 									[
-										1,
-										4
+										948,
+										949
 									]
 								},
 								"unmatched":
@@ -374,16 +410,16 @@
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
@@ -394,31 +430,150 @@
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 156.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "resources/views/livewire/admin/institution/authority/form/edit.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1493,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1080,
+								1080
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1092,
+										1093
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"region.greenish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1043,
+										1044
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
-								"bh_angle_content"
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content"
 							],
 							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
 							"tab_size": 4,
@@ -428,44 +583,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "resources/views/livewire/admin/institution/pastoral/table/index.blade.php",
+					"buffer": 2,
+					"file": "resources/views/livewire/admin/institution/authority/form/fields.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5034,
+						"buffer_size": 1795,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								65,
-								65
-							],
-							[
-								137,
-								137
-							],
-							[
-								200,
-								200
-							],
-							[
-								265,
-								265
-							],
-							[
-								333,
-								333
-							],
-							[
-								407,
-								407
+								1465,
+								1465
 							]
 						],
 						"settings":
@@ -477,65 +612,15 @@
 								{
 									"1":
 									[
-										79,
-										80
-									],
-									"2":
-									[
-										151,
-										152
-									],
-									"3":
-									[
-										214,
-										215
-									],
-									"4":
-									[
-										279,
-										280
-									],
-									"5":
-									[
-										347,
-										348
-									],
-									"6":
-									[
-										421,
-										422
+										1466,
+										1467
 									]
 								},
 								"icon":
 								{
 									"1":
 									[
-										"Packages/BracketHighlighter/icons/double_quote.png",
-										"region.greenish"
-									],
-									"2":
-									[
-										"Packages/BracketHighlighter/icons/double_quote.png",
-										"region.greenish"
-									],
-									"3":
-									[
-										"Packages/BracketHighlighter/icons/double_quote.png",
-										"region.greenish"
-									],
-									"4":
-									[
-										"Packages/BracketHighlighter/icons/double_quote.png",
-										"region.greenish"
-									],
-									"5":
-									[
-										"Packages/BracketHighlighter/icons/double_quote.png",
-										"region.greenish"
-									],
-									"6":
-									[
-										"Packages/BracketHighlighter/icons/double_quote.png",
+										"Packages/BracketHighlighter/icons/single_quote.png",
 										"region.greenish"
 									]
 								},
@@ -543,33 +628,8 @@
 								{
 									"1":
 									[
-										29,
-										30
-									],
-									"2":
-									[
-										101,
-										102
-									],
-									"3":
-									[
-										178,
-										179
-									],
-									"4":
-									[
-										243,
-										244
-									],
-									"5":
-									[
-										311,
-										312
-									],
-									"6":
-									[
-										371,
-										372
+										1454,
+										1455
 									]
 								},
 								"unmatched":
@@ -578,61 +638,61 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
-								"bh_angle_content"
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content"
 							],
 							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
 							"tab_size": 4,
@@ -646,124 +706,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
+					"file": "resources/views/vendor/form-components/components/inputs/select.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3479,
+						"buffer_size": 1245,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2254,
-								2254
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content"
-							],
-							"default_dir": "/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pastoral/table",
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 78.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "resources/views/livewire/preincription/enrollment/steps/estudiants.blade.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2624,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								902,
-								902
+								0,
+								0
 							]
 						],
 						"settings":
@@ -784,8 +740,8 @@
 								{
 									"1":
 									[
-										1230,
-										1233
+										1,
+										4
 									]
 								}
 							},
@@ -801,16 +757,16 @@
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
@@ -821,31 +777,31 @@
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content"
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
 							],
 							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
 							"tab_size": 4,
@@ -856,6 +812,115 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "resources/views/enrollments/form/partials/estudiants.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6883,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1177,
+								1177
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+									"1":
+									[
+										992,
+										1000
+									]
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 247.0,
+						"translation.y": 273.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -946,7 +1011,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 250.0,
+	"side_bar_width": 294.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

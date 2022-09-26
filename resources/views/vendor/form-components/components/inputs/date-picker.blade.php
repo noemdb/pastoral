@@ -18,7 +18,7 @@
 >
     @if ($toggleIcon !== false)
         <span x-on:click="fp.open()"
-              class="leading-addon cursor-pointer"
+              class="leading-addon cursor-pointer h-2 w-2"
               role="button"
               title="{{ __('Select a date') }}"
         >
@@ -54,7 +54,7 @@
             <button x-show.transition.opacity.150ms="Boolean(value)"
                     x-on:click="value = null; fp.setDate(value)"
                     x-cloak
-                    class="form-input-clear"
+                    class="form-input-clear h-2 w-2"
                     type="button"
             >
                 <span class="sr-only">{{ __('Clear selected') }}</span>
