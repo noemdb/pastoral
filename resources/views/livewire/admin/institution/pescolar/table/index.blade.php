@@ -1,11 +1,11 @@
 {{-- 'pastoral_id','name','code','finicial','ffinal','description','observations','color','header','body','footer', --}}
 @php
     $class['iteration']="text-left px-4";
-    $class['pastoral_id']="hidden lg:table-cell text-left px-4";
-    $class['name']="hidden md:table-cell text-left px-4";
+    $class['pastoral_id']="text-left px-4";
+    $class['name']="text-left px-4";
     $class['finicial']="hidden md:table-cell text-left px-4";
-    $class['ffinal']="text-left px-4";
-    $class['description']="text-left px-4";
+    $class['ffinal']="hidden md:table-cell text-left px-4";
+    $class['description']="hidden lg:table-cell text-left px-4";
     $class['action']="text-left px-4";
     $table_id = 'table_id';
 @endphp

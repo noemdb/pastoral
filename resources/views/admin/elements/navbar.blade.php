@@ -19,11 +19,11 @@
                 <x-icon-table class="w-6 h-6 mr-0.5" />
                 <div class="mr-0.5 hidden md:flex">{{ __('Planes') }} </div>
             </x-jet-nav-link>
-            <x-jet-nav-link class="shadow py-2 rounded dark:border-gray-400" href="{{ route('institutions.index') }}" :active="request()->routeIs('*lapses*')">
+            <x-jet-nav-link class="shadow py-2 rounded dark:border-gray-400" href="{{ route('lapses.index') }}" :active="request()->routeIs('*lapses*')">
                 <x-icon-clock class="w-6 h-6 mr-0.5" />
                 <div class="mr-0.5 hidden md:flex">{{ __('Lapsos') }} </div>
             </x-jet-nav-link>
-            <x-jet-nav-link class="shadow py-2 rounded dark:border-gray-400" href="{{ route('institutions.index') }}" :active="request()->routeIs('*levels*')">
+            <x-jet-nav-link class="shadow py-2 rounded dark:border-gray-400" href="{{ route('levels.index') }}" :active="request()->routeIs('*levels*')">
                 <x-icon-chart-bar-v class="w-6 h-6 mr-0.5" />
                 <div class="mr-0.5 hidden md:flex">{{ __('Niveles') }} </div>
             </x-jet-nav-link>

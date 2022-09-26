@@ -1,10 +1,10 @@
-{{-- 'pescolar_id','code','name','order','capacity','description','observations','status_build_promotion','title','profile','status','color','header','body','footer', --}}
+{{-- 'curriculum_id','code','code_sm','name','description','observations','finicial','ffinal','status','color','header','footer','body' --}}
 @php
-    $class['iteration']="text-left px-4"; // hidden md:table-cell // hidden lg:table-cell 
-    $class['pescolar_id']="text-left px-4";
-    $class['code']="hidden md:table-cell text-left px-4";
+    $class['iteration']="text-left px-4";
+    $class['curriculum_id']="text-left px-4";
     $class['name']="text-left px-4";
-    $class['capacity']="hidden md:table-cell text-left px-4";
+    $class['finicial']="hidden md:table-cell text-left px-4";
+    $class['ffinal']="hidden md:table-cell text-left px-4";
     $class['description']="hidden lg:table-cell text-left px-4";
     $class['action']="text-left px-4";
     $table_id = 'table_id';
@@ -15,7 +15,7 @@
 
     <div class="mb-4 flex justify-between">
         <div class="w-3/4">
-            @php $name = 'search'; $model = 'curriculum.'.$name; @endphp
+            @php $name = 'search'; $model = 'lapse.'.$name; @endphp
             <div class="flex justify-start">
                 <x-jet-label for="{{$name}}" value="Buscar:" />
                 <span class="text-gray-400 mx-2 font-medium">nombre, descripción</span>                
@@ -35,43 +35,43 @@
                 <th class="{{ $class['iteration'] ?? ''}}">
                     <div class="flex  justify-between">N</div>
                 </th>
-                <th class="{{ $class['pescolar_id'] ?? ''}}">
+                <th class="{{ $class['curriculum_id'] ?? ''}}">
                     <div class="flex justify-between">
-                        <div> {{$list_comment['pescolar_id'] ?? ''}} </div>
-                        @if($curricula->isNotEmpty())
-                            <x-elements.crud.sort-by field="pescolar_id" :sortBy="$sortBy" :sortDirection="$sortDirection" />
-                        @endif
-                    </div>
-                </th>
-                <th class="{{ $class['code'] ?? ''}}">
-                    <div class="flex justify-between">
-                        <div> {{$list_comment['code'] ?? ''}} </div>
-                        @if($curricula->isNotEmpty())
-                            <x-elements.crud.sort-by field="code" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        <div> {{$list_comment['curriculum_id'] ?? ''}} </div>
+                        @if($lapses->isNotEmpty())
+                            <x-elements.crud.sort-by field="curriculum_id" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                         @endif
                     </div>
                 </th>
                 <th class="{{ $class['name'] ?? ''}}">
                     <div class="flex  justify-between">
                         <div> {{$list_comment['name'] ?? ''}} </div>
-                        @if($curricula->isNotEmpty())
+                        @if($lapses->isNotEmpty())
                             <x-elements.crud.sort-by field="name" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                         @endif
                     </div>
                 </th>
                 
-                <th class="{{ $class['capacity'] ?? ''}}">
+                <th class="{{ $class['finicial'] ?? ''}}">
                     <div class="flex justify-between">
-                        <div> {{$list_comment['capacity'] ?? ''}} </div>
-                        @if($curricula->isNotEmpty())
-                            <x-elements.crud.sort-by field="capacity" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        <div> {{$list_comment['finicial'] ?? ''}} </div>
+                        @if($lapses->isNotEmpty())
+                            <x-elements.crud.sort-by field="finicial" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        @endif
+                    </div>
+                </th>
+                <th class="{{ $class['ffinal'] ?? ''}}">
+                    <div class="flex justify-between">
+                        <div> {{$list_comment['ffinal'] ?? ''}} </div>
+                        @if($lapses->isNotEmpty())
+                            <x-elements.crud.sort-by field="ffinal" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                         @endif
                     </div>
                 </th>
                 <th class="{{ $class['description'] ?? ''}}">
                     <div class="flex justify-between">
                         <div> {{$list_comment['description'] ?? ''}} </div>
-                        @if($curricula->isNotEmpty())
+                        @if($lapses->isNotEmpty())
                             <x-elements.crud.sort-by field="description" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                         @endif
                     </div>
@@ -82,26 +82,26 @@
         </thead>
 
         <tbody id="tdatos">
-        @forelse($curricula as $curriculum)
+        @forelse($lapses as $lapse)
 
-            {{-- 'pescolar_id','name','code','capacity','ffinal','description','observations','color','header','body','footer', --}}
+            {{-- 'curriculum_id','name','code','finicial','ffinal','description','observations','color','header','body','footer', --}}
 
-            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($curriculum->id == $curriculum_id) ? 'bg-gray-200' : null}}">
+            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($lapse->id == $lapse_id) ? 'bg-gray-200' : null}}">
                 <td class="{{ $class['iteration'] ?? ''}}">{{$loop->iteration}}</td>
-                <td class="{{ $class['pescolar_id'] ?? ''}}">{{$curriculum->pescolar->name ?? ''}}</td>
-                <td class="{{ $class['code'] ?? ''}}">{{$curriculum->code ?? ''}}</td>
-                <td class="{{ $class['name'] ?? ''}}">{{$curriculum->name ?? ''}}</td>
-                <td class="{{ $class['capacity'] ?? ''}}">{{$curriculum->capacity ?? ''}}</td>
-                <td class="{{ $class['description'] ?? ''}}">{{$curriculum->description ?? ''}}</td>
+                <td class="{{ $class['curriculum_id'] ?? ''}}">{{$lapse->pastoral->name ?? ''}}</td>
+                <td class="{{ $class['name'] ?? ''}}">{{$lapse->name ?? ''}}</td>
+                <td class="{{ $class['finicial'] ?? ''}}">{{$lapse->finicial ?? ''}}</td>
+                <td class="{{ $class['ffinal'] ?? ''}}">{{$lapse->ffinal ?? ''}}</td>
+                <td class="{{ $class['description'] ?? ''}}">{{$lapse->description ?? ''}}</td>
 
                 <td class="{{ $class['action'] ?? '' }}">
 
                     <div class="flex items-center justify-center justify-between mb-3 shadow">
                         <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
-                            <x-elements.form.button-edit wire:key="curriculum-edit-{{$curriculum->id}}" wire:click="edit({{ $curriculum->id }})" >
+                            <x-elements.form.button-edit wire:key="lapse-edit-{{$lapse->id}}" wire:click="edit({{ $lapse->id }})" >
                                 <x-icon-pen class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-edit>
-                            <x-elements.form.button-del wire:key="curriculum-delete-{{$curriculum->id}}" wire:click="delete({{ $curriculum->id }})" >
+                            <x-elements.form.button-del wire:key="lapse-delete-{{$lapse->id}}" wire:click="delete({{ $lapse->id }})" >
                                 <x-icon-trash-can class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-del>
                         </div>
@@ -119,6 +119,6 @@
 
     </table>
 
-    {{ $curricula->links() }}
+    {{ $lapses->links() }}
 
 </div>

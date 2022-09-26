@@ -41,6 +41,11 @@ class Curriculum extends Model
     {
         return "{$this->code} {$this->name}";
     }
+
+    public static function curricula_list() 
+	{
+		return Curriculum::pluck('name','id');
+	}
 }
 
 //'pescolar_id','code','name','order','capacity','description','observations','status_build_promotion','title','profile','status','color','header','body','footer',

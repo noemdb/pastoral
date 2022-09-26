@@ -2,7 +2,7 @@
     @include('form-components::partials.leading-addons')
 
     <select name="{{ $name }}"
-        {!! $attributes->merge(['class' => 'bg-white border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm dark:text-gray-100 dark:bg-gray-800 dark:border-gray-700']) !!}
+        {!! $attributes->merge(['class' => 'my-1 bg-white border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm dark:text-gray-100 dark:bg-gray-800 dark:border-gray-700']) !!}
             @if ($id) id="{{ $id }}" @endif
             @if ($multiple) multiple @endif
 

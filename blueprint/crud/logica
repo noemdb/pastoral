@@ -54,3 +54,98 @@ Crear vistas
 
 -.copiar carpetas
 -.actualizar los route en el navbar
+
+---------------------------------lapses---------------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Institution\LapseController'
+
+define ruta
+Route::resource('lapses', LapseController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Institution/Lapse/ListComponent'
+
+crear los traits
+Livewiere
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Institution/Lapse/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Institution/Lapse/Traits/LapseRules.php'
+
+Model
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Pescolar/Traits/Lapse'
+touch '/home/nuser/code/pastoral/app/Models/app/Pescolar/Traits/Lapse/LapseRelations.php'
+
+copia codigo en backend
+-LapseRelations
+-LapseRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+
+---------------------------------levels---------------------------------------Level
+
+crear controladores
+php artisan make:controller 'Admin\Institution\LevelController'
+
+define ruta
+Route::resource('levels', LevelController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Institution/Level/ListComponent'
+
+crear los traits
+Livewiere
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Institution/Level/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Institution/Level/Traits/LevelRules.php'
+
+Model
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Pescolar/Traits/Level'
+touch '/home/nuser/code/pastoral/app/Models/app/Pescolar/Traits/Level/LevelRelations.php'
+
+copia codigo en backend
+-LevelRelations
+-LevelRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+
+---------------------------------sections---------------------------------------Section
+
+crear controladores
+php artisan make:controller 'Admin\Institution\SectionController'
+
+define ruta
+Route::resource('sections', SectionController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Institution/Section/ListComponent'
+
+crear los traits
+Livewiere
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Institution/Section/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Institution/Section/Traits/SectionRules.php'
+
+Model
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Pescolar/Traits/Section'
+touch '/home/nuser/code/pastoral/app/Models/app/Pescolar/Traits/Section/SectionRelations.php'
+
+copia codigo en backend
+-SectionRelations
+-SectionRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar

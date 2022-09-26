@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Institution\Curriculum;
+namespace App\Http\Livewire\Admin\Institution\Lapse;
 
 use App\Http\Livewire\traits\WithSortingTrait;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithPagination;
-use App\Http\Livewire\Admin\Institution\Curriculum\Traits\CurriculumRules;
+use App\Http\Livewire\Admin\Institution\Lapse\Traits\LapseRules;
 use App\Models\app\Pescolar;
+use App\Models\app\Pescolar\Lapse;
 use App\Models\app\Pescolar\Curriculum;
 
 class ListComponent extends Component
@@ -15,11 +16,11 @@ class ListComponent extends Component
     use WithPagination;
     use LivewireAlert;
     use WithSortingTrait;
-    use CurriculumRules;
+    use LapseRules;
 
-    public Curriculum $curriculum;
+    public Lapse $lapse;
 
-    public $curriculum_id;
+    public $lapse_id;
 
     public $search = ''; //'name','description'
 
@@ -29,7 +30,7 @@ class ListComponent extends Component
 
     public $status_last,$status_first,$saveInto;
 
-    public $pescolars_list;
+    public $curricula_list;
 
     protected $listeners = [ 'remove' ];
 
@@ -37,44 +38,44 @@ class ListComponent extends Component
     {
         $this->modeCreate = false;
         $this->modeEdit = false;
-        $this->list_comment = Curriculum::COLUMN_COMMENTS; 
-        $this->pescolars_list = Pescolar::pescolars_list()->toArray(); 
+        $this->list_comment = Lapse::COLUMN_COMMENTS; 
+        $this->curricula_list = Curriculum::curricula_list()->toArray(); 
     }
 
     public function render()
     {
         $search = $this->search; 
 
-        $curricula = Curriculum::select('curricula.*');  
+        $lapses = Lapse::select('lapses.*');  
 
-        $curricula = (!empty($search)) ? $curricula->orwhere(
+        $lapses = (!empty($search)) ? $lapses->orwhere(
             function($query) use ($search) {
                 $query->orWhere('description','like', '%'.$search.'%')
                     ->orWhere('name','like','%'.$search.'%');
             }) 
-            : $curricula ; //dd($curricula);
+            : $lapses ; //dd($lapses);
 
-        $curricula = ($this->sortBy && $this->sortDirection) ? $curricula->orderBy($this->sortBy,$this->sortDirection) : $curricula;
+        $lapses = ($this->sortBy && $this->sortDirection) ? $lapses->orderBy($this->sortBy,$this->sortDirection) : $lapses;
         
-        $curricula = $curricula->paginate($this->paginate);
+        $lapses = $lapses->paginate($this->paginate);
 
-        return view('livewire.admin.institution.curriculum.list-component', [
-            'curricula' => $curricula,
+        return view('livewire.admin.institution.lapse.list-component', [
+            'lapses' => $lapses,
         ]);
     }
 
     public function create()
     {
-        $this->curriculum = new Curriculum;
-        $this->curriculum_id = null;
+        $this->lapse = new Lapse;
+        $this->lapse_id = null;
         $this->modeCreate = true;
         $this->modeEdit = false;
     }
 
     public function edit($id)
     {
-        $this->curriculum = Curriculum::find($id);
-        $this->curriculum_id = ($this->curriculum) ? $this->curriculum->id:null;
+        $this->lapse = Lapse::find($id);
+        $this->lapse_id = ($this->lapse) ? $this->lapse->id:null;
         $this->modeEdit = true;
         $this->modeCreate = false;
     }
@@ -82,19 +83,19 @@ class ListComponent extends Component
     public function save()
     {
         $this->validate();
-        $this->curriculum->save();
+        $this->lapse->save();
 
         $this->alert('success', 'Los datos fueron almacenados satisfactoriamente!');
 
         $this->modeCreate = false;
         $this->modeEdit = false;
-        $this->curriculum = new Curriculum;
-        $this->reset(['curriculum_id']);
+        $this->lapse = new Lapse;
+        $this->reset(['lapse_id']);
     }
 
     public function closeEditMode()
     {
-        $this->curriculum_id = false;
+        $this->lapse_id = false;
         $this->modeEdit = false;
     }
 
@@ -105,9 +106,9 @@ class ListComponent extends Component
 
     public function delete ($id)
     {
-        $curriculum = Curriculum::find($id);
-        if ($curriculum) {
-            $this->curriculum = $curriculum;
+        $lapse = Lapse::find($id);
+        if ($lapse) {
+            $this->lapse = $lapse;
             $this->alert('warning', 'Estas seguro de realizar esta acción?', [
                 'showConfirmButton' => true,
                 'showCancelButton' => true,
@@ -120,7 +121,7 @@ class ListComponent extends Component
 
     public function remove ()
     {
-        $this->curriculum->delete();
+        $this->lapse->delete();
         $this->alert('success', 'Los datos fueron eliminados satisfactoriamente!');
     }
 
