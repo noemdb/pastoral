@@ -84,11 +84,20 @@
         <tbody id="tdatos">
         @forelse($lapses as $lapse)
 
-            {{-- 'curriculum_id','name','code','finicial','ffinal','description','observations','color','header','body','footer', --}}
+            @php 
+                $curriculum = $lapse->curriculum;
+                $pescolar = $curriculum->pescolar;
+                $pastoral = $curriculum->pastoral;
+             @endphp
 
             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($lapse->id == $lapse_id) ? 'bg-gray-200' : null}}">
                 <td class="{{ $class['iteration'] ?? ''}}">{{$loop->iteration}}</td>
-                <td class="{{ $class['curriculum_id'] ?? ''}}">{{$lapse->pastoral->name ?? ''}}</td>
+                <td class="{{ $class['curriculum_id'] ?? ''}}">
+                        {{$curriculum->name ?? ''}}
+                        <div>{{$curriculum->name ?? ''}}</div>
+                        <div class="flex justify-end text-gray-400 text-sm">{{$pescolar->name ?? ''}}</div>
+                        <div class="flex justify-end text-gray-400 text-sm">{{$pastoral->name ?? ''}}</div>
+                </td>
                 <td class="{{ $class['name'] ?? ''}}">{{$lapse->name ?? ''}}</td>
                 <td class="{{ $class['finicial'] ?? ''}}">{{$lapse->finicial ?? ''}}</td>
                 <td class="{{ $class['ffinal'] ?? ''}}">{{$lapse->ffinal ?? ''}}</td>

@@ -5,8 +5,6 @@ namespace App\Models\app\Pescolar;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-use Illuminate\Support\Carbon;
-
 use App\Models\app\Pescolar\Traits\Lapse\LapseRelations;
 
 class Lapse extends Model

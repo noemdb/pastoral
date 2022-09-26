@@ -6,6 +6,9 @@ use App\Models\app\Pescolar\Traits\Curriculum\CurriculumRelations;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\app\Pastoral;
+use App\Models\app\Pescolar;
+
 class Curriculum extends Model
 {
     use HasFactory;
@@ -40,6 +43,16 @@ class Curriculum extends Model
     public function getFullNameAttribute()
     {
         return "{$this->code} {$this->name}";
+    }
+
+    public function getPastoralAttribute()
+    {
+        $pastoral = Pastoral::select('pastorals.*')
+        	->join('pescolars', 'pastorals.id', '=', 'pescolars.pastoral_id')
+        	->join('curricula', 'pescolars.id', '=', 'curricula.pescolar_id')
+        	->where('curricula.id',$this->id)
+        	->first();
+        return $pastora;
     }
 
     public static function curricula_list() 

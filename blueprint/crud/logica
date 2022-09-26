@@ -149,3 +149,76 @@ Crear vistas
 
 -.copiar carpetas
 -.actualizar los route en el navbar
+
+
+---------------------------------courses---------------------------------------Course
+
+crear controladores
+php artisan make:controller 'Admin\Institution\CourseController'
+
+define ruta
+Route::resource('courses', CourseController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Institution/Course/ListComponent'
+
+crear los traits
+Livewiere
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Institution/Course/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Institution/Course/Traits/CourseRules.php'
+
+Model
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Pescolar/Traits/Course'
+touch '/home/nuser/code/pastoral/app/Models/app/Pescolar/Traits/Course/CourseRelations.php'
+
+copia codigo en backend
+-CourseRelations
+-CourseRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+---------------------------------pensums---------------------------------------Pensum
+
+crear controladores
+php artisan make:controller 'Admin\Institution\PensumController'
+
+define ruta
+Route::resource('pensums', PensumController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Institution/Pensum/ListComponent'
+
+crear los traits
+Livewiere
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Institution/Pensum/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Institution/Pensum/Traits/PensumRules.php'
+
+Model
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Pescolar/Traits/Pensum'
+touch '/home/nuser/code/pastoral/app/Models/app/Pescolar/Traits/Pensum/PensumRelations.php'
+
+copia codigo en backend
+-PensumRelations
+-PensumRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+
+level_id
+course_id
+order
+hour_t_week
+hour_p_week
+unid_credit
+approved_credit_unir
+enable_academic_index

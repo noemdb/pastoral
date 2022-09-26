@@ -38,4 +38,9 @@ class Level extends Model
         return "{$this->code} {$this->name}";
     }
 
+    public static function levels_list() 
+    {
+        return Level::pluck('name','id');
+    }
+
 }

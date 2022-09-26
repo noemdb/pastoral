@@ -9,7 +9,7 @@ use Livewire\WithPagination;
 use App\Http\Livewire\Admin\Institution\Section\Traits\SectionRules; //app/Http/Livewire/Admin/Institution/Section/Traits/SectionRules.php
 use App\Models\app\Pescolar;
 use App\Models\app\Pescolar\Section;
-use App\Models\app\Pescolar\Curriculum;
+use App\Models\app\Pescolar\Level;
 
 class ListComponent extends Component
 {
@@ -18,7 +18,7 @@ class ListComponent extends Component
     use WithSortingTrait;
     use SectionRules;
 
-    public Section $level;
+    public Section $section;
 
     public $section_id;
 
@@ -39,34 +39,34 @@ class ListComponent extends Component
         $this->modeCreate = false;
         $this->modeEdit = false;
         $this->list_comment = Section::COLUMN_COMMENTS; 
-        $this->curricula_list = Curriculum::curricula_list()->toArray(); 
+        $this->levels_list = Level::levels_list()->toArray(); 
     }
 
     public function render()
     {
         $search = $this->search; 
 
-        $levels = Section::select('levels.*');  
+        $sections = Section::select('sections.*');  
 
-        $levels = (!empty($search)) ? $levels->orwhere(
+        $sections = (!empty($search)) ? $sections->orwhere(
             function($query) use ($search) {
                 $query->orWhere('description','like', '%'.$search.'%')
                     ->orWhere('name','like','%'.$search.'%');
             }) 
-            : $levels ; //dd($levels);
+            : $sections ; //dd($sections);
 
-        $levels = ($this->sortBy && $this->sortDirection) ? $levels->orderBy($this->sortBy,$this->sortDirection) : $levels;
+        $sections = ($this->sortBy && $this->sortDirection) ? $sections->orderBy($this->sortBy,$this->sortDirection) : $sections;
         
-        $levels = $levels->paginate($this->paginate);
+        $sections = $sections->paginate($this->paginate);
 
-        return view('livewire.admin.institution.level.list-component', [
-            'levels' => $levels,
+        return view('livewire.admin.institution.section.list-component', [
+            'sections' => $sections,
         ]);
     }
 
     public function create()
     {
-        $this->level = new Section;
+        $this->section = new Section;
         $this->section_id = null;
         $this->modeCreate = true;
         $this->modeEdit = false;
@@ -74,8 +74,8 @@ class ListComponent extends Component
 
     public function edit($id)
     {
-        $this->level = Section::find($id);
-        $this->section_id = ($this->level) ? $this->level->id:null;
+        $this->section = Section::find($id);
+        $this->section_id = ($this->section) ? $this->section->id:null;
         $this->modeEdit = true;
         $this->modeCreate = false;
     }
@@ -83,13 +83,13 @@ class ListComponent extends Component
     public function save()
     {
         $this->validate();
-        $this->level->save();
+        $this->section->save();
 
         $this->alert('success', 'Los datos fueron almacenados satisfactoriamente!');
 
         $this->modeCreate = false;
         $this->modeEdit = false;
-        $this->level = new Section;
+        $this->section = new Section;
         $this->reset(['section_id']);
     }
 
@@ -106,9 +106,9 @@ class ListComponent extends Component
 
     public function delete ($id)
     {
-        $level = Section::find($id);
-        if ($level) {
-            $this->level = $level;
+        $section = Section::find($id);
+        if ($section) {
+            $this->section = $section;
             $this->alert('warning', 'Estas seguro de realizar esta acción?', [
                 'showConfirmButton' => true,
                 'showCancelButton' => true,
@@ -121,7 +121,7 @@ class ListComponent extends Component
 
     public function remove ()
     {
-        $this->level->delete();
+        $this->section->delete();
         $this->alert('success', 'Los datos fueron eliminados satisfactoriamente!');
     }
 

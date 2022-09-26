@@ -27,15 +27,15 @@
                 <x-icon-chart-bar-v class="w-6 h-6 mr-0.5" />
                 <div class="mr-0.5 hidden md:flex">{{ __('Niveles') }} </div>
             </x-jet-nav-link>
-            <x-jet-nav-link class="shadow py-2 rounded dark:border-gray-400" href="{{ route('institutions.index') }}" :active="request()->routeIs('*sections*')">
+            <x-jet-nav-link class="shadow py-2 rounded dark:border-gray-400" href="{{ route('sections.index') }}" :active="request()->routeIs('*sections*')">
                 <x-icon-rectangle-list class="w-6 h-6 mr-0.5" />
                 <div class="mr-0.5 hidden md:flex">{{ __('Secciones') }} </div>
             </x-jet-nav-link>
-            <x-jet-nav-link class="shadow py-2 rounded dark:border-gray-400" href="{{ route('institutions.index') }}" :active="request()->routeIs('*courses*')">
+            <x-jet-nav-link class="shadow py-2 rounded dark:border-gray-400" href="{{ route('courses.index') }}" :active="request()->routeIs('*courses*')">
                 <x-icon-window-restore class="w-6 h-6 mr-0.5" />
                 <div class="mr-0.5 hidden md:flex">{{ __('Asignaturas') }} </div>
             </x-jet-nav-link>
-            <x-jet-nav-link class="shadow py-2 rounded dark:border-gray-400" title="Programas Educativos" href="{{ route('institutions.index') }}" :active="request()->routeIs('*pensums*')">
+            <x-jet-nav-link class="shadow py-2 rounded dark:border-gray-400" title="Programas Educativos" href="{{ route('pensums.index') }}" :active="request()->routeIs('*pensums*')">
                 <x-icon-archive class="w-6 h-6 mr-0.5" />
                 <div class="mr-0.5 hidden md:flex">{{ __('Programas') }} </div>
             </x-jet-nav-link>

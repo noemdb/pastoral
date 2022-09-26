@@ -46,6 +46,13 @@ class Pescolar extends Model
 	{
 		return Pescolar::pluck('name','id');
 	}
+
+    public function getFullNameAttribute()
+    {
+    	$pastoral = $this->pastoral;
+    	$fullname = ($pastoral) ? $pastoral->code . ' - '. $this->name : null;
+        return $fullname;
+    }
 }
 
 /*

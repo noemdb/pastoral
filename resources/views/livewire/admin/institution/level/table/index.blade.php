@@ -69,7 +69,7 @@
 
             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($level->id == $level_id) ? 'bg-gray-200' : null}}">
                 <td class="{{ $class['iteration'] ?? ''}}">{{$loop->iteration}}</td>
-                <td class="{{ $class['curriculum_id'] ?? ''}}">{{$level->pastoral->name ?? ''}}</td>
+                <td class="{{ $class['curriculum_id'] ?? ''}}">{{$level->curriculum->name ?? ''}}</td>
                 <td class="{{ $class['name'] ?? ''}}">{{$level->name ?? ''}}</td>
                 <td class="{{ $class['description'] ?? ''}}">{{$level->description ?? ''}}</td>
 

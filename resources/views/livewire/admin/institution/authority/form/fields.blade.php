@@ -4,7 +4,7 @@
     <div class="mb-4">
         @php $name = 'pastoral_id'; $model = 'authority.'.$name; $key = Str::random(10); @endphp
         <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
-        <x-select wire:key="{{$key}}" wire:model.lazy="{{$model}}" :options="$pastorals_list" class=" w-full " />
+        <x-select wire:key="{{$key}}" wire:model.defer="{{$model}}" :options="$pastorals_list" class=" w-full " />
         @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
     </div>    
 </div>

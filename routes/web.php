@@ -10,6 +10,8 @@ use App\Http\Controllers\Admin\Institution\CurriculumController;
 use App\Http\Controllers\Admin\Institution\LapseController;
 use App\Http\Controllers\Admin\Institution\LevelController;
 use App\Http\Controllers\Admin\Institution\SectionController;
+use App\Http\Controllers\Admin\Institution\CourseController;
+use App\Http\Controllers\Admin\Institution\PensumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +46,8 @@ Route::middleware( [ 'auth:sanctum',config('jetstream.auth_session'),'verified']
             Route::resource('lapses', LapseController::class)->only([ 'index']);
             Route::resource('levels', LevelController::class)->only([ 'index']);
             Route::resource('sections', SectionController::class)->only([ 'index']);
+            Route::resource('courses', CourseController::class)->only([ 'index']);
+            Route::resource('pensums', PensumController::class)->only([ 'index']);
         });
     });
 
