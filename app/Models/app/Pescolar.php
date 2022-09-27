@@ -6,6 +6,7 @@ use App\Models\app\Pescolar\Traits\Pescolar\PescolarRelations;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class Pescolar extends Model
 {
@@ -49,10 +50,18 @@ class Pescolar extends Model
 
     public function getFullNameAttribute()
     {
-    	$pastoral = $this->pastoral;
-    	$fullname = ($pastoral) ? $pastoral->code . ' - '. $this->name : null;
-        return $fullname;
-    }
+		$pastoral = $this->pastoral;
+		$fullname = ($pastoral) ? $pastoral->code . ' - '. $this->name : null;
+		return $fullname;
+	}
+
+	public static function pescolar_list_fullname() 
+	{
+		$pescolar_list = Pescolar::select('pescolars.id',DB::raw('pescolars.name || " | INS. " || pastorals.name as fullnamename' ))
+			->join('pastorals', 'pastorals.id', '=', 'pescolars.pastoral_id')
+			->pluck('fullnamename','id');
+		return $pescolar_list;
+	}
 }
 
 /*

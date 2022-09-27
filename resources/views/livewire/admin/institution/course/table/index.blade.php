@@ -65,11 +65,21 @@
         <tbody id="tdatos">
         @forelse($courses as $course)
 
+            @php 
+                $curriculum = $course->curriculum;
+                $pescolar = $curriculum->pescolar;
+                $pastoral = $curriculum->pastoral;
+            @endphp
+
             {{-- 'curriculum_id','name','code','description','observations','color','header','body','footer', --}}
 
             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($course->id == $course_id) ? 'bg-gray-200' : null}}">
                 <td class="{{ $class['iteration'] ?? ''}}">{{$loop->iteration}}</td>
-                <td class="{{ $class['curriculum_id'] ?? ''}}">{{$course->curriculum->name ?? ''}}</td>
+                <td class="{{ $class['curriculum_id'] ?? ''}}">
+                    <div>{{$curriculum->name ?? ''}}</div>
+                    <div class="flex justify-end text-gray-400 text-sm">{{$pescolar->name ?? ''}}</div>
+                    <div class="flex justify-end text-gray-400 text-sm">{{$pastoral->name ?? ''}}</div>
+                </td>
                 <td class="{{ $class['name'] ?? ''}}">{{$course->name ?? ''}}</td>
                 <td class="{{ $class['description'] ?? ''}}">{{$course->description ?? ''}}</td>
 

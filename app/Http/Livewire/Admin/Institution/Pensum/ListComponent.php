@@ -42,7 +42,7 @@ class ListComponent extends Component
         $this->modeCreate = false;
         $this->modeEdit = false;
         $this->list_comment = Pensum::COLUMN_COMMENTS; 
-        $this->levels_list = Level::levels_list()->toArray(); 
+        $this->levels_list = Level::levels_list_fullname()->toArray(); 
         $this->courses_list =  Array(); 
         $this->pensums_list = Pensum::pensums_list()->toArray(); 
     }

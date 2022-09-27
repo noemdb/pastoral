@@ -11,7 +11,7 @@ trait CurriculumRules
     protected $rules = [
         'curriculum.pescolar_id' => 'required|integer',
         'curriculum.name' => 'required|string',
-        'curriculum.code' => 'required|string|min:2|max:5',
+        'curriculum.code' => 'required|string|min:2|max:10',
         'curriculum.order' => 'required|integer',
         'curriculum.capacity' => 'required|integer',
         'curriculum.description' => 'required|string',

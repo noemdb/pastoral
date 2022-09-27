@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use App\Models\app\Pastoral;
 use App\Models\app\Pescolar;
+use Illuminate\Support\Facades\DB;
 
 class Curriculum extends Model
 {
@@ -23,7 +24,7 @@ class Curriculum extends Model
 	protected $dates = ['created_at','updated_at'];
 
     const COLUMN_COMMENTS = [
-		'pescolar_id' => 'P.Educativo',
+		'pescolar_id' => 'Período Educativo',
 		'code' => 'Código',
 		'name' => 'Nombres',
 		'order' => 'Orden',
@@ -48,12 +49,21 @@ class Curriculum extends Model
     public function getPastoralAttribute()
     {
         $pastoral = Pastoral::select('pastorals.*')
-        	->join('pescolars', 'pastorals.id', '=', 'pescolars.pastoral_id')
-        	->join('curricula', 'pescolars.id', '=', 'curricula.pescolar_id')
-        	->where('curricula.id',$this->id)
-        	->first();
-        return $pastora;
-    }
+			->join('pescolars', 'pastorals.id', '=', 'pescolars.pastoral_id')
+			->join('curricula', 'pescolars.id', '=', 'curricula.pescolar_id')
+			->where('curricula.id',$this->id)
+			->first();
+        return $pastoral;
+	}
+
+	public static function curricula_list_fullname() 
+	{
+		$curricula_list = Curriculum::select('curricula.id',DB::raw('curricula.name || " | PE. "  || pescolars.name || " | INS. " || pastorals.name as fullnamename' ))
+			->join('pescolars', 'pescolars.id', '=', 'curricula.pescolar_id')
+			->join('pastorals', 'pastorals.id', '=', 'pescolars.pastoral_id')
+			->pluck('fullnamename','id'); //dd($curricula_list_fullname);
+		return $curricula_list;
+	}
 
     public static function curricula_list() 
 	{

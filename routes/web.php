@@ -13,6 +13,8 @@ use App\Http\Controllers\Admin\Institution\SectionController;
 use App\Http\Controllers\Admin\Institution\CourseController;
 use App\Http\Controllers\Admin\Institution\PensumController;
 
+use App\Http\Controllers\Admin\Competitor\EstudiantController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,6 +50,10 @@ Route::middleware( [ 'auth:sanctum',config('jetstream.auth_session'),'verified']
             Route::resource('sections', SectionController::class)->only([ 'index']);
             Route::resource('courses', CourseController::class)->only([ 'index']);
             Route::resource('pensums', PensumController::class)->only([ 'index']);
+        });
+
+        Route::prefix('competitors')->group(function () {
+            Route::resource('estudiants', EstudiantController::class)->only([ 'index']);
         });
     });
 

@@ -14,13 +14,13 @@
 		<div class="mr-0.5 hidden md:flex">{{ __('Instituciones') }}</div> 
 	</x-jet-nav-link>
 
-	<x-jet-nav-link href="#" :active="request()->routeIs('*institutions*')">
+	<x-jet-nav-link href="{{ route('estudiants.index') }}" :active="request()->routeIs('*estudiants*')">
 	    <x-icon-user-pen class="w-6 h-6 mr-0.5" />
 		<div class="mr-0.5 hidden md:flex">{{ __('Estudiantes') }}</div> 
 	</x-jet-nav-link>
 
 	<x-jet-nav-link href="#" :active="request()->routeIs('*institutions*')">
-	    <x-icon-user-tie class="w-6 h-6 mr-0.5" />
+	    <x-icon-chalkboard-teacher class="w-6 h-6 mr-0.5" />
 		<div class="mr-0.5 hidden md:flex">{{ __('Profesores') }}</div> 
 	</x-jet-nav-link>
 

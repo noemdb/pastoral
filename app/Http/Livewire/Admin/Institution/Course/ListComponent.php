@@ -39,7 +39,7 @@ class ListComponent extends Component
         $this->modeCreate = false;
         $this->modeEdit = false;
         $this->list_comment = Course::COLUMN_COMMENTS; 
-        $this->curricula_list = Curriculum::curricula_list()->toArray(); 
+        $this->curricula_list = Curriculum::curricula_list_fullname()->toArray();
     }
 
     public function render()

@@ -38,7 +38,7 @@ class ListComponent extends Component
         $this->modeCreate = false;
         $this->modeEdit = false;
         $this->list_comment = Curriculum::COLUMN_COMMENTS; 
-        $this->pescolars_list = Pescolar::pescolars_list()->toArray(); 
+        $this->pescolars_list = Pescolar::pescolar_list_fullname()->toArray(); 
     }
 
     public function render()

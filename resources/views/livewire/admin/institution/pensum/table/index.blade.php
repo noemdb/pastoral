@@ -55,11 +55,23 @@
         <tbody id="tdatos">
         @forelse($pensums as $pensum)
 
+            @php 
+                $level = $pensum->level;
+                $curriculum = $level->curriculum;
+                $pescolar = $curriculum->pescolar;
+                $pastoral = $curriculum->pastoral;
+            @endphp
+
             {{-- 'level_id','course_id','order','hour_t_week','hour_p_week','unid_credit','approved_credit_unir','enable_academic_index', --}}
 
             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($pensum->id == $pensum_id) ? 'bg-gray-200' : null}}">
                 <td class="{{ $class['iteration'] ?? ''}}">{{$loop->iteration}}</td>
-                <td class="{{ $class['level_id'] ?? ''}}">{{$pensum->level->fullname ?? ''}}</td>
+                <td class="{{ $class['level_id'] ?? ''}}">
+                    <div>{{$level->name ?? ''}}</div>
+                    <div class="flex justify-end text-gray-400 text-sm">{{$curriculum->name ?? ''}}</div>
+                    <div class="flex justify-end text-gray-400 text-sm">{{$pescolar->name ?? ''}}</div>
+                    <div class="flex justify-end text-gray-400 text-sm">{{$pastoral->name ?? ''}}</div>
+                </td>
                 <td class="{{ $class['course_id'] ?? ''}}">{{$pensum->course->fullname ?? ''}}</td>
 
                 <td class="{{ $class['action'] ?? '' }}">

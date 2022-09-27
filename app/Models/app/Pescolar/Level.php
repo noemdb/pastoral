@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Models\app\Pescolar\Traits\Level\LevelRelations; //app/Models/app/Pescolar/Traits/Level/LevelRelations.php
+use Illuminate\Support\Facades\DB;
 
 class Level extends Model
 {
@@ -42,5 +43,15 @@ class Level extends Model
     {
         return Level::pluck('name','id');
     }
+
+    public static function levels_list_fullname() 
+	{
+		$curricula_list = Level::select('levels.id',DB::raw('curricula.name || " | PE. "  || pescolars.name || " | INS. " || pastorals.name || " | N. " || levels.name as fullnamename' ))
+			->join('curricula', 'curricula.id', '=', 'levels.curriculum_id')
+			->join('pescolars', 'pescolars.id', '=', 'curricula.pescolar_id')
+			->join('pastorals', 'pastorals.id', '=', 'pescolars.pastoral_id')
+			->pluck('fullnamename','id'); //dd($curricula_list_fullname);
+		return $curricula_list;
+	}
 
 }

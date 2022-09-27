@@ -39,7 +39,7 @@ class ListComponent extends Component
         $this->modeCreate = false;
         $this->modeEdit = false;
         $this->list_comment = Section::COLUMN_COMMENTS; 
-        $this->levels_list = Level::levels_list()->toArray(); 
+        $this->levels_list = Level::levels_list_fullname()->toArray(); 
     }
 
     public function render()

@@ -8,8 +8,8 @@ trait SectionRules
 
     protected $rules = [
         'section.level_id' => 'required|integer',
-        'section.code' => 'required|string|min:2|max:10',
-        'section.code_sm' => 'required|string|min:2|max:5',
+        'section.code' => 'required|string|min:1|max:10',
+        'section.code_sm' => 'required|string|min:1|max:5',
         'section.name' => 'required|string',
         'section.description' => 'required|string',
         'section.observations' => 'nullable|string',

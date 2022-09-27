@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Models\app\Pescolar\Traits\Lapse\LapseRelations;
+use Carbon\Carbon;
 
 class Lapse extends Model
 {

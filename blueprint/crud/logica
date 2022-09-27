@@ -213,12 +213,50 @@ Crear vistas
 -.copiar carpetas
 -.actualizar los route en el navbar
 
+---------------------------------estudiants---------------------------------------Estudiant
 
-level_id
-course_id
-order
-hour_t_week
-hour_p_week
-unid_credit
-approved_credit_unir
-enable_academic_index
+crear controladores
+php artisan make:controller 'Admin\Estudiant\EstudiantController'
+
+define ruta
+Route::resource('estudiants', EstudiantController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Estudiant/Estudiant/ListComponent'
+
+crear los traits
+Livewiere
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Estudiant/Estudiant/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Estudiant/Estudiant/Traits/EstudiantRules.php'
+
+Model
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Pescolar/Traits/Estudiant'
+touch '/home/nuser/code/pastoral/app/Models/app/Pescolar/Traits/Estudiant/EstudiantRelations.php'
+
+copia codigo en backend
+-EstudiantRelations
+-EstudiantRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+user_id
+representant_id
+citype_id
+ci
+name
+lastname
+gender
+date_birth
+country_id
+state_id
+city_id
+dir_address
+phone
+email
+status_nacionality
+status

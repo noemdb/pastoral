@@ -65,11 +65,23 @@
         <tbody id="tdatos">
         @forelse($sections as $section)
 
+            @php 
+                $level = $section->level;
+                $curriculum = $level->curriculum;
+                $pescolar = $curriculum->pescolar;
+                $pastoral = $curriculum->pastoral;
+            @endphp
+
             {{-- 'level_id','code','code_sm','name','description','observations','color','header','body','footer','status',--}}
 
             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($section->id == $section_id) ? 'bg-gray-200' : null}}">
                 <td class="{{ $class['iteration'] ?? ''}}">{{$loop->iteration}}</td>
-                <td class="{{ $class['level_id'] ?? ''}}">{{$section->level->name ?? ''}}</td>
+                <td class="{{ $class['level_id'] ?? ''}}">
+                    <div>{{$level->name ?? ''}}</div>
+                    <div class="flex justify-end text-gray-400 text-xs">{{$curriculum->name ?? ''}}</div>
+                    <div class="flex justify-end text-gray-400 text-xs">{{$pescolar->name ?? ''}}</div>
+                    <div class="flex justify-end text-gray-400 text-xs">{{$pastoral->name ?? ''}}</div>
+                </td>
                 <td class="{{ $class['name'] ?? ''}}">{{$section->name ?? ''}}</td>
                 <td class="{{ $class['description'] ?? ''}}">{{$section->description ?? ''}}</td>
 

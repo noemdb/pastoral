@@ -10,7 +10,7 @@ trait RulesPescolar
     protected $rules = [
         'pescolar.pastoral_id' => 'required|integer',
         'pescolar.name' => 'required|string',
-        'pescolar.code' => 'required|string|min:2|max:5',
+        'pescolar.code' => 'required|string|min:2|max:10',
         'pescolar.finicial' => 'required|date', //
         'pescolar.ffinal' => 'required|date', //
         'pescolar.description' => 'required|string',
