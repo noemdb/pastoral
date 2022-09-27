@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"text-gray",
+				"text-gray-700 "
+			],
+			[
+				"jus",
+				"justify-between"
+			],
+			[
 				"con",
 				"console"
 			],
@@ -32,48 +40,856 @@
 	"buffers":
 	[
 		{
-			"file": "resources/views/livewire/admin/institution/authority/list-component.blade.php",
+			"file": "resources/views/livewire/admin/institution/curriculum/table/index.blade.php",
 			"settings":
 			{
-				"buffer_size": 1020,
+				"buffer_size": 6450,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
+			},
+			"undo_stack":
+			[
+				[
+					3,
+					1,
+					"insert",
+					{
+						"characters": "full"
+					},
+					"BAAAAA0SAAAAAAAADhIAAAAAAAAAAAAADhIAAAAAAAAPEgAAAAAAAAAAAAAPEgAAAAAAABASAAAAAAAAAAAAABASAAAAAAAAERIAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAANEgAAAAAAAA0SAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					8,
+					1,
+					"paste",
+					null,
+					"AgAAAA0SAAAAAAAAFRIAAAAAAAAAAAAAFRIAAAAAAAAVEgAAAAAAAAgAAABmdWxsbmFtZQ",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAANEgAAAAAAABUSAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					13,
+					1,
+					"insert",
+					{
+						"characters": "\n"
+					},
+					"CAAAAB0SAAAAAAAAHhIAAAAAAAAAAAAAHhIAAAAAAAAuEgAAAAAAAAAAAAD0EQAAAAAAAPURAAAAAAAAAAAAAPURAAAAAAAABRIAAAAAAAAAAAAALxIAAAAAAAAvEgAAAAAAABAAAAAgICAgICAgICAgICAgICAgLxIAAAAAAAA7EgAAAAAAAAAAAAD1EQAAAAAAAPURAAAAAAAAEAAAACAgICAgICAgICAgICAgICD1EQAAAAAAAAkSAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAIAAAD0EQAAAAAAAPQRAAAAAAAAAAAAAAAA8L8dEgAAAAAAAB0SAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					16,
+					1,
+					"insert",
+					{
+						"characters": "\t"
+					},
+					"AQAAAD8SAAAAAAAAQxIAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAA/EgAAAAAAAD8SAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					19,
+					1,
+					"insert",
+					{
+						"characters": "\ndiv"
+					},
+					"BgAAAPQRAAAAAAAA9REAAAAAAAAAAAAA9REAAAAAAAAFEgAAAAAAAAAAAAAFEgAAAAAAAAkSAAAAAAAAAAAAAAkSAAAAAAAAChIAAAAAAAAAAAAAChIAAAAAAAALEgAAAAAAAAAAAAALEgAAAAAAAAwSAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAD0EQAAAAAAAPQRAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					20,
+					1,
+					"emmet_expand_abbreviation",
+					{
+						"tab": true
+					},
+					"AgAAAAkSAAAAAAAACRIAAAAAAAADAAAAZGl2CRIAAAAAAAAUEgAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAMEgAAAAAAAAwSAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					21,
+					1,
+					"auto_indent_tag",
+					null,
+					"AQAAAA4SAAAAAAAAPBIAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAOEgAAAAAAAA4SAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					24,
+					1,
+					"insert",
+					{
+						"characters": " cla"
+					},
+					"BAAAAA0SAAAAAAAADhIAAAAAAAAAAAAADhIAAAAAAAAPEgAAAAAAAAAAAAAPEgAAAAAAABASAAAAAAAAAAAAABASAAAAAAAAERIAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAANEgAAAAAAAA0SAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					25,
+					1,
+					"insert",
+					{
+						"characters": "s"
+					},
+					"AQAAABESAAAAAAAAEhIAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAREgAAAAAAABESAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					26,
+					1,
+					"insert_completion",
+					{
+						"completion": "class=\"$1\"$0",
+						"format": "snippet",
+						"keep_prefix": false,
+						"must_insert": false,
+						"trigger": "class"
+					},
+					"AgAAAA4SAAAAAAAADhIAAAAAAAAEAAAAY2xhcw4SAAAAAAAAFhIAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAASEgAAAAAAABISAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					27,
+					1,
+					"insert",
+					{
+						"characters": "flex"
+					},
+					"BAAAABUSAAAAAAAAFhIAAAAAAAAAAAAAFhIAAAAAAAAXEgAAAAAAAAAAAAAXEgAAAAAAABgSAAAAAAAAAAAAABgSAAAAAAAAGRIAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAVEgAAAAAAABUSAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					28,
+					1,
+					"insert",
+					{
+						"characters": " jus"
+					},
+					"BAAAABkSAAAAAAAAGhIAAAAAAAAAAAAAGhIAAAAAAAAbEgAAAAAAAAAAAAAbEgAAAAAAABwSAAAAAAAAAAAAABwSAAAAAAAAHRIAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAZEgAAAAAAABkSAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					29,
+					1,
+					"insert_completion",
+					{
+						"completion": "justify-items-end",
+						"format": "snippet",
+						"keep_prefix": false,
+						"must_insert": false,
+						"trigger": "justify-items-end "
+					},
+					"AgAAABoSAAAAAAAAGhIAAAAAAAADAAAAanVzGhIAAAAAAAArEgAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAdEgAAAAAAAB0SAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					36,
+					1,
+					"cut",
+					null,
+					"AQAAAHYSAAAAAAAAdhIAAAAAAAApAAAAe3skY3VycmljdWx1bS0+cGVzY29sYXItPmZ1bGxuYW1lID8/ICcnfX0",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACfEgAAAAAAAHYSAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					39,
+					1,
+					"insert",
+					{
+						"characters": "\ndiv"
+					},
+					"BgAAAPQRAAAAAAAA9REAAAAAAAAAAAAA9REAAAAAAAAFEgAAAAAAAAAAAAAFEgAAAAAAAAkSAAAAAAAAAAAAAAkSAAAAAAAAChIAAAAAAAAAAAAAChIAAAAAAAALEgAAAAAAAAAAAAALEgAAAAAAAAwSAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAD0EQAAAAAAAPQRAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					40,
+					1,
+					"emmet_expand_abbreviation",
+					{
+						"tab": true
+					},
+					"AgAAAAkSAAAAAAAACRIAAAAAAAADAAAAZGl2CRIAAAAAAAAUEgAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAMEgAAAAAAAAwSAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					43,
+					1,
+					"paste",
+					null,
+					"AQAAAA4SAAAAAAAANxIAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAOEgAAAAAAAA4SAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					46,
+					1,
+					"paste",
+					null,
+					"AQAAAI8SAAAAAAAAuBIAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACPEgAAAAAAAI8SAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					53,
+					1,
+					"insert",
+					{
+						"characters": "name"
+					},
+					"BQAAACcSAAAAAAAAKBIAAAAAAAAAAAAAKBIAAAAAAAAoEgAAAAAAAAgAAABmdWxsbmFtZSgSAAAAAAAAKRIAAAAAAAAAAAAAKRIAAAAAAAAqEgAAAAAAAAAAAAAqEgAAAAAAACsSAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAnEgAAAAAAAC8SAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					69,
+					1,
+					"paste",
+					null,
+					"AgAAAKQSAAAAAAAAqBIAAAAAAAAAAAAAqBIAAAAAAACoEgAAAAAAAAgAAABmdWxsbmFtZQ",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACkEgAAAAAAAKwSAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					74,
+					3,
+					"right_delete",
+					null,
+					"AwAAAB0SAAAAAAAAHRIAAAAAAAAIAAAAcGVzY29sYXIdEgAAAAAAAB0SAAAAAAAAAQAAAC0dEgAAAAAAAB0SAAAAAAAAAQAAAD4",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAdEgAAAAAAACUSAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					81,
+					1,
+					"swap_line_up",
+					null,
+					"AgAAAGkSAAAAAAAAaRIAAAAAAAA+AAAAICAgICAgICAgICAgICAgICAgICAgICAge3skY3VycmljdWx1bS0+cGVzY29sYXItPm5hbWUgPz8gJyd9fQowEgAAAAAAAG4SAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACmEgAAAAAAAKYSAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					91,
+					1,
+					"insert",
+					{
+						"characters": "\n\n\t"
+					},
+					"BgAAAEoQAAAAAAAASxAAAAAAAAAAAAAASxAAAAAAAABTEAAAAAAAAAAAAABTEAAAAAAAAFQQAAAAAAAAAAAAAFQQAAAAAAAAXBAAAAAAAAAAAAAASxAAAAAAAABLEAAAAAAAAAgAAAAgICAgICAgIFQQAAAAAAAAWBAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABKEAAAAAAAAEoQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					92,
+					1,
+					"insert",
+					{
+						"characters": "@php"
+					},
+					"BAAAAFgQAAAAAAAAWRAAAAAAAAAAAAAAWRAAAAAAAABaEAAAAAAAAAAAAABaEAAAAAAAAFsQAAAAAAAAAAAAAFsQAAAAAAAAXBAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABYEAAAAAAAAFgQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					93,
+					1,
+					"insert",
+					{
+						"characters": " @"
+					},
+					"AgAAAFwQAAAAAAAAXRAAAAAAAAAAAAAAXRAAAAAAAABeEAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABcEAAAAAAAAFwQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					94,
+					1,
+					"insert",
+					{
+						"characters": "endphp"
+					},
+					"BgAAAF4QAAAAAAAAXxAAAAAAAAAAAAAAXxAAAAAAAABgEAAAAAAAAAAAAABgEAAAAAAAAGEQAAAAAAAAAAAAAGEQAAAAAAAAYhAAAAAAAAAAAAAAYhAAAAAAAABjEAAAAAAAAAAAAABjEAAAAAAAAGQQAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABeEAAAAAAAAF4QAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					97,
+					1,
+					"insert",
+					{
+						"characters": " $"
+					},
+					"AgAAAFwQAAAAAAAAXRAAAAAAAAAAAAAAXRAAAAAAAABeEAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABcEAAAAAAAAFwQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					98,
+					1,
+					"insert",
+					{
+						"characters": "pastoral"
+					},
+					"CAAAAF4QAAAAAAAAXxAAAAAAAAAAAAAAXxAAAAAAAABgEAAAAAAAAAAAAABgEAAAAAAAAGEQAAAAAAAAAAAAAGEQAAAAAAAAYhAAAAAAAAAAAAAAYhAAAAAAAABjEAAAAAAAAAAAAABjEAAAAAAAAGQQAAAAAAAAAAAAAGQQAAAAAAAAZRAAAAAAAAAAAAAAZRAAAAAAAABmEAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABeEAAAAAAAAF4QAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					99,
+					1,
+					"insert",
+					{
+						"characters": " ="
+					},
+					"AgAAAGYQAAAAAAAAZxAAAAAAAAAAAAAAZxAAAAAAAABoEAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABmEAAAAAAAAGYQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					100,
+					1,
+					"insert",
+					{
+						"characters": " "
+					},
+					"AQAAAGgQAAAAAAAAaRAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABoEAAAAAAAAGgQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					101,
+					1,
+					"insert",
+					{
+						"characters": "->pasto"
+					},
+					"BwAAAGkQAAAAAAAAahAAAAAAAAAAAAAAahAAAAAAAABrEAAAAAAAAAAAAABrEAAAAAAAAGwQAAAAAAAAAAAAAGwQAAAAAAAAbRAAAAAAAAAAAAAAbRAAAAAAAABuEAAAAAAAAAAAAABuEAAAAAAAAG8QAAAAAAAAAAAAAG8QAAAAAAAAcBAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABpEAAAAAAAAGkQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					102,
+					1,
+					"insert",
+					{
+						"characters": "ral;"
+					},
+					"BAAAAHAQAAAAAAAAcRAAAAAAAAAAAAAAcRAAAAAAAAByEAAAAAAAAAAAAAByEAAAAAAAAHMQAAAAAAAAAAAAAHMQAAAAAAAAdBAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABwEAAAAAAAAHAQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					111,
+					1,
+					"insert",
+					{
+						"characters": "$"
+					},
+					"AQAAAGkQAAAAAAAAahAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABpEAAAAAAAAGkQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					112,
+					1,
+					"paste",
+					null,
+					"AQAAAGoQAAAAAAAAdBAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABqEAAAAAAAAGoQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					122,
+					1,
+					"paste",
+					null,
+					"AgAAAE4SAAAAAAAAVhIAAAAAAAAAAAAAVhIAAAAAAABWEgAAAAAAAAoAAABjdXJyaWN1bHVt",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABOEgAAAAAAAFgSAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					136,
+					1,
+					"paste",
+					null,
+					"AgAAAE4SAAAAAAAAWBIAAAAAAAAAAAAAWBIAAAAAAABYEgAAAAAAAAgAAABwYXN0b3JhbA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABOEgAAAAAAAFYSAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					145,
+					1,
+					"insert",
+					{
+						"characters": "\n"
+					},
+					"BAAAAH8QAAAAAAAAgBAAAAAAAAAAAAAAgBAAAAAAAACMEAAAAAAAAAAAAABdEAAAAAAAAF4QAAAAAAAAAAAAAF4QAAAAAAAAahAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAIAAABdEAAAAAAAAF0QAAAAAAAAAAAAAAAA8L9/EAAAAAAAAH8QAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					148,
+					1,
+					"insert",
+					{
+						"characters": "\t"
+					},
+					"AQAAAGoQAAAAAAAAbhAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABqEAAAAAAAAGoQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					151,
+					1,
+					"duplicate_line",
+					null,
+					"AQAAAJEQAAAAAAAAxBAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACQEAAAAAAAAJAQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					165,
+					1,
+					"paste",
+					null,
+					"AgAAAG8QAAAAAAAAdxAAAAAAAAAAAAAAdxAAAAAAAAB3EAAAAAAAAAgAAABwYXN0b3JhbA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABvEAAAAAAAAHcQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					170,
+					1,
+					"paste",
+					null,
+					"AgAAAIcQAAAAAAAAjxAAAAAAAAAAAAAAjxAAAAAAAACPEAAAAAAAAAgAAABwYXN0b3JhbA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACHEAAAAAAAAI8QAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					175,
+					1,
+					"paste",
+					null,
+					"AgAAAK4QAAAAAAAAthAAAAAAAAAAAAAAthAAAAAAAAC2EAAAAAAAAAoAAABjdXJyaWN1bHVt",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACuEAAAAAAAALgQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					185,
+					1,
+					"paste",
+					null,
+					"AgAAAJ0SAAAAAAAApRIAAAAAAAAAAAAApRIAAAAAAAClEgAAAAAAAAoAAABjdXJyaWN1bHVt",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACdEgAAAAAAAKcSAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					199,
+					1,
+					"paste",
+					null,
+					"AgAAANUSAAAAAAAA3RIAAAAAAAAAAAAA3RIAAAAAAADdEgAAAAAAABQAAABjdXJyaWN1bHVtLT5wZXNjb2xhcg",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADpEgAAAAAAANUSAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					202,
+					1,
+					"swap_line_down",
+					null,
+					"AgAAACUTAAAAAAAAVxMAAAAAAAAAAAAAuhIAAAAAAAC6EgAAAAAAADIAAAAgICAgICAgICAgICAgICAgICAgICAgICB7eyRwYXN0b3JhbC0+bmFtZSA/PyAnJ319Cg",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADrEgAAAAAAAOsSAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					208,
+					1,
+					"paste",
+					null,
+					"AgAAANoSAAAAAAAA8BIAAAAAAAAAAAAA8BIAAAAAAADwEgAAAAAAABYAAABmbGV4IGp1c3RpZnktaXRlbXMtZW5k",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADwEgAAAAAAANoSAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					209,
+					1,
+					"insert",
+					{
+						"characters": " te"
+					},
+					"AwAAAPASAAAAAAAA8RIAAAAAAAAAAAAA8RIAAAAAAADyEgAAAAAAAAAAAADyEgAAAAAAAPMSAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADwEgAAAAAAAPASAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					210,
+					1,
+					"insert",
+					{
+						"characters": "xt-g"
+					},
+					"BAAAAPMSAAAAAAAA9BIAAAAAAAAAAAAA9BIAAAAAAAD1EgAAAAAAAAAAAAD1EgAAAAAAAPYSAAAAAAAAAAAAAPYSAAAAAAAA9xIAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADzEgAAAAAAAPMSAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					211,
+					1,
+					"insert",
+					{
+						"characters": "ray-"
+					},
+					"BAAAAPcSAAAAAAAA+BIAAAAAAAAAAAAA+BIAAAAAAAD5EgAAAAAAAAAAAAD5EgAAAAAAAPoSAAAAAAAAAAAAAPoSAAAAAAAA+xIAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAD3EgAAAAAAAPcSAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					212,
+					1,
+					"insert",
+					{
+						"characters": "300"
+					},
+					"AwAAAPsSAAAAAAAA/BIAAAAAAAAAAAAA/BIAAAAAAAD9EgAAAAAAAAAAAAD9EgAAAAAAAP4SAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAD7EgAAAAAAAPsSAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					213,
+					1,
+					"insert",
+					{
+						"characters": " text-"
+					},
+					"BgAAAP4SAAAAAAAA/xIAAAAAAAAAAAAA/xIAAAAAAAAAEwAAAAAAAAAAAAAAEwAAAAAAAAETAAAAAAAAAAAAAAETAAAAAAAAAhMAAAAAAAAAAAAAAhMAAAAAAAADEwAAAAAAAAAAAAADEwAAAAAAAAQTAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAD+EgAAAAAAAP4SAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					214,
+					1,
+					"insert_completion",
+					{
+						"completion": "text-sm",
+						"format": "snippet",
+						"keep_prefix": false,
+						"must_insert": false,
+						"trigger": "text-sm "
+					},
+					"AgAAAP8SAAAAAAAA/xIAAAAAAAAFAAAAdGV4dC3/EgAAAAAAAAYTAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAEEwAAAAAAAAQTAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					219,
+					1,
+					"insert",
+					{
+						"characters": "400"
+					},
+					"BAAAAPsSAAAAAAAA/BIAAAAAAAAAAAAA/BIAAAAAAAD8EgAAAAAAAAMAAAAzMDD8EgAAAAAAAP0SAAAAAAAAAAAAAP0SAAAAAAAA/hIAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAD7EgAAAAAAAP4SAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					224,
+					1,
+					"insert",
+					{
+						"characters": " "
+					},
+					"AgAAAAgTAAAAAAAACRMAAAAAAAAAAAAACRMAAAAAAAAJEwAAAAAAABkAAAAKICAgICAgICAgICAgICAgICAgICAgICAg",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAIEwAAAAAAACETAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					225,
+					1,
+					"left_delete",
+					null,
+					"AQAAAAgTAAAAAAAACBMAAAAAAAABAAAAIA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAJEwAAAAAAAAkTAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					230,
+					1,
+					"right_delete",
+					null,
+					"AQAAACETAAAAAAAAIRMAAAAAAAAVAAAACiAgICAgICAgICAgICAgICAgICAg",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAhEwAAAAAAADYTAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					232,
+					1,
+					"right_delete",
+					null,
+					"AQAAACcTAAAAAAAAJxMAAAAAAAABAAAACg",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAnEwAAAAAAACcTAAAAAAAA////////738"
+				],
+				[
+					237,
+					1,
+					"insert",
+					{
+						"characters": "flex"
+					},
+					"BQAAANoSAAAAAAAA2xIAAAAAAAAAAAAA2xIAAAAAAADbEgAAAAAAAAQAAABncmlk2xIAAAAAAADcEgAAAAAAAAAAAADcEgAAAAAAAN0SAAAAAAAAAAAAAN0SAAAAAAAA3hIAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADaEgAAAAAAAN4SAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					244,
+					1,
+					"paste",
+					null,
+					"AgAAANoSAAAAAAAA6hIAAAAAAAAAAAAA6hIAAAAAAADqEgAAAAAAABYAAABmbGV4IGp1c3RpZnktaXRlbXMtZW5k",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADwEgAAAAAAANoSAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					247,
+					1,
+					"insert",
+					{
+						"characters": " "
+					},
+					"AQAAAAATAAAAAAAAARMAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAEwAAAAAAAAATAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					248,
+					1,
+					"insert",
+					{
+						"characters": "my-"
+					},
+					"AwAAAAETAAAAAAAAAhMAAAAAAAAAAAAAAhMAAAAAAAADEwAAAAAAAAAAAAADEwAAAAAAAAQTAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAABEwAAAAAAAAETAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					249,
+					1,
+					"insert",
+					{
+						"characters": "0"
+					},
+					"AQAAAAQTAAAAAAAABRMAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAEEwAAAAAAAAQTAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					250,
+					1,
+					"insert",
+					{
+						"characters": " "
+					},
+					"AQAAAAUTAAAAAAAABhMAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAFEwAAAAAAAAUTAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					251,
+					1,
+					"insert",
+					{
+						"characters": "py-0"
+					},
+					"BAAAAAYTAAAAAAAABxMAAAAAAAAAAAAABxMAAAAAAAAIEwAAAAAAAAAAAAAIEwAAAAAAAAkTAAAAAAAAAAAAAAkTAAAAAAAAChMAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAGEwAAAAAAAAYTAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					254,
+					2,
+					"left_delete",
+					null,
+					"AgAAAAETAAAAAAAAARMAAAAAAAAJAAAAbXktMCBweS0wABMAAAAAAAAAEwAAAAAAAAEAAAAg",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAKEwAAAAAAAAETAAAAAAAAAAAAAAAA8L8"
+				]
+			]
 		},
 		{
-			"file": "resources/views/livewire/admin/institution/authority/form/edit.blade.php",
+			"file": "resources/views/livewire/admin/institution/lapse/table/index.blade.php",
 			"settings":
 			{
-				"buffer_size": 1493,
+				"buffer_size": 6369,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/views/livewire/admin/institution/authority/form/fields.blade.php",
-			"settings":
-			{
-				"buffer_size": 1795,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/views/vendor/form-components/components/inputs/select.blade.php",
-			"settings":
-			{
-				"buffer_size": 1245,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/views/enrollments/form/partials/estudiants.blade.php",
-			"settings":
-			{
-				"buffer_size": 6883,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
+			},
+			"undo_stack":
+			[
+				[
+					5,
+					1,
+					"insert",
+					{
+						"characters": "\n"
+					},
+					"CAAAALIRAAAAAAAAsxEAAAAAAAAAAAAAsxEAAAAAAADDEQAAAAAAAAAAAACSEQAAAAAAAJMRAAAAAAAAAAAAAJMRAAAAAAAAoxEAAAAAAAAAAAAAxBEAAAAAAADEEQAAAAAAABAAAAAgICAgICAgICAgICAgICAgxBEAAAAAAADQEQAAAAAAAAAAAACTEQAAAAAAAJMRAAAAAAAAEAAAACAgICAgICAgICAgICAgICCTEQAAAAAAAKcRAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAIAAACSEQAAAAAAAJIRAAAAAAAAAAAAAAAA8L+yEQAAAAAAALIRAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					6,
+					1,
+					"insert",
+					{
+						"characters": "\t"
+					},
+					"AgAAANQRAAAAAAAA2BEAAAAAAAAAAAAApxEAAAAAAACrEQAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAIAAACnEQAAAAAAAKcRAAAAAAAAAAAAAAAA8L/UEQAAAAAAANQRAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					11,
+					1,
+					"insert",
+					{
+						"characters": "\n"
+					},
+					"AgAAAMsRAAAAAAAAzBEAAAAAAAAAAAAAzBEAAAAAAADkEQAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADLEQAAAAAAAMsRAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					12,
+					1,
+					"paste",
+					null,
+					"AQAAAOQRAAAAAAAAXBIAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADkEQAAAAAAAOQRAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					14,
+					1,
+					"insert",
+					{
+						"characters": "\t\t\t\t\t\t"
+					},
+					"BgAAAAkSAAAAAAAADRIAAAAAAAAAAAAADRIAAAAAAAAREgAAAAAAAAAAAAAREgAAAAAAABUSAAAAAAAAAAAAABUSAAAAAAAAGRIAAAAAAAAAAAAAGRIAAAAAAAAdEgAAAAAAAAAAAAAdEgAAAAAAACESAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAJEgAAAAAAAAkSAAAAAAAAAAAAAAAAAAA"
+				],
+				[
+					19,
+					1,
+					"insert",
+					{
+						"characters": "\n\n"
+					},
+					"BQAAAO4PAAAAAAAA7w8AAAAAAAAAAAAA7w8AAAAAAAD3DwAAAAAAAAAAAAD3DwAAAAAAAPgPAAAAAAAAAAAAAPgPAAAAAAAAABAAAAAAAAAAAAAA7w8AAAAAAADvDwAAAAAAAAgAAAAgICAgICAgIA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAADuDwAAAAAAAO4PAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					20,
+					1,
+					"paste",
+					null,
+					"AQAAAPgPAAAAAAAAdxAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAD4DwAAAAAAAPgPAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					23,
+					1,
+					"insert",
+					{
+						"characters": "\t"
+					},
+					"AQAAAPgPAAAAAAAA/A8AAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAD4DwAAAAAAAPgPAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					28,
+					3,
+					"cut",
+					null,
+					"AwAAAHwQAAAAAAAAfBAAAAAAAAABAAAACnwQAAAAAAAAfBAAAAAAAACHAAAAICAgICAgICAgICAge3stLSAnY3VycmljdWx1bV9pZCcsJ25hbWUnLCdjb2RlJywnZmluaWNpYWwnLCdmZmluYWwnLCdkZXNjcmlwdGlvbicsJ29ic2VydmF0aW9ucycsJ2NvbG9yJywnaGVhZGVyJywnYm9keScsJ2Zvb3RlcicsIC0tfX0KfBAAAAAAAAB8EAAAAAAAAAEAAAAK",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAB8EAAAAAAAAHwQAAAAAAAAAAAAAAAAYUA"
+				],
+				[
+					42,
+					1,
+					"paste",
+					null,
+					"AgAAABMQAAAAAAAAHRAAAAAAAAAAAAAAHRAAAAAAAAAdEAAAAAAAAAgAAABwZXNjb2xhcg",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAATEAAAAAAAABsQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					52,
+					1,
+					"paste",
+					null,
+					"AgAAACEQAAAAAAAAJhAAAAAAAAAAAAAAJhAAAAAAAAAmEAAAAAAAAAoAAABjdXJyaWN1bHVt",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAhEAAAAAAAACsQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					62,
+					1,
+					"paste",
+					null,
+					"AgAAACgQAAAAAAAAMhAAAAAAAAAAAAAAMhAAAAAAAAAyEAAAAAAAAAgAAABwZXNjb2xhcg",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAoEAAAAAAAADAQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					65,
+					1,
+					"cut",
+					null,
+					"AQAAADQQAAAAAAAANBAAAAAAAAAxAAAAICAgICAgICAgICAgICAgICRwYXN0b3JhbCA9ICRwZXNjb2xhci0+cGFzdG9yYWw7Cg",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABkEAAAAAAAAGQQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					79,
+					1,
+					"paste",
+					null,
+					"AgAAAIARAAAAAAAAihEAAAAAAAAAAAAAihEAAAAAAACKEQAAAAAAAA8AAABsYXBzZS0+cGFzdG9yYWw",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACPEQAAAAAAAIARAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					82,
+					1,
+					"duplicate_line",
+					null,
+					"AQAAADQQAAAAAAAAZhAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAzEAAAAAAAADMQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					91,
+					1,
+					"insert",
+					{
+						"characters": "pastoral"
+					},
+					"CQAAAEUQAAAAAAAARhAAAAAAAAAAAAAARhAAAAAAAABGEAAAAAAAAAoAAABjdXJyaWN1bHVtRhAAAAAAAABHEAAAAAAAAAAAAABHEAAAAAAAAEgQAAAAAAAAAAAAAEgQAAAAAAAASRAAAAAAAAAAAAAASRAAAAAAAABKEAAAAAAAAAAAAABKEAAAAAAAAEsQAAAAAAAAAAAAAEsQAAAAAAAATBAAAAAAAAAAAAAATBAAAAAAAABNEAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABFEAAAAAAAAE8QAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					101,
+					1,
+					"paste",
+					null,
+					"AgAAAFEQAAAAAAAAWxAAAAAAAAAAAAAAWxAAAAAAAABbEAAAAAAAAAUAAABsYXBzZQ",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABREAAAAAAAAFYQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					111,
+					1,
+					"paste",
+					null,
+					"AgAAAF0QAAAAAAAAZRAAAAAAAAAAAAAAZRAAAAAAAABlEAAAAAAAAAoAAABjdXJyaWN1bHVt",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABdEAAAAAAAAGcQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					128,
+					1,
+					"duplicate_line",
+					null,
+					"AQAAAHUSAAAAAAAA4RIAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAB0EgAAAAAAAHQSAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					131,
+					1,
+					"duplicate_line",
+					null,
+					"AQAAADQQAAAAAAAAZhAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAzEAAAAAAAADMQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					141,
+					1,
+					"paste",
+					null,
+					"AgAAAEUQAAAAAAAATRAAAAAAAAAAAAAATRAAAAAAAABNEAAAAAAAAAoAAABjdXJyaWN1bHVt",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABFEAAAAAAAAE8QAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					146,
+					1,
+					"paste",
+					null,
+					"AgAAAFgQAAAAAAAAYBAAAAAAAAAAAAAAYBAAAAAAAABgEAAAAAAAAAoAAABjdXJyaWN1bHVt",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABYEAAAAAAAAGIQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					156,
+					1,
+					"paste",
+					null,
+					"AgAAAFEQAAAAAAAAWxAAAAAAAAAAAAAAWxAAAAAAAABbEAAAAAAAAAUAAABsYXBzZQ",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABREAAAAAAAAFYQAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					166,
+					1,
+					"paste",
+					null,
+					"AgAAAIsSAAAAAAAAkxIAAAAAAAAAAAAAkxIAAAAAAACTEgAAAAAAAAgAAABwYXN0b3JhbA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACLEgAAAAAAAJMSAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					176,
+					1,
+					"paste",
+					null,
+					"AgAAAB8SAAAAAAAAKRIAAAAAAAAAAAAAKRIAAAAAAAApEgAAAAAAAAgAAABwZXNjb2xhcg",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAfEgAAAAAAACcSAAAAAAAAAAAAAAAA8L8"
+				]
+			]
 		}
 	],
 	"build_system": "",
@@ -88,16 +904,12 @@
 		"selected_items":
 		[
 			[
-				"svg",
-				"SVG Viewer: Change Online Converter"
+				"SVG Viewer: View SVG",
+				"SVG Viewer: View SVG"
 			],
 			[
 				"Package Control: ",
 				"Package Control: Install Package"
-			],
-			[
-				"SVG Viewer: View SVG",
-				"SVG Viewer: View SVG"
 			]
 		],
 		"width": 0.0
@@ -120,61 +932,109 @@
 	},
 	"expanded_folders":
 	[
-		"/home/nuser/code/pastoral/resources/views",
-		"/home/nuser/code/pastoral/resources/views/vendor",
-		"/home/nuser/code/pastoral/resources/views/vendor/form-components",
-		"/home/nuser/code/pastoral/resources/views/vendor/form-components/components",
-		"/home/nuser/code/pastoral/resources/views/vendor/form-components/components/inputs"
+		"/home/nuser/code/pastoral/resources/views/livewire",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/lapse",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/lapse/table"
 	],
 	"file_history":
 	[
-		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pastoral/table/index.blade.php",
-		"/home/nuser/code/pastoral/resources/views/vendor/form-components/components/inputs/textarea.blade.php",
-		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/authority/table/index.blade.php",
-		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pastoral/form/edit.blade.php",
-		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pastoral/list-component.blade.php",
-		"/home/nuser/code/pastoral/resources/views/admin/authorities/index.blade.php",
 		"/home/nuser/code/pastoral/resources/views/layouts/partials/navigation-links.blade.php",
-		"/home/nuser/code/pastoral/resources/views/navigation-menu.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pensum/list-component.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pensum/form/fields.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pensum/table/index.blade.php",
+		"/home/nuser/code/pastoral/resources/views/layouts/app.blade.php",
 		"/home/nuser/code/pastoral/resources/views/admin/elements/navbar.blade.php",
-		"/home/nuser/code/pastoral/resources/views/components/elements/crud/sort-by.blade.php",
-		"/home/nuser/code/pastoral/resources/svg/align-center.svg",
-		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pastoral/form/create.blade.php",
+		"/home/nuser/code/pastoral/resources/views/admin/pensums/index.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pensum/form/create.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pensum/form/edit.blade.php",
+		"/home/nuser/code/pastoral/resources/views/admin/courses/index.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/course/form/edit.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/course/form/create.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/course/list-component.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/course/form/fields.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/course/table/index.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/authority/form/fields.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/lapse/form/fields.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/level/form/fields.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pescolar/form/fields.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/section/form/fields.blade.php",
+		"/home/nuser/code/pastoral/resources/views/admin/lapses/index.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/section/list-component.blade.php",
+		"/home/nuser/code/pastoral/resources/views/admin/sections/index.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/section/form/create.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/section/table/index.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/section/form/edit.blade.php",
+		"/home/nuser/code/pastoral/resources/views/admin/levels/index.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/level/list-component.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/level/table/index.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/level/form/create.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/level/form/edit.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/lapse/list-component.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/curriculum/form/edit.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/lapse/form/edit.blade.php",
+		"/home/nuser/code/pastoral/resources/views/vendor/form-components/components/inputs/select.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/lapse/form/create.blade.php",
+		"/home/nuser/code/pastoral/resources/views/vendor/form-components/components/inputs/input.blade.php",
+		"/home/nuser/code/pastoral/resources/views/vendor/form-components/components/inputs/textarea.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/lapse/table/index.blade.php",
+		"/home/nuser/code/pastoral/resources/views/admin/curricula/index.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pescolar/table/index.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/curriculum/table/index.blade.php",
 		"/home/nuser/code/pastoral/resources/views/admin/institutions/index.blade.php",
-		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pastoral/form/fields.blade.php",
-		"/home/nuser/code/pastoral/resources/views/welcome.blade.php",
-		"/home/nuser/code/pastoral/resources/views/partials/navbar/navigation-menu.blade.php",
-		"/home/nuser/code/pastoral/resources/views/enrollments/layout/app.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pastoral/list-component.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pastoral/table/index.blade.php",
+		"/home/nuser/code/pastoral/resources/views/vendor/livewire/tailwind.blade.php",
+		"/home/nuser/code/pastoral/resources/views/admin/authorities/index.blade.php",
+		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components/button.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/admin/institution/pastoral/table",
+		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components/welcome.blade.php",
+		"/home/nuser/code/pastoral/resources/views/navigation-menu.blade.php",
+		"/home/nuser/code/pastoral/resources/views/dashboard.blade.php",
+		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components/nav-link.blade.php",
+		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components/dropdown.blade.php",
 		"/home/nuser/code/pastoral/resources/views/enrollments/index.blade.php",
 		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/list-component.blade.php",
+		"/home/nuser/code/pastoral/resources/views/enrollments/layout/app.blade.php",
+		"/home/nuser/code/pastoral/resources/views/welcome.blade.php",
+		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components/action-message.blade.php",
+		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components/input.blade.php",
+		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components/form-section.blade.php",
+		"/home/nuser/code/pastoral/resources/views/profile/update-profile-information-form.blade.php",
+		"/home/nuser/code/pastoral/resources/views/teams/team-member-manager.blade.php",
+		"/home/nuser/code/pastoral/resources/views/teams/update-team-name-form.blade.php",
+		"/home/nuser/code/pastoral/resources/views/api/api-token-manager.blade.php",
+		"/home/nuser/code/pastoral/resources/views/components/elements/stepper/progress-bar.blade.php",
+		"/home/nuser/code/pastoral/resources/views/enrollments/form/partials/pastorals.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/institution.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/estudiants.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/patologies.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/representants.blade.php",
 		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components/validation-errors.blade.php",
 		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/address.blade.php",
-		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/representants.blade.php",
-		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/patologies.blade.php",
-		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/estudiants.blade.php",
 		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/contact.blade.php",
-		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/institution.blade.php",
-		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components/secondary-button.blade.php",
-		"/home/nuser/code/pastoral/resources/views/vendor/form-components/components/inputs/input.blade.php",
-		"/home/nuser/code/pastoral/resources/js/app.js",
-		"/home/nuser/code/pastoral/resources/views/navigation-menu/links/pastorals.blade.php",
-		"/home/nuser/code/pastoral/resources/views/institutions/pastorals/index.blade.php",
-		"/home/nuser/code/pastoral/resources/views/livewire/institutions/pastorals/list-component.blade.php",
-		"/home/nuser/code/pastoral/resources/views/layouts/app.blade.php",
-		"/home/nuser/code/pastoral/resources/views/livewire/institutions/pastorals/form/fields.blade.php",
-		"/home/nuser/code/pastoral/resources/views/dashboard.blade.php",
-		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/partials/header.blade.php",
+		"/home/nuser/code/pastoral/resources/views/components/mode-dark-btn.blade.php",
+		"/home/nuser/code/pastoral/resources/views/enrollments/layout/navbar.html",
+		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/<x-app-layout>.html",
+		"/home/nuser/code/pastoral/resources/views/default/layaout.html",
+		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components/label.blade.php",
+		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components/dialog-modal.blade.php",
 		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/home.blade.php",
-		"/home/nuser/code/pastoral/resources/views/profile/update-profile-information-form.blade.php",
-		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components/action-message.blade.php",
+		"/home/nuser/code/pastoral/public/vendor/livewire-alert/sweetalert2.js",
+		"/home/nuser/code/pastoral/resources/js/app.js",
+		"/home/nuser/code/pastoral/resources/views/layouts/guest.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/institutions/pastorals/list-component.blade.php",
+		"/home/nuser/code/pastoral/resources/views/institutions/pastorals/index.blade.php",
+		"/home/nuser/code/pastoral/resources/views/navigation-menu/links/pastorals.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/institutions/pastorals/form/fields.blade.php",
+		"/home/nuser/code/pastoral/resources/views/livewire/preincription/enrollment/steps/partials/header.blade.php",
 		"/home/nuser/code/pastoral/resources/views/profile/logout-other-browser-sessions-form.blade.php",
 		"/home/nuser/code/pastoral/resources/views/profile/update-password-form.blade.php",
-		"/home/nuser/code/pastoral/resources/views/vendor/form-components/components/inputs/select.blade.php",
 		"/home/nuser/code/pastoral/resources/views/enrollments/form/partials/estudiants.blade.php",
 		"/home/nuser/code/pastoral/resources/views/auth/login.blade.php",
 		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components/authentication-card-logo.blade.php",
 		"/home/nuser/code/pastoral/resources/views/components/enrollment/app-layout.blade.php",
-		"/home/nuser/code/pastoral/resources/views/vendor/jetstream/components/welcome.blade.php",
 		"/home/nuser/code/s2223/.env",
 		"/home/nuser/code/s2223/app/Http/Controllers/Admin/Fix/DB/HomeController.php",
 		"/home/nuser/code/s2223/app/Models/app/Planpago/Functions/Cuentaxpagar/Relations.php",
@@ -207,55 +1067,7 @@
 		"/home/nuser/code/s2122/resources/views/administracion/datatables/exportBootstrap.blade.php",
 		"/home/nuser/code/s2122/resources/views/administracion/boletins/partials/search_ajuste.blade.php",
 		"/home/nuser/code/s2122/resources/views/administracion/boletins/table/positions.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/boletins/positions.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/configuraciones/asignaturas/index.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/configuraciones/asignaturas/table/index.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/mailers/index.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/administracion/mailer/index-component.blade.php",
-		"/home/nuser/code/s2122/resources/views/email/mailers/control/messege.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/administracion/mailer/menu/index.blade.php",
-		"/home/nuser/code/s2122/resources/views/academicos/layouts/app.blade.php",
-		"/home/nuser/code/s2122/resources/views/academicos/mailers/index.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/layouts/app.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/administracion/mailer/table/mailer.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/index-component.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/table/mailer.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/layouts/dashboard/navbar/app.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/layouts/dashboard/navbar/access/mailers.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/layouts/dashboard/navbar/partials/mailers.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/layouts/dashboard/sidebar/partials/mailers.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/layouts/dashboard/sidebar/app.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/layouts/dashboard/navbar/partials/academicas.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/layouts/dashboard/sidebar/partials/academicas.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/table/show.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/edit-component.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/table/partials/btnMode.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/academico/mailer/table/partials/btnModeIndex.blade.php",
-		"/home/nuser/code/s2122/resources/views/academicos/tables/controls/estudiants/static.blade.php",
-		"/home/nuser/code/s2122/resources/views/academicos/home/partials/indicadores.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/inscripciones/book/table/statics.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/inscripciones/book/tab/pestudios.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/boletins/pdf/partials/31059/posiciones.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/boletins/pdf/table/tbody/31059.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/inscripciones/book.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/asisst_controls/assit_attendances/pdf/partials/assit_hours.blade.php",
-		"/home/nuser/code/s2122/app/Helpers/Convertidor.php",
-		"/home/nuser/code/s2122/Find Results change or",
-		"/home/nuser/code/s2122/resources/views/administracion/inscripciones/book/table/pestudios.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/inscripciones/book/table/tinscripcions.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/refunds/index.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/registropagos/form/asistent/sweetalerts/refund.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/registropagos/form/asistent/sweetalerts/questions.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/registropagos/asistent_representant_create.blade.php",
-		"/home/nuser/Descargas/sql/JNn83GeS->s2122-2022-05-11.sql",
-		"/home/nuser/Descargas/sql/default.sql",
-		"/home/nuser/code/s2122/resources/views/administracion/registropagos/crud.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/registropagos/table/crud.blade.php",
-		"/home/nuser/code/s2122/resources/views/administracion/creditoafavors/table/crud.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/index-component.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/table/index.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/form/fields.blade.php",
-		"/home/nuser/code/s2122/resources/views/livewire/administracion/refund/form/partials/ingresos.blade.php"
+		"/home/nuser/code/s2122/resources/views/administracion/boletins/positions.blade.php"
 	],
 	"find":
 	{
@@ -271,26 +1083,42 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
-			"authorities",
-			"$class['assit_schedule']=",
-			"$class['description']=",
-			"$class['legalname']=",
-			"$class['name']=",
-			"pastoral",
-			"lg:flex",
-			"mr-2 hidden",
-			"w-6 h-6 mr-1",
-			"md:",
-			"mr-2",
-			"cloc",
-			"th-large",
-			"evenodd",
-			"M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10",
-			"click",
-			"border px-4 py-2",
+			"inputtype",
+			"course",
+			"courses",
+			"course",
+			"lapse",
+			"lapses",
+			"lapse",
+			"curriculum_id",
+			"lapse",
+			"lapses",
+			"lapse",
+			"pescolar",
+			"pescolars_list",
+			"pescolar",
+			"pescolars",
+			"pastoral_id",
+			"pescolar_id",
+			"curriculum",
+			"relative inline-flex items-center px-2 py-2 -ml-px text-sm font-medium text-gray-500 bg-white border border-gray-300 cursor-default rounded-r-md leading-5 ",
+			"relative inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-500 bg-white border border-gray-300 cursor-default leading-5 select-none",
+			"user",
+			"bg-indigo-100",
+			"x-mode-dark-btn",
+			"dark",
+			"photo",
+			"action-message",
+			"x-jet-action-message",
+			"select-option",
+			"text-gray-500",
+			"mode-dark-btn",
+			"algo",
+			"wire:model.defer",
+			"wire:model",
 			"legalname",
 			"phone",
 			"date-picker",
@@ -303,27 +1131,38 @@
 		"regex": false,
 		"replace_history":
 		[
-			"pastorals",
-			"$class['name']=",
-			"$class['pastoral_id']=",
-			"$class['pescolar_id']=",
-			"$class['tauthority_id']=",
-			"authority",
-			"md:flex",
-			"mr-0.5 hidden",
-			"w-6 h-6 mr-0.5",
-			"lg:",
-			"mr-2 hidden md:table-cell",
-			"stop",
-			"large",
-			"px-6 py-4 border-b border-gray-200",
+			"input type",
+			"pensum",
+			"pensums",
+			"pensum",
+			"course",
+			"courses",
+			"course",
+			"section",
+			"level_id",
+			"section",
+			"level",
+			"levels",
+			"level",
+			"lapse",
+			"lapses",
+			"curriculum_id",
+			"lapse",
+			"pastoral",
+			"",
+			"text-black",
+			"wire:model.lazy",
+			"wire:model.defer",
+			"'wire:model.defer",
 			"name",
 			"legalname",
 			"id"
 		],
 		"reverse": false,
+		"scrollbar_highlights": true,
 		"show_context": true,
 		"use_buffer2": true,
+		"use_gitignore": true,
 		"whole_word": false,
 		"wrap": true
 	},
@@ -345,24 +1184,23 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "resources/views/livewire/admin/institution/authority/list-component.blade.php",
+					"file": "resources/views/livewire/admin/institution/curriculum/table/index.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1020,
+						"buffer_size": 6450,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								985,
-								985
+								4311,
+								4184
 							]
 						],
 						"settings":
@@ -372,27 +1210,12 @@
 							{
 								"close":
 								{
-									"1":
-									[
-										997,
-										998
-									]
 								},
 								"icon":
 								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/single_quote.png",
-										"region.greenish"
-									]
 								},
 								"open":
 								{
-									"1":
-									[
-										948,
-										949
-									]
 								},
 								"unmatched":
 								{
@@ -400,21 +1223,31 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
@@ -425,16 +1258,11 @@
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
@@ -449,12 +1277,128 @@
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
-								"bh_single_quote_content",
+								"bh_single_quote_content"
+							],
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 273.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "resources/views/livewire/admin/institution/lapse/table/index.blade.php",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6369,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4649,
+								4649
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										4661,
+										4662
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										4637,
+										4638
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
-								"bh_round_content"
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
 							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
 							"tab_size": 4,
@@ -464,463 +1408,8 @@
 						"translation.y": 156.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "resources/views/livewire/admin/institution/authority/form/edit.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1493,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1080,
-								1080
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										1092,
-										1093
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/single_quote.png",
-										"region.greenish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										1043,
-										1044
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content"
-							],
-							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "resources/views/livewire/admin/institution/authority/form/fields.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1795,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1465,
-								1465
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										1466,
-										1467
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/single_quote.png",
-										"region.greenish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										1454,
-										1455
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content"
-							],
-							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "resources/views/vendor/form-components/components/inputs/select.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1245,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-									"1":
-									[
-										1,
-										4
-									]
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
-							],
-							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "resources/views/enrollments/form/partials/estudiants.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6883,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1177,
-								1177
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-									"1":
-									[
-										992,
-										1000
-									]
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
-							],
-							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 247.0,
-						"translation.y": 273.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
+					"stack_multiselect": false,
 					"type": "text"
 				}
 			]
@@ -1011,7 +1500,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 294.0,
+	"side_bar_width": 213.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

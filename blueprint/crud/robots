@@ -1,0 +1,28 @@
+-----------------Bmain,robots,User------------------------------
+
+crear controladores
+php artisan make:controller 'Admin/Robot/BmainController'
+php artisan make:livewire 'Admin/Robot/Bmain/ListComponent'
+
+define ruta
+Route::resource('bmains', BmainController::class)->only([ 'index']);
+
+Create file
+
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Robot/Bmain/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Robot/Bmain/Traits/BmainRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Poll/Traits/Robot'
+touch '/home/nuser/code/pastoral/app/Models/app/Poll/Traits/Robot/BmainRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/robots/bmains'
+touch '/home/nuser/code/pastoral/resources/views/admin/robots/bmains/index.blade.php'
+
+copia codigo en backend
+-BmainRelations
+-BmainRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar

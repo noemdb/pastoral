@@ -52,8 +52,8 @@ class Pastoral extends Model
             ->join('pescolars', 'pescolars.id', '=', 'curricula.pescolar_id')
             ->join('pastorals', 'pastorals.id', '=', 'pescolars.pastoral_id')
             ->Where('pastorals.id', '=', $this->id)
-            ->where('pescolars.finicial',Carbon::now()->startOfYear())
-            ->where('pescolars.ffinal',Carbon::now()->endOfYear())
+            // ->where('pescolars.finicial','>=',Carbon::now()->startOfYear())
+            // ->where('pescolars.ffinal','>=',Carbon::now()->endOfYear())
             ->pluck('name','id');
         return $list;
     }

@@ -1,0 +1,28 @@
+-----------------Mailer,mailers,User------------------------------
+
+crear controladores
+php artisan make:controller 'Admin/Sender/MailerController'
+php artisan make:livewire 'Admin/Sender/Mailer/ListComponent'
+
+define ruta
+Route::resource('mailers', MailerController::class)->only([ 'index']);
+
+Create file
+
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Sender/Mailer/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Sender/Mailer/Traits/MailerRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/SenderMailer/Traits/Sender'
+touch '/home/nuser/code/pastoral/app/Models/app/SenderMailer/Traits/Sender/MailerRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/senders/mailers'
+touch '/home/nuser/code/pastoral/resources/views/admin/senders/mailers/index.blade.php'
+
+copia codigo en backend
+-MailerRelations
+-MailerRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar

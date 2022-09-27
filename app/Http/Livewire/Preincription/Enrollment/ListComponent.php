@@ -134,17 +134,18 @@ class ListComponent extends Component
 
     public function loadInstitution($id)
     {
-        $this->pastoral = Pastoral::find($id);
+        $this->pastoral = Pastoral::find($id); 
         if ($this->pastoral) {
             $this->pastoral_id = $this->pastoral->id;
             $this->pescolars_list = Pescolar::where('pastoral_id',$this->pastoral_id)->pluck('name','id')->toArray();
             $this->curriculum_list = $this->pastoral->curriculum_list()->toArray();
+            //dd($this->pescolars_list,$this->curriculum_list,$id);
         }
     }
 
     public function loadCurriculum($id)
     {
-        $this->curriculum = Curriculum::find($id);
+        $this->curriculum = Curriculum::find($id); //dd($this->curriculum,$id);
     }
 
     public function render()

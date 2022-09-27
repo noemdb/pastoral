@@ -16,7 +16,7 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex dark:text-white">
+                <div class="hidden space-x-2 sm:-my-px sm:ml-2 sm:flex dark:text-white">
 
                     @include('layouts.partials.navigation-links') 
                     

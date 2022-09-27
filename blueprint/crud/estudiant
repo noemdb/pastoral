@@ -1,0 +1,224 @@
+-----------------Enrollment,enrollments,User------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Competitor\EnrollmentController'
+
+define ruta
+Route::resource('enrollments', EnrollmentController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Competitor/Enrollment/ListComponent'
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Enrollment/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Enrollment/Traits/EnrollmentRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor'
+touch '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor/EnrollmentRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/competitors/enrollments'
+touch '/home/nuser/code/pastoral/resources/views/admin/competitors/enrollments/index.blade.php'
+
+copia codigo en backend
+-EnrollmentRelations
+-EnrollmentRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+-----------------Inscription,inscriptions,User------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Competitor\InscriptionController'
+
+define ruta
+Route::resource('inscriptions', InscriptionController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Competitor/Inscription/ListComponent'
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Inscription/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Inscription/Traits/InscriptionRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor'
+touch '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor/InscriptionRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/competitors/inscriptions'
+touch '/home/nuser/code/pastoral/resources/views/admin/competitors/inscriptions/index.blade.php'
+
+copia codigo en backend
+-InscriptionRelations
+-InscriptionRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+
+-----------------Representant,representants------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Competitor\RepresentantController'
+
+define ruta
+Route::resource('representants', RepresentantController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Competitor/Representant/ListComponent'
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Representant/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Representant/Traits/RepresentantRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor'
+touch '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor/RepresentantRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/competitors/representants'
+touch '/home/nuser/code/pastoral/resources/views/admin/competitors/representants/index.blade.php'
+
+copia codigo en backend
+-RepresentantRelations
+-RepresentantRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+-----------------Constancies,constancies------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Competitor\ConstanciesController'
+
+define ruta
+Route::resource('constancies', ConstanciesController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Competitor/Constancies/ListComponent'
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Constancies/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Constancies/Traits/ConstanciesRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor'
+touch '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor/ConstanciesRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/competitors/constancies'
+touch '/home/nuser/code/pastoral/resources/views/admin/competitors/constancies/index.blade.php'
+
+copia codigo en backend
+-ConstanciesRelations
+-ConstanciesRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+-----------------Grades,grades------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Competitor\GradesController'
+
+define ruta
+Route::resource('grades', GradesController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Competitor/Grades/ListComponent'
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Grades/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Grades/Traits/GradesRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor'
+touch '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor/GradesRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/competitors/grades'
+touch '/home/nuser/code/pastoral/resources/views/admin/competitors/grades/index.blade.php'
+
+copia codigo en backend
+-GradesRelations
+-GradesRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+-----------------Withdrawal,withdrawals------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Competitor\WithdrawalController'
+
+define ruta
+Route::resource('withdrawals', WithdrawalController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Competitor/Withdrawal/ListComponent'
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Withdrawal/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Withdrawal/Traits/WithdrawalRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor'
+touch '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor/WithdrawalRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/competitors/withdrawals'
+touch '/home/nuser/code/pastoral/resources/views/admin/competitors/withdrawals/index.blade.php'
+
+copia codigo en backend
+-WithdrawalRelations
+-WithdrawalRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+-----------------Withdrawal,withdrawals------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Competitor\WithdrawalController'
+
+define ruta
+Route::resource('withdrawals', WithdrawalController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Competitor/Withdrawal/ListComponent'
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Withdrawal/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Withdrawal/Traits/WithdrawalRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor'
+touch '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor/WithdrawalRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/competitors/withdrawals'
+touch '/home/nuser/code/pastoral/resources/views/admin/competitors/withdrawals/index.blade.php'
+
+copia codigo en backend
+-WithdrawalRelations
+-WithdrawalRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+-----------------GradeFix,gradefixs------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Competitor\GradeFixController'
+
+define ruta
+Route::resource('gradefixs', GradeFixController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Competitor/GradeFix/ListComponent'
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/GradeFix/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/GradeFix/Traits/GradeFixRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor'
+touch '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor/GradeFixRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/competitors/gradefixs'
+touch '/home/nuser/code/pastoral/resources/views/admin/competitors/gradefixs/index.blade.php'
+
+copia codigo en backend
+-GradeFixRelations
+-GradeFixRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar

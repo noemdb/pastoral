@@ -5,9 +5,12 @@ namespace App\Models\app\Estudiant;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\app\Estudiant\Traits\Competitor\EnrollmentRelations;
+
 class Enrollment extends Model
 {
     use HasFactory;
+    use EnrollmentRelations;
 
     protected $dates = ['created_at','updated_at'];
 
@@ -48,30 +51,63 @@ class Enrollment extends Model
     ];
 }
 /*
-$table->string('name')->comment('Nombres');
-$table->string('lastname')->comment('Apellidos');
-$table->integer('citype_id')->unsigned()->default(1)->comment('Tipo de identificación');
-$table->string('ci')->comment('N. de Identificación');
-$table->string('curriculum_id')->comment('Nivel');
-$table->enum('gender',['Masculino', 'Femenino'])->nullable()->comment('Genero');//Másculino,Femenino
-$table->enum('laterality',['Izquierda(o)', 'Derecha(o)'])->nullable()->comment('Genero');//Másculino,Femenino
-$table->date('date_birth')->nullable()->comment('Fecha de nacimiento');
-$table->string('city_birth')->nullable()->comment('Ciudad de nacimiento');
-$table->string('town_hall_birth')->nullable()->comment('Municipio de nacimiento');
-$table->string('state_birth')->nullable()->comment('Estado de nacimiento');
-$table->string('country_birth')->nullable()->comment('País de nacimiento');
-$table->string('dir_address')->nullable()->comment('Dirección de residencia');
-$table->string('phone')->nullable()->comment('Número de teléfono fijo');
-$table->string('email')->nullable()->comment('Correo electrónico');
-$table->string('twitter')->nullable()->comment('Twitter');
-$table->string('instagram')->nullable()->comment('Instagram');
-$table->string('whatsapp')->nullable()->comment('WhatsApp');
-$table->string('facebook')->nullable()->comment('Facebook');
-$table->string('patology')->nullable()->comment('Patologías que deban ser mensionadas');
-$table->boolean('status_nacionality')->nullable()->comment('Nacionalizado');
 
-$table->boolean('status')->default(true)->comment('Estado');
-$table->string('description')->nullable();
-$table->string('observations')->nullable()->comment('Observaciones');
+pastoral_id,representant_ci,representant_name,citype_id,ci,name,lastname,fullname,curriculum_id,gender,laterality,date_birth,city_id,state_id,country_id,dir_address,phone,email,twitter,whatsapp,facebook,patology,status_nacionality,status_patology,status,description,observations,
 
+
+pastoral_id
+representant_ci
+representant_name
+citype_id
+ci
+name
+lastname
+fullname
+curriculum_id
+gender
+laterality
+date_birth
+city_id
+state_id
+country_id
+dir_address
+phone
+email
+twitter
+whatsapp
+facebook
+patology
+status_nacionality
+status_patology
+status
+description
+observations
+
+pastoral_id
+representant_ci
+representant_name
+citype_id
+ci
+name
+lastname
+fullname
+curriculum_id
+gender
+laterality
+date_birth
+city_id
+state_id
+country_id
+dir_address
+phone
+email
+twitter
+whatsapp
+facebook
+patology
+status_nacionality
+status_patology
+status
+description
+observations
 */

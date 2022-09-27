@@ -216,22 +216,22 @@ Crear vistas
 ---------------------------------estudiants---------------------------------------Estudiant
 
 crear controladores
-php artisan make:controller 'Admin\Estudiant\EstudiantController'
+php artisan make:controller 'Admin\Competitor\EstudiantController'
 
 define ruta
 Route::resource('estudiants', EstudiantController::class)->only([ 'index']);
 
 Livewire
-php artisan make:livewire 'Admin/Estudiant/Estudiant/ListComponent'
+php artisan make:livewire 'Admin/Competitor/Estudiant/ListComponent'
 
 crear los traits
 Livewiere
-mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Estudiant/Estudiant/Traits'
-touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Estudiant/Estudiant/Traits/EstudiantRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Estudiant/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Estudiant/Traits/EstudiantRules.php'
 
 Model
-mkdir -p '/home/nuser/code/pastoral/app/Models/app/Pescolar/Traits/Estudiant'
-touch '/home/nuser/code/pastoral/app/Models/app/Pescolar/Traits/Estudiant/EstudiantRelations.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor'
+touch '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor/EstudiantRelations.php'
 
 copia codigo en backend
 -EstudiantRelations
@@ -244,19 +244,157 @@ Crear vistas
 -.copiar carpetas
 -.actualizar los route en el navbar
 
-user_id
-representant_id
-citype_id
-ci
-name
-lastname
-gender
-date_birth
-country_id
-state_id
-city_id
-dir_address
-phone
-email
-status_nacionality
-status
+-----------------Professorate,teachers,professorate,Teacher------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Professorate\TeacherController'
+
+define ruta
+Route::resource('teachers', TeacherController::class)->only([ 'index']);
+
+php artisan make:livewire 'Admin/Professorate/Teacher/ListComponent'
+
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Teacher/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Teacher/Traits/TeacherRules.php'
+
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Teacher'
+touch '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Teacher/TeacherRelations.php'
+
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/professorate/teachers'
+touch '/home/nuser/code/pastoral/resources/views/admin/professorate/teachers/index.blade.php'
+
+
+copia codigo en backend
+-TeacherRelations
+-TeacherRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+-----------------Sender,senders,senders,Mailer------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Sender\MailerController'
+
+define ruta
+Route::resource('senders', MailerController::class)->only([ 'index']);
+
+php artisan make:livewire 'Admin/Sender/Mailer/ListComponent'
+
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Sender/Mailer/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Sender/Mailer/Traits/MailerRules.php'
+
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Mailer/Traits/Mailer'
+touch '/home/nuser/code/pastoral/app/Models/app/Mailer/Traits/Mailer/MailerRelations.php'
+
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/senders/mailers'
+touch '/home/nuser/code/pastoral/resources/views/admin/senders/mailers/index.blade.php'
+
+
+copia codigo en backend
+-MailerRelations
+-MailerRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+-----------------Survey,surveys,PollMain------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Survey\PollMainController'
+
+define ruta
+Route::resource('surveys', PollMainController::class)->only([ 'index']);
+
+php artisan make:livewire 'Admin/Survey/PollMain/ListComponent'
+
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Survey/PollMain/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Survey/PollMain/Traits/PollMainRules.php'
+
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Poll/Traits/PollMain'
+touch '/home/nuser/code/pastoral/app/Models/app/Poll/Traits/PollMain/PollMainRelations.php'
+
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/surveys/pollmains'
+touch '/home/nuser/code/pastoral/resources/views/admin/surveys/pollmains/index.blade.php'
+
+
+copia codigo en backend
+-PollMainRelations
+-PollMainRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+-----------------Robot,robots,Bmain------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Robot\BmainController'
+
+define ruta
+Route::resource('robots', BmainController::class)->only([ 'index']);
+
+php artisan make:livewire 'Admin/Robot/Bmain/ListComponent'
+
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Robot/Bmain/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Robot/Bmain/Traits/BmainRules.php'
+
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Bot/Traits/Bmain'
+touch '/home/nuser/code/pastoral/app/Models/app/Bot/Traits/Bmain/BmainRelations.php'
+
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/robots/bmains'
+touch '/home/nuser/code/pastoral/resources/views/admin/robots/bmains/index.blade.php'
+
+
+copia codigo en backend
+-BmainRelations
+-BmainRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+-----------------Setup,setups,User------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Setup\UserController'
+
+define ruta
+Route::resource('setups', UserController::class)->only([ 'index']);
+
+php artisan make:livewire 'Admin/Setup/User/ListComponent'
+
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Setup/User/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Setup/User/Traits/UserRules.php'
+
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Bot/Traits/User'
+touch '/home/nuser/code/pastoral/app/Models/app/Bot/Traits/User/UserRelations.php'
+
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/setups/users'
+touch '/home/nuser/code/pastoral/resources/views/admin/setups/users/index.blade.php'
+
+
+copia codigo en backend
+-UserRelations
+-UserRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar

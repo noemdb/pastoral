@@ -1,0 +1,28 @@
+-----------------PollMain,surveys,User------------------------------
+
+crear controladores
+php artisan make:controller 'Admin/Survey/PollMainController'
+php artisan make:livewire 'Admin/Survey/PollMain/ListComponent'
+
+define ruta
+Route::resource('surveys', PollMainController::class)->only([ 'index']);
+
+Create file
+
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Survey/PollMain/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Survey/PollMain/Traits/PollMainRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Poll/Traits/Survey'
+touch '/home/nuser/code/pastoral/app/Models/app/Poll/Traits/Survey/PollMainRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/surveys/pollmains'
+touch '/home/nuser/code/pastoral/resources/views/admin/surveys/pollmains/index.blade.php'
+
+copia codigo en backend
+-PollMainRelations
+-PollMainRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
