@@ -5,7 +5,10 @@ namespace App\Models\app\Pescolar;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\app\Estudiant\Tinscription;
+
 use App\Models\app\Pescolar\Traits\Section\SectionRelations;
+use Illuminate\Support\Facades\DB;
 
 class Section extends Model
 {
@@ -36,9 +39,24 @@ class Section extends Model
     {
         return "{$this->code} {$this->name}";
     }
+
+    public static function section_list_fullname() 
+    {
+        $sections = Section::select('sections.id')
+            ->SelectRaw(' sections.id || " - " || sections.name as name ')
+            ->join('levels', 'levels.id', '=', 'sections.level_id')
+            ->join('curricula', 'curricula.id', '=', 'levels.curriculum_id')
+            ->join('pescolars', 'pescolars.id', '=', 'curricula.pescolar_id')
+            ->join('pastorals', 'pastorals.id', '=', 'pescolars.pastoral_id')
+            ->pluck('name','id');
+        return $sections;
+    }
 }
 
 /*
+
+DB::raw('pastorals.code || " - " || pescolars.code  || " - " || curricula.code as name  || " - " || levels.code as name  || " - " || sections.name as name' )
+
 'level_id','code','code_sm','name','description','observations','color','header','body','footer','status',
 
 level_id
