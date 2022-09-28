@@ -8,7 +8,6 @@ trait RulesAuthority
 
     protected $rules = [
         'authority.tauthority_id' => 'required|integer',
-        'authority.pescolar_id' => 'required|integer',
         'authority.pastoral_id' => 'required|integer',
         'authority.name' => 'required|string', //
         'authority.lastname' => 'required|string', //
@@ -24,7 +23,6 @@ trait RulesAuthority
     {
         return [
             'authority.tauthority_id' => $this->list_comment['tauthority_id'],
-            'authority.pescolar_id' => $this->list_comment['pescolar_id'],
             'authority.pastoral_id' => $this->list_comment['pastoral_id'],
             'authority.name' => $this->list_comment['name'],
             'authority.lastname' => $this->list_comment['lastname'],

@@ -2,7 +2,6 @@
 @php
     $class['iteration']="text-left px-4";
     $class['tauthority_id']="hidden md:table-cell text-left px-4";
-    $class['pescolar_id']="hidden md:table-cell text-left px-4";
     $class['pastoral_id']="hidden lg:table-cell text-left px-4";
     $class['name']="text-left px-4";
     $class['ci']="text-left px-4";
@@ -44,14 +43,6 @@
                         <div> {{$list_comment['tauthority_id'] ?? ''}} </div>
                         @if($authorities->isNotEmpty())
                             <x-elements.crud.sort-by field="tauthority_id" :sortBy="$sortBy" :sortDirection="$sortDirection" />
-                        @endif
-                    </div>
-                </th>
-                <th class="{{ $class['pescolar_id'] ?? ''}}">
-                    <div class="flex justify-between">
-                        <div> {{$list_comment['pescolar_id'] ?? ''}} </div>
-                        @if($authorities->isNotEmpty())
-                            <x-elements.crud.sort-by field="pescolar_id" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                         @endif
                     </div>
                 </th>
@@ -100,7 +91,6 @@
             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($authority->id == $authority_id) ? 'bg-gray-200' : null}}">
                 <td class="{{ $class['iteration'] ?? ''}}">{{$loop->iteration}}</td>
                 <td class="{{ $class['tauthority_id'] ?? ''}}">{{$authority->tauthority->name ?? ''}}</td>
-                <td class="{{ $class['pescolar_id'] ?? ''}}">{{$authority->pescolar->name ?? ''}}</td>
                 <td class="{{ $class['pastoral_id'] ?? ''}}">{{$authority->pastoral->name ?? ''}}</td>
                 <td class="{{ $class['name'] ?? ''}}">{{$authority->fullname ?? ''}}</td>
                 <td class="{{ $class['ci'] ?? ''}}">{{$authority->ci ?? ''}}</td>

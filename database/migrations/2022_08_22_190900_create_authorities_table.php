@@ -16,7 +16,7 @@ class CreateAuthoritiesTable extends Migration
         Schema::create('authorities', function (Blueprint $table) {
             $table->id();
             $table->integer('tauthority_id')->unsigned();
-            $table->integer('pescolar_id')->unsigned();
+            // $table->integer('pescolar_id')->unsigned();
             $table->integer('pastoral_id')->unsigned();
             $table->string('name');
             $table->string('lastname');

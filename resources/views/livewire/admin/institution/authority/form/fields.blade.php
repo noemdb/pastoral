@@ -11,22 +11,14 @@
 
 <div class="grid grid-cols-2 gap-4">    
     <div class="mb-4">
-        @php $name = 'pescolar_id'; $model = 'authority.'.$name; $key = Str::random(10); @endphp
-        <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
-        <x-select wire:key="{{$key}}" wire:model.lazy="{{$model}}" :options="$pescolars_list" class=" w-full " />
-        @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
-    </div>
-    <div class="mb-4">
         @php $name = 'tauthority_id'; $model = 'authority.'.$name; $key = Str::random(10); @endphp
         <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
         <x-select wire:key="{{$key}}" wire:model.lazy="{{$model}}" :options="$tauthority_list" class=" w-full " />
         @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
-    </div>    
-</div>
+    </div>  
+    
+    <hr>
 
-<hr>
-
-<div class="grid grid-cols-2 gap-4">
     <div class="mb-4">
         @php $name = 'name'; $model = 'authority.'.$name; $key = Str::random(10);@endphp
         <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
@@ -52,11 +44,7 @@
         <x-input wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" class="block mt-1 w-full" />
         @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
     </div>
-</div>
 
-<hr>
-
-<div class="grid grid-cols-2 gap-4">
     <div class="mb-4">
         @php $name = 'finicial'; $model = 'authority.'.$name; $key = Str::random(10);@endphp
         <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
@@ -70,9 +58,7 @@
         <x-input type="date" wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" class="block mt-1 w-full" />
         @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
     </div>
-</div>
 
-<div class="grid grid-cols-1 gap-4">
     <div class="mb-4">
         @php $name = 'profile_professional'; $model = 'authority.'.$name; $key = Str::random(10);@endphp
         <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />

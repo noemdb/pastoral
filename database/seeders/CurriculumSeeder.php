@@ -39,5 +39,57 @@ class CurriculumSeeder extends Seeder
                 "status_build_promotion"=>true,
             ],
         );
+
+        DB::table('curricula')->insert(
+            [
+                "pescolar_id"=>2,
+                "code"=>"3200",
+                "name"=>"Comunión",
+                "order"=>"1",
+                "capacity"=>"30",
+                "title"=>"1ra Comunión",
+                "status"=>true,
+                "status_build_promotion"=>true,
+            ]
+        );
+
+        DB::table('curricula')->insert(
+            [
+                "pescolar_id"=>2,
+                "code"=>"3300",
+                "name"=>"Confirmación",
+                "order"=>"1",
+                "capacity"=>"30",
+                "title"=>"Confirmación",
+                "status"=>true,
+                "status_build_promotion"=>true,
+            ],
+        );
+
+        DB::table('curricula')->insert(
+            [
+                "pescolar_id"=>3,
+                "code"=>"3300",
+                "name"=>"Confirmación",
+                "order"=>"1",
+                "capacity"=>"30",
+                "title"=>"Confirmación",
+                "status"=>true,
+                "status_build_promotion"=>true,
+            ],
+        );
+
+        DB::table('curricula')->insert(
+            [
+                "pescolar_id"=>4,
+                "code"=>"3200",
+                "name"=>"Comunión",
+                "order"=>"1",
+                "capacity"=>"30",
+                "title"=>"1ra Comunión",
+                "status"=>true,
+                "status_build_promotion"=>true,
+            ]
+        );
     }
 }

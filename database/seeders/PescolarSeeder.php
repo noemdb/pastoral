@@ -19,11 +19,55 @@ class PescolarSeeder extends Seeder
         DB::table('pescolars')->insert(
             [
                 "pastoral_id"=>1,
-                "code"=>"0001",
-                "name"=>"1er 22-23",
+                "code"=>"FLA01",
+                "name"=>"Período Educativo 22-23",
                 "finicial"=>Carbon::now()->startOfYear()->format('Y-m-d'),
                 "ffinal"=>Carbon::now()->endOfYear()->format('Y-m-d'),
-                "description"=>"1re Período",
+                "description"=>"Tiempo en el que se realizaràn todas las actividades realicionadas catequesis de la instituciòn 22-23",
+            ]
+        );
+
+        DB::table('pescolars')->insert(
+            [
+                "pastoral_id"=>2,
+                "code"=>"CTE01",
+                "name"=>"Período Educativo 22-23",
+                "finicial"=>Carbon::now()->startOfYear()->format('Y-m-d'),
+                "ffinal"=>Carbon::now()->endOfYear()->format('Y-m-d'),
+                "description"=>"Tiempo en el que se realizaràn todas las actividades realicionadas catequesis de la instituciòn 22-23",
+            ]
+        );
+
+        DB::table('pescolars')->insert(
+            [
+                "pastoral_id"=>3,
+                "code"=>"INP03",
+                "name"=>"Período Educativo 22-23",
+                "finicial"=>Carbon::now()->startOfYear()->format('Y-m-d'),
+                "ffinal"=>Carbon::now()->endOfYear()->format('Y-m-d'),
+                "description"=>"Tiempo en el que se realizaràn todas las actividades realicionadas catequesis de la instituciòn 22-23",
+            ]
+        );
+
+        DB::table('pescolars')->insert(
+            [
+                "pastoral_id"=>4,
+                "code"=>"SP03",
+                "name"=>"Período Educativo 22-23",
+                "finicial"=>Carbon::now()->startOfYear()->format('Y-m-d'),
+                "ffinal"=>Carbon::now()->endOfYear()->format('Y-m-d'),
+                "description"=>"Tiempo en el que se realizaràn todas las actividades realicionadas catequesis de la instituciòn 22-23",
+            ]
+        );
+
+        DB::table('pescolars')->insert(
+            [
+                "pastoral_id"=>5,
+                "code"=>"BQ01",
+                "name"=>"Período Educativo 22-23",
+                "finicial"=>Carbon::now()->startOfYear()->format('Y-m-d'),
+                "ffinal"=>Carbon::now()->endOfYear()->format('Y-m-d'),
+                "description"=>"Tiempo en el que se realizaràn todas las actividades realicionadas catequesis de la instituciòn 22-23",
             ]
         );
 
