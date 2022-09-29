@@ -21,6 +21,7 @@ class Inscription extends Model
         'tinscription_id' => 'Tipo',
         'section_id' => 'Sección',
         'estudiant_id' => 'Estudiante',
+        'ci' => 'CI',
         'observations' => 'Observaciones',
     ];
     

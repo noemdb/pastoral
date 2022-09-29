@@ -1,7 +1,7 @@
 <?php
 namespace App\Models\app\Estudiant\Traits\Competitor; //app/Models/app/Estudiant/Traits/Competitor/EnrollmentRelations.php
 
-trait EstudentRelations {
+trait EstudiantRelations {
 
     public function user()
     {

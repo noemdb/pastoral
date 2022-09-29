@@ -14,6 +14,11 @@ trait InscriptionRelations {
     {
         return $this->belongsTo('App\Models\app\Pescolar\Section');
     }
+
+    public function estudiant()
+    {
+        return $this->belongsTo('App\Models\app\Estudiant');
+    }
     ///////////////////////////////////////////////////////////////////////////////////    
 }
 

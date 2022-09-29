@@ -33,6 +33,8 @@ class CreateEstudiantsTable extends Migration
 
             $table->boolean('status')->default(true)->comment('Estado');
 
+            $table->timestamps();
+
             // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             // $table->foreign('representant_id')->references('id')->on('representants')->onDelete('cascade')->onUpdate('cascade');
             // $table->foreign('citype_id')->references('id')->on('citypes')->onDelete('cascade')->onUpdate('cascade');

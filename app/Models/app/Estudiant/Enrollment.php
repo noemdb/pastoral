@@ -29,7 +29,7 @@ class Enrollment extends Model
         'name'=>'Nombres del estudiante',
         'lastname'=>'Apellidos del estudiante',
         'fullname'=>'Nombre',
-        'curriculum_id'=>'Plan de Estudio',
+        'curriculum_id'=>'Plan de Formación',
         'gender'=>'Genero',
         'laterality'=>'Lateralidad',
         'date_birth'=>'Fecha de nacimiento',

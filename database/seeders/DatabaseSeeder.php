@@ -15,15 +15,17 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\User::factory(10)->create();
 
+        
+
         $this->call(UserAdminSeeder::class);
         $this->call(PastoralSeeder::class);
         $this->call(CitypeSeeder::class);
         $this->call(PescolarSeeder::class);
         $this->call(CurriculumSeeder::class);
         
-        // $this->call(CountrySeeder::class);
-        // $this->call(StateSeeder::class);
-        // $this->call(CitySeeder::class);
+        $this->call(CountrySeeder::class);
+        $this->call(StateSeeder::class);
+        $this->call(CitySeeder::class);
         
         $this->call(TauthoritySeeder::class);
         $this->call(AuthoritySeeder::class);
@@ -33,6 +35,9 @@ class DatabaseSeeder extends Seeder
         $this->call(CourseSeeder::class);
         $this->call(PensumSeeder::class);
         $this->call(TinscriptionSeeder::class);
+
+        $this->call(RepresentantSeeder::class);        
+        //$this->call(EstudiantSeeder::class);        
 
     }
 }

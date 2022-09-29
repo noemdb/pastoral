@@ -14,24 +14,24 @@ class Representant extends Model
     ];
 
     const COLUMN_COMMENTS = [
-        'user_id' => 'user_id',
-        'citype_id' => 'citype_id',
-        'ci' => 'ci',
-        'name'=>'ciname',
-        'phone'=>'phone',
-        'email'=>'email',
+        'user_id' => 'Usuario',
+        'citype_id' => 'T.Indet.',
+        'ci' => 'CI Ident.',
+        'name'=>'Nombre',
+        'phone'=>'Teléfono',
+        'email'=>'Correo Electrónico',
         'whatsapp'=>'whatsapp',
         'telegram'=>'telegram',
         'twitter'=>'twitter',
         'instagram'=>'instagram',
-        'status_adviders'=>'status_adviders',
+        'status_adviders'=>'Delegado',
     ];
 
 
     public static function representant_list() 
     {
         $representants = Representant::select('representants.id')
-            ->SelectRaw(' representants.ci  ||  representants.name as name ')
+            ->SelectRaw(' representants.ci || " - " || representants.name as name ')
             ->pluck('name','id');
         return $representants;
     }

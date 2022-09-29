@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Competitor\Estudent;
-//return view('livewire.admin.competitor.estudent.list-component');
+namespace App\Http\Livewire\Admin\Competitor\Estudiant;
+//return view('livewire.admin.competitor.estudiant.list-component');
 
-use App\Http\Livewire\Admin\Competitor\Estudent\Traits\EstudentRules;
+use App\Http\Livewire\Admin\Competitor\Estudiant\Traits\EstudiantRules;
 use App\Http\Livewire\traits\WithSortingTrait;
 
 use Jantinnerezo\LivewireAlert\LivewireAlert;
@@ -18,17 +18,20 @@ use App\Models\app\Pescolar;
 use App\Models\app\Pescolar\Curriculum;
 use App\Models\app\Estudiant\Testudiant;
 use App\Models\app\Pescolar\Section;
+use App\Models\app\Word\City;
+use App\Models\app\Word\Country;
+use App\Models\app\Word\State;
 
 class ListComponent extends Component
 {
     use WithPagination;
     use LivewireAlert;
     use WithSortingTrait;
-    use EstudentRules;
+    use EstudiantRules;
 
     public Estudiant $estudiant;
 
-    public $estudiant_id;
+    public $estudiant_id,$country,$state,$city,$country_id,$state_id,$city_id;
 
     public $search = ''; //'name'
 
@@ -38,7 +41,7 @@ class ListComponent extends Component
 
     public $status_last,$status_first,$saveInto;
 
-    public $representant_list,$citype_list,$genders_list;
+    public $representant_list,$citype_list,$genders_list,$country_list;
 
     protected $listeners = [ 'remove' ];
 
@@ -50,7 +53,14 @@ class ListComponent extends Component
         $this->representant_list = Representant::representant_list()->toArray(); //dd($this->testudiant_list);
         $this->citype_list = Citype::citype_list()->toArray();
         $this->genders_list = ['Masculino'=>'Masculino', 'Femenino'=>'Femenino'];
-    } //'user_id','representant_id','citype_id',
+
+        $this->country_list = Country::all()->pluck('name','id')->toArray();
+        $this->state_list = Array();
+        $this->city_list = Array();
+        $this->country_id = null;
+        $this->state_id = null;
+        $this->city_id = null;
+    }
 
     public function render()
     {
@@ -71,7 +81,7 @@ class ListComponent extends Component
         
         $estudiants = $estudiants->paginate($this->paginate);
 
-        return view('livewire.admin.competitor.estudent.list-component', [
+        return view('livewire.admin.competitor.estudiant.list-component', [
             'estudiants' => $estudiants,
         ]);
     }
@@ -135,6 +145,20 @@ class ListComponent extends Component
     {
         $this->estudiant->delete();
         $this->alert('success', 'Los datos fueron eliminados satisfactoriamente!');
+    }
+
+    public function loadState($id)
+    {
+        $this->country = Country::find($id);
+        $this->country_id = ($this->country) ? $this->country->id : null ;
+        $this->state_list = ($this->country) ? State::where('country_id',$id)->orderBy('name')->pluck('name','id')->toArray() : null ;
+    }
+
+    public function loadCity($id)
+    {
+        $this->state = State::find($id);
+        $this->state_id = ($this->state) ? $this->state->id : null ;
+        $this->city_list = ($this->state) ? City::where('state_id',$id)->orderBy('name')->pluck('name','id')->toArray() : null ;
     }
 
 }

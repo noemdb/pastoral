@@ -10,13 +10,13 @@ trait RepresentantRules
         'representant.user_id' => 'nullable|integer',
         'representant.citype_id' => 'required|integer',
         'representant.ci' => 'required|integer',
-        'representant.name' => 'required|string|min:2|max:10',
+        'representant.name' => 'required|string|min:5|max:100',
         'representant.phone' => 'required|string',
         'representant.email' => 'required|string',
         'representant.whatsapp' => 'required|string',
-        'representant.telegram' => 'required|date',
-        'representant.twitter' => 'required|integer',
-        'representant.instagram' => 'required|integer',
+        'representant.telegram' => 'required|string',
+        'representant.twitter' => 'required|string',
+        'representant.instagram' => 'required|string',
         'representant.status_adviders' => 'required|integer',
     ];
 

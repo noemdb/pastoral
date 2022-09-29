@@ -8,9 +8,9 @@
 
                 {{-- <div>Participantes</div> --}}
 
-                <livewire:admin.competitor.estudent.list-component />
+                <livewire:admin.competitor.estudiant.list-component />
 
-                {{-- /home/nuser/code/pastoral/resources/views/livewire/admin/competitor/estudent/list-component.blade.php --}}
+                {{-- /home/nuser/code/pastoral/resources/views/livewire/admin/competitor/estudiant/list-component.blade.php --}}
 
             </div>
         </div>

@@ -51,12 +51,14 @@ class ListComponent extends Component
     {
         $search = $this->search; 
 
-        $inscriptions = Inscription::select('inscriptions.*');  
+        $inscriptions = Inscription::select('inscriptions.*')
+            ->join('estudiants', 'estudiants.id', '=', 'inscriptions.estudiant_id');  
 
         $inscriptions = (!empty($search)) ? $inscriptions->orwhere(
             function($query) use ($search) {
-                $query->orWhere('description','like', '%'.$search.'%')
-                    ->orWhere('name','like','%'.$search.'%');
+                $query->orWhere('estudiants.name','like', '%'.$search.'%')
+                    ->orWhere('estudiants.lastname','like','%'.$search.'%')
+                    ->orWhere('estudiants.ci','like','%'.$search.'%');
             }) 
             : $inscriptions ; //dd($inscriptions);
 

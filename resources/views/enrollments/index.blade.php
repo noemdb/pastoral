@@ -14,11 +14,14 @@
                 </x-jet-nav-link>
                 </div>
 
-                <div class="flex">
+                <div class="flex text-center">
 
                     <h2 class="font-semibold text-xl text-gray-800 leading-tight dark:text-gray-100">
                         Preinscripciones
-                    </h2>                     
+                        <br>
+                        <span class=" font-semibold text-gray-400 text-sm">Formación para el catesismo de 1ra Comunión y Confirmación </span> 
+                    </h2>
+                                       
 
                 </div>
 

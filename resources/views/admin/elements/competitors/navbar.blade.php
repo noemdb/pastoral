@@ -26,17 +26,17 @@
                 <x-icon-file-invoice class="w-6 h-6 mr-0.5" />
                 <div class="mr-0.5 hidden md:flex">{{ __('Constancias') }} </div>                        
             </x-jet-nav-link>
-            <x-jet-nav-link class=" shadow py-2 mx-1 rounded" href="{{ route('grades.index') }}" :active="request()->is('*grades*')">
+            <x-jet-nav-link title="Informe de Notas" class=" shadow py-2 mx-1 rounded" href="{{ route('grades.index') }}" :active="request()->is('*grades*')">
                 <x-icon-list-ol class="w-6 h-6 mr-0.5" />
-                <div class="mr-0.5 hidden md:flex">{{ __('Informe de Notas') }} </div>                        
+                <div class="mr-0.5 hidden md:flex">{{ __('Notas') }} </div>                        
             </x-jet-nav-link>
             <x-jet-nav-link class=" shadow py-2 mx-1 rounded" href="{{ route('withdrawals.index') }}" :active="request()->is('*withdrawals*')">
                 <x-icon-random class="w-6 h-6 mr-0.5" />
                 <div class="mr-0.5 hidden md:flex">{{ __('Retiros') }} </div>                        
             </x-jet-nav-link>
-            <x-jet-nav-link class=" shadow py-2 mx-1 rounded" href="{{ route('gradefixs.index') }}" :active="request()->is('*gradefixs*')">
+            <x-jet-nav-link title="Ajustes de Notas" class=" shadow py-2 mx-1 rounded" href="{{ route('gradefixs.index') }}" :active="request()->is('*gradefixs*')">
                 <x-icon-th-large class="w-6 h-6 mr-0.5" />
-                <div class="mr-0.5 hidden md:flex">{{ __('Ajustes de Notas') }} </div>                        
+                <div class="mr-0.5 hidden md:flex">{{ __('Ajustes') }} </div>                        
             </x-jet-nav-link>
 
         </div>

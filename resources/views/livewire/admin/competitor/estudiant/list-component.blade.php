@@ -21,7 +21,7 @@
         @if ($modeEdit)
     
             <div class="mb-4 pb-4"> 
-                {{-- @include('livewire.admin.institution.course.form.edit') --}}
+                @include('livewire.admin.competitor.estudiant.form.edit')
             </div>
     
         @endif
@@ -30,7 +30,7 @@
         @if ($modeCreate)
     
             <div class="mb-4 pb-4">
-                @include('livewire.admin.competitor.estudent.form.create')
+                @include('livewire.admin.competitor.estudiant.form.create')
             </div>
     
         @endif
@@ -38,7 +38,7 @@
     
     
         <div class="mx-4 px-4">
-            @include('livewire.admin.competitor.estudent.table.index')
+            @include('livewire.admin.competitor.estudiant.table.index')
             {{-- //views/livewire/admin/competitor/enrollment/table/index.blade.php --}}
         </div>
     

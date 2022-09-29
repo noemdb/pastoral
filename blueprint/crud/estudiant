@@ -1,23 +1,23 @@
------------------Estudent,estudents------------------------------
+-----------------Estudiant,estudiants------------------------------
 
 crear controladores
-php artisan make:controller 'Admin\Competitor\EstudentController'
+php artisan make:controller 'Admin\Competitor\EstudiantController'
 
 define ruta
-Route::resource('estudents', EstudentController::class)->only([ 'index']);
+Route::resource('estudiants', EstudiantController::class)->only([ 'index']);
 
 Livewire
-php artisan make:livewire 'Admin/Competitor/Estudent/ListComponent'
-mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Estudent/Traits'
-touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Estudent/Traits/EstudentRules.php'
+php artisan make:livewire 'Admin/Competitor/Estudiant/ListComponent'
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Estudiant/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Estudiant/Traits/EstudiantRules.php'
 mkdir -p '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor'
-touch '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor/EstudentRelations.php'
-mkdir -p '/home/nuser/code/pastoral/resources/views/admin/competitors/estudents'
-touch '/home/nuser/code/pastoral/resources/views/admin/competitors/estudents/index.blade.php'
+touch '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor/EstudiantRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/competitors/estudiants'
+touch '/home/nuser/code/pastoral/resources/views/admin/competitors/estudiants/index.blade.php'
 
 copia codigo en backend
--EstudentRelations
--EstudentRules
+-EstudiantRelations
+-EstudiantRules
 
 composer dump-autoload
 

@@ -2,14 +2,14 @@
 
 namespace App\Models\app;
 
-use App\Models\app\Estudiant\Traits\Competitor\EstudentRelations;
+use App\Models\app\Estudiant\Traits\Competitor\EstudiantRelations;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Estudiant extends Model
 {
     use HasFactory;
-    use EstudentRelations;
+    use EstudiantRelations;
 
     protected $fillable = [
         'user_id','representant_id','citype_id','ci','name','lastname','gender','date_birth','country_id','state_id','city_id','dir_address','phone','email','status_nacionality',
@@ -30,7 +30,7 @@ class Estudiant extends Model
         'dir_address'=>'Direccón de residencia',
         'phone'=>'Teléfono',
         'email'=>'Correo Electrónico',
-        'status_nacionality'=>'COD status_nacionality'
+        'status_nacionality'=>'Nacionalizado'
     ];
 
     public function getFullNameAttribute()

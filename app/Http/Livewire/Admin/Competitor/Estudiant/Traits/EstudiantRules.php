@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Competitor\Estudent\Traits;
+namespace App\Http\Livewire\Admin\Competitor\Estudiant\Traits;
 
-trait EstudentRules
+trait EstudiantRules
 {
    //'user_id','representant_id','citype_id','ci','name','lastname','gender','date_birth','country_id','state_id','city_id','dir_address','phone','email','status_nacionality',
 

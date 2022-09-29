@@ -8,9 +8,9 @@ trait InscriptionRules
 
     protected $rules = [
         'inscription.tinscription_id' => 'required|integer',
-        'inscription.section_id' => 'required|string|min:2|max:10',
-        'inscription.estudiant_id' => 'required|string|min:2|max:5',
-        'inscription.observations' => 'required|string',
+        'inscription.section_id' => 'required|integer',
+        'inscription.estudiant_id' => 'required|integer',
+        'inscription.observations' => 'nullable|string',
     ];
 
     protected function validationAttributes()
