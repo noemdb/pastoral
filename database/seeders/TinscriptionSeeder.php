@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class TinscriptionSeeder extends Seeder
 {
@@ -13,6 +14,11 @@ class TinscriptionSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('tinscriptions')->insert([
+			'name' => 'Regular'
+        ]);        
+        DB::table('tinscriptions')->insert([
+			'name' => 'Nuevo ingreso'
+        ]);
     }
 }

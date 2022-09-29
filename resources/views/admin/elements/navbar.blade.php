@@ -21,7 +21,7 @@
             </x-jet-nav-link>
             <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" href="{{ route('lapses.index') }}" :active="request()->routeIs('*lapses*')">
                 <x-icon-clock class="w-6 h-6 mr-0.5" />
-                <div class="mr-0.5 hidden md:flex">{{ __('Lapsos') }} </div>
+                <div class="mr-0.5 hidden md:flex">{{ __('Cortes') }} </div>
             </x-jet-nav-link>
             <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" href="{{ route('levels.index') }}" :active="request()->routeIs('*levels*')">
                 <x-icon-chart-bar-v class="w-6 h-6 mr-0.5" />

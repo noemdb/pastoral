@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Competitor\Representant;
-//livewire.admin.competitor.representant.list-component
+namespace App\Http\Livewire\Admin\Competitor\Estudent;
+//return view('livewire.admin.competitor.estudent.list-component');
 
-use App\Http\Livewire\Admin\Competitor\Representant\Traits\RepresentantRules;
+use App\Http\Livewire\Admin\Competitor\Estudent\Traits\EstudentRules;
 use App\Http\Livewire\traits\WithSortingTrait;
 
 use Jantinnerezo\LivewireAlert\LivewireAlert;
@@ -16,7 +16,7 @@ use App\Models\app\Estudiant\Representant;
 use App\Models\app\Pescolar;
 
 use App\Models\app\Pescolar\Curriculum;
-use App\Models\app\Estudiant\Trepresentant;
+use App\Models\app\Estudiant\Testudiant;
 use App\Models\app\Pescolar\Section;
 
 class ListComponent extends Component
@@ -24,11 +24,11 @@ class ListComponent extends Component
     use WithPagination;
     use LivewireAlert;
     use WithSortingTrait;
-    use RepresentantRules;
+    use EstudentRules;
 
-    public Representant $representant;
+    public Estudiant $estudiant;
 
-    public $representant_id;
+    public $estudiant_id;
 
     public $search = ''; //'name'
 
@@ -46,45 +46,48 @@ class ListComponent extends Component
     {
         $this->modeCreate = false;
         $this->modeEdit = false;
-        $this->list_comment = Representant::COLUMN_COMMENTS; 
+        $this->list_comment = Estudiant::COLUMN_COMMENTS; 
+        $this->representant_list = Representant::representant_list()->toArray(); //dd($this->testudiant_list);
         $this->citype_list = Citype::citype_list()->toArray();
-    }
+        $this->genders_list = ['Masculino'=>'Masculino', 'Femenino'=>'Femenino'];
+    } //'user_id','representant_id','citype_id',
 
     public function render()
     {
         $search = $this->search; 
 
-        $representants = Representant::select('representants.*');  
+        $estudiants = Estudiant::select('estudiants.*');  
 
-        $representants = (!empty($search)) ? $representants->orwhere(
+        $estudiants = (!empty($search)) ? $estudiants->orwhere(
             function($query) use ($search) {
-                $query->orWhere('name','like', '%'.$search.'%')
+                $query->orWhere('lastname','like', '%'.$search.'%')
+                    ->orWhere('name','like','%'.$search.'%')
                     ->orWhere('ci','like','%'.$search.'%')
                     ;
             }) 
-            : $representants ; //dd($representants);
+            : $estudiants ; //dd($estudiants);
 
-        $representants = ($this->sortBy && $this->sortDirection) ? $representants->orderBy($this->sortBy,$this->sortDirection) : $representants;
+        $estudiants = ($this->sortBy && $this->sortDirection) ? $estudiants->orderBy($this->sortBy,$this->sortDirection) : $estudiants;
         
-        $representants = $representants->paginate($this->paginate);
+        $estudiants = $estudiants->paginate($this->paginate);
 
-        return view('livewire.admin.competitor.representant.list-component', [
-            'representants' => $representants,
+        return view('livewire.admin.competitor.estudent.list-component', [
+            'estudiants' => $estudiants,
         ]);
     }
 
     public function create()
     {
-        $this->representant = new Representant;
-        $this->representant_id = null;
+        $this->estudiant = new Estudiant;
+        $this->estudiant_id = null;
         $this->modeCreate = true;
         $this->modeEdit = false;
     }
 
     public function edit($id)
     {
-        $this->representant = Representant::find($id);
-        $this->representant_id = ($this->representant) ? $this->representant->id:null;
+        $this->estudiant = Estudiant::find($id);
+        $this->estudiant_id = ($this->estudiant) ? $this->estudiant->id:null;
         $this->modeEdit = true;
         $this->modeCreate = false;
     }
@@ -92,19 +95,19 @@ class ListComponent extends Component
     public function save()
     {
         $this->validate();
-        $this->representant->save();
+        $this->estudiant->save();
 
         $this->alert('success', 'Los datos fueron almacenados satisfactoriamente!');
 
         $this->modeCreate = false;
         $this->modeEdit = false;
-        $this->representant = new Representant;
-        $this->reset(['representant_id']);
+        $this->estudiant = new Estudiant;
+        $this->reset(['estudiant_id']);
     }
 
     public function closeEditMode()
     {
-        $this->representant_id = false;
+        $this->estudiant_id = false;
         $this->modeEdit = false;
     }
 
@@ -115,9 +118,9 @@ class ListComponent extends Component
 
     public function delete ($id)
     {
-        $representant = Representant::find($id);
-        if ($representant) {
-            $this->representant = $representant;
+        $estudiant = Estudiant::find($id);
+        if ($estudiant) {
+            $this->estudiant = $estudiant;
             $this->alert('warning', 'Estas seguro de realizar esta acción?', [
                 'showConfirmButton' => true,
                 'showCancelButton' => true,
@@ -130,7 +133,7 @@ class ListComponent extends Component
 
     public function remove ()
     {
-        $this->representant->delete();
+        $this->estudiant->delete();
         $this->alert('success', 'Los datos fueron eliminados satisfactoriamente!');
     }
 

@@ -21,12 +21,18 @@ class DatabaseSeeder extends Seeder
         $this->call(PescolarSeeder::class);
         $this->call(CurriculumSeeder::class);
         
-        $this->call(CountrySeeder::class);
-        $this->call(StateSeeder::class);
-        $this->call(CitySeeder::class);
+        // $this->call(CountrySeeder::class);
+        // $this->call(StateSeeder::class);
+        // $this->call(CitySeeder::class);
         
         $this->call(TauthoritySeeder::class);
         $this->call(AuthoritySeeder::class);
+        $this->call(LapseSeeder::class);
+        $this->call(LevelSeeder::class);
+        $this->call(SectionSeeder::class);
+        $this->call(CourseSeeder::class);
+        $this->call(PensumSeeder::class);
+        $this->call(TinscriptionSeeder::class);
 
     }
 }

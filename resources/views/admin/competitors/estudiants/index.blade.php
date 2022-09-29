@@ -6,9 +6,11 @@
         <div class="max-w-7xl  mx-auto sm:px-6 lg:px-8 border-gray-900 ">
             <div class="bg-white  sm:rounded-lg border-gray-900 dark:bg-gray-800">
 
-                <div>Participantes</div>
+                {{-- <div>Participantes</div> --}}
 
-                {{-- <livewire:admin.institution.authority.list-component /> --}}
+                <livewire:admin.competitor.estudent.list-component />
+
+                {{-- /home/nuser/code/pastoral/resources/views/livewire/admin/competitor/estudent/list-component.blade.php --}}
 
             </div>
         </div>

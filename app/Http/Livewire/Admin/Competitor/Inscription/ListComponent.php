@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Livewire\Admin\Competitor\Inscription;
+
 use App\Http\Livewire\traits\WithSortingTrait;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
@@ -50,21 +51,21 @@ class ListComponent extends Component
     {
         $search = $this->search; 
 
-        $courses = Inscription::select('courses.*');  
+        $inscriptions = Inscription::select('inscriptions.*');  
 
-        $courses = (!empty($search)) ? $courses->orwhere(
+        $inscriptions = (!empty($search)) ? $inscriptions->orwhere(
             function($query) use ($search) {
                 $query->orWhere('description','like', '%'.$search.'%')
                     ->orWhere('name','like','%'.$search.'%');
             }) 
-            : $courses ; //dd($courses);
+            : $inscriptions ; //dd($inscriptions);
 
-        $courses = ($this->sortBy && $this->sortDirection) ? $courses->orderBy($this->sortBy,$this->sortDirection) : $courses;
+        $inscriptions = ($this->sortBy && $this->sortDirection) ? $inscriptions->orderBy($this->sortBy,$this->sortDirection) : $inscriptions;
         
-        $courses = $courses->paginate($this->paginate);
+        $inscriptions = $inscriptions->paginate($this->paginate);
 
         return view('livewire.admin.competitor.inscription.list-component', [
-            'courses' => $courses,
+            'inscriptions' => $inscriptions,
         ]);
     }
 

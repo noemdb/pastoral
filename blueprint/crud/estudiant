@@ -1,3 +1,31 @@
+-----------------Estudent,estudents------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Competitor\EstudentController'
+
+define ruta
+Route::resource('estudents', EstudentController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Competitor/Estudent/ListComponent'
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Estudent/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Competitor/Estudent/Traits/EstudentRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor'
+touch '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Competitor/EstudentRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/competitors/estudents'
+touch '/home/nuser/code/pastoral/resources/views/admin/competitors/estudents/index.blade.php'
+
+copia codigo en backend
+-EstudentRelations
+-EstudentRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
 -----------------Enrollment,enrollments,User------------------------------
 
 crear controladores

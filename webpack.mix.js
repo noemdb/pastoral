@@ -1,5 +1,15 @@
 const mix = require('laravel-mix');
 
+// mix.disableNotifications();
+// mix.disableSuccessNotifications();
+mix.disableNotifications();
+
+mix.webpackConfig({
+    stats: {
+        warnings: false,
+    }
+});
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management

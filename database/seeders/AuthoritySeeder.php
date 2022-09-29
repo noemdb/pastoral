@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 use Illuminate\Support\Facades\DB;
@@ -24,8 +25,8 @@ class AuthoritySeeder extends Seeder
 			'position' => 'DIRECTOR GENERAL Y ADMINISTRATIVO',
 			'profile_professional' => 'Fraile',
 			'photo' => 'Foto',
-			'finicial' => '2022-01-01',
-			'ffinal' => '2022-12-31',
+			"finicial"=>Carbon::now()->startOfYear()->format('Y-m-d'),
+			"ffinal"=>Carbon::now()->endOfYear()->format('Y-m-d'),
         ]);
 
         DB::table('authorities')->insert([
@@ -37,60 +38,21 @@ class AuthoritySeeder extends Seeder
 			'position' => 'JEFE 1',
 			'profile_professional' => 'LICENCIADO',
 			'photo' => 'Foto',
-			'finicial' => '2022-01-01',
-			'ffinal' => '2022-12-31',
+			"finicial"=>Carbon::now()->startOfYear()->format('Y-m-d'),
+			"ffinal"=>Carbon::now()->endOfYear()->format('Y-m-d'),
 		]);
 		
 		DB::table('authorities')->insert([
-			'tauthority_id' => 1,
+			'tauthority_id' => 3,
 			'pastoral_id' => 1,
 			'name' => 'JOSE',
 			'lastname' => 'PEREZ',
 			'ci' => '5625888',
-			'position' => 'DIRECTOR GENERAL Y ADMINISTRATIVO',
-			'profile_professional' => 'Fraile',
+			'position' => 'COORDINADOR EDUCATIVO',
+			'profile_professional' => 'FRAYLE',
 			'photo' => 'Foto',
-			'finicial' => '2022-01-01',
-			'ffinal' => '2022-12-31',
-        ]);
-
-        DB::table('authorities')->insert([
-			'tauthority_id' => 2,
-			'pastoral_id' => 2,
-			'name' => 'CARLA',
-			'lastname' => 'LOPEZ',
-			'ci' => '7914556',
-			'position' => 'JEFE 1',
-			'profile_professional' => 'LICENCIADO',
-			'photo' => 'Foto',
-			'finicial' => '2022-01-01',
-			'ffinal' => '2022-12-31',
-		]);
-		
-		DB::table('authorities')->insert([
-			'tauthority_id' => 1,
-			'pastoral_id' => 2,
-			'name' => 'JOSE',
-			'lastname' => 'PEREZ',
-			'ci' => '5625888',
-			'position' => 'DIRECTOR GENERAL Y ADMINISTRATIVO',
-			'profile_professional' => 'Fraile',
-			'photo' => 'Foto',
-			'finicial' => '2022-01-01',
-			'ffinal' => '2022-12-31',
-        ]);
-
-        DB::table('authorities')->insert([
-			'tauthority_id' => 2,
-			'pastoral_id' => 2,
-			'name' => 'CARLA',
-			'lastname' => 'LOPEZ',
-			'ci' => '7914556',
-			'position' => 'JEFE 1',
-			'profile_professional' => 'LICENCIADO',
-			'photo' => 'Foto',
-			'finicial' => '2022-01-01',
-			'ffinal' => '2022-12-31',
+			"finicial"=>Carbon::now()->startOfYear()->format('Y-m-d'),
+			"ffinal"=>Carbon::now()->endOfYear()->format('Y-m-d'),
         ]);
     }
 }

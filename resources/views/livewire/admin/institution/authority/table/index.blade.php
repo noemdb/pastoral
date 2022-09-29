@@ -35,15 +35,7 @@
             <tr class="text-center">
                 <th class="{{ $class['iteration'] ?? ''}}">
                     <div class="flex  justify-between">
-                         N
-                    </div>
-                </th>
-                <th class="{{ $class['tauthority_id'] ?? ''}}">
-                    <div class="flex  justify-between">
-                        <div> {{$list_comment['tauthority_id'] ?? ''}} </div>
-                        @if($authorities->isNotEmpty())
-                            <x-elements.crud.sort-by field="tauthority_id" :sortBy="$sortBy" :sortDirection="$sortDirection" />
-                        @endif
+                        N
                     </div>
                 </th>
                 <th class="{{ $class['pastoral_id'] ?? ''}}">
@@ -54,6 +46,14 @@
                         @endif
                     </div>
                 </th>
+                <th class="{{ $class['tauthority_id'] ?? ''}}">
+                    <div class="flex  justify-between">
+                        <div> {{$list_comment['tauthority_id'] ?? ''}} </div>
+                        @if($authorities->isNotEmpty())
+                            <x-elements.crud.sort-by field="tauthority_id" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        @endif
+                    </div>
+                </th>                
                 <th class="{{ $class['name'] ?? ''}}">
                     <div class="flex justify-between">
                         <div> {{$list_comment['name'] ?? ''}} </div>
@@ -86,12 +86,16 @@
         <tbody id="tdatos">
         @forelse($authorities as $authority)
 
+            @php 
+                $pastoral = $authority->pastoral;
+            @endphp
+
             {{-- 'tauthority_id','pescolar_id','pastoral_id','name','lastname','ci','position','profile_professional','photo','finicial','ffinal', --}}
 
             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($authority->id == $authority_id) ? 'bg-gray-200' : null}}">
                 <td class="{{ $class['iteration'] ?? ''}}">{{$loop->iteration}}</td>
-                <td class="{{ $class['tauthority_id'] ?? ''}}">{{$authority->tauthority->name ?? ''}}</td>
                 <td class="{{ $class['pastoral_id'] ?? ''}}">{{$authority->pastoral->name ?? ''}}</td>
+                <td class="{{ $class['tauthority_id'] ?? ''}}"> {{$authority->tauthority->name ?? ''}} </td>
                 <td class="{{ $class['name'] ?? ''}}">{{$authority->fullname ?? ''}}</td>
                 <td class="{{ $class['ci'] ?? ''}}">{{$authority->ci ?? ''}}</td>
                 <td class="{{ $class['position'] ?? ''}}">{{$authority->position ?? ''}}</td>

@@ -38,7 +38,7 @@
 
 
     <div class="mx-4 px-4">
-        {{-- @include('livewire.admin.competitor.enrollment.table.index') --}}
+        @include('livewire.admin.competitor.inscription.table.index')
         {{-- //views/livewire/admin/competitor/enrollment/table/index.blade.php --}}
     </div>
 

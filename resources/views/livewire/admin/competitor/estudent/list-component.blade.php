@@ -4,8 +4,8 @@
     
             <div class="text-right mb-4 ml-4 text-lg leading-7 font-semibold dark:text-gray-100">
                 <div class="flex justify-start pt-2">
-                    <x-icon-calendar class="w-6 h-6 mr-0.5" />
-                    <div class="mr-2">Cortes Educativos</div>                
+                        <x-icon-user-pen class="w-6 h-6 mr-0.5" />
+                    <div class="mr-2">Estudiantes registrados</div>                
                 </div>            
             </div>
     
@@ -13,8 +13,7 @@
                 <div wire:loading class="text-gray-400 text-sm"> Cargando... </div>
                 <x-jet-button type="button" class="mx-1 bg-blue-900 shadow w-8 h-8 !p-0 flex justify-center items-center shadow" wire:click="create">
                     <x-icon-plus class="w-4 h-4" />
-                </x-jet-button>
-    
+                </x-jet-button>    
             </div>
     
         </div>
@@ -22,7 +21,7 @@
         @if ($modeEdit)
     
             <div class="mb-4 pb-4"> 
-                @include('livewire.admin.institution.lapse.form.edit')
+                {{-- @include('livewire.admin.institution.course.form.edit') --}}
             </div>
     
         @endif
@@ -31,7 +30,7 @@
         @if ($modeCreate)
     
             <div class="mb-4 pb-4">
-                @include('livewire.admin.institution.lapse.form.create')
+                @include('livewire.admin.competitor.estudent.form.create')
             </div>
     
         @endif
@@ -39,7 +38,8 @@
     
     
         <div class="mx-4 px-4">
-            @include('livewire.admin.institution.lapse.table.index')
+            @include('livewire.admin.competitor.estudent.table.index')
+            {{-- //views/livewire/admin/competitor/enrollment/table/index.blade.php --}}
         </div>
     
     

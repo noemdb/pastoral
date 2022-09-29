@@ -17,11 +17,12 @@ class CurriculumSeeder extends Seeder
         DB::table('curricula')->insert(
             [
                 "pescolar_id"=>1,
-                "code"=>"3200",
-                "name"=>"Comunión",
+                "code"=>"3100",
+                "name"=>"Catequesis Comunión",
                 "order"=>"1",
-                "capacity"=>"30",
-                "title"=>"1ra Comunión",
+                "capacity"=>"20",
+                "description"=>"Plan educativo para el Catecismo de la Iglesia Católica para la preparaciòn de la 1ra Comunión. Se les explica para que puedan entender y asimilar el significado del misterio de Cristo, mediante distintos recursos y puedan recibirle con fe y devoción.",
+                "title"=>"Catequesis 1ra Comunión",
                 "status"=>true,
                 "status_build_promotion"=>true,
             ]
@@ -30,66 +31,15 @@ class CurriculumSeeder extends Seeder
         DB::table('curricula')->insert(
             [
                 "pescolar_id"=>1,
-                "code"=>"3300",
-                "name"=>"Confirmación",
-                "order"=>"1",
-                "capacity"=>"30",
-                "title"=>"Confirmación",
-                "status"=>true,
-                "status_build_promotion"=>true,
-            ],
-        );
-
-        DB::table('curricula')->insert(
-            [
-                "pescolar_id"=>2,
                 "code"=>"3200",
-                "name"=>"Comunión",
-                "order"=>"1",
-                "capacity"=>"30",
-                "title"=>"1ra Comunión",
-                "status"=>true,
-                "status_build_promotion"=>true,
-            ]
-        );
-
-        DB::table('curricula')->insert(
-            [
-                "pescolar_id"=>2,
-                "code"=>"3300",
-                "name"=>"Confirmación",
-                "order"=>"1",
-                "capacity"=>"30",
-                "title"=>"Confirmación",
+                "name"=>"Catequesis Confirmación",
+                "order"=>"2",
+                "capacity"=>"20",
+                "description"=>"Plan educativo para el Catecismo de la Iglesia Católica para la preparaciòn de la Confirmación. Se les explica para que puedan entender y asimilar el significado del misterio de Cristo, mediante distintos recursos y puedan recibirle con fe y devoción.",
+                "title"=>"Catequesis Confirmación",
                 "status"=>true,
                 "status_build_promotion"=>true,
             ],
-        );
-
-        DB::table('curricula')->insert(
-            [
-                "pescolar_id"=>3,
-                "code"=>"3300",
-                "name"=>"Confirmación",
-                "order"=>"1",
-                "capacity"=>"30",
-                "title"=>"Confirmación",
-                "status"=>true,
-                "status_build_promotion"=>true,
-            ],
-        );
-
-        DB::table('curricula')->insert(
-            [
-                "pescolar_id"=>4,
-                "code"=>"3200",
-                "name"=>"Comunión",
-                "order"=>"1",
-                "capacity"=>"30",
-                "title"=>"1ra Comunión",
-                "status"=>true,
-                "status_build_promotion"=>true,
-            ]
-        );
+        );        
     }
 }

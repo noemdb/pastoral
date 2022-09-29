@@ -1,11 +1,9 @@
-{{-- 'pastoral_id'lastname','name','curriculum_id', 'phone'--}}
+{{-- 'tinscription_id','section_id','estudiant_id','observations' --}}
 @php
     $class['iteration']="text-left px-4";
-    $class['pastoral_id']="text-left px-4";
-    $class['curriculum_id']="text-left px-4";
-    $class['name']="text-left px-4";
-    $class['lastname']="text-left px-4";
-    $class['phone']="hidden lg:table-cell text-left px-4";
+    $class['tinscription_id']="text-left px-4";
+    $class['section_id']="text-left px-4";
+    $class['estudiant_id']="text-left px-4";
     $class['action']="text-left px-4";
     $table_id = 'table_id';
 @endphp
@@ -15,10 +13,10 @@
 
     <div class="mb-4 flex justify-between">
         <div class="w-3/4">
-            @php $name = 'search'; $model = 'enrollment.'.$name; @endphp
+            @php $name = 'search'; $model = 'inscription.'.$name; @endphp
             <div class="flex justify-start">
                 <x-jet-label for="{{$name}}" value="Buscar:" />
-                <span class="text-gray-400 mx-2 font-medium">nombre, descripción</span>                
+                <span class="text-gray-400 mx-2 font-medium">nombre</span>                
             </div>        
             <x-input wire:model.debounce.500ms="{{$name}}" name="{{$name}}" class="block w-full" />
         </div>
@@ -29,42 +27,34 @@
     </div>
 
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        {{-- 'pastoral_id','curriculum_id',lastname','name', 'phone'--}}
+        {{-- 'tinscription_id','section_id',lastname','estudiant_id', 'phone'--}}
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
 
             <tr class="text-center">
                 <th class="{{ $class['iteration'] ?? ''}}">
                     <div class="flex  justify-between">N</div>
                 </th>
-                <th class="{{ $class['curriculum_id'] ?? ''}}">
+                <th class="{{ $class['tinscription_id'] ?? ''}}">
+                        <div class="flex justify-between">
+                            <div> {{$list_comment['tinscription_id'] ?? ''}} </div>
+                            @if($inscriptions->isNotEmpty())
+                                <x-elements.crud.sort-by field="tinscription_id" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                            @endif
+                        </div>
+                    </th>
+                <th class="{{ $class['section_id'] ?? ''}}">
                     <div class="flex justify-between">
-                        <div> {{$list_comment['curriculum_id'] ?? ''}} </div>
-                        @if($enrollments->isNotEmpty())
-                            <x-elements.crud.sort-by field="curriculum_id" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        <div> {{$list_comment['section_id'] ?? ''}} </div>
+                        @if($inscriptions->isNotEmpty())
+                            <x-elements.crud.sort-by field="section_id" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                         @endif
                     </div>
                 </th>
-                <th class="{{ $class['name'] ?? ''}}">
+                <th class="{{ $class['estudiant_id'] ?? ''}}">
                     <div class="flex  justify-between">
-                        <div> {{$list_comment['name'] ?? ''}} </div>
-                        @if($enrollments->isNotEmpty())
+                        <div> {{$list_comment['estudiant_id'] ?? ''}} </div>
+                        @if($inscriptions->isNotEmpty())
                             <x-elements.crud.sort-by field="name" :sortBy="$sortBy" :sortDirection="$sortDirection" />
-                        @endif
-                    </div>
-                </th>
-                <th class="{{ $class['lastname'] ?? ''}}">
-                    <div class="flex  justify-between">
-                        <div> {{$list_comment['lastname'] ?? ''}} </div>
-                        @if($enrollments->isNotEmpty())
-                            <x-elements.crud.sort-by field="lastname" :sortBy="$sortBy" :sortDirection="$sortDirection" />
-                        @endif
-                    </div>
-                </th>
-                <th class="{{ $class['phone'] ?? ''}}">
-                    <div class="flex  justify-between">
-                        <div> {{$list_comment['phone'] ?? ''}} </div>
-                        @if($enrollments->isNotEmpty())
-                            <x-elements.crud.sort-by field="phone" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                         @endif
                     </div>
                 </th>
@@ -74,35 +64,40 @@
         </thead>
 
         <tbody id="tdatos">
-        @forelse($enrollments as $enrollment)
+        @forelse($inscriptions as $inscription)
 
             @php 
-                $curriculum = $enrollment->curriculum;
-                $pescolar = ($curriculum ) ? $curriculum->pescolar:null;
-                $pastoral = $enrollment->pastoral;
+                $section = $inscription->section;
+                $level = $section->level;
+                $curriculum = $level->curriculum;
+                $pescolar = $curriculum->pescolar;
+                $pastoral = $pescolar->pastoral;
             @endphp
 
-            {{-- 'pastoral_id','curriculum_id',lastname','name', 'phone'--}}
+            {{-- 'tinscription_id','section_id','estudiant_id'--}}
 
-            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($enrollment->id == $enrollment_id) ? 'bg-gray-200' : null}}">
+            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($inscription->id == $inscription_id) ? 'bg-gray-200' : null}}">
                 <td class="{{ $class['iteration'] ?? ''}}">{{$loop->iteration}}</td>
-                <td class="{{ $class['curriculum_id'] ?? ''}}">
+                <td class="{{ $class['tinscription_id'] ?? ''}}">{{$inscription->tinscription_id ?? ''}}</td>
+                <td class="{{ $class['section_id'] ?? ''}}">
                     <div>{{$curriculum->name ?? ''}}</div>
+                    <div class="flex justify-end text-gray-400 text-sm">{{$section->name ?? ''}}</div>
+                    <div class="flex justify-end text-gray-400 text-sm">{{$level->name ?? ''}}</div>
+                    <div class="flex justify-end text-gray-400 text-sm">{{$curriculum->name ?? ''}}</div>
                     <div class="flex justify-end text-gray-400 text-sm">{{$pescolar->name ?? ''}}</div>
                     <div class="flex justify-end text-gray-400 text-sm">{{$pastoral->name ?? ''}}</div>
                 </td>
-                <td class="{{ $class['lastname'] ?? ''}}">{{$enrollment->lastname ?? ''}}</td>
-                <td class="{{ $class['name'] ?? ''}}">{{$enrollment->name ?? ''}}</td>
-                <td class="{{ $class['phone'] ?? ''}}">{{$enrollment->phone ?? ''}}</td>
+                
+                <td class="{{ $class['estudiant_id'] ?? ''}}">{{$inscription->name ?? ''}}</td>
 
                 <td class="{{ $class['action'] ?? '' }}">
 
                     <div class="flex items-center justify-center justify-between mb-3 shadow">
                         <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
-                            <x-elements.form.button-edit wire:key="enrollment-edit-{{$enrollment->id}}" wire:click="edit({{ $enrollment->id }})" >
+                            <x-elements.form.button-edit wire:key="inscription-edit-{{$inscription->id}}" wire:click="edit({{ $inscription->id }})" >
                                 <x-icon-pen class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-edit>
-                            <x-elements.form.button-del wire:key="enrollment-delete-{{$enrollment->id}}" wire:click="delete({{ $enrollment->id }})" >
+                            <x-elements.form.button-del wire:key="inscription-delete-{{$inscription->id}}" wire:click="delete({{ $inscription->id }})" >
                                 <x-icon-trash-can class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-del>
                         </div>
@@ -120,6 +115,6 @@
 
     </table>
 
-    {{ $enrollments->links() }}
+    {{ $inscriptions->links() }}
 
 </div>
