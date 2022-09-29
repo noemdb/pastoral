@@ -1,20 +1,20 @@
 {{-- 'level_id','course_id','order','hour_t_week','hour_p_week','unid_credit','approved_credit_unir','enable_academic_index', --}}
 
-<div class="grid grid-cols-2 gap-4">
+<div class="grid grid-cols-1 gap-4">
     <div class="mb-4">
         @php $name = 'level_id'; $model = 'pensum.'.$name; $key = Str::random(10); @endphp
         <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
         <x-select wire:change="loadCourses($event.target.value)" wire:key="{{$key}}" wire:model.defer="{{$model}}" :options="$levels_list" id="{{$model}}" class=" w-full " />
         @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
     </div>
+</div>
+<div class="grid grid-cols-2 gap-4"> 
     <div class="mb-4">
         @php $name = 'course_id'; $model = 'pensum.'.$name; $key = Str::random(10); @endphp
         <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
         <x-select wire:key="{{$key}}" wire:model.defer="{{$model}}" :options="$courses_list" id="{{$model}}" class=" w-full " />
         @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
-    </div>
-</div>
-<div class="grid grid-cols-2 gap-4">    
+    </div>   
     <div class="mb-4">
         @php $name = 'order'; $model = 'pensum.'.$name; $key = Str::random(10);@endphp
         <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />

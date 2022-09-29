@@ -72,12 +72,14 @@ class ListComponent extends Component
 
         $search = $this->search; 
 
-        $pensums = Pensum::select('pensums.*');  
+        $pensums = Pensum::select('pensums.*')
+            ->join('levels', 'levels.id', '=', 'pensums.level_id')
+            ->join('courses', 'courses.id', '=', 'pensums.course_id');  
 
         $pensums = (!empty($search)) ? $pensums->orwhere(
             function($query) use ($search) {
-                $query->orWhere('description','like', '%'.$search.'%')
-                    ->orWhere('name','like','%'.$search.'%');
+                $query->orWhere('courses.description','like', '%'.$search.'%')
+                    ->orWhere('courses.name','like','%'.$search.'%');
             }) 
             : $pensums ; //dd($pensums);
 
@@ -100,10 +102,14 @@ class ListComponent extends Component
 
     public function edit($id)
     {
-        $this->pensum = Pensum::find($id);
-        $this->pensum_id = ($this->pensum) ? $this->pensum->id:null;
-        $this->modeEdit = true;
-        $this->modeCreate = false;
+        $pensum = Pensum::find($id);
+        if ($pensum) {
+            $this->pensum = $pensum;
+            $this->pensum_id = $pensum->id;
+            $this->modeEdit = true;
+            $this->modeCreate = false;
+            $this->loadCourses($this->pensum_id);
+        }        
     }
 
     public function save()

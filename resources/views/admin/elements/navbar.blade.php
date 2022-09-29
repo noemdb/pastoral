@@ -4,40 +4,40 @@
 
             <x-jet-nav-link class=" shadow py-2 mx-1 rounded" href="{{ route('institutions.index') }}" :active="request()->routeIs('*institutions*')">
                 <x-icon-building class="w-6 h-6 mr-0.5" />
-                <div class="mr-0.5 hidden md:flex">{{ __('Instituciones') }} </div>                        
+                <div class="mr-0.5 hidden lg:flex">{{ __('Instituciones') }} </div>                        
             </x-jet-nav-link>
 
             <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" href="{{ route('authorities.index') }}" :active="request()->routeIs('*authorities*')">
                 <x-icon-stop class="w-6 h-6 mr-0.5" />
-                <div class="mr-0.5 hidden md:flex">{{ __('Autoridades') }} </div> 
+                <div class="mr-0.5 hidden lg:flex">{{ __('Autoridades') }} </div> 
             </x-jet-nav-link>
             <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" title="Perídos Educativo"  href="{{ route('pescolars.index') }}" :active="request()->routeIs('*pescolars*')">
                 <x-icon-calendar class="w-6 h-6 mr-0.5" />
-                <div class="mr-0.5 hidden md:flex">{{ __('Perídos') }} </div>
+                <div class="mr-0.5 hidden lg:flex">{{ __('Perídos') }} </div>
             </x-jet-nav-link>
-            <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" title="Planes de Educativos" href="{{ route('curricula.index') }}" :active="request()->routeIs('*curricula*')">
+            <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" title="Planes de Formativos" href="{{ route('curricula.index') }}" :active="request()->routeIs('*curricula*')">
                 <x-icon-table class="w-6 h-6 mr-0.5" />
-                <div class="mr-0.5 hidden md:flex">{{ __('Planes') }} </div>
+                <div class="mr-0.5 hidden lg:flex">{{ __('Planes') }} </div>
             </x-jet-nav-link>
             <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" href="{{ route('lapses.index') }}" :active="request()->routeIs('*lapses*')">
                 <x-icon-clock class="w-6 h-6 mr-0.5" />
-                <div class="mr-0.5 hidden md:flex">{{ __('Cortes') }} </div>
+                <div class="mr-0.5 hidden lg:flex">{{ __('Cortes') }} </div>
             </x-jet-nav-link>
             <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" href="{{ route('levels.index') }}" :active="request()->routeIs('*levels*')">
                 <x-icon-chart-bar-v class="w-6 h-6 mr-0.5" />
-                <div class="mr-0.5 hidden md:flex">{{ __('Niveles') }} </div>
+                <div class="mr-0.5 hidden lg:flex">{{ __('Niveles') }} </div>
             </x-jet-nav-link>
             <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" href="{{ route('sections.index') }}" :active="request()->routeIs('*sections*')">
                 <x-icon-rectangle-list class="w-6 h-6 mr-0.5" />
-                <div class="mr-0.5 hidden md:flex">{{ __('Secciones') }} </div>
+                <div class="mr-0.5 hidden lg:flex">{{ __('Secciones') }} </div>
             </x-jet-nav-link>
             <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" href="{{ route('courses.index') }}" :active="request()->routeIs('*courses*')">
                 <x-icon-window-restore class="w-6 h-6 mr-0.5" />
-                <div class="mr-0.5 hidden md:flex">{{ __('Asignaturas') }} </div>
+                <div class="mr-0.5 hidden lg:flex">{{ __('Asignaturas') }} </div>
             </x-jet-nav-link>
-            <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" title="Programas Educativos" href="{{ route('pensums.index') }}" :active="request()->routeIs('*pensums*')">
+            <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" title="Programas de Formación" href="{{ route('pensums.index') }}" :active="request()->routeIs('*pensums*')">
                 <x-icon-archive class="w-6 h-6 mr-0.5" />
-                <div class="mr-0.5 hidden md:flex">{{ __('Programas') }} </div>
+                <div class="mr-0.5 hidden lg:flex">{{ __('Programas') }} </div>
             </x-jet-nav-link>
 
         </div>

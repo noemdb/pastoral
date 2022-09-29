@@ -45,10 +45,10 @@ class AuthoritySeeder extends Seeder
 		DB::table('authorities')->insert([
 			'tauthority_id' => 3,
 			'pastoral_id' => 1,
-			'name' => 'JOSE',
-			'lastname' => 'PEREZ',
+			'name' => 'JOSE DE LA CRUZ',
+			'lastname' => 'RIVERO',
 			'ci' => '5625888',
-			'position' => 'COORDINADOR EDUCATIVO',
+			'position' => 'COORDINADOR FORMATIVO',
 			'profile_professional' => 'FRAYLE',
 			'photo' => 'Foto',
 			"finicial"=>Carbon::now()->startOfYear()->format('Y-m-d'),

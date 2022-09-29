@@ -5,7 +5,7 @@
             <div class="text-right mb-4 ml-4 text-lg leading-7 font-semibold dark:text-gray-100">
                 <div class="flex justify-start pt-2">
                     <x-icon-calendar class="w-6 h-6 mr-0.5" />
-                    <div class="mr-2">Períodos Educativos</div>                
+                    <div class="mr-2">Períodos de Formativos</div>                
                 </div>            
             </div>
     

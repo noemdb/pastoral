@@ -23,7 +23,7 @@ class Pensum extends Model
 
     const COLUMN_COMMENTS = [
         'level_id' =>'Nivel',
-        'course_id' =>'Área de Formación',
+        'course_id' =>'Asignatura de Formación',
         'order' =>'Orden',
         'hour_t_week' =>'Horas teóricas',
         'hour_p_week' =>'Horas prácticas',
@@ -31,6 +31,7 @@ class Pensum extends Model
         'approved_credit_unir' =>'Unidades de Créditos aprobadas',
         'enable_academic_index'=>'Afecta índice',
         'name'=>'Nombre',
+        'location'=>'Pertenencia',
     ];
     
     public function getFullNameAttribute()

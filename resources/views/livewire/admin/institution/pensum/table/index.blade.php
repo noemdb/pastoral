@@ -2,6 +2,7 @@
 @php
     $class['iteration']="text-left px-4";
     $class['level_id']="text-left px-4";
+    $class['location']="text-left px-4";
     $class['course_id']="text-left px-4";
     $class['action']="text-left px-4";
     $table_id = 'table_id';
@@ -14,7 +15,7 @@
             @php $name = 'search'; $model = 'pensum.'.$name; @endphp
             <div class="flex justify-start">
                 <x-jet-label for="{{$name}}" value="Buscar:" />
-                <span class="text-gray-400 mx-2 font-medium">nombre</span>                
+                <span class="text-gray-400 mx-2 font-medium">nombre o descripción</span>                
             </div>        
             <x-input wire:model.debounce.500ms="{{$name}}" name="{{$name}}" class="block w-full" />
         </div>
@@ -37,6 +38,12 @@
                         @if($pensums->isNotEmpty())
                             <x-elements.crud.sort-by field="level_id" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                         @endif
+                    </div>
+                </th>
+
+                <th class="{{ $class['location'] ?? ''}}">
+                    <div class="flex justify-between">
+                        <div> {{$list_comment['location'] ?? ''}} </div>
                     </div>
                 </th>
                 <th class="{{ $class['course_id'] ?? ''}}">
@@ -68,9 +75,11 @@
                 <td class="{{ $class['iteration'] ?? ''}}">{{$loop->iteration}}</td>
                 <td class="{{ $class['level_id'] ?? ''}}">
                     <div>{{$level->name ?? ''}}</div>
-                    <div class="flex justify-end text-gray-400 text-sm">{{$curriculum->name ?? ''}}</div>
-                    <div class="flex justify-end text-gray-400 text-sm">{{$pescolar->name ?? ''}}</div>
-                    <div class="flex justify-end text-gray-400 text-sm">{{$pastoral->name ?? ''}}</div>
+                </td>
+                <td class="{{ $class['course_id'] ?? ''}}">
+                    <div class="flex justify-start text-gray-900 text-sm">{{$pastoral->name ?? ''}}</div>
+                    <div class="flex justify-start text-gray-700 text-sm ml-1">{{$pescolar->name ?? ''}}</div>
+                    <div class="flex justify-start text-gray-500 text-sm ml-2">{{$curriculum->name ?? ''}}</div>
                 </td>
                 <td class="{{ $class['course_id'] ?? ''}}">{{$pensum->course->fullname ?? ''}}</td>
 
