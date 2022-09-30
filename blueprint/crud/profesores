@@ -1,0 +1,28 @@
+-----------------Teacher,profesors------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Professorate\TeacherController'
+
+define ruta
+Route::resource('profesors', TeacherController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Professorate/Teacher/ListComponent'
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Teacher/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Teacher/Traits/TeacherRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Professorate'
+touch '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Professorate/TeacherRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/competitors/profesors'
+touch '/home/nuser/code/pastoral/resources/views/admin/competitors/profesors/index.blade.php'
+
+copia codigo en backend
+-TeacherRelations
+-TeacherRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+

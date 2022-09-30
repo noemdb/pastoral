@@ -15,7 +15,8 @@ class CreateTeachersTable extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ti_teacher')->comment('Tipo de facilitador');
+            $table->integer('ti_teacher_id')->unsigned()->comment('Tipo de facilitador');
+            // $table->string('ti_teacher')->comment('Tipo de facilitador');
             $table->string('ci_profesor')->comment('Cédula de identidad, Id temporal o pasaporte');
             $table->string('lastname')->nullable()->comment('Nombres');
             $table->string('name')->nullable()->comment('Nombres');
@@ -28,6 +29,7 @@ class CreateTeachersTable extends Migration
             $table->string('email')->nullable()->comment('Correo electrónico');
             $table->boolean('status')->default(true)->comment('Estado');
             $table->timestamps();
+            // $table->foreign('ti_teacher_id')->references('id')->on('ti_teachers')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

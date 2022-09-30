@@ -1,4 +1,5 @@
 <div class="flex justify-between">
+	
 	<x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->is('dashboard')">
 	    <x-icon-mattress-pillow class="w-6 h-6 mr-0.5" />
 		<div class="mr-0.5 hidden lg:flex">{{ __('Dashboard') }}</div> 

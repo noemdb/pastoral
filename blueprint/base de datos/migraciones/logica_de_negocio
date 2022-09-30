@@ -31,6 +31,7 @@ Detalles del Estudiants
 	php artisan make:model 'app\Estudiant\Title' -m -a 
 
 Detalles del Teachers
+	php artisan make:model 'app\Teacher\TiTeacher' -m -a
 	php artisan make:model 'app\Teacher' -m -a
 	php artisan make:model 'app\Teacher\Document' -m -a
 	php artisan make:model 'app\Teacher\Publication' -m -a
