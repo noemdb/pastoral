@@ -4,7 +4,7 @@
 		<div class="mr-0.5 hidden lg:flex">{{ __('Dashboard') }}</div> 
 	</x-jet-nav-link>
 
-	<x-jet-nav-link href="#" :active="Request::is('*setups*')" :disabled="true" class="!text-gray-100">
+	<x-jet-nav-link href="#" :active="Request::is('*setups*')" :disabled="true" class="!text-gray-400">
 	    <x-icon-cogs class="w-6 h-6 mr-0.5" />
 		<div class="mr-0.5 hidden lg:flex">{{ __('Configuraciones') }}</div> 
 	</x-jet-nav-link>
@@ -16,7 +16,7 @@
 
 	<x-jet-nav-link href="{{ route('estudiants.index') }}" :active="request()->is('*competitors*')">
 	    <x-icon-user-pen class="w-6 h-6 mr-0.5" />
-		<div class="mr-0.5 hidden lg:flex">{{ __('Estudiantes') }}</div> 
+		<div class="mr-0.5 hidden lg:flex">{{ __('Participantes') }}</div> 
 	</x-jet-nav-link>
 
 	<x-jet-nav-link href="{{ route('teachers.index') }}" :active="request()->is('*professorate*')">
