@@ -90,12 +90,12 @@
 
                 <div class="flex items-left justify-left mb-3 mt-4">
                     <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
-                        <x-jet-button type="button" class="mr-auto ml-1 bg-blue-500 " wire:click="home" > {{ __('Inicio') }} </x-jet-button>
+                        <x-jet-button type="button" class="mr-auto ml-1 bg-blue-500 " wire:click="home" :disabled="$errors->any()"> {{ __('Inicio') }} </x-jet-button>
                         @if (!$status_first)
-                            <x-jet-button type="button" class="ml-1" wire:click="back" :disabled="$status_first"> {{ __('Anterior') }} </x-jet-button>
+                            <x-jet-button type="button" class="ml-1" wire:click="back" :disabled="($status_first || $errors->any()) ? true : false "> {{ __('Anterior') }} </x-jet-button>
                         @endif
                         @if (!$status_last)
-                            <x-jet-button type="button" class="ml-1" wire:click="next" :disabled="$status_last"> {{ __('Siguiente') }} </x-jet-button>
+                            <x-jet-button type="button" class="ml-1" wire:click="next" :disabled="($status_last || $errors->any()) ? true : false "> {{ __('Siguiente') }} </x-jet-button>
                         @endif
                         @if ($status_last)
                                 <x-jet-button type="button" class="ml-1 bg-green-500 " wire:click="save" :disabled="$errors->any()" > {{ __('Registrar') }} </x-jet-button>
