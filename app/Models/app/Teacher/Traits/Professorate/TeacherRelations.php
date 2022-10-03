@@ -1,7 +1,12 @@
 <?php
-namespace App\Models\app\Teacher\Traits\Teacher;
+namespace App\Models\app\Teacher\Traits\Professorate;
 
 trait TeacherRelations {
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 
     public function ti_teacher()
     {

@@ -7,36 +7,41 @@ trait TeacherRules
    //'user_id','representant_id','citype_id','ci','name','lastname','gender','date_birth','country_id','state_id','city_id','dir_address','phone','email','status_nacionality',
 
     protected $rules = [
-        'teachers.ti_teacher_id' => 'required|integer',
-        'teachers.ci_profesor' => 'required|string',
-        'teachers.lastname' => 'required|string',
-        'teachers.name' => 'required|string|min:2',
-        'teachers.gender' => 'required|string',
-        'teachers.date_birth' => 'required|string',
-        'teachers.city_birth' => 'nullable|string',
-        'teachers.dir_address' => 'required|date',
-        'teachers.phone' => 'required|integer',
-        'teachers.cellphone' => 'nullable|integer',
-        'teachers.email' => 'required|integer',
-        'teachers.status' => 'required|boolean'
+        'teacher.ti_teacher_id' => 'required|integer',
+        'teacher.ci_profesor' => 'required|integer',
+        'teacher.lastname' => 'required|string|min:2',
+        'teacher.name' => 'required|string|min:2',
+        'teacher.gender' => 'required|string',
+        'teacher.date_birth' => 'required|date',
+        'teacher.dir_address' => 'required|string',
+        'teacher.phone' => 'nullable|string',
+        'teacher.cellphone' => 'nullable|integer',
+        'teacher.email' => 'required|email',
+        'teacher.whatsapp' => 'nullable|string',
+        'teacher.telegram' => 'nullable|string',
+        'teacher.twitter' => 'nullable|string',
+        'teacher.instagram' => 'nullable|string',
+        'teacher.status' => 'required|boolean',
     ];
 
     protected function validationAttributes()
     {
         return [
-            'teachers.user_id' => $this->list_comment['user_id'],
-            'teachers.representant_id' => $this->list_comment['representant_id'],
-            'teachers.citype_id' => $this->list_comment['citype_id'],
-            'teachers.ci' => $this->list_comment['ci'],
-            'teachers.name' => $this->list_comment['name'],
-            'teachers.lastname' => $this->list_comment['lastname'],
-            'teachers.gender' => $this->list_comment['gender'],
-            'teachers.date_birth' => $this->list_comment['date_birth'],
-            'teachers.country_id' => $this->list_comment['country_id'],
-            'teachers.state_id' => $this->list_comment['state_id'],
-            'teachers.city_id' => $this->list_comment['city_id'],
-            'teachers.dir_address' => $this->list_comment['dir_address'],
-            'teachers.phone' => $this->list_comment['phone']
+            'teacher.ti_teacher_id' => $this->list_comment['ti_teacher_id'],
+            'teacher.ci_profesor' => $this->list_comment['ci_profesor'],
+            'teacher.lastname' => $this->list_comment['lastname'],
+            'teacher.name' => $this->list_comment['name'],
+            'teacher.gender' => $this->list_comment['gender'],
+            'teacher.date_birth' => $this->list_comment['date_birth'],
+            'teacher.dir_address' => $this->list_comment['dir_address'],
+            'teacher.phone' => $this->list_comment['phone'],
+            'teacher.cellphone' => $this->list_comment['cellphone'],
+            'teacher.email' => $this->list_comment['email'],
+            'teacher.whatsapp' => $this->list_comment['whatsapp'],
+            'teacher.telegram' => $this->list_comment['telegram'],
+            'teacher.twitter' => $this->list_comment['twitter'],
+            'teacher.instagram' => $this->list_comment['instagram'],
+            'teacher.status' => $this->list_comment['status'],
         ];
     }
 

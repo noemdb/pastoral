@@ -37,10 +37,12 @@ Detalles del Teachers
 	php artisan make:model 'app\Teacher\Publication' -m -a
 
 	php artisan make:model 'app\Teacher\Pevaluation' -m -a
+	php artisan make:model 'app\Teacher\Topic' -m -a
 	php artisan make:model 'app\Teacher\Evaluation' -m -a
+	php artisan make:model 'app\Teacher\Excercise' -m -a
+	php artisan make:model 'app\Teacher\Resolution' -m -a
+	php artisan make:model 'app\Teacher\Lesson' -m -a
 	php artisan make:model 'app\Teacher\Tableclass' -m -a
-
-
 /***********Bot**********/
 	php artisan make:model 'app\Bot\Bmain' -m -a
 	php artisan make:model 'app\Bot\Boption' -m -a

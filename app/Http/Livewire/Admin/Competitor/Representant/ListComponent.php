@@ -132,6 +132,8 @@ class ListComponent extends Component
     {
         $this->representant->delete();
         $this->alert('success', 'Los datos fueron eliminados satisfactoriamente!');
+        $this->modeCreate = false;
+        $this->modeEdit = false;
     }
 
 }

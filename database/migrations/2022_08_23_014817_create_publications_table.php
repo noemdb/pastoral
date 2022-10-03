@@ -23,8 +23,9 @@ class CreatePublicationsTable extends Migration
             $table->string('color',12)->nullable();
             $table->text('header')->nullable();
             $table->text('body')->nullable();
-            $table->text('footer')->nullable();
             $table->text('attachment')->nullable();
+            $table->text('footer')->nullable();
+
             $table->boolean('status')->default(true)->comment('Estado');
 
             $table->timestamps();

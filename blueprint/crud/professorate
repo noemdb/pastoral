@@ -165,3 +165,227 @@ Crear vistas
 
 -.copiar carpetas
 -.actualizar los route en el navbar
+
+-----------------Topic,topics,User------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Professorate\TopicController'
+php artisan make:livewire 'Admin/Professorate/Topic/ListComponent'
+
+define ruta
+Route::resource('topics', TopicController::class)->only([ 'index']);
+
+Create file
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Topic/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Topic/Traits/TopicRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Professorate'
+touch '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Professorate/TopicRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/professorate/topics'
+touch '/home/nuser/code/pastoral/resources/views/admin/professorate/topics/index.blade.php'
+
+copia codigo en backend
+-TopicRelations
+-TopicRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+
+-----------------Excercise,excercises,User------------------------------
+crear controladores
+php artisan make:controller 'Admin\Professorate\ExcerciseController'
+php artisan make:livewire 'Admin/Professorate/Excercise/ListComponent'
+
+define ruta
+Route::resource('excercises', ExcerciseController::class)->only([ 'index']);
+
+Create file
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Excercise/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Excercise/Traits/ExcerciseRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Professorate'
+touch '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Professorate/ExcerciseRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/professorate/excercises'
+touch '/home/nuser/code/pastoral/resources/views/admin/professorate/excercises/index.blade.php'
+
+copia codigo en backend
+-ExcerciseRelations
+-ExcerciseRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+-----------------Resolution,resolutions,User------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Professorate\ResolutionController'
+php artisan make:livewire 'Admin/Professorate/Resolution/ListComponent'
+
+define ruta
+Route::resource('resolutions', ResolutionController::class)->only([ 'index']);
+
+Create file
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Resolution/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Resolution/Traits/ResolutionRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Professorate'
+touch '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Professorate/ResolutionRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/professorate/resolutions'
+touch '/home/nuser/code/pastoral/resources/views/admin/professorate/resolutions/index.blade.php'
+
+copia codigo en backend
+-ResolutionRelations
+-ResolutionRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+-----------------Lesson,lessons,User------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Professorate\LessonController'
+php artisan make:livewire 'Admin/Professorate/Lesson/ListComponent'
+
+define ruta
+Route::resource('lessons', LessonController::class)->only([ 'index']);
+
+Create file
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Lesson/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Lesson/Traits/LessonRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Professorate'
+touch '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Professorate/LessonRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/professorate/lessons'
+touch '/home/nuser/code/pastoral/resources/views/admin/professorate/lessons/index.blade.php'
+
+copia codigo en backend
+-LessonRelations
+-LessonRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+-----------------Pevaluation,pevaluations,User------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Professorate\PevaluationController'
+php artisan make:livewire 'Admin/Professorate/Pevaluation/ListComponent'
+
+define ruta
+Route::resource('pevaluations', PevaluationController::class)->only([ 'index']);
+
+Create file
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Pevaluation/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Pevaluation/Traits/PevaluationRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Professorate'
+touch '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Professorate/PevaluationRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/professorate/pevaluations'
+touch '/home/nuser/code/pastoral/resources/views/admin/professorate/pevaluations/index.blade.php'
+
+copia codigo en backend
+-PevaluationRelations
+-PevaluationRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+-----------------Evaluation,evaluations,User------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Professorate\EvaluationController'
+php artisan make:livewire 'Admin/Professorate/Evaluation/ListComponent'
+
+define ruta
+Route::resource('evaluations', EvaluationController::class)->only([ 'index']);
+
+Create file
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Evaluation/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Evaluation/Traits/EvaluationRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Professorate'
+touch '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Professorate/EvaluationRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/professorate/evaluations'
+touch '/home/nuser/code/pastoral/resources/views/admin/professorate/evaluations/index.blade.php'
+
+copia codigo en backend
+-EvaluationRelations
+-EvaluationRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+-----------------Publication,publications,User------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Professorate\PublicationController'
+php artisan make:livewire 'Admin/Professorate/Publication/ListComponent'
+
+define ruta
+Route::resource('publications', PublicationController::class)->only([ 'index']);
+
+Create file
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Publication/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Publication/Traits/PublicationRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Professorate'
+touch '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Professorate/PublicationRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/professorate/publications'
+touch '/home/nuser/code/pastoral/resources/views/admin/professorate/publications/index.blade.php'
+
+copia codigo en backend
+-PublicationRelations
+-PublicationRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+-----------------Document,documents,User------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Professorate\DocumentController'
+php artisan make:livewire 'Admin/Professorate/Document/ListComponent'
+
+define ruta
+Route::resource('documents', DocumentController::class)->only([ 'index']);
+
+Create file
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Document/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Document/Traits/DocumentRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Professorate'
+touch '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Professorate/DocumentRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/professorate/documents'
+touch '/home/nuser/code/pastoral/resources/views/admin/professorate/documents/index.blade.php'
+
+copia codigo en backend
+-DocumentRelations
+-DocumentRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar

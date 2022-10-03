@@ -4,7 +4,7 @@ namespace App\Models\app;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\app\Teacher\Traits\Teacher\TeacherRelations;
+use App\Models\app\Teacher\Traits\Professorate\TeacherRelations;
 
 class Teacher extends Model
 {
@@ -12,58 +12,92 @@ class Teacher extends Model
     use TeacherRelations;
 
     protected $fillable = [
-		'ti_teacher_id','ci_profesor','lastname','name','gender','date_birth','city_birth','dir_address','phone','cellphone','email','status',
+		'user_id','ti_teacher_id','ci_profesor','lastname','name','gender','date_birth','dir_address','phone','cellphone','email','status',
 	];
 
     const COLUMN_COMMENTS = [
-		'ti_teacher_id'=>'ti_teacher_id',
-		'ci_profesor'=>'ci_profesor',
-		'lastname'=>'lastname',
-		'name'=>'name',
-		'gender'=>'gender',
-		'date_birth'=>'date_birth',
-		'city_birth'=>'city_birth',
-		'dir_address'=>'dir_address',
-		'phone'=>'phone',
-		'cellphone'=>'cellphone',
-		'email'=>'email',
-		'status'=>'status',
+		'user_id'=>'Usuario',
+		'ti_teacher_id'=>'Tipo',
+		'ci_profesor'=>'CI. Ident.',
+		'lastname'=>'Apellidos',
+		'name'=>'Nombres',
+		'gender'=>'Género',
+		'date_birth'=>'F.Nacimiento',
+		'dir_address'=>'Dirección de Residencia',
+		'phone'=>'Telèfono',
+		'cellphone'=>'Telef.Celular',
+		'email'=>'C.Electrónico',
+		'whatsapp'=>'Whatsapp',
+		'telegram'=>'Telegram',
+		'twitter'=>'Twitter',
+		'instagram'=>'Instagram',
+		'status'=>'Estado',
     ];
 
     public static function teachers_list() 
 	{
 		return Teacher::pluck('name','id');
 	}
+
+	public function getFullNameAttribute()
+    {
+        return "{$this->name} {$this->lastname}";
+    }
 }
 
 /*
-'ti_teacher_id','ci_profesor','lastname','name','gender','date_birth','city_birth','dir_address','phone','cellphone','email','status',
-
+user_id
 ti_teacher_id
 ci_profesor
 lastname
 name
 gender
 date_birth
-city_birth
 dir_address
 phone
 cellphone
 email
+whatsapp
+telegram
+twitter
+instagram
 status
 
 
+user_id
 ti_teacher_id
 ci_profesor
 lastname
 name
 gender
 date_birth
-city_birth
 dir_address
 phone
 cellphone
 email
+whatsapp
+telegram
+twitter
+instagram
 status
+
+
+user_id
+ti_teacher_id
+ci_profesor
+lastname
+name
+gender
+date_birth
+dir_address
+phone
+cellphone
+email
+whatsapp
+telegram
+twitter
+instagram
+status
+
 
 */

@@ -22,7 +22,7 @@ class ListComponent extends Component
 
     public Teacher $teacher;
 
-    public $teacher_id,$country,$state,$city,$country_id,$state_id,$city_id;
+    public $teacher_id;
 
     public $search = ''; //'name'
 
@@ -32,7 +32,7 @@ class ListComponent extends Component
 
     public $status_last,$status_first,$saveInto;
 
-    public $representant_list,$citype_list,$genders_list,$country_list;
+    public $ti_teacher_list,$genders_list;
 
     protected $listeners = [ 'remove' ];
 
@@ -41,7 +41,7 @@ class ListComponent extends Component
         $this->modeCreate = false;
         $this->modeEdit = false;
         $this->list_comment = Teacher::COLUMN_COMMENTS; 
-        $this->citype_list = TiTeacher::ti_teacher_list()->toArray();
+        $this->ti_teacher_list = TiTeacher::ti_teacher_list()->toArray();
         $this->genders_list = ['Masculino'=>'Masculino', 'Femenino'=>'Femenino'];
     }
 
