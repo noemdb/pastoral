@@ -19,13 +19,11 @@ class CreateLessonsTable extends Migration
             $table->integer('duration')->comment('Duración'); //en minutos
             $table->string('description')->comment('Descripción');
             $table->string('observations')->nullable()->comment('Observaciones');
-
             $table->string('color',12)->nullable();
             $table->text('header')->nullable();
             $table->text('body')->nullable();
             $table->text('attachment')->nullable();
             $table->text('footer')->nullable();
-
             $table->boolean('status')->default(true)->comment('Estado');
 
             $table->timestamps();

@@ -5,6 +5,7 @@ namespace App\Models\app;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\app\Teacher\Traits\Professorate\TeacherRelations;
+use Illuminate\Support\Facades\DB;
 
 class Teacher extends Model
 {
@@ -36,7 +37,9 @@ class Teacher extends Model
 
     public static function teachers_list() 
 	{
-		return Teacher::pluck('name','id');
+		$teachers = Teacher::select('teachers.id', DB::raw('teachers.ci_profesor || " - " || teachers.name || " - " || teachers.lastname as teacherFullName' ) )
+            ->pluck('teacherFullName','id');
+		return $teachers;
 	}
 
 	public function getFullNameAttribute()

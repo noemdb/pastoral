@@ -15,22 +15,20 @@ class CreateTopicsTable extends Migration
     {
         Schema::create('topics', function (Blueprint $table) {
             $table->id();
-            $table->integer('pevaluacion_id')->unsigned()->comment('Plan de Evalaución');
+            $table->integer('pevaluation_id')->unsigned()->comment('Plan de Evalaución');
             $table->string('description')->comment('Descripción');
             $table->string('objetivo')->nullable()->comment('Objetivo');
             $table->string('observations')->nullable()->comment('Observaciones');
-
             $table->string('color',12)->nullable();
             $table->text('header')->nullable();
             $table->text('body')->nullable();
             $table->text('footer')->nullable();
             $table->text('attachment')->nullable();
-
             $table->boolean('status')->default(true)->comment('Estado');
 
             $table->timestamps();
             
-            // $table->foreign('pevaluacion_id')->references('id')->on('pevaluacions')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('pevaluation_id')->references('id')->on('pevaluacions')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

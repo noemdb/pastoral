@@ -5,7 +5,7 @@
             <div class="text-right mb-4 ml-4 text-lg leading-7 font-semibold dark:text-gray-100">
                 <div class="flex justify-start pt-2">
                     <x-icon-rectangle-list class="w-6 h-6 mr-0.5" />
-                    <div class="mr-2">Secciones</div>                
+                    <div class="mr-2">Grupos</div>                
                 </div>            
             </div>
     

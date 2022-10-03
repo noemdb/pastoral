@@ -16,7 +16,7 @@ class CreateInscriptionsTable extends Migration
         Schema::create('inscriptions', function (Blueprint $table) {
             $table->id();
             $table->integer('tinscription_id')->unsigned()->comment('Tipo de Inscripción');
-            $table->integer('section_id')->unsigned()->comment('Sección a inscribir');
+            $table->integer('section_id')->unsigned()->comment('Grupo a inscribir');
             $table->bigInteger('estudiant_id')->unique()->unsigned()->comment('Estudiante');
             $table->string('observations')->nullable()->comment('Observaciones');
             $table->timestamps();

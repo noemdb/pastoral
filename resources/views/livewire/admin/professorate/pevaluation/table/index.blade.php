@@ -1,10 +1,12 @@
+
+
 {{-- 'teacher_id','pensum_id','lapse_id','section_id','objetivo','description','observations','color','header','body','footer','attachment','status', --}}
 @php
     $class['iteration']="text-left px-4";
-    $class['pensum_id']="text-left px-4";
+    $class['location']="text-left px-4";
     $class['ci_profesor']="text-left px-4";
     $class['description']="text-left px-4";
-    $class['section_id']="text-left px-4";
+    $class['color']="text-left px-4";
     $class['action']="text-left px-4";
     $table_id = 'table_id';
 @endphp
@@ -17,7 +19,7 @@
             @php $name = 'search'; $model = 'pevaluation.'.$name; @endphp
             <div class="flex justify-start">
                 <x-jet-label for="{{$name}}" value="Buscar:" />
-                <span class="text-gray-400 mx-2 font-medium">nombre</span>                
+                <span class="text-gray-400 mx-2 font-medium">Catequista, asignatura, descripción</span>                
             </div>        
             <x-input wire:model.debounce.500ms="{{$name}}" name="{{$name}}" class="block w-full" />
         </div>
@@ -35,19 +37,19 @@
                 <th class="{{ $class['iteration'] ?? ''}}">
                     <div class="flex  justify-between">N</div>
                 </th>
-                <th class="{{ $class['pensum_id'] ?? ''}}">
+                <th class="{{ $class['teacher_id'] ?? ''}}">
                         <div class="flex justify-between">
-                            <div> {{$list_comment['pensum_id'] ?? ''}} </div>
+                            <div> {{$list_comment['teacher_id'] ?? ''}} </div>
                             @if($pevaluations->isNotEmpty())
-                                <x-elements.crud.sort-by field="name" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                                <x-elements.crud.sort-by field="teacher_id" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                             @endif
                         </div>
                     </th>
-                <th class="{{ $class['ci_profesor'] ?? ''}}">
+                <th class="{{ $class['pensum_id'] ?? ''}}">
                     <div class="flex justify-between">
-                        <div> {{$list_comment['ci_profesor'] ?? ''}} </div>
+                        <div> {{$list_comment['pensum_id'] ?? ''}} </div>
                         @if($pevaluations->isNotEmpty())
-                            <x-elements.crud.sort-by field="ci_profesor" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                            <x-elements.crud.sort-by field="pensum_id" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                         @endif
                     </div>
                 </th>
@@ -56,6 +58,14 @@
                         <div> {{$list_comment['description'] ?? ''}} </div>
                         @if($pevaluations->isNotEmpty())
                             <x-elements.crud.sort-by field="description" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        @endif
+                    </div>
+                </th>
+                <th class="{{ $class['color'] ?? ''}}">
+                    <div class="flex  justify-between">
+                        <div> {{$list_comment['color'] ?? ''}} </div>
+                        @if($pevaluations->isNotEmpty())
+                            <x-elements.crud.sort-by field="color" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                         @endif
                     </div>
                 </th>
@@ -70,26 +80,31 @@
             @php 
                 $teacher = $pevaluation->teacher;
                 $pensum = $pevaluation->pensum;
+                $curriculum = $pevaluation->curriculum;
                 $lapse = $pevaluation->lapse;
                 $section = $pevaluation->section;
             @endphp
 
             {{-- 'teacher_id','pensum_id','lapse_id','section_id','objetivo','description','observations','color','header','body','footer','attachment','status', --}}
 
-            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($pevaluation->id == $teacher_id) ? 'bg-gray-200' : null}}">
+            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($pevaluation->id == $pevaluation_id) ? 'bg-gray-200' : null}}">
                 <td class="{{ $class['iteration'] ?? ''}}">{{$loop->iteration}}</td>
-                <td class="{{ $class['ci_profesor'] ?? ''}}">
+                <td class="{{ $class['teacher_id'] ?? ''}}">
                     <div>{{$teacher->fullname ?? ''}}</div>
                     {{-- <div class="flex justify-end text-gray-400 text-sm">{{$ti_teacher->name ?? ''}}</div> --}}
                 </td>
                 <td class="{{ $class['pensum_id'] ?? ''}}">
                     {{$pensum->fullname ?? ''}}
+                    <div class="flex justify-end text-gray-400 text-sm">{{$curriculum->name ?? ''}}</div>
                     <div class="flex justify-end text-gray-400 text-sm">{{$lapse->name ?? ''}}</div>
                     <div class="flex justify-end text-gray-400 text-sm">{{$section->name ?? ''}}</div>
                 </td>
                 
                 
                 <td class="{{ $class['description'] ?? ''}}">{{$pevaluation->description ?? ''}}</td>
+                <td class="{{ $class['color'] ?? ''}}">
+                    <div class="h-10 w-10 rounded" style="background-color: {{$pevaluation->color ?? ''}}"> </div>
+                </td>
 
                 <td class="{{ $class['action'] ?? '' }}">
 

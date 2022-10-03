@@ -50,11 +50,20 @@ class Pensum extends Model
 
     public static function pensums_list() 
     {
-        $pensums = Pensum::select('pensums.*',DB::raw('courses.code || " - " || courses.name as name' ))
-            ->join('levels', 'levels.id', '=', 'pensums.level_id')
+        $pensums = Pensum::select('pensums.id', DB::raw('courses.code || " - " || courses.name as courseName' ) )
             ->join('courses', 'courses.id', '=', 'pensums.course_id')
-            ->pluck('name','id');
+            ->pluck('courseName','id');
         return $pensums;
+    }
+
+    public function getCoursesAttribute()
+    {
+        return Course::coursesLevelId_list($this->level_id);
+    }
+
+    public static function coursesSectionId_list($section_id) 
+    {
+        return Course::coursesSectionId_list($section_id);
     }
 }
 

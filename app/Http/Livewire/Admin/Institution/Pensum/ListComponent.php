@@ -52,7 +52,8 @@ class ListComponent extends Component
         $level = Level::find($level_id);
         if ($level) {
             $this->level_id = $level->id ; 
-            $courses = Course::select('courses.id',DB::raw('courses.code || " - " || courses.name as name' ))->where('curriculum_id',$level->curriculum_id)->get(); //dd($courses);
+            // $courses = Course::select('courses.id',DB::raw('courses.code || " - " || courses.name as name' ))->where('curriculum_id',$level->curriculum_id)->get(); //dd($courses);
+            $courses = Course::coursesLevelId_list($this->level_id);
 
             if ($courses->isNotEmpty()) {
                 $this->courses = $courses;
@@ -129,10 +130,13 @@ class ListComponent extends Component
     {
         $this->pensum_id = false;
         $this->modeEdit = false;
+        $this->modeCreate = false;
     }
 
     public function closeCreateMode()
     {
+        $this->pensum_id = false;
+        $this->modeEdit = false;
         $this->modeCreate = false;
     }
 

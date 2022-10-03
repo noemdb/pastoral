@@ -82,7 +82,7 @@
         <div class="mb-4">
             @php $name = 'status'; $model = 'teacher.'.$name; $key = Str::random(10);@endphp
             <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
-            <x-select  wire:key="{{$key}}" wire:model.defer="{{$model}}" :options="[1=>'SI',0=>'NO']" class="block mt-1 w-full" rows="2" />
+            <x-select  wire:key="{{$key}}" wire:model.defer="{{$model}}" :options="[1=>'Activo',0=>'Desactivo']" class="block mt-1 w-full" rows="2" />
             @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
 

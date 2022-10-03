@@ -51,6 +51,7 @@ class Course extends Model
         $courses_list = ($level) ? Course::select('courses.id',DB::raw('courses.code || " - " || courses.name as name' ))->where('curriculum_id',$level->curriculum_id)->pluck('name','id') :  collect(); //dd($level_id,$level);
         return $courses_list;
     }
+    
 }
 
 /*

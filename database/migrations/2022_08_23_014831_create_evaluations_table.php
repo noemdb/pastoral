@@ -15,7 +15,8 @@ class CreateEvaluationsTable extends Migration
     {
         Schema::create('evaluations', function (Blueprint $table) {
             $table->id();
-            $table->integer('pevaluacion_id')->unsigned()->comment('Plan de Evalaución');
+            $table->integer('pevaluation_id')->unsigned()->comment('Plan de Evalaución');
+            $table->date('date')->comment('Fecha');
             $table->string('objetivo')->nullable()->comment('Objetivo');
             $table->string('description')->nullable()->comment('Descripción');
             $table->string('observations')->nullable()->comment('Observaciones');
@@ -29,7 +30,7 @@ class CreateEvaluationsTable extends Migration
 
             $table->timestamps();
             
-            // $table->foreign('pevaluacion_id')->references('id')->on('pevaluacions')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('pevaluation_id')->references('id')->on('pevaluacions')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

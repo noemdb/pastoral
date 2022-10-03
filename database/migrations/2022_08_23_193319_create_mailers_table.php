@@ -18,7 +18,7 @@ class CreateMailersTable extends Migration
             $table->string('name')->comment('Nombre');
             $table->string('code',10)->unique()->comment('Código');
             $table->integer('user_id')->unsigned();
-            $table->integer('section_id')->unsigned()->nullable()->comment('Sección a inscribir');
+            $table->integer('section_id')->unsigned()->nullable()->comment('Grupo');
             $table->integer('level_id')->unsigned()->nullable()->comment('Grado');
             $table->integer('curriculum_id')->unsigned()->nullable()->comment('Plan de Estudio');
             $table->string('description')->nullable()->comment('Descripción');

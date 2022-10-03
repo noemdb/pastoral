@@ -51,6 +51,33 @@ class Section extends Model
             ->pluck('name','id');
         return $sections;
     }
+
+    public function getPensumsAttribute() 
+    {
+        $section = Section::find($this->id);
+        $level = ($section) ? $section->level : null ;
+        $courses = ($level) ? Course::select('courses.id')
+            ->SelectRaw('courses.code || " - " || courses.name as name' )
+            ->join('pensums', 'courses.id', '=', 'pensums.course_id')
+            ->where('pensums.level_id',$level->id)
+            ->get() 
+            :  collect(); //dd($courses);
+        return $courses;
+    }
+
+    public function getLapsesAttribute() 
+    {
+        $lapses = Section::select('lapses.id','lapses.name as lapseName')
+        ->SelectRaw(' pastorals.name || " - " || pescolars.name || " - " || curricula.name || " - " || lapses.name as lapseFullName ')
+        ->join('levels', 'levels.id', '=', 'sections.level_id')
+        ->join('curricula', 'curricula.id', '=', 'levels.curriculum_id')
+        ->join('lapses', 'curricula.id', '=', 'lapses.curriculum_id')
+        ->join('pescolars', 'pescolars.id', '=', 'curricula.pescolar_id')
+        ->join('pastorals', 'pastorals.id', '=', 'pescolars.pastoral_id')
+        ->where('sections.id',$this->id)
+        ->get(); //dd($lapses);
+        return $lapses;
+    }
 }
 
 /*

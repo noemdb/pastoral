@@ -29,7 +29,7 @@
             </x-jet-nav-link>
             <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" href="{{ route('sections.index') }}" :active="request()->routeIs('*sections*')">
                 <x-icon-rectangle-list class="w-6 h-6 mr-0.5" />
-                <div class="mr-0.5 hidden lg:flex">{{ __('Secciones') }} </div>
+                <div class="mr-0.5 hidden lg:flex">{{ __('Grupos') }} </div>
             </x-jet-nav-link>
             <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" href="{{ route('courses.index') }}" :active="request()->routeIs('*courses*')">
                 <x-icon-window-restore class="w-6 h-6 mr-0.5" />

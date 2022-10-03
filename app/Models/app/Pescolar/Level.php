@@ -54,4 +54,15 @@ class Level extends Model
 		return $curricula_list;
 	}
 
+    public function getPensumsAttribute() 
+    {
+        $level = Level::find($this->id);
+        $courses = ($level) ? Course::select('courses.id',DB::raw('courses.code || " - " || courses.name as name' ))
+            ->join('pensums', 'courses.id', '=', 'pensums.course_id')
+            ->where('pensums.level_id',$level->id)
+            ->get() 
+            :  collect(); 
+        return $courses;
+    }
+
 }

@@ -19,7 +19,7 @@ class Inscription extends Model
 
     const COLUMN_COMMENTS = [
         'tinscription_id' => 'Tipo',
-        'section_id' => 'Sección',
+        'section_id' => 'Grupo',
         'estudiant_id' => 'Estudiante',
         'ci' => 'CI',
         'observations' => 'Observaciones',

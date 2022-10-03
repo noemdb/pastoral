@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use App\Models\app\Pescolar\Traits\Lapse\LapseRelations;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class Lapse extends Model
 {
@@ -49,6 +50,15 @@ class Lapse extends Model
     public function getFullNameAttribute()
     {
         return "{$this->code} {$this->name}";
+    }
+
+    public static function lapses_list() 
+    {
+        $lapses = Lapse::select('lapses.*',DB::raw('pescolars.code || " - " || curricula.code || " - " || curricula.name as name' ))
+            ->join('curricula', 'curricula.id', '=', 'lapses.curriculum_id')
+            ->join('pescolars', 'pescolars.id', '=', 'curricula.pescolar_id')
+            ->pluck('name','id');
+        return $lapses;
     }
 }
 

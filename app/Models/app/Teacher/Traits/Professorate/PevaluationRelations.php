@@ -5,7 +5,7 @@ trait PevaluationRelations {
 
     public function teacher()
     {
-        return $this->belongsTo('App\Models\app\Teacher');
+        return $this->belongsTo('App\Models\app\Teacher'); ///home/nuser/code/pastoral/app/Models/app/Teacher.php
     }
 
     public function pensum()
