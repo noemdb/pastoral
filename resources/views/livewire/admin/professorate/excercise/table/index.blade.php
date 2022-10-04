@@ -1,4 +1,4 @@
-{{-- 'pevaluation_id','description','objetivo','observations','color','header','body','footer','attachment','status' --}}
+{{-- 'topic_id','objetivo','description','observations','status_resolved','color','header','body','footer','attachment','status', --}}
 @php
     $class['iteration']="text-left px-4";
     $class['pevaluation_id']="text-left px-4";
@@ -14,7 +14,7 @@
 
     <div class="mb-4 flex justify-between">
         <div class="w-3/4">
-            @php $name = 'search'; $model = 'topic.'.$name; @endphp
+            @php $name = 'search'; $model = 'excercise.'.$name; @endphp
             <div class="flex justify-start">
                 <x-jet-label for="{{$name}}" value="Buscar:" />
                 <span class="text-gray-400 mx-2 font-medium">Catequista, asignatura, descripción</span>                
@@ -29,7 +29,7 @@
 
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
 
-        {{-- 'pevaluation_id','description','objetivo','observations','color','header','body','footer','attachment','status' --}}
+        {{-- 'topic_id','objetivo','description','observations','status_resolved','color','header','body','footer','attachment','status', --}}
 
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
 
@@ -40,7 +40,7 @@
                 <th class="{{ $class['pevaluation_id'] ?? ''}}">
                         <div class="flex justify-between">
                             <div> {{$list_comment['pevaluation_id'] ?? ''}} </div>
-                            @if($topics->isNotEmpty())
+                            @if($excercises->isNotEmpty())
                                 <x-elements.crud.sort-by field="pevaluation_id" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                             @endif
                         </div>
@@ -48,7 +48,7 @@
                 <th class="{{ $class['objetivo'] ?? ''}}">
                     <div class="flex justify-between">
                         <div> {{$list_comment['objetivo'] ?? ''}} </div>
-                        @if($topics->isNotEmpty())
+                        @if($excercises->isNotEmpty())
                             <x-elements.crud.sort-by field="objetivo" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                         @endif
                     </div>
@@ -56,7 +56,7 @@
                 <th class="{{ $class['description'] ?? ''}}">
                     <div class="flex  justify-between">
                         <div> {{$list_comment['description'] ?? ''}} </div>
-                        @if($topics->isNotEmpty())
+                        @if($excercises->isNotEmpty())
                             <x-elements.crud.sort-by field="description" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                         @endif
                     </div>
@@ -64,7 +64,7 @@
                 <th class="{{ $class['color'] ?? ''}}">
                     <div class="flex  justify-between">
                         <div> {{$list_comment['color'] ?? ''}} </div>
-                        @if($topics->isNotEmpty())
+                        @if($excercises->isNotEmpty())
                             <x-elements.crud.sort-by field="color" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                         @endif
                     </div>
@@ -76,10 +76,10 @@
         </thead>
 
         <tbody id="tdatos">
-        @forelse($topics as $topic)
+        @forelse($excercises as $excercise)
 
             @php 
-                $pevaluation = $topic->pevaluation;
+                $pevaluation = $excercise->pevaluation;
                 $teacher = $pevaluation->teacher;
                 $pensum = $pevaluation->pensum;
                 $curriculum = $pevaluation->curriculum;
@@ -87,9 +87,9 @@
                 $section = $pevaluation->section;
             @endphp
 
-            {{-- 'pevaluation_id','description','objetivo','observations','color','header','body','footer','attachment','status' --}}
+            {{-- 'topic_id','objetivo','description','observations','status_resolved','color','header','body','footer','attachment','status', --}}
 
-            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($topic->id == $pevaluation_id) ? 'bg-gray-200' : null}}">
+            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($excercise->id == $excercise_id) ? 'bg-gray-200' : null}}">
                 <td class="{{ $class['iteration'] ?? ''}}">{{$loop->iteration}}</td>
                 <td class="{{ $class['pevaluation_id'] ?? ''}}">
                     <div>{{$teacher->fullname ?? ''}}</div>
@@ -102,20 +102,20 @@
                     {{$pensum->fullname ?? ''}}                    
                 </td>
                          
-                <td class="{{ $class['description'] ?? ''}}">{{$topic->description ?? ''}}</td>
+                <td class="{{ $class['description'] ?? ''}}">{{$excercise->description ?? ''}}</td>
 
                 <td class="{{ $class['color'] ?? ''}}">
-                    <div class="h-10 w-10 rounded" style="background-color: {{$topic->color ?? ''}}"> </div>
+                    <div class="h-10 w-10 rounded" style="background-color: {{$excercise->color ?? ''}}"> </div>
                 </td>
 
                 <td class="{{ $class['action'] ?? '' }}">
 
                     <div class="flex items-center justify-center justify-between mb-3 shadow">
                         <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
-                            <x-elements.form.button-edit wire:key="topic-edit-{{$topic->id}}" wire:click="edit({{ $topic->id }})" >
+                            <x-elements.form.button-edit wire:key="excercise-edit-{{$excercise->id}}" wire:click="edit({{ $excercise->id }})" >
                                 <x-icon-pen class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-edit>
-                            <x-elements.form.button-del wire:key="topic-delete-{{$topic->id}}" wire:click="delete({{ $topic->id }})" >
+                            <x-elements.form.button-del wire:key="excercise-delete-{{$excercise->id}}" wire:click="delete({{ $excercise->id }})" >
                                 <x-icon-trash-can class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-del>
                         </div>
@@ -133,6 +133,6 @@
 
     </table>
 
-    {{ $topics->links() }}
+    {{ $excercises->links() }}
 
 </div>

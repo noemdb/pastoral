@@ -17,10 +17,10 @@ trait PevaluationRules
         'pevaluation.observations' => 'nullable|string',
         'pevaluation.color' => 'nullable|string',
         'pevaluation.header' => 'nullable|string',
-        'pevaluation.body' => 'required|string',
+        'pevaluation.body' => 'nullable|string',
         'pevaluation.footer' => 'nullable|string',
         'pevaluation.attachment' => 'nullable|string',
-        'pevaluation.status' => 'nullable|string',
+        'pevaluation.status' => 'required|required',
     ];
 
     protected function validationAttributes()

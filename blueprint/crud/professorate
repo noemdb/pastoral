@@ -150,8 +150,8 @@ Route::resource('tableclass', TableclassController::class)->only([ 'index']);
 Create file
 mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Tableclass/Traits'
 touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Professorate/Tableclass/Traits/TableclassRules.php'
-mkdir -p '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Professorate'
-touch '/home/nuser/code/pastoral/app/Models/app/Estudiant/Traits/Professorate/TableclassRelations.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Professorate'
+touch '/home/nuser/code/pastoral/app/Models/app/Teacher/Traits/Professorate/TableclassRelations.php'
 mkdir -p '/home/nuser/code/pastoral/resources/views/admin/professorate/tableclass'
 touch '/home/nuser/code/pastoral/resources/views/admin/professorate/tableclass/index.blade.php'
 

@@ -3,7 +3,7 @@
     $class['iteration']="text-left px-4";
     $class['topic_id']="text-left px-4";
     $class['description']="text-left px-4";
-    $class['objetivo']="text-left px-4";
+    $class['pensum']="text-left px-4";
     $class['color']="text-left px-4";
     $class['action']="text-left px-4";
     $table_id = 'table_id';
@@ -45,11 +45,11 @@
                             @endif
                         </div>
                     </th>
-                <th class="{{ $class['objetivo'] ?? ''}}">
+                <th class="{{ $class['pensum'] ?? ''}}">
                     <div class="flex justify-between">
-                        <div> {{$list_comment['objetivo'] ?? ''}} </div>
+                        <div> {{$list_comment['pensum'] ?? ''}} </div>
                         @if($lessons->isNotEmpty())
-                            <x-elements.crud.sort-by field="objetivo" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                            <x-elements.crud.sort-by field="pensum" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                         @endif
                     </div>
                 </th>
@@ -99,7 +99,7 @@
                     <div class="flex justify-end text-gray-400 text-sm">{{$lapse->name ?? ''}}</div>
                     <div class="flex justify-end text-gray-400 text-sm">{{$section->name ?? ''}}</div>
                 </td>
-                <td class="{{ $class['objetivo'] ?? ''}}">
+                <td class="{{ $class['pensum'] ?? ''}}">
                     {{$pensum->fullname ?? ''}}                    
                 </td>
                          

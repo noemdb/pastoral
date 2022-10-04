@@ -26,7 +26,9 @@ class Lesson extends Model
 		'body'=>'body',
 		'attachment'=>'attachment',
 		'footer'=>'footer',
-        'status'=>'status'
+        'status'=>'status',
+		///////////////////////
+        'pensum'=>'Asignatura'
     ];
 
     public static function lessons_list() 
@@ -46,11 +48,21 @@ class Lesson extends Model
 
 	public function getCurriculumAttribute() 
     {
-        $curriculum = Evaluation::select('curricula.*')
-		->join('evaluations', 'evaluations.id', '=', 'evaluations.pevaluation_id')
+        $curriculum = Topic::select('curricula.*')
+		->join('pevaluations', 'pevaluations.id', '=', 'evaluations.pevaluation_id')
 		->join('lapses', 'lapses.id', '=', 'pevaluations.lapse_id')
 		->join('curricula', 'curricula.id', '=', 'lapses.curriculum_id')
 		->where('pevaluations.id',$this->id)
+		->first();
+        return $curriculum;
+    }
+
+	public function getPevaluationAttribute() 
+    {
+        $curriculum = Pevaluation::select('pevaluations.*')
+		->join('topics', 'pevaluations.id', '=', 'topics.pevaluation_id')
+		->join('lessons', 'topics.id', '=', 'lessons.topic_id')
+		->where('lessons.id',$this->id)
 		->first();
         return $curriculum;
     }

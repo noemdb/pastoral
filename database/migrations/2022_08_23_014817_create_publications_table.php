@@ -15,17 +15,15 @@ class CreatePublicationsTable extends Migration
     {
         Schema::create('publications', function (Blueprint $table) {
             $table->id();
-            $table->integer('teacher_id')->unique()->unsigned()->comment('Profesor');
-            $table->integer('user_id')->unsigned();
-            $table->string('description')->nullable();
+            $table->integer('teacher_id')->unsigned()->comment('Profesor');
+            $table->integer('user_id')->nullable()->unsigned();
+            $table->string('description');
             $table->string('observations')->nullable();
-
             $table->string('color',12)->nullable();
             $table->text('header')->nullable();
             $table->text('body')->nullable();
             $table->text('attachment')->nullable();
             $table->text('footer')->nullable();
-
             $table->boolean('status')->default(true)->comment('Estado');
 
             $table->timestamps();

@@ -17,7 +17,7 @@ trait TopicRules
         'topic.body' => 'nullable|string',
         'topic.footer' => 'nullable|string',
         'topic.attachment' => 'nullable|string',
-        'topic.status' => 'nullable|boolean',
+        'topic.status' => 'required|boolean',
     ];
 
     protected function validationAttributes()

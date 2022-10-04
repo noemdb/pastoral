@@ -18,7 +18,6 @@ class CreateResolutionsTable extends Migration
             $table->integer('excercise_id')->unsigned()->comment('Ejercicio');
             $table->string('description')->comment('Descripción');
             $table->string('observations')->nullable()->comment('Observaciones');
-
             $table->string('color',12)->nullable();
             $table->text('header')->nullable();
             $table->text('body')->nullable();

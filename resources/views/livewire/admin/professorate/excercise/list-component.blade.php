@@ -5,7 +5,7 @@
         <div class="text-right mb-4 ml-4 text-lg leading-7 font-semibold dark:text-gray-100">
             <div class="flex justify-start pt-2">
                 <x-icon-grip class="w-6 h-6 mr-0.5" />
-                <div class="mr-2">Resoluciones registradas</div>                
+                <div class="mr-2">Ejercicios registrados</div>                
             </div>            
         </div>
 
@@ -21,7 +21,7 @@
     @if ($modeEdit)
 
         <div class="mb-4 pb-4"> 
-            {{-- @include('livewire.admin.professorate.excercise.form.edit') --}}
+            @include('livewire.admin.professorate.excercise.form.edit')
         </div>
 
     @endif
@@ -30,7 +30,7 @@
     @if ($modeCreate)
 
         <div class="mb-4 pb-4">
-            {{-- @include('livewire.admin.professorate.excercise.form.create') --}}
+            @include('livewire.admin.professorate.excercise.form.create')
         </div>
 
     @endif
@@ -38,7 +38,7 @@
 
 
     <div class="mx-4 px-4">
-        {{-- @include('livewire.admin.professorate.excercise.table.index') --}}
+        @include('livewire.admin.professorate.excercise.table.index')
     </div>
     
     

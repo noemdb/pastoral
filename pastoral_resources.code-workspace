@@ -9,9 +9,11 @@
 			"path": "resources"
 		},
 		{
-			"path": "resources/views"
+			"name": "admin",
+			"path": "resources/views/admin"
 		},
 		{
+			"name": "livewire",
 			"path": "resources/views/livewire"
 		}
 	],

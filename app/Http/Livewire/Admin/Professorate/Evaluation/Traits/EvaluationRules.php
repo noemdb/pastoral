@@ -16,7 +16,7 @@ trait EvaluationRules
         'evaluation.body' => 'nullable|string',
         'evaluation.footer' => 'nullable|string',
         'evaluation.attachment' => 'nullable|string',
-        'evaluation.status' => 'nullable|string',
+        'evaluation.status' => 'required|boolean',
     ];
 
     protected function validationAttributes()

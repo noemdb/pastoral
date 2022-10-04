@@ -1,0 +1,139 @@
+{{-- 'user_id','topic_id','title','messege','footer', --}}
+@php
+    $class['iteration']="text-left px-4";
+    $class['topic_id']="text-left px-4";
+    $class['description']="text-left px-4";
+    $class['objetivo']="text-left px-4";
+    $class['color']="text-left px-4";
+    $class['action']="text-left px-4";
+    $table_id = 'table_id';
+@endphp
+
+
+<div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+
+    <div class="mb-4 flex justify-between">
+        <div class="w-3/4">
+            @php $name = 'search'; $model = 'tableclass.'.$name; @endphp
+            <div class="flex justify-start">
+                <x-jet-label for="{{$name}}" value="Buscar:" />
+                <span class="text-gray-400 mx-2 font-medium">Catequista, asignatura, descripción</span>                
+            </div>        
+            <x-input wire:model.debounce.500ms="{{$name}}" name="{{$name}}" class="block w-full" />
+        </div>
+        <div class="w-1/5">
+            <x-jet-label for="paginate" value="Registros" />
+            <x-select  wire:model="paginate" name="paginate" class="w-full" :options="$paginate_list" />
+        </div>
+    </div>
+
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+
+        {{-- 'user_id','topic_id','title','messege','footer', --}}
+
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+
+            <tr class="text-center">
+                <th class="{{ $class['iteration'] ?? ''}}">
+                    <div class="flex  justify-between">N</div>
+                </th>
+                <th class="{{ $class['topic_id'] ?? ''}}">
+                        <div class="flex justify-between">
+                            <div> {{$list_comment['topic_id'] ?? ''}} </div>
+                            @if($tableclasses->isNotEmpty())
+                                <x-elements.crud.sort-by field="topic_id" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                            @endif
+                        </div>
+                    </th>
+                <th class="{{ $class['title'] ?? ''}}">
+                    <div class="flex justify-between">
+                        <div> {{$list_comment['title'] ?? ''}} </div>
+                        @if($tableclasses->isNotEmpty())
+                            <x-elements.crud.sort-by field="title" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        @endif
+                    </div>
+                </th>
+                <th class="{{ $class['messege'] ?? ''}}">
+                    <div class="flex  justify-between">
+                        <div> {{$list_comment['messege'] ?? ''}} </div>
+                        @if($tableclasses->isNotEmpty())
+                            <x-elements.crud.sort-by field="messege" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        @endif
+                    </div>
+                </th>
+                <th class="{{ $class['footer'] ?? ''}}">
+                    <div class="flex  justify-between">
+                        <div> {{$list_comment['footer'] ?? ''}} </div>
+                        @if($tableclasses->isNotEmpty())
+                            <x-elements.crud.sort-by field="footer" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        @endif
+                    </div>
+                </th>
+                
+                <th class="{{ $class['action'] ?? ''}}">Acciones</th>
+            </tr>
+
+        </thead>
+
+        <tbody id="tdatos">
+        @forelse($tableclasses as $tableclass)
+
+            @php 
+                $topic = $tableclass->topic;
+                $pevaluation = $topic->pevaluation;
+                $pensum = $pevaluation->pensum;
+                $curriculum = $pevaluation->curriculum;
+                $lapse = $pevaluation->lapse;
+                $section = $pevaluation->section;
+            @endphp
+
+            {{-- 'user_id','topic_id','title','messege','footer', --}}
+
+            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($tableclass->id == $tableclass_id) ? 'bg-gray-200' : null}}">
+                <td class="{{ $class['iteration'] ?? ''}}">{{$loop->iteration}}</td>
+                <td class="{{ $class['topic_id'] ?? ''}}">
+                    <div>{{Str::limit($topic->description,40) ?? ''}}</div>
+                    <div class="flex justify-end text-gray-400 text-sm">{{$teacher->fullname ?? ''}}</div>
+                    <div class="flex justify-end text-gray-400 text-sm">{{Str::limit($pevaluation->description,40) ?? ''}}</div>
+                    <div class="flex justify-end text-gray-400 text-sm">{{$curriculum->name ?? ''}}</div>
+                    <div class="flex justify-end text-gray-400 text-sm">{{$lapse->name ?? ''}}</div>
+                    <div class="flex justify-end text-gray-400 text-sm">{{$section->name ?? ''}}</div>
+                </td>
+                <td class="{{ $class['title'] ?? ''}}">
+                    {{$tableclass->title ?? ''}}                    
+                </td>
+                         
+                <td class="{{ $class['messege'] ?? ''}}">{{$tableclass->messege ?? ''}}</td>
+
+                <td class="{{ $class['footer'] ?? ''}}">
+                    {{$tableclass->footer ?? ''}}
+                </td>
+
+                <td class="{{ $class['action'] ?? '' }}">
+
+                    <div class="flex items-center justify-center justify-between mb-3 shadow">
+                        <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
+                            <x-elements.form.button-edit wire:key="tableclass-edit-{{$tableclass->id}}" wire:click="edit({{ $tableclass->id }})" >
+                                <x-icon-pen class="w-4 h-4 mr-0.5" />
+                            </x-elements.form.button-edit>
+                            <x-elements.form.button-del wire:key="tableclass-delete-{{$tableclass->id}}" wire:click="delete({{ $tableclass->id }})" >
+                                <x-icon-trash-can class="w-4 h-4 mr-0.5" />
+                            </x-elements.form.button-del>
+                        </div>
+                    </div>
+
+                </td>
+            </tr>
+        @empty
+            <tr>
+                <td colspan="7" class="text-center my-4 py-4">No hay datos.<td>
+            </tr>
+        @endforelse
+
+        </tbody>
+
+    </table>
+
+    {{ $tableclasses->links() }}
+
+</div>

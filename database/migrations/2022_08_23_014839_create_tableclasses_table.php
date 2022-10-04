@@ -15,17 +15,16 @@ class CreateTableclassesTable extends Migration
     {
         Schema::create('tableclasses', function (Blueprint $table) {
             $table->id();
-            $table->integer('evaluacion_id')->unsigned()->comment('Plan de Evalaución');
-            $table->integer('publication_id')->unsigned()->comment('Publicación');
-
+            $table->integer('user_id')->nullable()->unsigned()->comment('Usuario');
+            $table->integer('topic_id')->unsigned()->comment('Temas');
             $table->text('title')->nullable();
-            $table->text('subtitle');
+            $table->text('messege');
             $table->text('footer')->nullable();
 
             $table->timestamps();
 
-            // $table->foreign('evaluacion_id')->references('id')->on('evaluacions')->onDelete('cascade')->onUpdate('cascade');
-            // $table->foreign('publication_id')->references('id')->on('publications')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

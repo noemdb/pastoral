@@ -21,34 +21,45 @@ class Excercise extends Model
 		'objetivo'=>'objetivo',
 		'description'=>'Descripción',
 		'observations'=>'Observaciones',
-		'status_resolved'=>'color',
-		'color'=>'header',
-		'header'=>'body',
-		'body'=>'attachment',
+		'status_resolved'=>'Resolución',
+		'color'=>'color',
+		'header'=>'header',
+		'body'=>'body',
 		'footer'=>'footer',
         'attachment'=>'attachment',
         'status'=>'status'
     ];
 
-    public static function lessons_list() 
+    public static function excercises_list() 
 	{
         $excercises = Excercise::select('excercises.*')
-        ->SelectRaw(' pastorals.name || " - " || pescolars.name || " - " || curricula.name || " - " || courses.code || " " || courses.name as nameLesson ')
+        ->SelectRaw(' pastorals.name || " - " || pescolars.name || " - " || curricula.name || " - " || courses.code || " " || courses.name || " " || excercises.objetivo as nameExcercise ')
         ->join('topics', 'topics.id', '=', 'excercises.topic_id')
-        ->join('pevaluations', 'pevaluations.id', '=', 'excercises.pevaluation_id')
+        ->join('pevaluations', 'pevaluations.id', '=', 'topics.pevaluation_id')
         ->join('pensums', 'pensums.id', '=', 'pevaluations.pensum_id')
         ->join('courses', 'courses.id', '=', 'pensums.course_id')
 		->join('curricula', 'curricula.id', '=', 'courses.curriculum_id')
 		->join('pescolars', 'pescolars.id', '=', 'curricula.pescolar_id')
 		->join('pastorals', 'pastorals.id', '=', 'pescolars.pastoral_id')
-        ->pluck('nameLesson','id');
+        ->pluck('nameExcercise','id');
         return $excercises;
 	}
 
+	public function getPevaluationAttribute() 
+    {
+        $curriculum = Pevaluation::select('pevaluations.*')
+		->join('topics', 'pevaluations.id', '=', 'topics.pevaluation_id')
+		->join('excercises', 'topics.id', '=', 'excercises.topic_id')
+		->where('excercises.id',$this->id)
+		->first();
+        return $curriculum;
+    }
+
 	public function getCurriculumAttribute() 
     {
-        $curriculum = Evaluation::select('curricula.*')
-		->join('evaluations', 'evaluations.id', '=', 'evaluations.pevaluation_id')
+        $curriculum = Excercise::select('curricula.*')
+		->join('topics', 'topics.id', '=', 'excercises.topic_id')
+		->join('pevaluations', 'pevaluations.id', '=', 'evaluations.pevaluation_id')
 		->join('lapses', 'lapses.id', '=', 'pevaluations.lapse_id')
 		->join('curricula', 'curricula.id', '=', 'lapses.curriculum_id')
 		->where('pevaluations.id',$this->id)
@@ -62,6 +73,7 @@ class Excercise extends Model
 
 'topic_id','objetivo','description','observations','status_resolved','color','header','body','footer','attachment','status',
 
+'topic_id','objetivo','description','observations','status_resolved','color','header','body','footer','attachment','status',
 topic_id
 objetivo
 description

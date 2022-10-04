@@ -15,7 +15,7 @@ trait LessonRules
         'lesson.body' => 'nullable|string',
         'lesson.attachment' => 'nullable|string',
         'lesson.footer' => 'nullable|string',
-        'lesson.status' => 'boolean|string',
+        'lesson.status' => 'required|boolean',
     ];
 
     protected function validationAttributes()
