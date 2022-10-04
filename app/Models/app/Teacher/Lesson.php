@@ -13,7 +13,7 @@ class Lesson extends Model
     use LessonRelations;
 
     protected $fillable = [
-		'topic_id','duration','description','observations','color','header','body','attachment','footer','status'
+		'topic_id','duration','description','observations','color','header','body','attachment','footer','status',
 	];
 
     const COLUMN_COMMENTS = [
@@ -58,9 +58,7 @@ class Lesson extends Model
 
 /*
 
-'pevaluation_id','objetivo','description','observations','date','color','header','body','footer','attachment','status',
-
-'topic_id','duration','description','observations','color','header','body','attachment','footer',
+'topic_id','duration','description','observations','color','header','body','attachment','footer','status',
 
 topic_id
 duration
@@ -71,5 +69,6 @@ header
 body
 attachment
 footer
+status
 
 */

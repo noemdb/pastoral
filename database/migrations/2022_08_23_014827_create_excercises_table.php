@@ -19,16 +19,12 @@ class CreateExcercisesTable extends Migration
             $table->string('objetivo')->comment('Objetivo');
             $table->string('description')->comment('Descripción');
             $table->string('observations')->nullable()->comment('Observaciones');
-
             $table->boolean('status_resolved')->default(false)->comment('Resolución');
-
             $table->string('color',12)->nullable();
             $table->text('header')->nullable();
             $table->text('body')->nullable();
             $table->text('footer')->nullable();
-
             $table->text('attachment')->nullable();
-
             $table->boolean('status')->default(true)->comment('Estado');
 
             $table->timestamps();
