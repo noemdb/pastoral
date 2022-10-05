@@ -26,10 +26,13 @@ class CreateEnrollmentsTable extends Migration
             $table->enum('gender',['Masculino', 'Femenino'])->nullable()->comment('Genero');//Másculino,Femenino
             $table->enum('laterality',['Izquierda(o)', 'Derecha(o)'])->nullable()->comment('Lateralidad');//Másculino,Femenino
             $table->date('date_birth')->nullable()->comment('Fecha de nacimiento');
-            $table->string('city_birth')->nullable()->comment('Ciudad de nacimiento');
-            $table->string('town_hall_birth')->nullable()->comment('Municipio de nacimiento');
-            $table->string('state_birth')->nullable()->comment('Estado de nacimiento');
-            $table->string('country_birth')->nullable()->comment('País de nacimiento');
+            // $table->string('city_birth')->nullable()->comment('Ciudad de nacimiento');
+            // $table->string('town_hall_birth')->nullable()->comment('Municipio de nacimiento');
+            // $table->string('state_birth')->nullable()->comment('Estado de nacimiento');
+            // $table->string('country_birth')->nullable()->comment('País de nacimiento');
+            $table->integer('country_id')->nullable()->comment('País de nacimiento');
+            $table->integer('state_id')->nullable()->comment('Estado de nacimiento');
+            $table->integer('city_id')->nullable()->comment('Ciudad de nacimiento');
             $table->string('dir_address')->nullable()->comment('Dirección de residencia');
             $table->string('phone')->nullable()->comment('Número de teléfono');
             $table->string('email')->nullable()->comment('Correo electrónico');

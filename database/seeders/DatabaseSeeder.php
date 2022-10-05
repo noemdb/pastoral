@@ -21,7 +21,13 @@ class DatabaseSeeder extends Seeder
         $this->call(PastoralSeeder::class);
         $this->call(CitypeSeeder::class);
         $this->call(PescolarSeeder::class);
-        $this->call(CurriculumSeeder::class);        
+        $this->call(CurriculumSeeder::class); 
+        
+        ///////////////////Word/////////////////////
+
+        $this->call(CountrySeeder::class);
+        $this->call(StateSeeder::class);
+        $this->call(CitySeeder::class);
         
         $this->call(TauthoritySeeder::class);
         $this->call(AuthoritySeeder::class);
@@ -33,6 +39,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TinscriptionSeeder::class);
 
         $this->call(RepresentantSeeder::class);       
+        $this->call(EnrollmentSeeder::class);       
         //$this->call(EstudiantSeeder::class); 
         
         $this->call(TiTeacherSeeder::class);       
@@ -47,11 +54,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PublicationSeeder::class);
         $this->call(DocumentSeeder::class);
 
-        ///////////////////Word/////////////////////
-
-        $this->call(CountrySeeder::class);
-        $this->call(StateSeeder::class);
-        $this->call(CitySeeder::class);               
+                       
 
     }
 }

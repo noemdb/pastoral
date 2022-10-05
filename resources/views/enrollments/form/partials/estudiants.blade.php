@@ -64,25 +64,16 @@
 
 
 <div>
-    {{-- <x-jet-label for="city_birth" value="{{ __('Ciudad de nacimiento') }}" /> --}}
-    <x-jet-label for="city_birth" value="{{ __($comment_enrollment['city_birth']) }}" />
-    <x-jet-input id="city_birth" class="block mt-1 w-full" type="city_birth" name="city_birth" :value="old('city_birth')"   />
+    <x-jet-label for="city_id" value="{{ __($comment_enrollment['city_id']) }}" />
+    <x-jet-input id="city_id" class="block mt-1 w-full" type="city_id" name="city_id" :value="old('city_id')"   />
 </div>
 
 <div>
-    {{-- <x-jet-label for="town_hall_birth" value="{{ __('Municipio de nacimiento') }}" /> --}}
-    <x-jet-label for="town_hall_birth" value="{{ __($comment_enrollment['town_hall_birth']) }}" />
-    <x-jet-input id="town_hall_birth" class="block mt-1 w-full" type="town_hall_birth" name="town_hall_birth" :value="old('town_hall_birth')"   />
+    <x-jet-label for="state_id" value="{{ __($comment_enrollment['state_id']) }}" />
+    <x-jet-input id="state_id" class="block mt-1 w-full" type="state_id" name="state_id" :value="old('state_id')"   />
 </div>
 
 <div>
-    {{-- <x-jet-label for="state_birth" value="{{ __('Estado de nacimiento') }}" /> --}}
-    <x-jet-label for="state_birth" value="{{ __($comment_enrollment['state_birth']) }}" />
-    <x-jet-input id="state_birth" class="block mt-1 w-full" type="state_birth" name="state_birth" :value="old('state_birth')"   />
-</div>
-
-<div>
-    {{-- <x-jet-label for="country_birth" value="{{ __('País de nacimiento') }}" /> --}}
     <x-jet-label for="country_birth" value="{{ __($comment_enrollment['country_birth']) }}" />
     <x-jet-input id="country_birth" class="block mt-1 w-full" type="country_birth" name="country_birth" :value="old('country_birth')"   />
 </div>

@@ -1,4 +1,4 @@
-{{-- 'ti_teacher_id','ci_profesor','lastname','name','gender','date_birth','city_birth','dir_address','phone','cellphone','email','status', --}}
+{{-- 'ti_teacher_id','ci_profesor','lastname','name','gender','date_birth','city_id','dir_address','phone','cellphone','email','status', --}}
 @php
     $class['iteration']="text-left px-4";
     $class['name']="text-left px-4";
@@ -28,7 +28,6 @@
     </div>
 
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        {{-- 'ti_teacher_id','ci_profesor','lastname','name','gender','date_birth','city_birth','dir_address','phone','cellphone','email','status', --}}
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
 
             <tr class="text-center">

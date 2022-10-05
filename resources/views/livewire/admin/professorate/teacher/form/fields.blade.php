@@ -1,4 +1,4 @@
-{{-- 'ti_teacher_id','ci_profesor','lastname','name','gender','date_birth','city_birth','dir_address','phone','cellphone','email','status', --}}
+{{-- 'ti_teacher_id','ci_profesor','lastname','name','gender','date_birth','state_id','dir_address','phone','cellphone','email','status', --}}
 
 <div class="grid grid-cols-1 gap-4">
     <div class="mb-4">

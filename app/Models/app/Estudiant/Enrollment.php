@@ -16,7 +16,7 @@ class Enrollment extends Model
 
     protected $fillable = [
         'pastoral_id','representant_name','representant_ci','citype_id','laterality','twitter','whatsapp','facebook','ci','patology','lastname','name','curriculum_id','gender',
-        'date_birth','city_birth','state_birth','country_birth','dir_address','phone','email','observations',
+        'date_birth','country_id','state_id','city_id','dir_address','phone','email','observations',
         'status','status_nacionality','status_patology','description'
     ];
 
