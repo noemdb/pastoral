@@ -42,7 +42,7 @@ class Enrollment extends Model
         'twitter'=>'Twitter',
         'whatsapp'=>'WhatsApp',
         'facebook'=>'Facebook',
-        'patology'=>'Patologías que deban ser mensionadas',
+        'patology'=>'Patologías que deban ser mencionadas',
         'status_nacionality'=>'Nacionalizado',
         'status_patology'=>'Tratado por especialistas',
         'status'=>'Estado',

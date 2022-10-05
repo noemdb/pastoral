@@ -37,7 +37,7 @@ class CreateEnrollmentsTable extends Migration
             $table->string('instagram')->nullable()->comment('Instagram');
             $table->string('whatsapp')->nullable()->comment('WhatsApp');
             $table->string('facebook')->nullable()->comment('Facebook');
-            $table->string('patology')->nullable()->comment('Patologías que deban ser mensionadas');
+            $table->string('patology')->nullable()->comment('Patologías que deban ser mencionadas');
             $table->boolean('status_nacionality')->nullable()->comment('Nacionalizado');
             $table->boolean('status_patology')->nullable()->comment('Tratado por especialistas');
 
