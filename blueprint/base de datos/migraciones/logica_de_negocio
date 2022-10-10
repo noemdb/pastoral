@@ -16,6 +16,7 @@ Detalles del Pescolar
 	php artisan make:model 'app\Pescolar\Section' -m -a
 	php artisan make:model 'app\Pescolar\Course' -m -a
 	php artisan make:model 'app\Pescolar\Pensum' -m -a
+	php artisan make:model 'app\Pescolar\Library' -m -a
 
 Detalles del Estudiants
 	php artisan make:model 'app\Estudiant' -m -a
@@ -43,6 +44,7 @@ Detalles del Teachers
 	php artisan make:model 'app\Teacher\Resolution' -m -a
 	php artisan make:model 'app\Teacher\Lesson' -m -a
 	php artisan make:model 'app\Teacher\Tableclass' -m -a
+	php artisan make:model 'app\Teacher\Compendium' -m -a
 /***********Bot**********/
 	php artisan make:model 'app\Bot\Bmain' -m -a
 	php artisan make:model 'app\Bot\Boption' -m -a

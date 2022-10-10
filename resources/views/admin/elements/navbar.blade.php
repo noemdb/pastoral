@@ -39,6 +39,10 @@
                 <x-icon-archive class="w-6 h-6 mr-0.5" />
                 <div class="mr-0.5 hidden lg:flex">{{ __('Programas') }} </div>
             </x-jet-nav-link>
+            <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" title="Programas de Formación" href="{{ route('libraries.index') }}" :active="request()->routeIs('*libraries*')">
+                <x-icon-book class="w-6 h-6 mr-0.5" />
+                <div class="mr-0.5 hidden lg:flex">{{ __('Biblioteca') }} </div>
+            </x-jet-nav-link>
 
         </div>
 

@@ -21,7 +21,7 @@ use App\Http\Controllers\Admin\Competitor\ConstanciesController;
 use App\Http\Controllers\Admin\Competitor\GradesController;
 use App\Http\Controllers\Admin\Competitor\WithdrawalController;
 use App\Http\Controllers\Admin\Competitor\GradeFixController;
-
+use App\Http\Controllers\Admin\Institution\LibraryController;
 use App\Http\Controllers\Admin\Professorate\TeacherController;
 use App\Http\Controllers\Admin\Professorate\PevaluationController;
 use App\Http\Controllers\Admin\Professorate\TopicController;
@@ -89,6 +89,7 @@ Route::middleware( [ 'auth:sanctum',config('jetstream.auth_session'),'verified']
             Route::resource('sections', SectionController::class)->only([ 'index']);
             Route::resource('courses', CourseController::class)->only([ 'index']);
             Route::resource('pensums', PensumController::class)->only([ 'index']);
+            Route::resource('libraries', LibraryController::class)->only([ 'index']);
         });
 
         Route::prefix('competitors')->group(function () {

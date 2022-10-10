@@ -1,0 +1,27 @@
+-----------------Library,libraries,Institution------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Institution\LibraryController'
+php artisan make:livewire 'Admin/Institution/Library/ListComponent'
+
+define ruta
+Route::resource('libraries', LibraryController::class)->only([ 'index']);
+
+Create file
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Institution/Library/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Institution/Library/Traits/LibraryRules.php'
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Pescolar/Traits/Institution'
+touch '/home/nuser/code/pastoral/app/Models/app/Pescolar/Traits/Institution/LibraryRelations.php'
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/pescolars/libraries'
+touch '/home/nuser/code/pastoral/resources/views/admin/pescolars/libraries/index.blade.php'
+
+copia codigo en backend
+-LibraryRelations
+-LibraryRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
