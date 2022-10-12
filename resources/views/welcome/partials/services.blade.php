@@ -7,7 +7,7 @@
                         <h3 class="title mb-4 text-xl font-bold text-gray-900">Recibir formación para la preparación de la 1ar Comunión y Catecismo de Confirmación a veces puede ser difícil.</h3>
                         <div >
                             Sí quieres obtener formación de preparación para recibir la 1ra Comunión o el sacramento de la Confirmación,
-                            quizá el mayor obstaculo que tengas sea el trasladarte a un salon de clases o algo similar. Pues eso no tiene que ser asi.
+                            quizá el mayor obstaculo que tengas sea el trasladarte a un salon de clases o algo similar. Pues eso no tiene que ser asi,
                             nuestra plataforma puede ser un "banquito" para superar y avanzar.
                         </div>
                     </div> <!-- section title -->                    ,

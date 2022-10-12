@@ -21,7 +21,7 @@
                                 <div class="line"></div>
                                 <h3 class="title">Datos interesantes <span> sobre esta plataforma</span></h3>
                             </div> <!-- section title -->
-                            <p class="text">Indicadores sobresalientes que arroja un análisis a nuestro sistema.</p>
+                            <p class="text">Indicadores sobresalientes que arroja nuestro sistema.</p>
                         </div> <!-- counter content -->
                         <div class="row no-gutters">
                             <div class="flex items-center justify-center single-counter counter-color-1">
