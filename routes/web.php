@@ -53,6 +53,10 @@ use App\Http\Controllers\Admin\Setup\UserController;
 |
 */
 
+// Route::get('/', function () {
+//     return view('index');
+// })->name('index');
+
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');

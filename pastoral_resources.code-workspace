@@ -15,6 +15,9 @@
 		{
 			"name": "livewire",
 			"path": "resources/views/livewire"
+		},
+		{
+			"path": "template"
 		}
 	],
 	"settings": {}
