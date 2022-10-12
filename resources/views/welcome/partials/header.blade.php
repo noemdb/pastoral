@@ -40,7 +40,7 @@
                             </div> <!-- navbar collapse -->
                             
                             <div class="absolute right-0 hidden mt-2 mr-24 navbar-btn sm:inline-block lg:mt-0 lg:static lg:mr-0">
-                                <a class="main-btn btn-grad" data-scroll-nav="0" href="#" rel="nofollow">Acceder</a>
+                                <a class="main-btn gradient-btn-2" data-scroll-nav="0" href="#" rel="nofollow">Acceder</a>
                             </div>
                         </nav> <!-- navbar -->
                     </div>
@@ -89,20 +89,21 @@
                         </div> <!-- single services -->
                     </div>
                     <div class="w-full h-full sm:w-2/3 lg:w-2/3">
-                        <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                        {{-- <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" style="background-color: #2DD876;background-image: url(assets/images/frayluisamigo.png); background-repeat: no-repeat;"> --}}
+                        <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" style="background-color: #2DD876; background-repeat: no-repeat;">
                             <div class="services-icon">
                                 <img class="shape" src="assets/images/services-shape.svg" alt="shape">
-                                <img class="shape-1" src="assets/images/services-shape-2.svg" alt="shape">
-                                <i class="lni lni-cog"></i>
+                                <img class="shape-1" src="assets/images/services-shape-3.svg" alt="shape">
+                                <i class="lni lni-folder"></i>
                             </div>
                             <div class="mt-8 services-content">
                                 <h4 class="mb-8 text-xl font-bold text-gray-900">Inscripciones</h4>
                                 <div class="text-left">
-                                    <p class="mb-4">
+                                    <div class="px-2 mb-4 rounded font-bold" style="background-color: #F2FF00;">
                                         Formación catequética amigoniana para la 1ra Comunión (5to y 6to grado) y Confirmación (4to y 5to Año), año catequético 2022-2024. <br>
                                         Del 17 al 28 de octubre de 2022, horario: 10:30AM a 12:00PM. <br>
                                         Lugar: Sala Audio Visual "Padre Francis Morant".<br>                                        
-                                    </p>
+                                    </div>
                                     <ul class="ml-2">
                                         <li class="font-bold">Requisitos obligatorios:</li>
                                         <li>Fotocopias: Partida de nacimiento, Cédula de identidad del catequizando y su representante.</li>
@@ -110,7 +111,7 @@
                                         <li class="font-bold text-theme-color">Libro "Mi compromiso eucarístico".</li>
                                     </ul>
 
-                                    <div class ="mt-2">Los sacramentos en nuestra casa de estudios se realizan con uniforme escolar.</div>
+                                    <div class ="px-2 mt-2 rounded font-bold" style="background-color: #F2FF00;">Los sacramentos en nuestra casa de estudios se realizan con uniforme escolar.</div>
                                     <div class ="mt-2 font-bold">Canal informativo: en Instagram @amigonianos_SF.</div>
                                 </div>
                                 <!-- <a class="duration-300 hover:text-theme-color" href="javascript:void(0)">Learn More <i class="ml-2 lni lni-chevron-right"></i></a> -->
