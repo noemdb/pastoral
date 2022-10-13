@@ -3,9 +3,9 @@
         <div class="row">
             <div class="w-full">
                 <nav class="flex items-center justify-between navbar navbar-expand-lg">
-                    <a class="mr-4 navbar-brand" href="index.html">
+                    <a class="mr-4 navbar-brand " href="{{route('welcome')}}">
                         {{-- <img src="assets/images/logo.svg" alt="Logo"> --}}
-                        <img src="assets/images/logo1.png" alt="Logo">
+                        <img src="assets/images/logos/logoLeft.svg" alt="Logo" style="max-width: 15rem !important; max-height: 6rem !important">
                     </a>
                     <button class="block navbar-toggler focus:outline-none lg:hidden" type="button" data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="toggler-icon"></span>
@@ -40,7 +40,17 @@
                     </div> <!-- navbar collapse -->
                     
                     <div class="absolute right-0 hidden mt-2 mr-24 navbar-btn sm:inline-block lg:mt-0 lg:static lg:mr-0">
-                        <a class="main-btn gradient-btn-2" data-scroll-nav="0" href="#" rel="nofollow">Acceder</a>
+                        @auth
+                            <a href="{{ route('dashboard') }}" class="main-btn gradient-btn-2">Dashboard</a>
+                        @else
+                            {{-- <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Ingresar</a> --}}
+                            <a class="main-btn gradient-btn-2" data-scroll-nav="0" href="{{ route('login') }}" rel="nofollow">Acceder</a>
+
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="main-btn gradient-btn-2">Registrar</a>
+                            @endif
+                        @endauth
+                        {{-- <a class="main-btn gradient-btn-2" data-scroll-nav="0" href="#" rel="nofollow">Acceder</a> --}}
                     </div>
                 </nav> <!-- navbar -->
             </div>

@@ -6,11 +6,13 @@
                         <img class="absolute bottom-0 left-0 -ml-8 dots" src="assets/images/dots.svg" alt="dots">
                         <div class="relative mr-6 rounded-lg shadow-md video-wrapper">
                             <div class="video-image">
-                                <img src="assets/images/video.png" alt="video">
+                                {{-- <img src="assets/images/video.png" alt="video"> --}}
+                                <img src="assets/images/facts.svg" alt="facts">
                             </div>
-                            <div class="absolute top-0 left-0 flex items-center justify-center w-full h-full bg-blue-900 bg-opacity-25 rounded-lg video-icon">
-                                <a href="https://www.youtube.com/watch?v=r44RKWyfcFw" class="video-popup"><i class="lni lni-play"></i></a>
-                            </div>
+                            {{-- <div class="absolute top-0 left-0 flex items-center justify-center w-full h-full bg-blue-900 bg-opacity-25 rounded-lg video-icon"> --}}
+                                {{-- <a href="https://www.youtube.com/watch?v=r44RKWyfcFw" class="video-popup"><i class="lni lni-play"></i></a> --}}
+                                {{-- <img src="assets/images/facts.svg" alt="facts"> --}}
+                            {{-- </div> --}}
                         </div> <!-- video wrapper -->
                     </div> <!-- video content -->
                 </div>
@@ -36,12 +38,12 @@
                                     <p class="text-white">Catequistas</p>
                                 </div>
                             </div> <!-- single counter -->
-                            {{-- <div class="flex items-center justify-center single-counter counter-color-3">
+                            <div class="flex items-center justify-center single-counter counter-color-3">
                                 <div class="text-center counter-items">
-                                    <span class="text-2xl font-bold text-white"><span class="counter">4.8</span></span>
-                                    <p class="text-white">User Rating</p>
+                                    <span class="text-2xl font-bold text-white"><span class="counter">50</span></span>
+                                    <p class="text-white">Planes Formativos</p>
                                 </div>
-                            </div> <!-- single counter --> --}}
+                            </div>
                         </div> <!-- row -->
                     </div> <!-- counter wrapper -->
                 </div>

@@ -25,7 +25,8 @@
             </div>
             <div class="w-full lg:w-1/2 lg:order-first">
                 <div class="mx-4 mt-12 text-center about-image wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
-                    <img src="assets/images/about2.svg" alt="about">
+                    {{-- <img src="assets/images/about2.svg" alt="about"> --}}
+                    <img src="assets/images/moden.svg" alt="about">
                 </div> <!-- about image -->
             </div>
         </div> <!-- row -->

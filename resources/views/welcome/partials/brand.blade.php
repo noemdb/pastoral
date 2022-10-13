@@ -1,4 +1,4 @@
-<div class="pt-24 brand-area">
+<div class="pt-8 brand-area">
     <div class="container">
         <div class="row">
             <div class="w-full">
