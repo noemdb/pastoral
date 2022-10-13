@@ -41,6 +41,10 @@
     <!--====== HEADER PART START ======-->    
         @include('welcome.partials.header')   
     <!--====== HEADER PART ENDS ======-->
+
+    <!--====== SERVICES PART START ======-->    
+    @include('welcome.partials.objective') 
+    <!--====== SERVICES PART ENDS ======-->
     
     <!--====== SERVICES PART START ======-->    
     @include('welcome.partials.services') 
@@ -63,7 +67,7 @@
     <!--====== ABOUT3 PART ENDS ======-->
     
     <!--====== FACTS COUNTER PART START ======-->    
-        @include('welcome.partials.facts')
+        {{-- @include('welcome.partials.facts') --}}
         <!--====== FACTS COUNTER PART ENDS ======-->
         
     <!--====== TEAM PART START ======-->    

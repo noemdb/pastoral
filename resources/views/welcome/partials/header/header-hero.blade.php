@@ -5,8 +5,11 @@
                 <div class="pt-32 mb-12 text-center lg:pt-48 header-hero-content">
                     <h3 class="text-4xl font-light leading-tight text-white header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Pastoral Fray Luís Amigó.</h3>
                     <h2 class="mb-3 text-4xl font-bold text-white header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Formación Catequética para la 1ra Comunión y Confirmación.</h2>
-                    <p class="mb-8 text-white text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">Enseñanza del catecismo para conocer e interiorizar el significado del misterio de Cristo.</p>
-                    <a href="#" class="main-btn gradient-btn gradient-btn-2 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s">Comenzamos</a>
+                    <p class="mb-8 text-white text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
+                        Enseñanza del catecismo de la iglesia catolica para conocer e interiorizar el significado del misterio de Cristo para que se le pueda recibir con fe y devoción, 
+                        además sellar y fortalecer al creyente para que viva como un hijo de Dios, a través del poder del Espíritu Santo.
+                    </p>
+                    <a href="#features" class="main-btn gradient-btn gradient-btn-2 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s">Comenzamos</a>
                 </div> <!-- header hero content -->
             </div>
         </div> <!-- row -->
@@ -21,7 +24,7 @@
 
 
         <div class="justify-center row">
-            <div class="w-full h-full sm:w-2/3 lg:w-1/3">
+            <div class="w-full h-full sm:w-1/3 lg:w-1/3">
                 <div class="single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                     <div class="services-icon">
                         <img class="shape" src="assets/images/services-shape.svg" alt="shape">

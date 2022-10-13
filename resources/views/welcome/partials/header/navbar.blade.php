@@ -19,6 +19,9 @@
                                 <a class="page-scroll" href="#home">Inicio</a>
                             </li>
                             <li class="nav-item">
+                                <a class="page-scroll" href="#objective">Objetivo</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="page-scroll" href="#features">Características</a>
                             </li>
                             <li class="nav-item">
@@ -27,14 +30,14 @@
                             {{-- <li class="nav-item">
                                 <a class="page-scroll" href="#facts">Experiencias</a>
                             </li> --}}
-                            <li class="nav-item">
-                                <a class="page-scroll" href="#facts">Eventos</a>
-                            </li>
+                            {{-- <li class="nav-item">
+                                <a class="page-scroll" href="#facts">Interesantes</a>
+                            </li> --}}
                             <li class="nav-item">
                                 <a class="page-scroll" href="#team">Equipo</a>
                             </li>
                             <li class="nav-item">
-                                <a class="page-scroll" href="#blog">Comunidad</a>
+                                <a class="page-scroll" href="#footer">Comunidad</a>
                             </li>
                         </ul>
                     </div> <!-- navbar collapse -->
