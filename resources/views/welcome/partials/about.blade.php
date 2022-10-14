@@ -6,7 +6,7 @@
                     <div class="mx-4 mt-12 about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
                         <div class="mb-4 section-title">
                             <div class="line"></div>
-                            <h3 class="title">Una estructura de datos limpia <span>Organizada, robusta...</span></h3>
+                            <h3 class="title">Una estructura de datos limpia, <span>organizada, robusta...</span></h3>
                         </div> <!-- section title -->
                         <p class="mb-4">Soportada por tecnologías de alto nivel, tales como: Laravel, TailwindCSS y AlpineJS entre otras.</p>
                         <!-- <a href="javascript:void(0)" class="main-btn gradient-btn">Try it Free</a> -->
