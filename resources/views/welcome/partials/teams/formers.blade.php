@@ -17,7 +17,7 @@
                 </div>
                 <div class="p-8">
                     <h5 class="mb-1 text-xl font-bold text-gray-900">Susana Olivares</h5>
-                    <p>1ra Comunión</p>
+                    <p>Primera Comunión</p>
                 </div>
             </div> <!-- single team -->
         </div>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="p-8">
                     <h5 class="mb-1 text-xl font-bold text-gray-900">Kelly Mendoza</h5>
-                    <p>1ra Comunión</p>
+                    <p>Primera Comunión</p>
                 </div>
             </div> <!-- single team -->
         </div>

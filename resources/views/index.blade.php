@@ -110,7 +110,7 @@
                         <div class="w-full lg:w-2/3">
                             <div class="pt-32 mb-12 text-center lg:pt-48 header-hero-content">
                                 <h3 class="text-4xl font-light leading-tight text-white header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Pastoral Fray Luís Amigó.</h3>
-                                <h2 class="mb-3 text-4xl font-bold text-white header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Formación Catequética para la 1ra Comunión y Confirmación.</h2>
+                                <h2 class="mb-3 text-4xl font-bold text-white header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Formación Catequética para la Primera Comunión y Confirmación.</h2>
                                 <p class="mb-8 text-white text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">Enseñanza del catecismo para entender e interiorizar el significado del misterio de Cristo.</p>
                                 <a href="#" class="main-btn gradient-btn gradient-btn-2 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s">Comenzamos</a>
                             </div> <!-- header hero content -->
@@ -188,7 +188,7 @@
                             <div class="m-auto line"></div>
                             <h4 class="mb-4 text-xl font-bold text-gray-900">Recibir formación para la preparación de la 1ar Comunión y Catecismo de Confirmación a veces puede ser difícil.</h4>
                             <div >
-                                Sí quieres obtener formación de preparación para recibir la 1ra Comunión o el sacramento de la Confirmación,
+                                Sí quieres obtener formación de preparación para recibir la Primera Comunión o el sacramento de la Confirmación,
                                 quizá el mayor obstaculo que tengas sea el trasladarte a un salon de clases o algo similar. Pues eso no tiene que ser asi.
                                 nuestra plataforma puede ser un "banquito" para superar y avanzar.
                             </div>

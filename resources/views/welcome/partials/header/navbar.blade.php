@@ -44,13 +44,13 @@
                     
                     <div class="absolute right-0 hidden mt-2 mr-24 navbar-btn sm:inline-block lg:mt-0 lg:static lg:mr-0">
                         @auth
-                            <a href="{{ route('dashboard') }}" class="main-btn gradient-btn-2">Dashboard</a>
+                            <a href="{{ route('dashboard') }}" class="border-2 rounded p-2">Dashboard</a>
                         @else
                             {{-- <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Ingresar</a> --}}
-                            <a class="main-btn gradient-btn-2" data-scroll-nav="0" href="{{ route('login') }}" rel="nofollow">Acceder</a>
+                            <a class="border-2 rounded p-2 text-white" data-scroll-nav="0" href="{{ route('login') }}" rel="nofollow">Acceder</a>
 
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="main-btn gradient-btn-2">Registrar</a>
+                                <a href="{{ route('register') }}" class="border-2 rounded p-2">Registrar</a>
                             @endif
                         @endauth
                         {{-- <a class="main-btn gradient-btn-2" data-scroll-nav="0" href="#" rel="nofollow">Acceder</a> --}}

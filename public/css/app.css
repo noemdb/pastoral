@@ -2806,6 +2806,9 @@ select {
 .w-2 {
   width: 0.5rem;
 }
+.w-96 {
+  width: 24rem;
+}
 .min-w-0 {
   min-width: 0px;
 }

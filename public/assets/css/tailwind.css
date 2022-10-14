@@ -829,6 +829,14 @@ video {
   padding: 2rem;
 }
 
+.p-4{
+  padding: 1rem;
+}
+
+.p-2{
+  padding: 0.5rem;
+}
+
 .py-3{
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -1128,6 +1136,10 @@ p {
   flex-wrap: wrap;
 }
 
+.list-disc {
+  list-style-type: disc;
+}
+
 .navbar-area {
   position: absolute;
   top: 0;
@@ -1318,6 +1330,12 @@ p {
   width: 10rem;
   height: 0.25rem;
   margin-bottom: 0.75rem;
+}
+
+.section-subtitle .subtitle {
+  font-size: 24px;
+  padding-top: 0.5rem;
+  font-weight: 700;
 }
 
 .section-title .title {

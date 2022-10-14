@@ -42,7 +42,7 @@
             <div class="w-full lg:w-2/3">
                 <div class="pb-10 text-center section-title">
                     <div class="m-auto line"></div>
-                    <h3 class="title">Plataforma rápida y fácil de usar.<span> </span></h3>
+                    <h3 class="title">Ponemos a tu disposición una plataforma rápida y fácil de usar.<span> </span></h3>
                     <div class="container mb-4">
                         <div class="row">
                             <div class="w-full lg:w-1/2 lg:order-first">
@@ -104,8 +104,10 @@
                     </div>
                     <div class="mt-8 services-content">
                         <h4 class="mb-8 text-xl font-bold text-gray-900">Conectado</h4>
-                        <p class="mb-8">Herramientas de tecnología, aula virtual, mensajería instantánea, email, encuestas, etc., 
-                        que organizan y apuntalan la comunicación y el flujo de información entre todos los participantes. La información es difundida por distintas vías.</p>
+                        <p class="mb-8">
+                            Herramientas de tecnología, aula virtual, mensajería instantánea, notificaciones por email, encuestas, etc., 
+                            que organizan y apuntalan la comunicación y el flujo de información entre todos los participantes.
+                        </p>
                         <!-- <a class="duration-300 hover:text-theme-color" href="javascript:void(0)">Learn More <i class="ml-2 lni lni-chevron-right"></i></a> -->
                     </div>
                 </div> <!-- single services -->
@@ -120,8 +122,8 @@
                     <div class="mt-8 services-content">
                         <h4 class="mb-8 text-xl font-bold text-gray-900">Poderoso</h4>
                         <p class="mb-8">
-                            Asiste efectivamente en la organización de los procesos centrales de la formación, carga de información, generación de formatos,
-                            presentación de resultados, difusión de información oportuna, etc.
+                            Asiste eficientemente en la organización de los procesos centrales de la formación, carga de información, generación de formatos,
+                            presentación de resultados, notificaciones, etc.
                         </p>
                         <!-- <a class="duration-300 hover:text-theme-color" href="javascript:void(0)">Learn More <i class="ml-2 lni lni-chevron-right"></i></a> -->
                     </div>

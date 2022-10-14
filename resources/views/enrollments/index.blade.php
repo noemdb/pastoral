@@ -19,7 +19,7 @@
                     <h2 class="font-semibold text-xl text-gray-800 leading-tight dark:text-gray-100">
                         Preinscripciones
                         <br>
-                        <span class=" font-semibold text-gray-400 text-sm">Formación para el catesismo de 1ra Comunión y Confirmación </span> 
+                        <span class=" font-semibold text-gray-400 text-sm">Formación para el catesismo de Primera Comunión y Confirmación </span> 
                     </h2>
                                        
 
