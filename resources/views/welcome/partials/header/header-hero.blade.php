@@ -27,7 +27,7 @@
 
 
         <div class="justify-center row">
-            <div class="w-full h-full sm:w-1/3 lg:w-1/3">
+            <div class="w-full h-full lg:w-1/3">
                 <div class="single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                     <div class="services-icon">
                         <img class="shape" src="assets/images/services-shape.svg" alt="shape">
@@ -46,7 +46,7 @@
                     </div>
                 </div> <!-- single services -->
             </div>
-            <div class="w-full h-full sm:w-2/3 lg:w-2/3">
+            <div class="w-full h-full lg:w-2/3">
                 {{-- <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" style="background-color: #2DD876;background-image: url(assets/images/frayluisamigo.png); background-repeat: no-repeat;"> --}}
                 <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                     <div class="services-icon">

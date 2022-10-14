@@ -43,11 +43,11 @@
     <!--====== HEADER PART ENDS ======-->
 
     <!--====== SERVICES PART START ======-->    
-    @include('welcome.partials.objective') 
+        @include('welcome.partials.objective') 
     <!--====== SERVICES PART ENDS ======-->
     
     <!--====== SERVICES PART START ======-->    
-    @include('welcome.partials.services') 
+        @include('welcome.partials.services') 
     <!--====== SERVICES PART ENDS ======-->
     
     <!--====== ABOUT PART START ======-->   

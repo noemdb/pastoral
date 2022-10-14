@@ -11,7 +11,7 @@
                             <div class="w-full lg:w-1/2 lg:order-last">
                                 <div class="mx-4 mt-12 about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
                                     <div class="mb-2 section-title">
-                                        <h3 class="title">Quizá te encuentres con <span> obstaculos </span> como:</h3>
+                                        <h3 class="title">Quizá te encuentres <span> obstaculos </span> como:</h3>
                                     </div>
                                     <p class="mb-8">
                                         <ul class="ml-2 mb-3">
