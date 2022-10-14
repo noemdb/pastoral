@@ -16,8 +16,8 @@
                     </div>
                 </div>
                 <div class="p-8">
-                    <h5 class="mb-1 text-xl font-bold text-gray-900">Isabela Pereira</h5>
-                    <p>Presidente</p>
+                    <h5 class="mb-1 text-xl font-bold text-gray-900">Susana Olivares</h5>
+                    <p>1ra Comunión</p>
                 </div>
             </div> <!-- single team -->
         </div>
@@ -35,8 +35,8 @@
                     </div>
                 </div>
                 <div class="p-8">
-                    <h5 class="mb-1 text-xl font-bold text-gray-900">Carlota Suarez</h5>
-                    <p>Secretario</p>
+                    <h5 class="mb-1 text-xl font-bold text-gray-900">Kelly Mendoza</h5>
+                    <p>1ra Comunión</p>
                 </div>
             </div> <!-- single team -->
         </div>
@@ -54,8 +54,8 @@
                     </div>
                 </div>
                 <div class="p-8">
-                    <h5 class="mb-1 text-xl font-bold text-gray-900">Gabriel Quintana</h5>
-                    <p>Coordinador</p>
+                    <h5 class="mb-1 text-xl font-bold text-gray-900">Miguel Añez</h5>
+                    <p>Confirmación</p>
                 </div>
             </div> <!-- single team -->
         </div>

@@ -11,14 +11,14 @@
                             <div class="w-full lg:w-2/3 lg:order-last">
                                 <div class="mx-4 mt-12 about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
                                     <div class="mb-2 section-title">
-                                        <h3 class="title"><span>¿ Para qué sirve la </span> 1ra Comunión?</h3>
+                                        <h3 class="title"><span>¿Para qué sirve la </span> 1ra Comunión?</h3>
                                     </div>
                                     <p class="mb-8">
                                         {{-- La comunión nos une más íntimamente a Jesús. «Quién come mi Carne y bebe mi Sangre permanece en mí y yo en él» (Jn 6,56). En esta relación de intimidad, en cierto modo, Él nos va transformando: Al igual que necesitamos la comida para nuestra vida corporal, le necesitamos a Él para nuestra vida espiritual. «La comunión con la Carne de Cristo resucitado, vivificada por el Espíritu Santo y vivificante, conserva, acrecienta y renueva la vida de gracia recibida en el Bautismo» (CIC 1392).                        --}}
                                         <ul class="ml-4">
-                                            <li>-. Conocer la vida de Jesús por medio del Evangelio.</li>
+                                            <li>-. Dar a conocer la vida de Jesús por medio del Evangelio.</li>
                                             <li>-. Facilitar el encuentro del niño con Dios a través de la oración.</li>
-                                            <li>-. Poner en práctica los valores cristianos.</li>
+                                            <li>-. Instar a poner en práctica los valores cristianos.</li>
                                         </ul>
                                     </p>
                                 </div>
@@ -48,15 +48,15 @@
                             <div class="w-full lg:w-2/3 lg:order-last">
                                 <div class="mx-4 mt-12 about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
                                     <div class="mb-2 section-title">
-                                        <h3 class="title"><span>¿ Para qué sirve </span> La Confirmación?</h3>
+                                        <h3 class="title"><span>¿Para qué sirve </span> La Confirmación?</h3>
                                     </div>
                                     <p class="mb-8">
                                         {{-- La comunión nos une más íntimamente a Jesús. «Quién come mi Carne y bebe mi Sangre permanece en mí y yo en él» (Jn 6,56). En esta relación de intimidad, en cierto modo, Él nos va transformando: Al igual que necesitamos la comida para nuestra vida corporal, le necesitamos a Él para nuestra vida espiritual. «La comunión con la Carne de Cristo resucitado, vivificada por el Espíritu Santo y vivificante, conserva, acrecienta y renueva la vida de gracia recibida en el Bautismo» (CIC 1392).                        --}}
                                         <ul class="ml-4">
-                                            <li>-. Mayor conocimiento de la vida de Jesús, la Iglesia, los sacramentos;</li>
-                                            <li>-. Participación más responsable en la Eucaristía dominical;</li>
-                                            <li>-. Trato de amistad con Jesús (oración);</li>
-                                            <li>-. Estilo de vida más acorde con los valores cristianos e integración paulatina en la vida de la comunidad parroquial.</li>
+                                            <li>-. Infundir mayor conocimiento de la vida de Jesús, la Iglesia, los sacramentos.</li>
+                                            <li>-. Procurar participación más responsable en la Eucaristía dominical.</li>
+                                            <li>-. Resaltar la importancia del trato de amistad con Jesús (oración).</li>
+                                            <li>-. Proponer un estilo de vida más acorde con los valores cristianos e integración paulatina en la vida de la comunidad parroquial.</li>
                                         </ul>
                                     </p>
                                 </div>

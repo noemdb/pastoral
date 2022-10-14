@@ -8,7 +8,7 @@
                 <div class="mx-4 mt-12 about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
                     <div class="mb-4 section-title">
                         <div class="line"></div>
-                        <h3 class="title">Diseño moderno <span> con características esenciales</span></h3>
+                        <h3 class="title">Diseño moderno <span> con características esenciales.</span></h3>
                     </div> <!-- section title -->
                     <p class="mb-8">
                     <ul>

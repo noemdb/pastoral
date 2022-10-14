@@ -18,7 +18,7 @@
                                             <li>-. Trasladarse a un salón de clases constantemente.</li>
                                             <li>-. No contar con el sufiente material de apoyo.</li>
                                             <li>-. Poca interactividad.</li>
-                                            <li>-. Requerir constancias y/o otros doucumentos con inmediatez.</li>
+                                            <li>-. Requerir constancias y/o otros documentos con inmediatez.</li>
                                         </ul>                        
                                     </p>
                                 </div>
@@ -31,7 +31,7 @@
                         </div>
                     </div>
 
-                    <div class="title mb-4 text-xl font-bold text-gray-900">Pues eso no tiene que ser asi, nuestra aplicación puede ser un "banquito" para superar y avanzar. </div>
+                    <div class="title mb-4 text-xl font-bold text-gray-900">Pues eso no tiene que ser así, nuestra aplicación puede ser un "banquito" para superar y avanzar. </div>
 
                 </div>                   
             </div>
@@ -48,11 +48,11 @@
                             <div class="w-full lg:w-1/2 lg:order-first">
                                 <div class="mx-4 mt-12 about-content wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
                                     <div class="mb-2 section-title">
-                                        <h4 class="mb-8 text-xl font-bold text-gray-900">Contiene todo lo que se necesita para empezar  <span> en este camino de formación! </span></h4>
+                                        <h4 class="mb-8 text-xl font-bold text-gray-900">Contiene todo lo que se necesita para empezar  <span>en este camino de formación.</span></h4>
                                     </div>
                                     <p class="mb-8">
                                         <ul class="ml-4 text-left">
-                                            <li>-. Preinscripciones.</li>
+                                            <li>-. Preinscripciones en línea.</li>
                                             <li>-. Aula Virtual.</li>
                                             <li>-. Biblioteca Virtual, material de apoyo en lìnea.</li>
                                             <li>-. Documentos y constancias en línea.</li>
@@ -119,8 +119,10 @@
                     </div>
                     <div class="mt-8 services-content">
                         <h4 class="mb-8 text-xl font-bold text-gray-900">Poderoso</h4>
-                        <p class="mb-8">Asiste efectivamente en la organización de los procesos centrales de la formación, carga de información, generación de formatos,
-                        presentación de resultados, difusión de información oportuna, etc.</p>
+                        <p class="mb-8">
+                            Asiste efectivamente en la organización de los procesos centrales de la formación, carga de información, generación de formatos,
+                            presentación de resultados, difusión de información oportuna, etc.
+                        </p>
                         <!-- <a class="duration-300 hover:text-theme-color" href="javascript:void(0)">Learn More <i class="ml-2 lni lni-chevron-right"></i></a> -->
                     </div>
                 </div> <!-- single services -->
