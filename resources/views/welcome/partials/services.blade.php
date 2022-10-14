@@ -4,7 +4,7 @@
             <div class="w-full lg:w-2/3">
                 <div class="pb-10 text-center section-title text-left">
                     <div class="m-auto line"></div>
-                    <h3 class="title mb-4 text-xl font-bold text-gray-900">Obtener formación para recibir la 1ar Comunión y el Sacramento de la Confirmación a veces puede ser difícil.</h3>
+                    <h3 class="title mb-4 text-xl font-bold text-gray-900">Obtener formación para recibir la Primera Comunión y el Sacramento de la Confirmación a veces puede ser difícil.</h3>
 
                     <div class="container mb-4">
                         <div class="row">

@@ -186,7 +186,7 @@
                     <div class="w-full lg:w-2/3">
                         <div class="pb-10 text-center section-title">
                             <div class="m-auto line"></div>
-                            <h4 class="mb-4 text-xl font-bold text-gray-900">Recibir formación para la preparación de la 1ar Comunión y Catecismo de Confirmación a veces puede ser difícil.</h4>
+                            <h4 class="mb-4 text-xl font-bold text-gray-900">Recibir formación para la preparación de la Primera Comunión y Catecismo de Confirmación a veces puede ser difícil.</h4>
                             <div >
                                 Sí quieres obtener formación de preparación para recibir la Primera Comunión o el sacramento de la Confirmación,
                                 quizá el mayor obstaculo que tengas sea el trasladarte a un salon de clases o algo similar. Pues eso no tiene que ser asi.
