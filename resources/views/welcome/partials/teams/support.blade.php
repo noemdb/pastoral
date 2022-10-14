@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="p-8">
-                    <h5 class="mb-1 text-xl font-bold text-gray-900">Isabela Pereira</h5>
+                    <h5 class="mb-1 text-xl font-bold text-gray-900">Camila Veliz</h5>
                     <p>Web Developer</p>
                 </div>
             </div> <!-- single team -->
