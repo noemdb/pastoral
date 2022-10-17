@@ -40,7 +40,7 @@
                         <h4 class="mb-8 text-xl font-bold text-gray-900">Preinscripciones</h4>
                         <p class="mb-8">
                             Preinscribe en línea a niñas, niños o adolescentes que esten interesados en recibir formación de preparación para la <b>1ra de Comunión</b>
-                            o de Catecismo de preparación para el sacraemnto de la <b>Confirmación</b> en el ciclo escolar 2022-2023.
+                            o de Catecismo de preparación para el sacramento de la <b>Confirmación</b> en el ciclo escolar 2022-2023.
                         </p>
                         <a class="duration-300 hover:text-theme-color !font-bold" href="{{ route('enrollments')}}">Registrar preinscripción<i class="ml-2 lni lni-chevron-right"></i></a>
                     </div>
