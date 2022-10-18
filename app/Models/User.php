@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Models\app\Setup\User\TraitsUserRelations;
+use App\Models\sys\Rol;
+use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -10,6 +13,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
@@ -19,14 +23,35 @@ class User extends Authenticatable
     use HasTeams;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use HasRoles;
+    use TraitsUserRelations;
 
+    const COLUMN_COMMENTS = [
+        'id' =>'id',
+        'name' =>'Nombre de usuario',
+        'email' =>'email',
+        'email_verified_at'=>'email_verified_at',
+        'password'=>'password',
+        'current_team_id'=>'Equipo',
+        'profile_photo_path'=>'profile_photo_path',
+        'status'=>'status',
+        'last_login_at'=>'last_login_at',
+        'last_loginout_at'=>'last_loginout_at',
+        'last_login_ip'=>'last_login_ip',
+        'work_id'=>'work_id',
+        'card_id'=>'card_id',
+        'biometric_id'=>'biometric_id',
+    ]; // 'name','email','email_verified_at','password','current_team_id','profile_photo_path','status','last_login_at','last_loginout_at','last_login_ip','work_id','card_id','biometric_id'
+    
+    
+    
     /**
      * The attributes that are mass assignable.
      *
      * @var string[]
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','current_team_id','profile_photo_path','status','last_login_at','last_loginout_at','last_login_ip','work_id','card_id','biometric_id'
     ];
 
     /**
@@ -58,4 +83,49 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
+
+    public function profile()
+    {
+        return $this->hasOne('App\Models\sys\Profile');
+    }
+
+    public function rols()
+    {
+        return $this->hasMany('App\Models\sys\Rol');
+    }
+
+    public function getRolAttribute()
+    {
+        $fecha = Carbon::now();
+        $rol = Rol::Where('user_id',$this->id)->Where('ffinal','>=',$fecha)->Where('finicial','<=',$fecha)->first(); //dd($rol);
+        return $rol;
+    }
+
+    public function getAreaAttribute()
+    {
+        return ($this->rol) ? $this->rol->area : null ;
+
+    }
+
+    public function getRolNameAttribute()
+    {
+        return ($this->rol) ? $this->rol->rol : null ;
+
+    }
+
+    public function getFullRolAttribute()
+    {
+        return ($this->rol) ?  $this->rol->area . ' - ' . $this->rol->rol : null ;
+
+    }
+
+    public function hasRole()
+    {
+        return ($this->rol) ? true:false;
+    }
 }

@@ -5,7 +5,7 @@
 		<div class="mr-0.5 hidden lg:flex">{{ __('Dashboard') }}</div> 
 	</x-jet-nav-link>
 
-	<x-jet-nav-link href="#" :active="Request::is('*setups*')" :disabled="true" class="!text-gray-400">
+	<x-jet-nav-link href="{{ route('users.index') }}" :active="Request::is('*setups*')" :disabled="true" class="!text-gray-400">
 	    <x-icon-cogs class="w-6 h-6 mr-0.5" />
 		<div class="mr-0.5 hidden lg:flex">{{ __('Configuraciones') }}</div> 
 	</x-jet-nav-link>

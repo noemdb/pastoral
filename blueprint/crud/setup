@@ -1,0 +1,123 @@
+----------------Module:Setup(setups)-Model:User-Table:users------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Setup\UserController'
+
+define ruta
+Route::resource('Users', UserController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Setup/User/ListComponent'
+
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Setup/User/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Setup/User/Traits/UserRules.php'
+
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Setup/User/Traits/Setup'
+touch '/home/nuser/code/pastoral/app/Models/app/Setup/User/TraitsUserRelations.php'
+
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/setups/users'
+touch '/home/nuser/code/pastoral/resources/views/admin/setups/users/index.blade.php'
+
+copia codigo en backend
+-UserRelations
+-UserRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+--------------Controller:RoleController--Module:Setup(setups)--Model:Role--Table:roles------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Setup\RoleController'
+
+define ruta
+Route::resource('Users', RoleController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Setup/Role/ListComponent'
+
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Setup/Role/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Setup/Role/Traits/UserRules.php'
+
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Setup/Role/Traits/Setup'
+touch    '/home/nuser/code/pastoral/app/Models/app/Setup/Role/TraitsUserRelations.php'
+
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/setups/roles'
+touch '/home/nuser/code/pastoral/resources/views/admin/setups/roles/index.blade.php'
+
+copia codigo en backend
+-UserRelations
+-UserRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+--------------Controller:ProfileController--Module:Setup(setups)--Model:Profile--Table:profiles------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Setup\ProfileController'
+
+define ruta
+Route::resource('Users', ProfileController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Setup/Profile/ListComponent'
+
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Setup/Profile/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Setup/Profile/Traits/UserRules.php'
+
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Setup/Profile/Traits/Setup'
+touch '/home/nuser/code/pastoral/app/Models/app/Setup/Profile/TraitsUserRelations.php'
+
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/setups/profiles'
+touch '/home/nuser/code/pastoral/resources/views/admin/setups/profiles/index.blade.php'
+
+copia codigo en backend
+-UserRelations
+-UserRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar
+
+--------------Controller:PermissionController--Module:Setup(setups)--Model:Permission--Table:permissions------------------------------
+
+crear controladores
+php artisan make:controller 'Admin\Setup\PermissionController'
+
+define ruta
+Route::resource('Permission', PermissionController::class)->only([ 'index']);
+
+Livewire
+php artisan make:livewire 'Admin/Setup/Permission/ListComponent'
+
+mkdir -p '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Setup/Permission/Traits'
+touch '/home/nuser/code/pastoral/app/Http/Livewire/Admin/Setup/Permission/Traits/UserRules.php'
+
+mkdir -p '/home/nuser/code/pastoral/app/Models/app/Setup/Permission/Traits/Setup'
+touch '/home/nuser/code/pastoral/app/Models/app/Setup/Permission/TraitsUserRelations.php'
+
+mkdir -p '/home/nuser/code/pastoral/resources/views/admin/setups/permissions'
+touch '/home/nuser/code/pastoral/resources/views/admin/setups/permissions/index.blade.php'
+
+copia codigo en backend
+-UserRelations
+-UserRules
+
+composer dump-autoload
+
+Crear vistas
+
+-.copiar carpetas
+-.actualizar los route en el navbar

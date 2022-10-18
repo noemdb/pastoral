@@ -1,18 +1,17 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Setup\User; //livewire.admin.setup.user.list-component
-
-use App\Http\Livewire\Admin\Setup\User\Traits\UserRules;
+namespace App\Http\Livewire\Admin\Setup\Role; //livewire.admin.setup.role.list-component
+use App\Http\Livewire\Admin\Setup\Role\Traits\RolRules;
 use App\Http\Livewire\traits\WithSortingTrait;
 use App\Models\app\Pastoral;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-use App\Models\User;
 use App\Models\app\Pescolar;
-use App\Models\app\User\TiTeacher;
+use App\Models\app\Rol\TiTeacher;
 use App\Models\sys\Rol;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Laravel\Jetstream\Jetstream;
 use Spatie\Permission\Models\Role;
@@ -22,11 +21,11 @@ class ListComponent extends Component
     use WithPagination;
     use LivewireAlert;
     use WithSortingTrait;
-    use UserRules;
+    use RolRules;
 
-    public User $user;
+    public Rol $rol;
 
-    public $user_id;
+    public $rol_id,$user_id;
 
     public $search = ''; //'name'
 
@@ -44,12 +43,11 @@ class ListComponent extends Component
     {
         $this->modeCreate = false;
         $this->modeEdit = false;
-        $this->list_comment = User::COLUMN_COMMENTS; 
+        $this->list_comment = Rol::COLUMN_COMMENTS; 
+        $this->list_comment = Rol::COLUMN_COMMENTS; 
         $this->list_area = Rol::list_area(); 
         $this->list_rol = Rol::list_rol(); 
-        $this->pastorals_list = Pastoral::latest()->pluck('name','id')->toArray(); //dd($this->role_list);
-        $this->team_list = DB::table('teams')->select('name','id')->pluck('name','id')->toArray(); //dd($this->team_list);
-        $this->genders_list = ['Masculino'=>'Masculino', 'Femenino'=>'Femenino'];
+        $this->pastorals_list = Pastoral::pastorals_list()->toArray(); //dd($this->role_list);
     }
 
     public function render()
@@ -71,44 +69,52 @@ class ListComponent extends Component
         
         $users = $users->paginate($this->paginate);
 
-        return view('livewire.admin.setup.user.list-component', [
+        return view('livewire.admin.setup.role.list-component', [
             'users' => $users,
         ]);
     }
 
     public function create()
     {
-        $this->user = new User;
-        $this->user_id = null;
+        $this->rol = new Rol;
+        $this->rol_id = null;
         $this->modeCreate = true;
         $this->modeEdit = false;
     }
 
     public function edit($id)
     {
-        $this->user = User::find($id); //dd($this->user);
-        $this->user_id = ($this->user) ? $this->user->id:null;
-        $this->modeEdit = true;
-        $this->modeCreate = false;
+        $user = User::findOrFail($id);
+        $rol = $user->rol;
+        if ($rol) {
+            # code...
+            $this->user = $user;
+            $this->rol = $user->rol;
+            $this->rol_id = ($this->rol) ? $this->rol->id:null;
+            $this->modeEdit = true;
+            $this->modeCreate = false;
+        } else {
+            $this->create();
+        }
     }
 
     public function save()
     {
         $this->validate();
         
-        $this->user->save();
+        $this->rol->save();
 
         $this->alert('success', 'Los datos fueron almacenados satisfactoriamente!');
 
         $this->modeCreate = false;
         $this->modeEdit = false;
-        $this->user = new User;
-        $this->reset(['user_id']);
+        $this->rol = new Rol;
+        $this->reset(['rol_id']);
     }
 
     public function close()
     {
-        $this->user_id = false;
+        $this->rol_id = false;
         $this->modeEdit = false;
         $this->modeCreate = false;
     }
@@ -120,9 +126,9 @@ class ListComponent extends Component
 
     public function delete ($id)
     {
-        $user = User::find($id);
-        if ($user) {
-            $this->user = $user;
+        $rol = Rol::find($id);
+        if ($rol) {
+            $this->rol = $rol;
             $this->alert('warning', 'Estas seguro de realizar esta acción?', [
                 'showConfirmButton' => true,
                 'showCancelButton' => true,
@@ -135,7 +141,7 @@ class ListComponent extends Component
 
     public function remove ()
     {
-        $this->user->delete();
+        $this->rol->delete();
         $this->alert('success', 'Los datos fueron eliminados satisfactoriamente!');
     }
 

@@ -18,7 +18,12 @@ class CreateProfilesTable extends Migration
             $table->integer('user_id')->unsigned()->unique();
             $table->string('firstname',50);
             $table->string('lastname',50);
-            $table->string('url_img',255)->nullable();
+            $table->enum('gender',['Masculino', 'Femenino'])->nullable()->comment('Genero');//Másculino,Femenino
+            $table->date('date_birth')->nullable()->comment('Fecha de nacimiento');
+            $table->string('twitter')->nullable()->comment('Twitter');
+            $table->string('instagram')->nullable()->comment('Instagram');
+            $table->string('whatsapp')->nullable()->comment('WhatsApp');
+            $table->string('facebook')->nullable()->comment('Facebook');
             $table->timestamps();
             // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });

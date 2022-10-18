@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\Setup;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class ProfileController extends Controller
 {
     public function __construct()
     {
@@ -14,6 +14,7 @@ class UserController extends Controller
 
     public function index(Request $request)
     {
-        return view('admin.setups.users.index');
+        return view('admin.setups.profiles.index');
     }
+    
 }
