@@ -77,7 +77,7 @@ class ListComponent extends Component
     public function create()
     {
         $this->rol = new Rol;
-        $this->rol_id = null;
+        $this->rol_id = null;        
         $this->modeCreate = true;
         $this->modeEdit = false;
     }
@@ -85,12 +85,12 @@ class ListComponent extends Component
     public function edit($id)
     {
         $user = User::findOrFail($id);
+        $this->user_id = $user->id;
+
         $rol = $user->rol;
         if ($rol) {
-            # code...
-            $this->user = $user;
-            $this->rol = $user->rol;
-            $this->rol_id = ($this->rol) ? $this->rol->id:null;
+            $this->rol = $rol;
+            $this->rol_id = $rol->id;
             $this->modeEdit = true;
             $this->modeCreate = false;
         } else {
@@ -101,6 +101,8 @@ class ListComponent extends Component
     public function save()
     {
         $this->validate();
+
+        $this->rol->user_id = $this->user_id;
         
         $this->rol->save();
 
@@ -126,7 +128,8 @@ class ListComponent extends Component
 
     public function delete ($id)
     {
-        $rol = Rol::find($id);
+        $user = User::findOrFail($id);
+        $rol = Rol::find($user->id);
         if ($rol) {
             $this->rol = $rol;
             $this->alert('warning', 'Estas seguro de realizar esta acción?', [

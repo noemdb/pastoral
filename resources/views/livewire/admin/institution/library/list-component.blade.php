@@ -22,7 +22,7 @@
         @if ($modeEdit)
     
             <div class="mb-4 pb-4"> 
-                {{-- @include('livewire.admin.institution.levelibraryl.form.edit') --}}
+                @include('livewire.admin.institution.library.form.edit')
             </div>
     
         @endif
@@ -31,7 +31,7 @@
         @if ($modeCreate)
     
             <div class="mb-4 pb-4">
-                {{-- @include('livewire.admin.institution.library.form.create') --}}
+                @include('livewire.admin.institution.library.form.create')
             </div>
     
         @endif

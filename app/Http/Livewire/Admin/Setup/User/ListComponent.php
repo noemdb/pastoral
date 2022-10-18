@@ -26,7 +26,7 @@ class ListComponent extends Component
 
     public User $user;
 
-    public $user_id;
+    public $user_id,$user_password;
 
     public $search = ''; //'name'
 
@@ -87,7 +87,8 @@ class ListComponent extends Component
     public function edit($id)
     {
         $this->user = User::find($id); //dd($this->user);
-        $this->user_id = ($this->user) ? $this->user->id:null;
+        $this->user_id = ($this->user) ? $this->user->id : null;
+        $this->user_password = ($this->user) ? $this->user->password : null;
         $this->modeEdit = true;
         $this->modeCreate = false;
     }
@@ -95,6 +96,8 @@ class ListComponent extends Component
     public function save()
     {
         $this->validate();
+
+        dd($this->user);
         
         $this->user->save();
 

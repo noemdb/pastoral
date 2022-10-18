@@ -35,18 +35,10 @@
                     <div class="flex  justify-between">N</div>
                 </th>
                 <th class="{{ $class['name'] ?? ''}}">
-                        <div class="flex justify-between">
-                            <div> {{$list_comment['name'] ?? ''}} </div>
-                            @if($users->isNotEmpty())
-                                <x-elements.crud.sort-by field="name" :sortBy="$sortBy" :sortDirection="$sortDirection" />
-                            @endif
-                        </div>
-                    </th>
-                <th class="{{ $class['role'] ?? ''}}">
                     <div class="flex justify-between">
-                        <div> {{$list_comment['role'] ?? ''}} </div>
+                        <div> {{$list_comment['name'] ?? ''}} </div>
                         @if($users->isNotEmpty())
-                            <x-elements.crud.sort-by field="role" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                            <x-elements.crud.sort-by field="name" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                         @endif
                     </div>
                 </th>
@@ -58,14 +50,14 @@
                         @endif
                     </div>
                 </th>
-                <th class="{{ $class['phone'] ?? ''}}">
-                    <div class="flex  justify-between">
-                        <div> {{$list_comment['phone'] ?? ''}} </div>
+                <th class="{{ $class['role'] ?? ''}}">
+                    <div class="flex justify-between">
+                        <div> {{$list_comment['role'] ?? ''}} </div>
                         @if($users->isNotEmpty())
-                            <x-elements.crud.sort-by field="phone" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                            <x-elements.crud.sort-by field="role" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                         @endif
                     </div>
-                </th>
+                </th>                
                 <th class="{{ $class['action'] ?? ''}}">Acciones</th>
             </tr>
 
@@ -86,11 +78,10 @@
                     <div>{{$user->name ?? ''}}</div>
                     <div class="flex justify-end text-gray-400 text-sm">{{$ti_user->name ?? ''}}</div>
                 </td>
-                <td class="{{ $class['role'] ?? ''}}">{{$user->full_rol ?? ''}}</td>
-                
                 
                 <td class="{{ $class['email'] ?? ''}}">{{$user->email ?? ''}}</td>
-                <td class="{{ $class['phone'] ?? ''}}">{{$user->phone ?? ''}}</td>
+                
+                <td class="{{ $class['role'] ?? ''}}">{{$user->full_rol ?? ''}}</td>                
 
                 <td class="{{ $class['action'] ?? '' }}">
 
@@ -100,7 +91,7 @@
                                 <x-icon-pen class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-edit>
                             @php $disabled = (empty($user->rol)) ? true : false ; @endphp
-                            <x-elements.form.button-del wire:key="user-delete-{{$user->id}}" wire:click="delete({{ $user->id }})" :disabled="$disabled">
+                            <x-elements.form.button-del wire:key="user-delete-{{$user->id}}" wire:click="delete({{ $user->id }})" :disabled="$disabled" class="{{($disabled) ? '!text-gray-400':null}}">
                                 <x-icon-trash-can class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-del>
                         </div>

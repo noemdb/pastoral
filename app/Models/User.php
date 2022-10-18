@@ -84,9 +84,10 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function setPasswordAttribute($value)
-    {
-        $this->attributes['password'] = bcrypt($value);
+    public function setPasswordAttribute($value){
+        if (! empty($value)) {
+            $this->attributes['password'] = bcrypt($value);
+        }
     }
 
     public function profile()

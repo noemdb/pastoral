@@ -14,7 +14,9 @@ use Livewire\WithPagination;
 
 use App\Models\app\Pescolar\Library;
 use App\Models\app\Pescolar;
+use App\Models\app\Pescolar\Curriculum;
 use App\Models\app\Pescolar\Lapse;
+use App\Models\app\Pescolar\Level;
 use App\Models\app\Pescolar\Pensum;
 use App\Models\app\Pescolar\Section;
 use App\Models\app\Teacher;
@@ -43,7 +45,7 @@ class ListComponent extends Component
 
     public $status_last,$status_first,$saveInto;
 
-    public $teachers_list;
+    public $curricula_list,$levels_list;
 
     protected $listeners = [ 'remove' ];
 
@@ -52,7 +54,8 @@ class ListComponent extends Component
         $this->modeCreate = false;
         $this->modeEdit = false;
         $this->list_comment = Library::COLUMN_COMMENTS; 
-        $this->pensums_list = Pensum::pensums_list()->toArray();
+        $this->curricula_list = Curriculum::curricula_list()->toArray();
+        $this->levels_list = Level::levels_list_fullname()->toArray();
     }
 
     public function render()

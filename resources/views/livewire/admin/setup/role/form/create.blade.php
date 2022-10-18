@@ -12,7 +12,7 @@
     </div>
     <form wire:submit.prevent="save">
         
-        {{-- @include('livewire.admin.setup.rol.form.fields') --}}
+        @include('livewire.admin.setup.role.form.fields')
 
         <div class="flex justify-between">
             <x-jet-button type="submit" class="ml-1 bg-green-500 shadow" > {{ __('Enviar') }} </x-jet-button>

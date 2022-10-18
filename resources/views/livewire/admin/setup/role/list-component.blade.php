@@ -35,11 +35,8 @@
 
     @endif
 
-
-
     <div class="mx-4 px-4">
         @include('livewire.admin.setup.role.table.index') 
     </div>
-
-
+    
 </div>

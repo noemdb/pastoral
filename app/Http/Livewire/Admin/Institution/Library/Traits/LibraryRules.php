@@ -4,10 +4,11 @@ namespace App\Http\Livewire\Admin\Institution\Library\Traits;
 
 trait LibraryRules
 {
-   //'curriculum_id','code','code_sm','name','description','observations','color','header','body','footer','status',
+   // 'curriculum_id','level_id','code','code_sm','name','description','observations','autor','color','header','body','attachment','footer','status',
 
     protected $rules = [
         'library.curriculum_id' => 'required|integer',
+        'library.level_id' => 'nullable|integer',
         'library.code' => 'required|string|min:2|max:10',
         'library.code_sm' => 'required|string|min:2|max:5',
         'library.name' => 'required|string',
@@ -24,6 +25,7 @@ trait LibraryRules
     {
         return [
             'library.curriculum_id' => $this->list_comment['curriculum_id'],
+            'library.level_id' => $this->list_comment['level_id'],
             'library.code' => $this->list_comment['code'],
             'library.code_sm' => $this->list_comment['code_sm'],
             'library.name' => $this->list_comment['name'],
