@@ -96,8 +96,6 @@ class ListComponent extends Component
     public function save()
     {
         $this->validate();
-
-        dd($this->user);
         
         $this->user->save();
 

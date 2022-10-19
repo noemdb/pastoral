@@ -1,8 +1,9 @@
 Implementacion de Middleware
 php artisan make:middleware 'Admin\IsAdmin'
-php artisan make:middleware 'App\Http\Middleware\App\IsPresident'
-php artisan make:middleware 'App\Http\Middleware\App\IsSecretary'
+php artisan make:middleware 'App\Http\Middleware\App\IsDirector'
 php artisan make:middleware 'App\Http\Middleware\App\IsCoordinator'
+php artisan make:middleware 'App\Http\Middleware\App\IsSubcoordinator'
+php artisan make:middleware 'App\Http\Middleware\App\IsSecretary'
 php artisan make:middleware 'App\Http\Middleware\App\IsTeacher'
 php artisan make:middleware 'App\Http\Middleware\App\IsEstudiant'
 
@@ -10,7 +11,9 @@ php artisan make:middleware 'App\Http\Middleware\App\IsEstudiant'
 registrar Middleware en kernel.php (variable: protected $routeMiddleware)
 'is_admin'=> 'App\Http\Middleware\Admin\IsAdmin',
 'is_president'=> 'App\Http\Middleware\App\IsPresident',
+'is_director'=> 'App\Http\Middleware\App\IsDirector',
 'is_secretary'=> 'App\Http\Middleware\App\IsSecretary',
 'is_coordinator'=> 'App\Http\Middleware\App\IsCoordinator',
+'is_subcoordinator'=> 'App\Http\Middleware\App\IsSubcoordinator',
 'is_teacherr'=> 'App\Http\Middleware\App\IsTeacher',
 'is_estudiant'=> 'App\Http\Middleware\App\IsEstudiant'

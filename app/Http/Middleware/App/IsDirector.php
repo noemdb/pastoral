@@ -1,21 +1,12 @@
 <?php
 
-namespace App\Http\Middleware\Admin;
+namespace App\Http\Middleware\App;
 
 use Closure;
-use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
-// use Laravel\Sanctum\Guard;
 
-class IsAdmin
+class IsDirector
 {
-    public function __construct(Guard $auth){
-
-        $this->auth = $auth;
-
-    }
-
     /**
      * Handle an incoming request.
      *
@@ -25,12 +16,6 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!$this->auth->user()->isAdmin()){
-
-            Session::flash('sessionMessege','Sección restringida');
-
-            return redirect('/dashboard');
-        }
         return $next($request);
     }
 }

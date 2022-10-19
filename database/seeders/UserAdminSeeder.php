@@ -33,5 +33,16 @@ class UserAdminSeeder extends Seeder
                 'personal_team' => true,
             ]
         );
+
+        DB::table('rols')->insert(
+            [
+                'area' => "SISTEMA",
+                'rol' => "ADMINISTRADOR",            
+                'description' => "webmaster del sistema",
+                'finicial' => "20000101",
+                'ffinal' => "20500101",
+                'user_id' => $user_id,
+            ]
+        );
     }
 }

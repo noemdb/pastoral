@@ -86,7 +86,7 @@
                     <div>{{$user->name ?? ''}}</div>
                     <div class="flex justify-end text-gray-400 text-sm">{{$ti_user->name ?? ''}}</div>
                 </td>
-                <td class="{{ $class['role'] ?? ''}}">{{$user->role ?? ''}}</td>
+                <td class="{{ $class['role'] ?? ''}}">{{$user->completerol ?? ''}}</td>
                 
                 
                 <td class="{{ $class['email'] ?? ''}}">{{$user->email ?? ''}}</td>

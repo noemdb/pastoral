@@ -11,8 +11,8 @@ trait RolRules
         'rol.rol' => 'required|string',
         'rol.description' => 'nullable|string',
         'rol.observation' => 'nullable|string',
-        'rol.finicial' => 'nullable|date',
-        'rol.ffinal' => 'nullable|date',
+        'rol.finicial' => 'required|date',
+        'rol.ffinal' => 'required|date',
     ];
 
     protected function validationAttributes()

@@ -1,13 +1,13 @@
 <x-app-layout>
-    {{--
 
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight ">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    --}}
+    @if (Session::has('sessionMessege'))
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 shadow" role="alert">
+                <p class="font-bold">{{Session::get('sessionMessege')}}</p>
+                <p>Fuiste redirigido.</p>
+            </div>
+        </div>
+    @endif
 
     <div class="py-2">
         <div class="max-w-7xl {{-- p-1 --}} mx-auto sm:px-6 lg:px-8 border-gray-900">
@@ -16,4 +16,5 @@
             </div>
         </div>
     </div>
+    
 </x-app-layout>

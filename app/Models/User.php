@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\app\Setup\User\TraitsUserRelations;
+use App\Models\sys\Profile;
 use App\Models\sys\Rol;
 use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -94,19 +95,17 @@ class User extends Authenticatable
 
     public function profile()
     {
-        return $this->hasOne('App\Models\sys\Profile');
+        return $this->hasOne(Profile::class);
     }
 
-    public function rols()
+    public function role()
     {
-        return $this->hasMany('App\Models\sys\Rol');
+        return $this->hasOne(Rol::class);
     }
 
     public function getRolAttribute()
     {
-        $fecha = Carbon::now();
-        $rol = Rol::Where('user_id',$this->id)->Where('ffinal','>=',$fecha)->Where('finicial','<=',$fecha)->first(); //dd($rol);
-        return $rol;
+        return Rol::Where('user_id',$this->id)->Where('ffinal','>=',Carbon::now())->Where('finicial','<=',Carbon::now())->first();
     }
 
     public function getAreaAttribute()
@@ -126,6 +125,11 @@ class User extends Authenticatable
         return ($this->rol) ?  $this->rol->area . ' - ' . $this->rol->rol : null ;
 
     }
+    public function getCompleteRolAttribute()
+    {
+        return ($this->rol) ?  $this->rol->pastoral->code . ' - ' . $this->rol->area . ' - ' . $this->rol->rol : null ;
+
+    }
 
     public function hasRole()
     {
@@ -135,24 +139,24 @@ class User extends Authenticatable
     //is admin
     public function isAdmin()
     {
-        if ($this->is_active == 'disable') return false;
-        $fecha = Carbon::now();
-        $is_admin = $this->rols->whereIn('area', ['SISTEMA'])->Where('finicial', '<=', $fecha)->Where('ffinal', '>=', $fecha)->count();
-        if($is_admin>0){return true;}
-        else{return false;}
+        if ($this->status) {
+            $now = Carbon::now()->format('Ymd'); //dd($now);
+            $rol = Rol::Where('rols.user_id',$this->id)->where('rols.ffinal','<=','20221019')->first(); dd($rol);
+            $rol = Rol::first();
+            if ($rol->ffinal >= $now) dd('true');
+            if ($this->rol) {                
+                $count = $this->rol->whereIn('area', ['SISTEMA'])->whereIn('rol', ['ADMINISTRADOR'])->count();
+                return ($count > 0) ? true:false;
+            }
+        }
     }
 
-    public function IsPresident()
+    //is is_director
+    public function IsDirector()
     {
-        if ($this->is_active == 'disable') return false;
-        $fecha = Carbon::now();
-        $IsExpediente = $this->rols
-                ->whereIn('area', ['SISTEMA','ADMINISTRACION'])
-                ->whereIn('rol', ['ADMINISTRADOR','DIRECTOR','COORDINADOR','ASISTENTE'])
-                ->Where('finicial', '<=', $fecha)
-                ->Where('ffinal', '>=', $fecha)
-                ->count();
-        if($IsExpediente>0){return true;}
-        else{return false;}
+        if ($this->status) {
+            $count = $this->rol->whereIn('area', ['SISTEMA','DIRECCIÓN'])->whereIn('rol', ['ADMINISTRADOR','DIRECTOR'])->count();
+            return ($count > 0) ? true:false;
+        }
     }
 }

@@ -70,8 +70,10 @@ class Kernel extends HttpKernel
 
         'is_admin'=> 'App\Http\Middleware\Admin\IsAdmin',
         'is_president'=> 'App\Http\Middleware\App\IsPresident',
+        'is_director'=> 'App\Http\Middleware\App\IsDirector',
         'is_secretary'=> 'App\Http\Middleware\App\IsSecretary',
         'is_coordinator'=> 'App\Http\Middleware\App\IsCoordinator',
+        'is_subcoordinator'=> 'App\Http\Middleware\App\IsSubcoordinator',
         'is_teacherr'=> 'App\Http\Middleware\App\IsTeacher',
         'is_estudiant'=> 'App\Http\Middleware\App\IsEstudiant'
         
