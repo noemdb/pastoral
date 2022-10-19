@@ -65,8 +65,6 @@ Route::middleware( [ 'auth:sanctum',config('jetstream.auth_session'),'verified']
 
 	Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
 
-    
-    // Route::group(['middleware' => ['auth', 'permission']], function() {
     Route::group(['middleware' => ['auth']], function() {
             
         Route::prefix('admin')->group(function () {
@@ -75,7 +73,6 @@ Route::middleware( [ 'auth:sanctum',config('jetstream.auth_session'),'verified']
                 Route::resource('users', UserController::class)->only([ 'index']);
                 Route::resource('roles', RoleController::class)->only([ 'index']);
                 Route::resource('profiles', ProfileController::class)->only([ 'index']);
-                Route::resource('Permission', PermissionController::class)->only([ 'index']);
             });
 
             Route::resource('institutions', InstitutionController::class)->only([ 'index']);

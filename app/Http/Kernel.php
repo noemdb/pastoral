@@ -67,5 +67,13 @@ class Kernel extends HttpKernel
         'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
         'permission' => \App\Http\Middleware\PermissionMiddleware::class,
         'role_or_permission' => \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class,
+
+        'is_admin'=> 'App\Http\Middleware\Admin\IsAdmin',
+        'is_president'=> 'App\Http\Middleware\App\IsPresident',
+        'is_secretary'=> 'App\Http\Middleware\App\IsSecretary',
+        'is_coordinator'=> 'App\Http\Middleware\App\IsCoordinator',
+        'is_teacherr'=> 'App\Http\Middleware\App\IsTeacher',
+        'is_estudiant'=> 'App\Http\Middleware\App\IsEstudiant'
+        
     ];
 }

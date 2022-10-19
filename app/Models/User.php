@@ -41,6 +41,8 @@ class User extends Authenticatable
         'work_id'=>'work_id',
         'card_id'=>'card_id',
         'biometric_id'=>'biometric_id',
+        'role'=>'Rol',
+        'phone'=>'Teléfono',
     ]; // 'name','email','email_verified_at','password','current_team_id','profile_photo_path','status','last_login_at','last_loginout_at','last_login_ip','work_id','card_id','biometric_id'
     
     
@@ -128,5 +130,29 @@ class User extends Authenticatable
     public function hasRole()
     {
         return ($this->rol) ? true:false;
+    }
+
+    //is admin
+    public function isAdmin()
+    {
+        if ($this->is_active == 'disable') return false;
+        $fecha = Carbon::now();
+        $is_admin = $this->rols->whereIn('area', ['SISTEMA'])->Where('finicial', '<=', $fecha)->Where('ffinal', '>=', $fecha)->count();
+        if($is_admin>0){return true;}
+        else{return false;}
+    }
+
+    public function IsPresident()
+    {
+        if ($this->is_active == 'disable') return false;
+        $fecha = Carbon::now();
+        $IsExpediente = $this->rols
+                ->whereIn('area', ['SISTEMA','ADMINISTRACION'])
+                ->whereIn('rol', ['ADMINISTRADOR','DIRECTOR','COORDINADOR','ASISTENTE'])
+                ->Where('finicial', '<=', $fecha)
+                ->Where('ffinal', '>=', $fecha)
+                ->count();
+        if($IsExpediente>0){return true;}
+        else{return false;}
     }
 }
