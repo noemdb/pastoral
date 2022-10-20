@@ -8,21 +8,19 @@ trait TraitsMiddleware {
 
     //is admin
     public function isAdmin()
-    {
-        if ($this->status) {
-            if ($this->rol) {                
-                $count = $this->rol->whereIn('area', ['SISTEMA'])->whereIn('rol', ['ADMINISTRADOR'])->count();  dd($this->rol,$count);
-                return ($count > 0) ? true:false;
-            }
+    {       
+        if ($this->status) {   
+            $arr_area = ['SISTEMA'];  
+            $arr_rol = ['ADMINISTRADOR'];                      
+            return  $this->hasAreRol($arr_area,$arr_rol);
         }
     }
     public function IsDirector()
     {
-        if ($this->status) {
-            if ($this->rol) {                
-                $count = $this->rol->whereIn('area', ['SISTEMA','DIRECCIÓN'])->whereIn('rol', ['ADMINISTRADOR','DIRECTOR'])->count();
-                return ($count > 0) ? true:false;
-            }
+        if ($this->status) {    
+            $arr_area = ['DIRECCIÓN'];                    
+            $arr_rol = ['DIRECTOR'];                    
+            return  $this->hasAreRol($arr_area,$arr_rol);
         }
     }
     public function IsCandidate()

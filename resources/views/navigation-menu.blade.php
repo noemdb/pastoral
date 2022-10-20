@@ -2,7 +2,8 @@
     
     <!-- Primary Navigation Menu -->
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {{-- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> --}}
+    <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="flex justify-between h-16">
 
@@ -19,6 +20,7 @@
                 <div class="hidden space-x-2 sm:-my-px sm:ml-2 sm:flex dark:text-white">
 
                     @includeWhen((Auth::user()->IsAdmin()), 'layouts.partials.navigation.admin.navigation-links')
+                    @includeWhen((Auth::user()->IsDirector()), 'layouts.partials.navigation.director.navigation-links')
 
                     {{-- @include('layouts.partials.navigation-links')  --}}
                     
@@ -34,6 +36,7 @@
                 <!-- Settings Dropdown -->
                 <div class="ml-3 relative">
                     @includeWhen((Auth::user()->IsAdmin()), 'layouts.partials.dropdown.admin.settings')                    
+                    @includeWhen((Auth::user()->IsDirector()), 'layouts.partials.dropdown.director.settings')                    
                 </div>
 
                 <div class=" mx-2"> <x-mode-dark-btn /> </div>

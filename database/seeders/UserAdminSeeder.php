@@ -51,6 +51,12 @@ class UserAdminSeeder extends Seeder
         DB::table('teams')->insert(['name' => 'PastoralAmigoniana','user_id' => $user_id,'personal_team' => true,]);
         DB::table('rols')->insert(['pastoral_id'=>1,'area' => "ASPIRANTADO",'rol' => "COOPERADOR",'description' => "Aspirante a cooperador",'finicial' => "20000101",'ffinal' => "20500101",'user_id' => $user_id,]);
 
+        //Religioso
+        $user_id = DB::table('users')->insertGetId(['name' => 'religioso','email' => 'religioso@religioso.com','email_verified_at' => now(),'password' => bcrypt('123456'),]);
+        DB::table('teams')->insert(['name' => 'PastoralAmigoniana','user_id' => $user_id,'personal_team' => true,]);
+        DB::table('rols')->insert(['pastoral_id'=>1,'area' => "ASPIRANTADO",'rol' => "RELIGIOSO",'description' => "Aspirante a religioso",'finicial' => "20000101",'ffinal' => "20500101",'user_id' => $user_id,]);
+
+
 
     }
 }

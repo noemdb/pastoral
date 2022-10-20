@@ -9,7 +9,7 @@ trait TraitsRols {
 
     public function getRolAttribute()
     {
-        $now = Carbon::now()->format('Ymd');
+        $now = Carbon::now()->format('Ymd'); //dd($now);
         return Rol::Where('rols.user_id',$this->id)->where('rols.ffinal','>=',$now)->where('rols.finicial','<=',$now)->first();
     }
 
@@ -39,6 +39,13 @@ trait TraitsRols {
     public function hasRol()
     {
         return ($this->rol) ? true:false;
+    }
+
+    public function hasAreRol(Array $area,Array $rol)
+    {
+        $now = Carbon::now()->format('Ymd'); //dd($now);
+        $count = Rol::Where('rols.user_id',$this->id)->whereIn('rols.area', $area)->whereIn('rols.rol', $rol)->where('rols.ffinal','>=',$now)->where('rols.finicial','<=',$now)->count();
+        return ($count > 0) ? true:false;
     }
 
 }
