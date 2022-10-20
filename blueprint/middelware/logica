@@ -8,6 +8,8 @@ php artisan make:middleware 'App\Http\Middleware\App\IsTeacher'
 php artisan make:middleware 'App\Http\Middleware\App\IsEstudiant'
 php artisan make:middleware 'App\Http\Middleware\App\IsRepresentant'
 php artisan make:middleware 'App\Http\Middleware\App\IsCandidate'
+php artisan make:middleware 'App\Http\Middleware\App\IsCooperator'
+php artisan make:middleware 'App\Http\Middleware\App\IsReligious'
 
 
 registrar Middleware en kernel.php (variable: protected $routeMiddleware)
@@ -21,3 +23,5 @@ registrar Middleware en kernel.php (variable: protected $routeMiddleware)
 'is_estudiant'=> 'App\Http\Middleware\App\IsEstudiant'
 'is_representant'=> 'App\Http\Middleware\App\IsRepresentant'
 'is_candidate'=> 'App\Http\Middleware\App\IsCandidate'
+'is_candidate'=> 'App\Http\Middleware\App\IsReligious'
+'is_candidate'=> 'App\Http\Middleware\App\IsCooperator'

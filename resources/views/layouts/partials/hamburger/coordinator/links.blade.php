@@ -1,0 +1,1 @@
+@includeWhen((Auth::user()->IsCandidate()), 'layouts.partials.navigation.coordinator.navigation-links')

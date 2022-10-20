@@ -1,0 +1,1 @@
+@includeWhen((Auth::user()->IsPresident()), 'layouts.partials.navigation.president.navigation-links')

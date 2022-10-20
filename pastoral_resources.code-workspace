@@ -18,6 +18,9 @@
 		},
 		{
 			"path": "resources/views"
+		},
+		{
+			"path": "resources/views/layouts"
 		}
 	],
 	"settings": {}

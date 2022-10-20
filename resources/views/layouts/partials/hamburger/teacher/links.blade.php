@@ -1,0 +1,1 @@
+@includeWhen((Auth::user()->IsTeacher()), 'layouts.partials.navigation.teacher.navigation-links')

@@ -36,7 +36,7 @@
                     @csrf
 
                     <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900 ml-2">
-                        {{ __('Log Out') }}
+                        {{ __('Salir') }}
                     </button>
                 </form>
             </div>

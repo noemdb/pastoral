@@ -53,6 +53,7 @@ class User extends Authenticatable
         'card_id'=>'card_id',
         'biometric_id'=>'biometric_id',
         'role'=>'Rol',
+        'rol'=>'Rol',
         'phone'=>'Teléfono',
     ];
     

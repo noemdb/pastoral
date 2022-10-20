@@ -1,9 +1,6 @@
 <?php
 namespace App\Models\sys\Extension\User;
 
-use App\Models\sys\Profile;
-use App\Models\sys\Rol;
-
 trait TraitsMiddleware {
 
     //is admin
@@ -25,66 +22,84 @@ trait TraitsMiddleware {
     }
     public function IsCandidate()
     {
-        if ($this->status) {
-            if ($this->rol) {                
-                $count = $this->rol->whereIn('area', ['SISTEMA','ASPIRANTADO'])->whereIn('rol', ['ADMINISTRADOR','COOPERADOR'])->count();
-                return ($count > 0) ? true:false;
-            }
+        if ($this->status) {    
+            $arr_area = ['ASPIRANTADO'];                    
+            $arr_rol = ['COOPERADOR'];                    
+            return  $this->hasAreRol($arr_area,$arr_rol);
+        }
+    }
+    public function IsCooperator()
+    {
+        if ($this->status) {    
+            $arr_area = ['ASPIRANTADO'];                    
+            $arr_rol = ['COOPERADOR'];                    
+            return  $this->hasAreRol($arr_area,$arr_rol);
+        }
+    }
+    public function IsReligious() //representant
+    {
+        if ($this->status) {    
+            $arr_area = ['ASPIRANTADO'];                    
+            $arr_rol = ['RELIGIOSO'];                    
+            return  $this->hasAreRol($arr_area,$arr_rol);
         }
     }
     public function IsCoordinator()
     {
-        if ($this->status) {
-            if ($this->rol) {                
-                $count = $this->rol->whereIn('area', ['SISTEMA','COORDINACION'])->whereIn('rol', ['ADMINISTRADOR','COORDINADOR'])->count();
-                return ($count > 0) ? true:false;
-            }
-        }
-    }
-    public function IsEstudiant()
-    {
-        if ($this->status) {
-            if ($this->rol) {                
-                $count = $this->rol->whereIn('area', ['SISTEMA','COMUNIDAD'])->whereIn('rol', ['ADMINISTRADOR','CATEQUIZANDO'])->count();
-                return ($count > 0) ? true:false;
-            }
-        }
-    }
-    public function IsPresident()
-    {
-        if ($this->status) {
-            if ($this->rol) {                
-                $count = $this->rol->whereIn('area', ['SISTEMA','PRESIDENCIA'])->whereIn('rol', ['ADMINISTRADOR','PRESIDENTE'])->count();
-                return ($count > 0) ? true:false;
-            }
-        }
-    }
-    public function IsSecretary()
-    {
-        if ($this->status) {
-            if ($this->rol) {                
-                $count = $this->rol->whereIn('area', ['SISTEMA','SECRETARÍA'])->whereIn('rol', ['ADMINISTRADOR','SECRETARIO'])->count();
-                return ($count > 0) ? true:false;
-            }
+        if ($this->status) {    
+            $arr_area = ['COORDINACION'];                    
+            $arr_rol = ['COORDINADOR'];                    
+            return  $this->hasAreRol($arr_area,$arr_rol);
         }
     }
     public function IsSubcoordinator()
     {
-        if ($this->status) {
-            if ($this->rol) {                
-                $count = $this->rol->whereIn('area', ['SISTEMA','COORDINACION'])->whereIn('rol', ['ADMINISTRADOR','ASISTENTE'])->count();
-                return ($count > 0) ? true:false;
-            }
+        if ($this->status) {    
+            $arr_area = ['COORDINACION'];                    
+            $arr_rol = ['SUBCOORDINADOR'];                    
+            return  $this->hasAreRol($arr_area,$arr_rol);
         }
     }
-    public function IsTeacher()
+    public function IsEstudiant() //estudiant
     {
-        if ($this->status) {
-            if ($this->rol) {                
-                $count = $this->rol->whereIn('area', ['SISTEMA','FORMADORES'])->whereIn('rol', ['ADMINISTRADOR','CATEQUISTA'])->count();
-                return ($count > 0) ? true:false;
-            }
+        if ($this->status) {    
+            $arr_area = ['COMUNIDAD'];                    
+            $arr_rol = ['CATEQUIZANDO'];                    
+            return  $this->hasAreRol($arr_area,$arr_rol);
         }
     }
+    public function IsPresident() //president
+    {
+        if ($this->status) {    
+            $arr_area = ['PRESIDENCIA'];                    
+            $arr_rol = ['PRESIDENTE'];                    
+            return  $this->hasAreRol($arr_area,$arr_rol);
+        }
+    }
+    public function IsSecretary() //secretary
+    {
+        if ($this->status) {    
+            $arr_area = ['SECRETARÍA'];                    
+            $arr_rol = ['SECRETARIO'];                    
+            return  $this->hasAreRol($arr_area,$arr_rol);
+        }
+    }
+    public function IsTeacher() //teacher
+    {
+        if ($this->status) {    
+            $arr_area = ['FORMADORES'];                    
+            $arr_rol = ['CATEQUISTA'];                    
+            return  $this->hasAreRol($arr_area,$arr_rol);
+        }
+    }
+    public function IsRepresentant() //representant
+    {
+        if ($this->status) {    
+            $arr_area = ['COMUNIDAD'];                    
+            $arr_rol = ['REPRESENTANTE'];                    
+            return  $this->hasAreRol($arr_area,$arr_rol);
+        }
+    }
+
 
 }

@@ -1,0 +1,1 @@
+@includeWhen((Auth::user()->IsSecretary()), 'layouts.partials.navigation.secretary.navigation-links')

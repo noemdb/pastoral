@@ -2,7 +2,7 @@
 @php
     $class['iteration']="text-left px-4";
     $class['name']="text-left px-4";
-    $class['role']="text-left px-4";
+    $class['rol']="text-left px-4";
     $class['email']="text-left px-4";
     $class['phone']="text-left px-4";
     $class['action']="text-left px-4";
@@ -42,11 +42,11 @@
                             @endif
                         </div>
                     </th>
-                <th class="{{ $class['role'] ?? ''}}">
+                <th class="{{ $class['rol'] ?? ''}}">
                     <div class="flex justify-between">
-                        <div> {{$list_comment['role'] ?? ''}} </div>
+                        <div> {{$list_comment['rol'] ?? ''}} </div>
                         @if($users->isNotEmpty())
-                            <x-elements.crud.sort-by field="role" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                            <x-elements.crud.sort-by field="rol" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                         @endif
                     </div>
                 </th>
@@ -78,15 +78,15 @@
                 //$ti_user = $user->ti_user;
             @endphp
 
-            {{-- 'name','role','email'--}}
+            {{-- 'name','rol','email'--}}
 
             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($user->id == $user_id) ? 'bg-gray-200' : null}}">
                 <td class="{{ $class['iteration'] ?? ''}}">{{$loop->iteration}}</td>
-                <td class="{{ $class['role'] ?? ''}}">
+                <td class="{{ $class['rol'] ?? ''}}">
                     <div>{{$user->name ?? ''}}</div>
                     <div class="flex justify-end text-gray-400 text-sm">{{$ti_user->name ?? ''}}</div>
                 </td>
-                <td class="{{ $class['role'] ?? ''}}">{{$user->completerol ?? ''}}</td>
+                <td class="{{ $class['rol'] ?? ''}}">{{$user->full_rol ?? ''}}</td>
                 
                 
                 <td class="{{ $class['email'] ?? ''}}">{{$user->email ?? ''}}</td>
@@ -95,7 +95,7 @@
                 <td class="{{ $class['action'] ?? '' }}">
 
                     <div class="flex items-center justify-center justify-between mb-3 shadow">
-                        <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
+                        <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" rol="group">
                             <x-elements.form.button-edit wire:key="user-edit-{{$user->id}}" wire:click="edit({{ $user->id }})" >
                                 <x-icon-pen class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-edit>

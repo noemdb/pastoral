@@ -1,0 +1,1 @@
+@includeWhen((Auth::user()->IsCooperator()), 'layouts.partials.navigation.cooperator.navigation-links')
