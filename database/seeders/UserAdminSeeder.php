@@ -16,33 +16,41 @@ class UserAdminSeeder extends Seeder
      */
     public function run()
     {
-        $user_id = DB::table('users')->insertGetId(
-            [
-                'name' => 'admin',
-                'email' => 'admin@admin.com',
-                'email_verified_at' => now(),
-                'password' => bcrypt('123456'), // 123456
-                'remember_token' => Str::random(10),
-            ]
-        );
+        //Superadmin
+        $user_id = DB::table('users')->insertGetId( ['name' => 'admin','email' => 'admin@admin.com','email_verified_at' => now(),'password' => bcrypt('123456')] );
+        DB::table('teams')->insert( ['name' => 'WebAdmin','user_id' => $user_id,'personal_team' => true,] );
+        DB::table('rols')->insert( ['area' => "SISTEMA",'rol' => "ADMINISTRADOR",'description' => "webmaster del sistema",'finicial' => "20000101",'ffinal' => "20500101",'user_id' => $user_id,]);
 
-        DB::table('teams')->insert(
-            [
-                'name' => 'NoDoz',
-                'user_id' => $user_id,
-                'personal_team' => true,
-            ]
-        );
+        //Director
+        $user_id = DB::table('users')->insertGetId(['name' => 'director','email' => 'director@director.com','email_verified_at' => now(),'password' => bcrypt('123456'),]);
+        DB::table('teams')->insert(['name' => 'PastoralAmigoniana','user_id' => $user_id,'personal_team' => true,]);
+        DB::table('rols')->insert(['pastoral_id'=>1,'area' => "DIRECCIÓN",'rol' => "DIRECTOR",'description' => "Director de Catequesis",'finicial' => "20000101",'ffinal' => "20500101",'user_id' => $user_id,]);
 
-        DB::table('rols')->insert(
-            [
-                'area' => "SISTEMA",
-                'rol' => "ADMINISTRADOR",            
-                'description' => "webmaster del sistema",
-                'finicial' => "20000101",
-                'ffinal' => "20500101",
-                'user_id' => $user_id,
-            ]
-        );
+        //Coordinador
+        $user_id = DB::table('users')->insertGetId(['name' => 'coordinador','email' => 'coordinador@coordinador.com','email_verified_at' => now(),'password' => bcrypt('123456'),]);
+        DB::table('teams')->insert(['name' => 'PastoralAmigoniana','user_id' => $user_id,'personal_team' => true,]);
+        DB::table('rols')->insert(['pastoral_id'=>1,'area' => "COORDINACION",'rol' => "COORDINADOR",'description' => "Coordinador de Catequesis",'finicial' => "20000101",'ffinal' => "20500101",'user_id' => $user_id,]);
+
+        //Catequista
+        $user_id = DB::table('users')->insertGetId(['name' => 'catequista','email' => 'catequista@catequista.com','email_verified_at' => now(),'password' => bcrypt('123456'),]);
+        DB::table('teams')->insert(['name' => 'PastoralAmigoniana','user_id' => $user_id,'personal_team' => true,]);
+        DB::table('rols')->insert(['pastoral_id'=>1,'area' => "FORMADORES",'rol' => "CATEQUISTA",'description' => "Formador Catequista",'finicial' => "20000101",'ffinal' => "20500101",'user_id' => $user_id,]);
+
+         //Catequizando
+         $user_id = DB::table('users')->insertGetId(['name' => 'catequizando','email' => 'catequizando@catequizando.com','email_verified_at' => now(),'password' => bcrypt('123456'),]);
+         DB::table('teams')->insert(['name' => 'PastoralAmigoniana','user_id' => $user_id,'personal_team' => true,]);
+         DB::table('rols')->insert(['pastoral_id'=>1,'area' => "COMUNIDAD",'rol' => "CATEQUIZANDO",'description' => "Catequisando",'finicial' => "20000101",'ffinal' => "20500101",'user_id' => $user_id,]);
+        
+         //Representante
+        $user_id = DB::table('users')->insertGetId(['name' => 'represerntante','email' => 'represerntante@represerntante.com','email_verified_at' => now(),'password' => bcrypt('123456'),]);
+        DB::table('teams')->insert(['name' => 'PastoralAmigoniana','user_id' => $user_id,'personal_team' => true,]);
+        DB::table('rols')->insert(['pastoral_id'=>1,'area' => "COMUNIDAD",'rol' => "REPRESENTANTE",'description' => "Representante",'finicial' => "20000101",'ffinal' => "20500101",'user_id' => $user_id,]);
+
+        //Cooperador
+        $user_id = DB::table('users')->insertGetId(['name' => 'cooperador','email' => 'cooperador@cooperador.com','email_verified_at' => now(),'password' => bcrypt('123456'),]);
+        DB::table('teams')->insert(['name' => 'PastoralAmigoniana','user_id' => $user_id,'personal_team' => true,]);
+        DB::table('rols')->insert(['pastoral_id'=>1,'area' => "ASPIRANTADO",'rol' => "COOPERADOR",'description' => "Aspirante a cooperador",'finicial' => "20000101",'ffinal' => "20500101",'user_id' => $user_id,]);
+
+
     }
 }

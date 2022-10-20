@@ -152,7 +152,7 @@
                                 </div>
                                 <div class="mt-8 services-content">
                                     <h4 class="mb-8 text-xl font-bold text-gray-900">Conectado</h4>
-                                    <p class="mb-8">Herramientas de tecnología, mensajería instantánea, email, encuestas, etc., que apuntalan la comunicación entre todos los participantes. La información es difundida por distintas vías.</p>
+                                    <p class="mb-8">Herramientas de tecnología, mensajería instantánea, email, encuestas, etc., que apuntalan la comunicación entre todos los catequizandos. La información es difundida por distintas vías.</p>
                                     <!-- <a class="duration-300 hover:text-theme-color" href="javascript:void(0)">Learn More <i class="ml-2 lni lni-chevron-right"></i></a> -->
                                 </div>
                             </div> <!-- single services -->
@@ -230,7 +230,7 @@
                             </div>
                             <div class="mt-8 services-content">
                                 <h4 class="mb-8 text-xl font-bold text-gray-900">Conectado</h4>
-                                <p class="mb-8">Herramientas de tecnología, mensajería instantánea, email, encuestas, etc., que apuntalan la comunicación entre todos los participantes. La información es difundida por distintas vías.</p>
+                                <p class="mb-8">Herramientas de tecnología, mensajería instantánea, email, encuestas, etc., que apuntalan la comunicación entre todos los catequizando. La información es difundida por distintas vías.</p>
                                 <!-- <a class="duration-300 hover:text-theme-color" href="javascript:void(0)">Learn More <i class="ml-2 lni lni-chevron-right"></i></a> -->
                             </div>
                         </div> <!-- single services -->

@@ -14,7 +14,7 @@
 
             <x-jet-nav-link class=" shadow py-2 mx-1 rounded" href="{{ route('estudiants.index') }}" :active="request()->is('*estudiants*')">
                 <x-icon-user-pen class="w-6 h-6 mr-0.5" />
-                <div class="mr-0.5 hidden md:flex">{{ __('Participantes') }} </div>                        
+                <div class="mr-0.5 hidden md:flex">{{ __('Catequizando') }} </div>                        
             </x-jet-nav-link>
             
             <x-jet-nav-link class=" shadow py-2 mx-1 rounded" href="{{ route('inscriptions.index') }}" :active="request()->is('*inscriptions*')">

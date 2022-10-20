@@ -54,13 +54,16 @@ class ListComponent extends Component
     {
         $search = $this->search; 
 
-        $users = User::select('users.*');
+        $users = User::select('users.*','rols.area','rols.rol','pastorals.code')
+            ->leftjoin('rols', 'users.id', '=', 'rols.user_id')
+            ->leftjoin('pastorals', 'pastorals.id', '=', 'rols.pastoral_id');
 
         $users = (!empty($search)) ? $users->orwhere(
             function($query) use ($search) {
-                $query->orWhere('lastname','like', '%'.$search.'%')
-                    ->orWhere('name','like','%'.$search.'%')
-                    ->orWhere('ci','like','%'.$search.'%')
+                $query->orWhere('users.name','like','%'.$search.'%')
+                    ->orWhere('rols.area','like', '%'.$search.'%')
+                    ->orWhere('rols.rol','like','%'.$search.'%')
+                    ->orWhere('pastorals.code','like','%'.$search.'%')
                     ;
             }) 
             : $users ; //dd($users);

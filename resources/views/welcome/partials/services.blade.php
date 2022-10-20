@@ -106,7 +106,7 @@
                         <h4 class="mb-8 text-xl font-bold text-gray-900">Conectado</h4>
                         <p class="mb-8">
                             Herramientas de tecnología, aula virtual, mensajería instantánea, notificaciones por email, encuestas, etc., 
-                            que organizan y apuntalan la comunicación y el flujo de información entre todos los participantes.
+                            que organizan y apuntalan la comunicación y el flujo de información entre todos los catequizandos.
                         </p>
                         <!-- <a class="duration-300 hover:text-theme-color" href="javascript:void(0)">Learn More <i class="ml-2 lni lni-chevron-right"></i></a> -->
                     </div>

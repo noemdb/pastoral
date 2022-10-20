@@ -17,12 +17,12 @@
 
 	<x-jet-nav-link href="{{ route('estudiants.index') }}" :active="request()->is('*competitors*')">
 	    <x-icon-user-pen class="w-6 h-6 mr-0.5" />
-		<div class="mr-0.5 hidden lg:flex">{{ __('Participantes') }}</div> 
+		<div class="mr-0.5 hidden lg:flex">{{ __('Catequizando') }}</div> 
 	</x-jet-nav-link>
 
 	<x-jet-nav-link href="{{ route('teachers.index') }}" :active="request()->is('*professorate*')">
 	    <x-icon-chalkboard-teacher class="w-6 h-6 mr-0.5" />
-		<div class="mr-0.5 hidden lg:flex">{{ __('Profesores') }}</div> 
+		<div class="mr-0.5 hidden lg:flex">{{ __('Catequistas') }}</div> 
 	</x-jet-nav-link>
 
 	<x-jet-nav-link href="{{ route('mailers.index') }}" :active="request()->is('*senders*')">

@@ -19,7 +19,7 @@ class PastoralSeeder extends Seeder
         DB::table('pastorals')->insert([
             "name"=>"Pastoral Fray Luís Amigó",
             "legalname"=>"ASOCIACION DE TERCIARIOS CAPUCHINOS DE VENEZUELA",
-            "code"=>"J-0005716-7",
+            "code"=>"PAS-CFLA",
             "code_official"=>"0005716",
             "code_private"=>"0005716",
             "description"=>"INTITUCIÓN ENCARGADA DE IMPARTIR CATECISMO DE COMUNIÓN Y CONFIRMACIÓN",

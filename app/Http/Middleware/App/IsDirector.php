@@ -4,9 +4,15 @@ namespace App\Http\Middleware\App;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Support\Facades\Session;
 
 class IsDirector
 {
+    public function __construct(Guard $auth){
+        $this->auth = $auth;
+    }
+
     /**
      * Handle an incoming request.
      *
@@ -16,6 +22,12 @@ class IsDirector
      */
     public function handle(Request $request, Closure $next)
     {
+        if(!$this->auth->user()->IsDirector()){
+
+            Session::flash('sessionMessege','Sección restringida');
+
+            return redirect('/dashboard');
+        }
         return $next($request);
     }
 }
