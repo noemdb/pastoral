@@ -1,7 +1,7 @@
 <?php
 
-Route::group(['middleware' => ['is_coordinator']], function() {            
-    Route::prefix('coordinator')->name('coordinator.')->group(function () {
+Route::group(['middleware' => ['is_cooperator']], function() {            
+    Route::prefix('cooperator')->name('cooperator.')->group(function () {
         // require (__DIR__ . '/resource/setups.php');
         require (__DIR__ . '/resource/institutions.php');            
         require (__DIR__ . '/resource/competitors.php');            

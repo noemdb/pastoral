@@ -24,16 +24,15 @@ trait TraitsMiddleware {
     {
         if ($this->status) {    
             $arr_area = ['ASPIRANTADO'];                    
-            $arr_rol = ['COOPERADOR']; //dd($arr_area,$arr_rol); 
-            //dd($this->hasAreRol($arr_area,$arr_rol));                  
+            $arr_rol = ['COOPERADOR'];
             return  $this->hasAreRol($arr_area,$arr_rol);
         }
     }
-    public function IsReligious() //representant
+    public function IsPostulant()
     {
         if ($this->status) {    
-            $arr_area = ['ASPIRANTADO'];                    
-            $arr_rol = ['RELIGIOSO'];                    
+            $arr_area = ['POSTULANTADO'];                    
+            $arr_rol = ['POSTULANTE'];                    
             return  $this->hasAreRol($arr_area,$arr_rol);
         }
     }
@@ -53,7 +52,7 @@ trait TraitsMiddleware {
             return  $this->hasAreRol($arr_area,$arr_rol);
         }
     }
-    public function IsEstudiant() //estudiant
+    public function IsEstudiant()
     {
         if ($this->status) {    
             $arr_area = ['COMUNIDAD'];                    
@@ -61,7 +60,7 @@ trait TraitsMiddleware {
             return  $this->hasAreRol($arr_area,$arr_rol);
         }
     }
-    public function IsPresident() //president
+    public function IsPresident()
     {
         if ($this->status) {    
             $arr_area = ['PRESIDENCIA'];                    
@@ -69,7 +68,7 @@ trait TraitsMiddleware {
             return  $this->hasAreRol($arr_area,$arr_rol);
         }
     }
-    public function IsSecretary() //secretary
+    public function IsSecretary()
     {
         if ($this->status) {    
             $arr_area = ['SECRETARÍA'];                    
@@ -77,7 +76,7 @@ trait TraitsMiddleware {
             return  $this->hasAreRol($arr_area,$arr_rol);
         }
     }
-    public function IsTeacher() //teacher
+    public function IsTeacher()
     {
         if ($this->status) {    
             $arr_area = ['FORMADORES'];                    
@@ -85,13 +84,29 @@ trait TraitsMiddleware {
             return  $this->hasAreRol($arr_area,$arr_rol);
         }
     }
-    public function IsRepresentant() //representant
+    public function IsRepresentant()
     {
         if ($this->status) {    
             $arr_area = ['COMUNIDAD'];                    
             $arr_rol = ['REPRESENTANTE'];                    
             return  $this->hasAreRol($arr_area,$arr_rol);
         }
+    }
+
+    public function getPrefixAttribute()
+    {
+        $prefix = ($this->isAdmin()) ? 'admin' : null ;
+        $prefix = ($this->IsDirector()) ? 'director' : $prefix ;
+        $prefix = ($this->IsCooperator()) ? 'cooperator' : $prefix ;
+        $prefix = ($this->IsPostulant()) ? 'postulant' : $prefix ;
+        $prefix = ($this->IsCoordinator()) ? 'coordinator' : $prefix ;
+        $prefix = ($this->IsSubcoordinator()) ? 'subcoordinator' : $prefix ;
+        $prefix = ($this->IsEstudiant()) ? 'estudiant' : $prefix ;
+        $prefix = ($this->IsPresident()) ? 'president' : $prefix ;
+        $prefix = ($this->IsSecretary()) ? 'secretary' : $prefix ;
+        $prefix = ($this->IsTeacher()) ? 'teacher' : $prefix ;
+        $prefix = ($this->IsRepresentant()) ? 'representant' : $prefix ;
+        return $prefix;
     }
 
 

@@ -15,7 +15,7 @@ trait TeacherRules
         'teacher.date_birth' => 'required|date',
         'teacher.dir_address' => 'required|string',
         'teacher.phone' => 'nullable|string',
-        'teacher.cellphone' => 'nullable|integer',
+        'teacher.cellphone' => 'nullable|string',
         'teacher.email' => 'required|email',
         'teacher.whatsapp' => 'nullable|string',
         'teacher.telegram' => 'nullable|string',

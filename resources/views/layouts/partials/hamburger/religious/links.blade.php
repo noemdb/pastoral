@@ -1,1 +1,0 @@
-@include('layouts.partials.navigation.religious.navigation-links')

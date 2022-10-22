@@ -28,8 +28,8 @@
 	--}}
 
 	<x-jet-nav-link href="#" :active="request()->is('*candidate*')">
-	    <x-icon-person class="w-6 h-6 mr-0.5" />
-		<div class="mr-0.5 hidden lg:flex">{{ __('Aspirante') }}</div> 
+	    <x-icon-cooperador class="w-6 h-6 mr-0.5" />
+		<div class="mr-0.5 hidden lg:flex">{{ __('Postulante') }}</div> 
 	</x-jet-nav-link> 
 
 	<x-jet-nav-link href="#" :active="request()->is('*senders*')">

@@ -17,13 +17,12 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-2 sm:-my-px sm:ml-2 sm:flex dark:text-white">
-
                     @includeWhen((Auth::user()->IsAdmin()), 'layouts.partials.navigation.admin.navigation-links')
                     @includeWhen((Auth::user()->IsDirector()), 'layouts.partials.navigation.director.navigation-links')
                     @includeWhen((Auth::user()->IsCoordinator()), 'layouts.partials.navigation.coordinator.navigation-links')
                     @includeWhen((Auth::user()->IsSubcoordinator()), 'layouts.partials.navigation.subcoordinator.navigation-links')
                     @includeWhen((Auth::user()->IsCooperator()), 'layouts.partials.navigation.cooperator.navigation-links')
-                    @includeWhen((Auth::user()->IsReligious()), 'layouts.partials.navigation.religious.navigation-links')
+                    @includeWhen((Auth::user()->IsPostulant()), 'layouts.partials.navigation.postulant.navigation-links')
                     @includeWhen((Auth::user()->IsEstudiant()), 'layouts.partials.navigation.estudiant.navigation-links')
                     @includeWhen((Auth::user()->IsPresident()), 'layouts.partials.navigation.president.navigation-links')
                     @includeWhen((Auth::user()->IsSecretary()), 'layouts.partials.navigation.secretary.navigation-links')
@@ -45,7 +44,7 @@
                     @includeWhen((Auth::user()->IsCoordinator()), 'layouts.partials.dropdown.coordinator.settings')                    
                     @includeWhen((Auth::user()->IsSubcoordinator()), 'layouts.partials.dropdown.subcoordinator.settings')                    
                     @includeWhen((Auth::user()->IsCooperator()), 'layouts.partials.dropdown.cooperator.settings')                    
-                    @includeWhen((Auth::user()->IsReligious()), 'layouts.partials.dropdown.religious.settings')                    
+                    @includeWhen((Auth::user()->IsPostulant()), 'layouts.partials.dropdown.postulant.settings')                    
                     @includeWhen((Auth::user()->IsEstudiant()), 'layouts.partials.dropdown.estudiant.settings')                    
                     @includeWhen((Auth::user()->IsPresident()), 'layouts.partials.dropdown.president.settings')                    
                     @includeWhen((Auth::user()->IsSecretary()), 'layouts.partials.dropdown.secretary.settings')                    
@@ -82,7 +81,7 @@
             @includeWhen((Auth::user()->IsCoordinator()), 'layouts.partials.hamburger.coordinator.links')
             @includeWhen((Auth::user()->IsSubcoordinator()), 'layouts.partials.hamburger.subcoordinator.links')
             @includeWhen((Auth::user()->IsCooperator()), 'layouts.partials.hamburger.cooperator.links')
-            @includeWhen((Auth::user()->IsReligious()), 'layouts.partials.hamburger.religious.links')
+            @includeWhen((Auth::user()->IsPostulant()), 'layouts.partials.hamburger.postulant.links')
             @includeWhen((Auth::user()->IsEstudiant()), 'layouts.partials.hamburger.estudiant.links')
             @includeWhen((Auth::user()->IsPresident()), 'layouts.partials.hamburger.president.links')
             @includeWhen((Auth::user()->IsSecretary()), 'layouts.partials.hamburger.secretary.links')
@@ -99,7 +98,7 @@
             @includeWhen((Auth::user()->IsCoordinator()), 'layouts.partials.hamburger.coordinator.settings')
             @includeWhen((Auth::user()->IsSubcoordinator()), 'layouts.partials.hamburger.subcoordinator.settings')
             @includeWhen((Auth::user()->IsCooperator()), 'layouts.partials.hamburger.cooperator.settings')
-            @includeWhen((Auth::user()->IsReligious()), 'layouts.partials.hamburger.religious.settings')
+            @includeWhen((Auth::user()->IsPostulant()), 'layouts.partials.hamburger.postulant.settings')
             @includeWhen((Auth::user()->IsEstudiant()), 'layouts.partials.hamburger.estudiant.settings')
             @includeWhen((Auth::user()->IsPresident()), 'layouts.partials.hamburger.president.settings')
             @includeWhen((Auth::user()->IsSecretary()), 'layouts.partials.hamburger.secretary.settings')

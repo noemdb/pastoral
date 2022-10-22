@@ -17,7 +17,7 @@ class TeacherSeeder extends Seeder
     {
         DB::table('teachers')->insert(
             [
-                'ti_teacher_id' => 1,
+                'ti_teacher_id' => 2,
                 'ci_profesor' => '5625888',
                 'lastname' => 'SIERRA RODRIGUEZ',
                 'name' => 'EZEQUIEL JOSE',

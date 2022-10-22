@@ -98,3 +98,16 @@ class User extends Authenticatable
         'profile_photo_url',
     ];       
 }
+
+/*
+admin
+presidente
+director
+coordinador
+subcoordinador
+catequista
+catequizando
+representante
+cooperador
+postulante
+*/

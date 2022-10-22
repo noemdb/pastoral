@@ -74,9 +74,11 @@ class Kernel extends HttpKernel
         'is_secretary'=> 'App\Http\Middleware\App\IsSecretary',
         'is_coordinator'=> 'App\Http\Middleware\App\IsCoordinator',
         'is_subcoordinator'=> 'App\Http\Middleware\App\IsSubcoordinator',
-        'is_teacherr'=> 'App\Http\Middleware\App\IsTeacher',
+        'is_teacher'=> 'App\Http\Middleware\App\IsTeacher',
+        'is_sstudiant'=> 'App\Http\Middleware\App\IsEstudiant',
         'is_representant'=> 'App\Http\Middleware\App\IsRepresentant',
-        'is_candidate'=> 'App\Http\Middleware\App\IsCandidate',
+        'is_cooperator'=> 'App\Http\Middleware\App\IsCooperator',
+        'is_postulant'=> 'App\Http\Middleware\App\IsPostulant',
         
     ];
 }

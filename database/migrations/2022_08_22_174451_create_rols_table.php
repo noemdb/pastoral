@@ -17,8 +17,8 @@ class CreateRolsTable extends Migration
             $table->id();
             $table->integer('user_id')->unsigned()->unique();
             $table->integer('pastoral_id')->nullable()->unsigned();
-            $table->enum('area',['SISTEMA','PRESIDENCIA','DIRECCIÓN','SECRETARÍA','COORDINACION','FORMADORES','ASPIRANTADO','COMUNIDAD']);
-            $table->enum('rol',['ADMINISTRADOR','PRESIDENTE','DIRECTOR','SECRETARIO','COORDINADOR','SUBCOORDINADOR','CATEQUISTA','COOPERADOR','RELIGIOSO','SUPERVISOR','SUPLENTE','JEFE','ASISTENTE','CATEQUIZANDO','REPRESENTANTE','PERSONAL']);
+            $table->enum('area',['SISTEMA','PRESIDENCIA','DIRECCIÓN','SECRETARÍA','COORDINACION','FORMADORES','POSTULANTADO','ASPIRANTADO','COMUNIDAD']);
+            $table->enum('rol',['ADMINISTRADOR','PRESIDENTE','DIRECTOR','SECRETARIO','COORDINADOR','SUBCOORDINADOR','CATEQUISTA','POSTULANTE','COOPERADOR','RELIGIOSO','SUPERVISOR','SUPLENTE','JEFE','ASISTENTE','CATEQUIZANDO','REPRESENTANTE','PERSONAL']);
             $table->string('description')->nullable();
             $table->string('observation')->nullable();
             $table->date('finicial');

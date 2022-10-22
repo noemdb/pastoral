@@ -13,28 +13,27 @@
 	{{-- <x-jet-nav-link href="{{ route('institutions.index') }}" :active="request()->is('*institutions*')">
 	    <x-icon-building class="w-6 h-6 mr-0.5" />
 		<div class="mr-0.5 hidden lg:flex">{{ __('Institución') }}</div> 
-	</x-jet-nav-link>
+	</x-jet-nav-link> --}}
 
-	<x-jet-nav-link href="{{ route('estudiants.index') }}" :active="request()->is('*competitors*')">
+	{{-- <x-jet-nav-link href="{{ route('estudiants.index') }}" :active="request()->is('*competitors*')">
 	    <x-icon-user-pen class="w-6 h-6 mr-0.5" />
 		<div class="mr-0.5 hidden lg:flex">{{ __('Catequizandos') }}</div> 
-	</x-jet-nav-link>
+	</x-jet-nav-link> --}}
 
-	<x-jet-nav-link href="{{ route('teachers.index') }}" :active="request()->is('*professorate*')">
+	{{-- <x-jet-nav-link href="{{ route('teachers.index') }}" :active="request()->is('*professorate*')">
 	    <x-icon-chalkboard-teacher class="w-6 h-6 mr-0.5" />
 		<div class="mr-0.5 hidden lg:flex">{{ __('Catequistas') }}</div> 
-	</x-jet-nav-link>
+	</x-jet-nav-link> --}}
 
-	--}}
-
+	
 	<x-jet-nav-link href="#" :active="request()->is('*candidate*')">
-	    <x-icon-person class="w-6 h-6 mr-0.5" />
+	    <x-icon-cooperador class="w-6 h-6 mr-0.5" />
 		<div class="mr-0.5 hidden lg:flex">{{ __('Aspirante') }}</div> 
 	</x-jet-nav-link> 
 
 	<x-jet-nav-link href="#" :active="request()->is('*senders*')">
 	    <x-icon-envelope class="w-6 h-6 mr-0.5" />
-		<div class="mr-0.5 hidden lg:flex">{{ __('Mensajes') }}</div> 
+		<div class="mr-0.5 hidden lg:flex">{{ __('Mailer') }}</div> 
 	</x-jet-nav-link>
 
 	<x-jet-nav-link href="#" :active="request()->is('*surveys*')">

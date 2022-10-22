@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class InstitutionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(Request $request)
     {
         return view('admin.institutions.index'); //views/admin/institutions/index.blade.php

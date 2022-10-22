@@ -25,9 +25,9 @@
 		<div class="mr-0.5 hidden lg:flex">{{ __('Evaluaciones') }}</div> 
 	</x-jet-nav-link>
 
-	<x-jet-nav-link href="#" :active="request()->is('*candidate*')">
+	<x-jet-nav-link href="#" :active="request()->is('*candidate*')" title="Biblioteca Amigoniana" >
 	    <x-icon-book class="w-6 h-6 mr-0.5" />
-		<div class="mr-0.5 hidden lg:flex">{{ __('Biblioteca') }}</div> 
+		<div class="mr-0.5 hidden lg:flex">{{ __('Amigoteca') }}</div> 
 	</x-jet-nav-link> 
 
 	<x-jet-nav-link href="#" :active="request()->is('*candidate*')">
