@@ -20,19 +20,12 @@ trait TraitsMiddleware {
             return  $this->hasAreRol($arr_area,$arr_rol);
         }
     }
-    public function IsCandidate()
-    {
-        if ($this->status) {    
-            $arr_area = ['ASPIRANTADO'];                    
-            $arr_rol = ['COOPERADOR'];                    
-            return  $this->hasAreRol($arr_area,$arr_rol);
-        }
-    }
     public function IsCooperator()
     {
         if ($this->status) {    
             $arr_area = ['ASPIRANTADO'];                    
-            $arr_rol = ['COOPERADOR'];                    
+            $arr_rol = ['COOPERADOR']; //dd($arr_area,$arr_rol); 
+            //dd($this->hasAreRol($arr_area,$arr_rol));                  
             return  $this->hasAreRol($arr_area,$arr_rol);
         }
     }

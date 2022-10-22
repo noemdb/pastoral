@@ -24,9 +24,9 @@ class LevelSeeder extends Seeder
                 'observations' => 'Primer Nivel',
                 "color"=>'#FFDDCC',
                 'status'=>true,
-                "header"=>'Primer Nivel del plan formativo',
-                'body'=>'1ra Unidad organizativa',
-                'footer'=>'Aprendiendo nuesrta fé',
+                "header"=>'Primer Nivel de la Formación Catequética Amigoniana',
+                'body'=>'Identidad y Carisma Amigoniano',
+                'footer'=>'Identidad y Carisma Amigoniano',
             ],
         );
         
@@ -40,9 +40,9 @@ class LevelSeeder extends Seeder
                 'observations' => 'Segundo Nivel',
                 "color"=>'#FFDDCC',
                 'status'=>true,
-                "header"=>'Segundo Nivel del plan formativo',
-                'body'=>'2da Unidad organizativa',
-                'footer'=>'Fortaleciendo nuesrta fé',
+                "header"=>'Segundo Nivel de la Formación Catequética Amigoniana',
+                'body'=>'Identidad y Carisma Amigoniano',
+                'footer'=>'Identidad y Carisma Amigoniano',
             ],
         );
 
@@ -56,9 +56,9 @@ class LevelSeeder extends Seeder
                 'observations' => 'Primer Nivel',
                 "color"=>'#FFDDCC',
                 'status'=>true,
-                "header"=>'Primer Nivel del plan educativo',
-                'body'=>'1ra Unidad organizativa',
-                'footer'=>'Aprendiendo nuesrta fé',
+                "header"=>'Primer Nivel de la Formación Catequética Amigoniana',
+                'body'=>'Identidad y Carisma Amigoniano',
+                'footer'=>'Identidad y Carisma Amigoniano',
             ],
         );
         
@@ -72,9 +72,9 @@ class LevelSeeder extends Seeder
                 'observations' => 'Segundo Nivel',
                 "color"=>'#FFDDCC',
                 'status'=>true,
-                "header"=>'Segundo Nivel del plan educativo',
-                'body'=>'2da Unidad organizativa',
-                'footer'=>'Fortaleciendo nuesrta fé',
+                "header"=>'Segundo Nivel de la Formación Catequética Amigoniana',
+                'body'=>'Identidad y Carisma Amigoniano',
+                'footer'=>'Identidad y Carisma Amigoniano',
             ],
         );
     }

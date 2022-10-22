@@ -27,5 +27,8 @@ class TauthoritySeeder extends Seeder
         DB::table('tauthorities')->insert([
 			'name' => 'COORDINADOR'
         ]);
+        DB::table('tauthorities')->insert([
+			'name' => 'SUB-COORDINADOR'
+        ]);
     }
 }

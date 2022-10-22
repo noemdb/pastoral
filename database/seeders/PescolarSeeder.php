@@ -19,11 +19,11 @@ class PescolarSeeder extends Seeder
         DB::table('pescolars')->insert(
             [
                 "pastoral_id"=>1,
-                "code"=>"FLA01",
-                "name"=>"Período Formativo 22-23",
+                "code"=>"PACFLA 22-23",
+                "name"=>"ITINERARIO CATEQUÉTICO AMIGONIANO",
                 "finicial"=>Carbon::now()->startOfYear()->format('Y-m-d'),
                 "ffinal"=>Carbon::now()->endOfYear()->format('Y-m-d'),
-                "description"=>"Tiempo en el que se realizarán todas las actividades realicionadas a la catequesis de la institución",
+                "description"=>"AÑO CATEQUÉTICO 2022-2023",
             ]
         );
     }

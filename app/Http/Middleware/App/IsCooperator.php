@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Session;
 
 class IsCooperator
 {
+    public function __construct(Guard $auth){
+        $this->auth = $auth;
+    }
+    
     /**
      * Handle an incoming request.
      *

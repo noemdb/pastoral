@@ -20,16 +20,15 @@
 
                     @includeWhen((Auth::user()->IsAdmin()), 'layouts.partials.navigation.admin.navigation-links')
                     @includeWhen((Auth::user()->IsDirector()), 'layouts.partials.navigation.director.navigation-links')
-                    {{-- @includeWhen((Auth::user()->IsCandidate()), 'layouts.partials.navigation.candidate.navigation-links') --}}
-                    @includeWhen((Auth::user()->IsCandidate()), 'layouts.partials.navigation.cooperator.navigation-links')
                     @includeWhen((Auth::user()->IsCoordinator()), 'layouts.partials.navigation.coordinator.navigation-links')
                     @includeWhen((Auth::user()->IsSubcoordinator()), 'layouts.partials.navigation.subcoordinator.navigation-links')
+                    @includeWhen((Auth::user()->IsCooperator()), 'layouts.partials.navigation.cooperator.navigation-links')
+                    @includeWhen((Auth::user()->IsReligious()), 'layouts.partials.navigation.religious.navigation-links')
                     @includeWhen((Auth::user()->IsEstudiant()), 'layouts.partials.navigation.estudiant.navigation-links')
                     @includeWhen((Auth::user()->IsPresident()), 'layouts.partials.navigation.president.navigation-links')
                     @includeWhen((Auth::user()->IsSecretary()), 'layouts.partials.navigation.secretary.navigation-links')
                     @includeWhen((Auth::user()->IsTeacher()), 'layouts.partials.navigation.teacher.navigation-links')
-                    {{-- @includeWhen((Auth::user()->IsRepresentant()), 'layouts.partials.navigation.representant.navigation-links') --}}
-                    cooperator
+                    @includeWhen((Auth::user()->IsRepresentant()), 'layouts.partials.navigation.representant.navigation-links')
                 </div>
 
             </div>
@@ -43,10 +42,10 @@
                 <div class="ml-3 relative">
                     @includeWhen((Auth::user()->IsAdmin()), 'layouts.partials.dropdown.admin.settings')                    
                     @includeWhen((Auth::user()->IsDirector()), 'layouts.partials.dropdown.director.settings')                    
-                    {{-- @includeWhen((Auth::user()->IsCandidate()), 'layouts.partials.dropdown.candidate.settings')                     --}}
-                    @includeWhen((Auth::user()->IsCandidate()), 'layouts.partials.dropdown.cooperator.settings')                    
                     @includeWhen((Auth::user()->IsCoordinator()), 'layouts.partials.dropdown.coordinator.settings')                    
                     @includeWhen((Auth::user()->IsSubcoordinator()), 'layouts.partials.dropdown.subcoordinator.settings')                    
+                    @includeWhen((Auth::user()->IsCooperator()), 'layouts.partials.dropdown.cooperator.settings')                    
+                    @includeWhen((Auth::user()->IsReligious()), 'layouts.partials.dropdown.religious.settings')                    
                     @includeWhen((Auth::user()->IsEstudiant()), 'layouts.partials.dropdown.estudiant.settings')                    
                     @includeWhen((Auth::user()->IsPresident()), 'layouts.partials.dropdown.president.settings')                    
                     @includeWhen((Auth::user()->IsSecretary()), 'layouts.partials.dropdown.secretary.settings')                    
@@ -80,10 +79,10 @@
 
             @includeWhen((Auth::user()->IsAdmin()), 'layouts.partials.hamburger.admin.links')
             @includeWhen((Auth::user()->IsDirector()), 'layouts.partials.hamburger.director.links')
-            {{-- @includeWhen((Auth::user()->IsCandidate()), 'layouts.partials.hamburger.candidate.links') --}}
-            @includeWhen((Auth::user()->IsCandidate()), 'layouts.partials.cooperator.candidate.links')
             @includeWhen((Auth::user()->IsCoordinator()), 'layouts.partials.hamburger.coordinator.links')
             @includeWhen((Auth::user()->IsSubcoordinator()), 'layouts.partials.hamburger.subcoordinator.links')
+            @includeWhen((Auth::user()->IsCooperator()), 'layouts.partials.hamburger.cooperator.links')
+            @includeWhen((Auth::user()->IsReligious()), 'layouts.partials.hamburger.religious.links')
             @includeWhen((Auth::user()->IsEstudiant()), 'layouts.partials.hamburger.estudiant.links')
             @includeWhen((Auth::user()->IsPresident()), 'layouts.partials.hamburger.president.links')
             @includeWhen((Auth::user()->IsSecretary()), 'layouts.partials.hamburger.secretary.links')
@@ -97,10 +96,10 @@
 
             @includeWhen((Auth::user()->IsAdmin()), 'layouts.partials.hamburger.admin.settings')
             @includeWhen((Auth::user()->IsDirector()), 'layouts.partials.hamburger.director.settings')
-            {{-- @includeWhen((Auth::user()->IsCandidate()), 'layouts.partials.hamburger.candidate.settings') --}}
-            @includeWhen((Auth::user()->IsCandidate()), 'layouts.partials.hamburger.cooperator.settings')
             @includeWhen((Auth::user()->IsCoordinator()), 'layouts.partials.hamburger.coordinator.settings')
             @includeWhen((Auth::user()->IsSubcoordinator()), 'layouts.partials.hamburger.subcoordinator.settings')
+            @includeWhen((Auth::user()->IsCooperator()), 'layouts.partials.hamburger.cooperator.settings')
+            @includeWhen((Auth::user()->IsReligious()), 'layouts.partials.hamburger.religious.settings')
             @includeWhen((Auth::user()->IsEstudiant()), 'layouts.partials.hamburger.estudiant.settings')
             @includeWhen((Auth::user()->IsPresident()), 'layouts.partials.hamburger.president.settings')
             @includeWhen((Auth::user()->IsSecretary()), 'layouts.partials.hamburger.secretary.settings')

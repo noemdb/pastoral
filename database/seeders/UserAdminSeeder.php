@@ -48,10 +48,10 @@ class UserAdminSeeder extends Seeder
         DB::table('rols')->insert(['pastoral_id'=>1,'area' => "FORMADORES",'rol' => "CATEQUISTA",'description' => "Formador Catequista",'finicial' => "20000101",'ffinal' => "20500101",'user_id' => $user_id,]);
 
          //Catequizando
-         $user_id = DB::table('users')->insertGetId(['name' => 'catequizando','email' => 'catequizando@catequizando.com','email_verified_at' => now(),'password' => bcrypt('catequizando'),]);
-         DB::table('teams')->insert(['name' => 'PastoralAmigoniana','user_id' => $user_id,'personal_team' => true,]);
-         DB::table('rols')->insert(['pastoral_id'=>1,'area' => "COMUNIDAD",'rol' => "CATEQUIZANDO",'description' => "Catequisando",'finicial' => "20000101",'ffinal' => "20500101",'user_id' => $user_id,]);
-        
+        $user_id = DB::table('users')->insertGetId(['name' => 'catequizando','email' => 'catequizando@catequizando.com','email_verified_at' => now(),'password' => bcrypt('catequizando'),]);
+        DB::table('teams')->insert(['name' => 'PastoralAmigoniana','user_id' => $user_id,'personal_team' => true,]);
+        DB::table('rols')->insert(['pastoral_id'=>1,'area' => "COMUNIDAD",'rol' => "CATEQUIZANDO",'description' => "Catequisando",'finicial' => "20000101",'ffinal' => "20500101",'user_id' => $user_id,]);
+    
          //Representante
         $user_id = DB::table('users')->insertGetId(['name' => 'representante','email' => 'representante@representante.com','email_verified_at' => now(),'password' => bcrypt('representante'),]);
         DB::table('teams')->insert(['name' => 'PastoralAmigoniana','user_id' => $user_id,'personal_team' => true,]);
