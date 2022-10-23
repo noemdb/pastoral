@@ -25,6 +25,7 @@ class CreateCurriculaTable extends Migration
             $table->boolean('status_build_promotion')->comment('Genera promoción');
             $table->string('title')->nullable()->comment('Descripción completa del titulo que se otorga');
             $table->text('profile')->nullable()->comment('Perfil');
+            $table->text('txt_contract_study')->nullable();
             $table->boolean('status')->comment('Estado');
             $table->string('color',12)->default('#e5e7eb')->nullable();
             $table->text('header')->nullable();

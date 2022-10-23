@@ -15,9 +15,8 @@ class CreateEnrollmentsTable extends Migration
     {
         Schema::create('enrollments', function (Blueprint $table) {
             $table->id();
-            $table->integer('pastoral_id')->default(1)->unsigned();
-            $table->string('representant_name')->comment('Nombre del representante');
-            $table->string('representant_ci')->comment('CI del representante');
+            $table->integer('pastoral_id')->default(1)->unsigned()->comment('Pastoral');
+            
             $table->string('name')->comment('Nombres');
             $table->string('lastname')->comment('Apellidos');
             $table->integer('citype_id')->unsigned()->default(1)->comment('Tipo de identificación');
@@ -25,17 +24,31 @@ class CreateEnrollmentsTable extends Migration
             $table->integer('curriculum_id')->unsigned()->comment('Plan de Estudio');
             $table->enum('gender',['Masculino', 'Femenino'])->nullable()->comment('Genero');//Másculino,Femenino
             $table->enum('laterality',['Izquierda(o)', 'Derecha(o)'])->nullable()->comment('Lateralidad');//Másculino,Femenino
+            
             $table->date('date_birth')->nullable()->comment('Fecha de nacimiento');
-            // $table->string('city_birth')->nullable()->comment('Ciudad de nacimiento');
-            // $table->string('town_hall_birth')->nullable()->comment('Municipio de nacimiento');
-            // $table->string('state_birth')->nullable()->comment('Estado de nacimiento');
-            // $table->string('country_birth')->nullable()->comment('País de nacimiento');
             $table->integer('country_id')->nullable()->comment('País de nacimiento');
             $table->integer('state_id')->nullable()->comment('Estado de nacimiento');
             $table->integer('city_id')->nullable()->comment('Ciudad de nacimiento');
+
             $table->string('dir_address')->nullable()->comment('Dirección de residencia');
+
+            $table->string('christening_place')->nullable()->comment('Lugar del bautizo');
+            $table->string('christening_date')->nullable()->comment('Fecha del bautizo');
+
             $table->string('phone')->nullable()->comment('Número de teléfono');
+            $table->string('extracathedra')->nullable()->comment('Actividad Extracatedra');
             $table->string('email')->nullable()->comment('Correo electrónico');
+            $table->string('institution')->nullable()->comment('Institución Educativa');
+            $table->string('academic_level')->nullable()->comment('Año académico');
+            $table->string('academic_section')->nullable()->comment('Sección');
+
+            $table->string('representant_name')->comment('Nombre del representante');
+            $table->string('representant_ci')->comment('CI del representante');
+            $table->enum('kinship',['Abuelo(a)','Padre/Madre','Tío(a)','Hermano(a)','Otro'])->nullable()->comment('Parentesco');
+            $table->string('profession')->nullable()->comment('Profesión');
+            
+            $table->string('representant_phone')->nullable()->comment('Número de teléfono del representante');
+            $table->string('representant_email')->nullable()->comment('Correo electrónico del representante');
             $table->string('twitter')->nullable()->comment('Twitter');
             $table->string('instagram')->nullable()->comment('Instagram');
             $table->string('whatsapp')->nullable()->comment('WhatsApp');
@@ -45,7 +58,7 @@ class CreateEnrollmentsTable extends Migration
             $table->boolean('status_patology')->nullable()->comment('Tratado por especialistas');
 
             $table->boolean('status')->default(true)->comment('Estado');
-            $table->string('description')->nullable();
+            $table->string('description')->nullable()->comment('Descripción');
             $table->string('observations')->nullable()->comment('Observaciones');
             $table->timestamps();
             // $table->foreign('citype_id')->references('id')->on('citypes')->onDelete('cascade')->onUpdate('cascade');

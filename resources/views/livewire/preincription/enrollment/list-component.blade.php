@@ -65,19 +65,25 @@
                             @include('livewire.preincription.enrollment.steps.institution')
                             @break
                         @case(3)
-                            @include('livewire.preincription.enrollment.steps.representants')
+                            @include('livewire.preincription.enrollment.steps.info')
                             @break
                         @case(4)
-                            @include('livewire.preincription.enrollment.steps.contact')
+                            @include('livewire.preincription.enrollment.steps.representants')
                             @break
                         @case(5)
-                            @include('livewire.preincription.enrollment.steps.estudiants')
+                            @include('livewire.preincription.enrollment.steps.contact')
                             @break
                         @case(6)
-                            @include('livewire.preincription.enrollment.steps.address')
+                            @include('livewire.preincription.enrollment.steps.estudiants')
                             @break
                         @case(7)
-                            @include('livewire.preincription.enrollment.steps.patologies')
+                            @include('livewire.preincription.enrollment.steps.estudiants2')
+                            @break
+                        @case(8)
+                            @include('livewire.preincription.enrollment.steps.address')
+                            @break
+                        @case(9)
+                            @include('livewire.preincription.enrollment.steps.extras')
                             @break
 
                         @default
@@ -92,10 +98,10 @@
                     <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
                         <x-jet-button type="button" class="mr-auto ml-1 bg-blue-500 " wire:click="home"> {{ __('Inicio') }} </x-jet-button>
                         @if (!$status_first)
-                            <x-jet-button type="button" class="ml-1" wire:click="back" :disabled="($status_first || $errors->any()) ? true : false "> {{ __('Anterior') }} </x-jet-button>
+                            <x-jet-button type="button" class="ml-1" wire:click="back" :disabled="$status_first"> {{ __('Anterior') }} </x-jet-button>
                         @endif
                         @if (!$status_last)
-                            <x-jet-button type="button" class="ml-1" wire:click="next" :disabled="($status_last || $errors->any()) ? true : false "> {{ __('Siguiente') }} </x-jet-button>
+                            <x-jet-button type="button" class="ml-1" wire:click="next" :disabled="$status_last"> {{ __('Siguiente') }} </x-jet-button>
                         @endif
                         @if ($status_last)
                                 <x-jet-button type="button" class="ml-1 bg-green-500 " wire:click="save"> {{ __('Registrar') }} </x-jet-button>

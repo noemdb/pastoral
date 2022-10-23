@@ -18,7 +18,7 @@ class Curriculum extends Model
 
     protected $fillable = [
         'pescolar_id','code','name','order','capacity','description','observations','status_build_promotion','title',
-        'profile','status','color','header','body','footer'
+        'profile','txt_contract_study','status','color','header','body','footer'
 	];
 	
 	protected $dates = ['created_at','updated_at'];
@@ -34,6 +34,7 @@ class Curriculum extends Model
 		'status_build_promotion' => 'Genera promosión',
 		'title' => 'Título',
 		'profile' => 'Perfil',
+		'txt_contract_study'=>'Contrato de Estudio',
 		'status' => 'Estado',
 		'color' => 'Color',
 		'header'=>'Tìtulo',

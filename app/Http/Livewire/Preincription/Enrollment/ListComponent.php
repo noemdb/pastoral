@@ -21,16 +21,15 @@ class ListComponent extends Component
 
     use LivewireAlert;
 
-    public $pastoral,$curriculum,$country,$state,$city,$country_id,$state_id,$city_id;
+    public $pastoral,$curriculum,$country,$state,$city;    
 
-    public $pastoral_id,$representant_ci,$representant_name,$citype_id,$laterality,$twitter,$whatsapp,$facebook,$ci,$patology,$lastname,$name,$curriculum_id;
-    public $gender,$date_birth,$dir_address,$phone;
-    public $email,$observations,$status,$status_nacionality,$status_patology,$description;
+    public $pastoral_id,$name,$lastname,$citype_id,$ci,$curriculum_id,$gender,$laterality,$date_birth,$country_id,$state_id,$city_id,$dir_address,$christening_place,$christening_date,$phone,$extracathedra,$email,$institution,$academic_level,$academic_section,$representant_name,$representant_ci,$representant_email,$kinship,$profession,$representant_phone,$twitter,$instagram,$whatsapp,$facebook,$patology,$status_nacionality,$status_patology,$status,$description,$observations;
 
     public $porcentage;
-    public $step,$limit_step=7;
+    public $step,$limit_step=9;
 
-    public $comment_enrollment,$pastorals_list,$pescolars_list,$curriculum_list,$citype_list,$gender_list,$laterality_list;
+    public $comment_enrollment,$pastorals_list,$pescolars_list,$curriculum_list,$citype_list,$gender_list,$laterality_list,$kinship_list;
+    public $academic_level_list,$academic_section_list;
     public $country_list,$state_list,$city_list;
 
     public $status_last,$status_first,$saveInto;
@@ -38,47 +37,84 @@ class ListComponent extends Component
     protected $listeners = [ 'confirmed' ];
 
     protected $rules = [
-                    'pastoral_id'=>'required',
-                    'curriculum_id'=>'required',
-                    'name'=>'required',
-                    'representant_ci'=>'required|numeric',
-                    'representant_name'=>'required',
-                    'lastname'=>'required',
-                    'citype_id'=>'required',
-                    'ci'=>'required|unique:enrollments|numeric',
-                    'gender'=>'required',
-                    'date_birth'=>'required|date',
-                    'city_id'=>'required',
-                    'state_id'=>'required',
-                    'country_id'=>'required',
-                    'dir_address'=>'required',
-                    'phone'=>'required',
-                    'email'=>'required|email',
-                    'status_nacionality'=>'required',
-                    'status_patology'=>'required',
+        'pastoral_id'=>'required|integer',
+        'name'=>'required|string',
+        'lastname'=>'required|string',
+        'citype_id'=>'required|integer',
+        'ci'=>'required|string',
+        'curriculum_id'=>'required|integer',
+        'gender'=>'required|string',
+        'laterality'=>'required|string',
+        'date_birth'=>'required|date',
+        'country_id'=>'required|integer',
+        'state_id'=>'nullable|integer',
+        'city_id'=>'nullable|integer',
+        'dir_address'=>'required|string',
+        'christening_place'=>'required|string',
+        'christening_date'=>'required|date',
+        'phone'=>'nullable|string',
+        'extracathedra'=>'nullable|string',
+        'email'=>'required|email',
+        'institution'=>'required|string',
+        'academic_level'=>'required|string',
+        'academic_section'=>'required|string',
+        'representant_name'=>'required|string',
+        'representant_ci'=>'required|numeric',
+        'representant_phone'=>'nullable|string',
+        'representant_email'=>'nullable|string',
+        'kinship'=>'required|string',
+        'profession'=>'nullable|string',        
+        'twitter'=>'nullable|string',
+        'instagram'=>'nullable|string',
+        'whatsapp'=>'nullable|string',
+        'facebook'=>'nullable|string',
+        'patology'=>'nullable|string',
+        'status_nacionality'=>'required|string',
+        'status_patology'=>'required|string',
+        'description'=>'nullable|string',
+        'observations'=>'nullable|string',
     ];
 
     protected function validationAttributes()
     {
         return [
-                'pastoral_id' => $this->comment_enrollment['pastoral_id'],
-                'curriculum_id' => $this->comment_enrollment['curriculum_id'],
-                'representant_ci'=>$this->comment_enrollment['representant_ci'],
-                'representant_name'=>$this->comment_enrollment['representant_name'],
-                'name' =>$this->comment_enrollment['name'],
-                'lastname' =>$this->comment_enrollment['lastname'],
-                'citype_id' =>$this->comment_enrollment['citype_id'],
-                'ci' =>$this->comment_enrollment['ci'],
-                'gender' =>$this->comment_enrollment['gender'],
-                'date_birth' =>$this->comment_enrollment['date_birth'],
-                'city_id' =>$this->comment_enrollment['city_id'],
-                'state_id' =>$this->comment_enrollment['state_id'],
-                'country_id' =>$this->comment_enrollment['country_id'],
-                'dir_address' =>$this->comment_enrollment['dir_address'],
-                'phone' =>$this->comment_enrollment['phone'],
-                'email' =>$this->comment_enrollment['email'],
-                'status_nacionality' =>$this->comment_enrollment['status_nacionality'],
-                'status_patology' =>$this->comment_enrollment['status_patology'],
+            'pastoral_id'=>$this->comment_enrollment['pastoral_id'],
+            'name'=>$this->comment_enrollment['name'],
+            'lastname'=>$this->comment_enrollment['lastname'],
+            'citype_id'=>$this->comment_enrollment['citype_id'],
+            'ci'=>$this->comment_enrollment['ci'],
+            'curriculum_id'=>$this->comment_enrollment['curriculum_id'],
+            'gender'=>$this->comment_enrollment['gender'],
+            'laterality'=>$this->comment_enrollment['laterality'],
+            'date_birth'=>$this->comment_enrollment['date_birth'],
+            'country_id'=>$this->comment_enrollment['country_id'],
+            'state_id'=>$this->comment_enrollment['state_id'],
+            'city_id'=>$this->comment_enrollment['city_id'],
+            'dir_address'=>$this->comment_enrollment['dir_address'],
+            'christening_place'=>$this->comment_enrollment['christening_place'],
+            'christening_date'=>$this->comment_enrollment['christening_date'],
+            'phone'=>$this->comment_enrollment['phone'],
+            'extracathedra'=>$this->comment_enrollment['extracathedra'],
+            'email'=>$this->comment_enrollment['email'],
+            'institution'=>$this->comment_enrollment['institution'],
+            'academic_level'=>$this->comment_enrollment['academic_level'],
+            'academic_section'=>$this->comment_enrollment['academic_section'],
+            'representant_name'=>$this->comment_enrollment['representant_name'],
+            'representant_ci'=>$this->comment_enrollment['representant_ci'],
+            'representant_phone'=>$this->comment_enrollment['representant_phone'],
+            'representant_email'=>$this->comment_enrollment['representant_email'],
+            'kinship'=>$this->comment_enrollment['kinship'],
+            'profession'=>$this->comment_enrollment['profession'],
+            'twitter'=>$this->comment_enrollment['twitter'],
+            'instagram'=>$this->comment_enrollment['instagram'],
+            'whatsapp'=>$this->comment_enrollment['whatsapp'],
+            'facebook'=>$this->comment_enrollment['facebook'],
+            'patology'=>$this->comment_enrollment['patology'],
+            'status_nacionality'=>$this->comment_enrollment['status_nacionality'],
+            'status_patology'=>$this->comment_enrollment['status_patology'],
+            'status'=>$this->comment_enrollment['status'],
+            'description'=>$this->comment_enrollment['description'],
+            'observations'=>$this->comment_enrollment['observations'],
         ];
     }
 
@@ -96,8 +132,11 @@ class ListComponent extends Component
         $this->comment_enrollment = Enrollment::COLUMN_COMMENTS;
         $this->pastorals_list = Pastoral::all()->pluck('name','id')->toArray();
         $this->citype_list = Citype::all()->pluck('name','id')->toArray();
-        $this->gender_list = ['Femenino'=>'Femenino','Masculino'=>'Masculino'];
-        $this->laterality_list = ['Izquierdo(a)'=>'Izquierdo(a)','Derecho(a)'=>'Derecho(a)','Ambidextro(a)'=>'Ambidextro(a)'];
+        $this->gender_list = Enrollment::gender_list();
+        $this->laterality_list = Enrollment::laterality_list();
+        $this->kinship_list = Enrollment::kinship_list();
+        $this->academic_level_list = Enrollment::academic_level_list();
+        $this->academic_section_list = Enrollment::academic_section_list();
         $this->country_list = Country::all()->pluck('name','id')->toArray();
         $this->state_list = Array();
         $this->city_list = Array();
@@ -132,20 +171,16 @@ class ListComponent extends Component
         $this->status();
     }
 
-    public function loadInstitution($id)
+    public function updatedPastoralId()
     {
-        $this->pastoral = Pastoral::find($id); 
-        if ($this->pastoral) {
-            $this->pastoral_id = $this->pastoral->id;
-            $this->pescolars_list = Pescolar::where('pastoral_id',$this->pastoral_id)->pluck('name','id')->toArray();
-            $this->curriculum_list = $this->pastoral->curriculum_list()->toArray();
-            //dd($this->pescolars_list,$this->curriculum_list,$id);
-        }
+        $this->pastoral = Pastoral::findOrfail($this->pastoral_id);
+        $this->pescolars_list = Pescolar::where('pastoral_id',$this->pastoral_id)->pluck('name','id')->toArray();
+        $this->curriculum_list = $this->pastoral->curriculum_list()->toArray();
     }
 
-    public function loadCurriculum($id)
+    public function updatedCurriculumId()
     {
-        $this->curriculum = Curriculum::find($id); //dd($this->curriculum,$id);
+        $this->curriculum = Curriculum::findOrfail($this->curriculum_id);
     }
 
     public function render()
@@ -183,18 +218,18 @@ class ListComponent extends Component
         $this->reset();
     }
 
-    public function loadState($id)
+    // public function loadState($id)
+    public function updatedCountryId($id)
     {
-        $this->country = Country::find($id);
-        $this->country_id = ($this->country) ? $this->country->id : null ;
-        $this->state_list = ($this->country) ? State::where('country_id',$id)->orderBy('name')->pluck('name','id')->toArray() : null ;
+        $this->country = Country::findOrFail($this->country_id);
+        $this->state_list = State::where('country_id',$id)->orderBy('name')->pluck('name','id')->toArray();
     }
 
-    public function loadCity($id)
+    // public function loadCity($id)
+    public function updatedStateId()
     {
-        $this->state = State::find($id);
-        $this->state_id = ($this->state) ? $this->state->id : null ;
-        $this->city_list = ($this->state) ? City::where('state_id',$id)->orderBy('name')->pluck('name','id')->toArray() : null ;
+        $this->state = State::findOrFail($this->state_id);
+        $this->city_list = City::where('state_id',$this->state_id)->orderBy('name')->pluck('name','id')->toArray() ;
     }
 
     public function confirmed()

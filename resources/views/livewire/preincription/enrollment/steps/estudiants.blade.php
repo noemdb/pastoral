@@ -38,19 +38,6 @@
             @error('gender') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
 
-
-        <div class="mb-4">
-            <x-jet-label for="laterality" value="{{ __($comment_enrollment['laterality']) }}" />
-            <x-select name="laterality" wire:model="laterality" id="laterality" wire:model.lazy="laterality" :options="$laterality_list" class="w-full" />
-            @error('laterality') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
-        </div>
-
-        <div class="mb-4">
-            <x-jet-label for="date_birth" value="{{ __($comment_enrollment['date_birth']) }}" />
-            <x-input type="date" wire:model.lazy="date_birth" name="date_birth" class="block mt-1 w-full" />
-            @error('date_birth') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
-        </div>
-
     </div>
 
 </div>

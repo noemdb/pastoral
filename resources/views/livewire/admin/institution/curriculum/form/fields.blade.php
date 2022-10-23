@@ -68,6 +68,13 @@
     </div>
 
     <div class="mb-4">
+        @php $name = 'txt_contract_study'; $model = 'curriculum.'.$name; $key = Str::random(10);@endphp
+        <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
+        <x-textarea wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" id="{{$model}}" class="block mt-1 w-full" rows="2"/>
+        @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+    </div>
+
+    <div class="mb-4">
         @php $name = 'status'; $model = 'curriculum.'.$name; $key = Str::random(10);@endphp
         <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
         <x-select  wire:key="{{$key}}" wire:model.defer="{{$model}}" :options="[1=>'SI',0=>'NO']" class="block mt-1 w-full" rows="2" />

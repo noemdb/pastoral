@@ -19,6 +19,7 @@ trait CurriculumRules
         'curriculum.status_build_promotion' => 'required|boolean',
         'curriculum.title' => 'required|string', //
         'curriculum.profile' => 'required|string', //
+        'curriculum.txt_contract_study' => 'nullable|string', //
         'curriculum.status' => 'required|boolean',
         'curriculum.color' => 'nullable|string',
         'curriculum.header' => 'nullable|string',
@@ -39,6 +40,7 @@ trait CurriculumRules
             'curriculum.status_build_promotion' => $this->list_comment['status_build_promotion'],
             'curriculum.title' => $this->list_comment['title'],
             'curriculum.profile' => $this->list_comment['profile'],
+            'curriculum.txt_contract_study' => $this->list_comment['txt_contract_study'],
             'curriculum.status' => $this->list_comment['status'],
             'curriculum.color' => $this->list_comment['color'],
             'curriculum.header' => $this->list_comment['header'],

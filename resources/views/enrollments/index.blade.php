@@ -21,8 +21,8 @@
                         <br>
                         <span class=" font-semibold text-gray-400 text-sm">Formación para el catesismo de Primera Comunión y Confirmación </span> 
                     </h2>
-                                       
 
+                    
                 </div>
 
                 <div class=" ml-2">

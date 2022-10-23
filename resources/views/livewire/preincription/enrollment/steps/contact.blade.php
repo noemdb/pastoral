@@ -5,18 +5,18 @@
         <div class="font-semibold text-xl text-gray-800 leading-tight dark:text-gray-100">
             Datos de contacto
         </div>
-
-
+        
+        
         <div class="mb-4">
-            <x-jet-label for="phone" value="{{ __($comment_enrollment['phone']) }}" />
-            <x-input wire:model.lazy="phone" name="phone" class="block mt-1 w-full " />
-            @error('phone') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+            <x-jet-label for="representant_phone" value="{{ __($comment_enrollment['representant_phone']) }}" />
+            <x-input wire:model.lazy="representant_phone" name="representant_phone" class="block mt-1 w-full " />
+            @error('representant_phone') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
 
         <div class="mb-4">
-            <x-jet-label for="email" value="{{ __($comment_enrollment['email']) }}" />
-            <x-input wire:model.lazy="email" name="email" class="block mt-1 w-full" />
-            @error('email') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+            <x-jet-label for="representant_email" value="{{ __($comment_enrollment['representant_email']) }}" />
+            <x-input wire:model.lazy="representant_email" name="representant_email" class="block mt-1 w-full" />
+            @error('representant_email') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
 
         <div class="mb-4">

@@ -13,7 +13,7 @@
 		</p>
 		<hr>
 		<p>
-			Una vez culminado el registro, tus datos serán evaluados y posteriormente se realizará la inscripción.
+			Una vez culminado el registro, tus datos serán evaluados y posteriormente se formalizará tu inscripción.
 		</p>
 
 	</div>

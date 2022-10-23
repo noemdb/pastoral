@@ -26,5 +26,27 @@ class PescolarSeeder extends Seeder
                 "description"=>"AÑO CATEQUÉTICO 2022-2023",
             ]
         );
+
+        DB::table('pescolars')->insert(
+            [
+                "pastoral_id"=>1,
+                "code"=>"POSTPCFLA 22-23",
+                "name"=>"ITINERARIO POSTULANTE AMIGONIANO",
+                "finicial"=>Carbon::now()->startOfYear()->format('Y-m-d'),
+                "ffinal"=>Carbon::now()->endOfYear()->format('Y-m-d'),
+                "description"=>"AÑO DE FORMACIÒN 2022-2023",
+            ]
+        );
+
+        DB::table('pescolars')->insert(
+            [
+                "pastoral_id"=>1,
+                "code"=>"COOPCFLA 22-23",
+                "name"=>"ITINERARIO COOPERADOR AMIGONIANO",
+                "finicial"=>Carbon::now()->startOfYear()->format('Y-m-d'),
+                "ffinal"=>Carbon::now()->endOfYear()->format('Y-m-d'),
+                "description"=>"AÑO DE FORMACIÒN 2022-2023",
+            ]
+        );        
     }
 }

@@ -13,14 +13,16 @@
 			"path": "resources/views/admin"
 		},
 		{
-			"name": "livewire",
-			"path": "resources/views/livewire"
-		},
-		{
+			"name": "views",
 			"path": "resources/views"
 		},
 		{
+			"name": "layouts",
 			"path": "resources/views/layouts"
+		},
+		{
+			"name": "livewire",
+			"path": "resources/views/livewire"
 		}
 	],
 	"settings": {}
