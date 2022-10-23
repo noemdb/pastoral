@@ -5,7 +5,7 @@
                 <div class="pt-32 mb-12 text-center lg:pt-48 header-hero-content">
                     <h2 class="text-4xl font-bold leading-tight text-white header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Pastoral Amigoniana San Felipe.</h2>
                     <h3 class="mb-3 text-4xl font-light text-white header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
-                        Formación Catequética Amigoniana Primera Comunión y Confirmación.
+                        Formación Catequética Amigoniana<br>Primera Comunión y Confirmación.
                     </h3>
                     <p class="mb-8 text-white text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
                         Identidad y Carisma Amigoniana en Acción. Fortaleciendo los Valores Humano-Cristiano a través de la Pedagogía Amigoniana.
