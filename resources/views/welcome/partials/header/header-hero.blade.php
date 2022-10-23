@@ -3,28 +3,17 @@
         <div class="justify-center row">
             <div class="w-full lg:w-2/3">
                 <div class="pt-32 mb-12 text-center lg:pt-48 header-hero-content">
-                    <h3 class="text-4xl font-light leading-tight text-white header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Pastoral Fray Luís Amigó.</h3>
+                    <h3 class="text-4xl font-light leading-tight text-white header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Pastoral Amigoniana San Felipe.</h3>
                     <h2 class="mb-3 text-4xl font-bold text-white header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
-                        Formación Catequética para la Primera Comunión y Confirmación.
+                        Formación Catequética Amigoniana Primera Comunión y Confirmación y en la descripcion colocas.
                     </h2>
                     <p class="mb-8 text-white text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
-                        Enseñanza del catecismo de la iglesia catolica para conocer e interiorizar el significado del misterio de Cristo
-                        para que se le pueda recibir con fe y devoción, además de sellar y fortalecer al creyente para que viva como un hijo de Dios,
-                        a través del poder del Espíritu Santo.
+                        Identidad y Carisma Amigoniana en Acción. Fortaleciendo los Valores Humano-Cristiano a través de la Pedagogía Amigoniana.
                     </p>
                     <a href="#objective" class="border-2 rounded p-2 text-white wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s">Comenzamos</a>
                 </div> <!-- header hero content -->
             </div>
         </div> <!-- row -->
-
-        {{-- <div class="justify-center row">
-            <div class="w-full lg:w-2/3">
-                <div class="text-center header-hero-image wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">                            
-                    <img src="assets/images/header-hero.png" alt="hero">
-                </div> 
-            </div>
-        </div> --}}
-
 
         <div class="justify-center row">
             <div class="w-full h-full lg:w-1/3">

@@ -31,7 +31,7 @@ class Curriculum extends Model
 		'capacity' => 'Capacidad',
 		'description'=>'Descripción',
         'observations'=>'Observaciones',
-		'status_build_promotion' => 'Genera promosión',
+		'status_build_promotion' => 'Genera promoción',
 		'title' => 'Título',
 		'profile' => 'Perfil',
 		'txt_contract_study'=>'Contrato de Estudio',
