@@ -3,10 +3,10 @@
         <div class="justify-center row">
             <div class="w-full lg:w-2/3">
                 <div class="pt-32 mb-12 text-center lg:pt-48 header-hero-content">
-                    <h3 class="text-4xl font-light leading-tight text-white header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Pastoral Amigoniana San Felipe.</h3>
-                    <h2 class="mb-3 text-4xl font-bold text-white header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
+                    <h2 class="text-4xl font-bold leading-tight text-white header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Pastoral Amigoniana San Felipe.</h2>
+                    <h3 class="mb-3 text-4xl font-light text-white header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
                         Formación Catequética Amigoniana Primera Comunión y Confirmación.
-                    </h2>
+                    </h3>
                     <p class="mb-8 text-white text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
                         Identidad y Carisma Amigoniana en Acción. Fortaleciendo los Valores Humano-Cristiano a través de la Pedagogía Amigoniana.
                     </p>
