@@ -5,7 +5,7 @@
                 <nav class="flex items-center justify-between navbar navbar-expand-lg">
                     <a class="mr-4 navbar-brand " href="{{route('welcome')}}">
                         {{-- <img src="assets/images/logo.svg" alt="Logo"> --}}
-                        <img src="assets/images/logos/logoLeft.svg" alt="Logo" style="max-width: 15rem !important; max-height: 6rem !important">
+                        <img src="assets/images/logos/logoSimple.svg" alt="Logo" style="max-width: 15rem !important; max-height: 6rem !important">
                     </a>
                     <button class="block navbar-toggler focus:outline-none lg:hidden" type="button" data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="toggler-icon"></span>

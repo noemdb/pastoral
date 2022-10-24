@@ -13,7 +13,7 @@ $(function () {
         var scroll = $(window).scrollTop();
         if (scroll < 20) {
             $(".navbar-area").removeClass("sticky");
-            $(".navbar .navbar-brand img").attr("src", "assets/images/logos/logoButton.svg");
+            $(".navbar .navbar-brand img").attr("src", "assets/images/logos/logoSimple.svg");
         } else {
             $(".navbar-area").addClass("sticky");
             $(".navbar .navbar-brand img").attr("src", "assets/images/logos/logoLeft.svg");
