@@ -1,5 +1,6 @@
 <div id="home" class="header-hero" style="background-image: url(assets/images/banner-bg.svg)">
     <div class="container">
+        
         <div class="justify-center row">
             <div class="w-full lg:w-2/3">
                 <div class="pt-32 mb-12 text-center lg:pt-48 header-hero-content">

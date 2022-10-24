@@ -79,6 +79,7 @@ class Kernel extends HttpKernel
         'is_representant'=> 'App\Http\Middleware\App\IsRepresentant',
         'is_cooperator'=> 'App\Http\Middleware\App\IsCooperator',
         'is_postulant'=> 'App\Http\Middleware\App\IsPostulant',
+        'is_candidate'=> 'App\Http\Middleware\App\IsCandidate',
         
     ];
 }

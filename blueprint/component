@@ -15,3 +15,6 @@ php artisan make:component Elements/Stepper/ProgressBar
 php artisan make:component Elements/Crud/sortBy
 
 php artisan make:component ModeDarkBtn
+php artisan make:component appLogoSimple
+php artisan make:component appLogoButton
+php artisan make:component appLogoLeft

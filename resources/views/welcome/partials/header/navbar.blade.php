@@ -5,6 +5,7 @@
                 <nav class="flex items-center justify-between navbar navbar-expand-lg">
                     <a class="mr-4 navbar-brand " href="{{route('welcome')}}">
                         {{-- <img src="assets/images/logo.svg" alt="Logo"> --}}
+                        {{-- <img src="assets/images/logos/frayluis/001.svg" alt="Logo" style="max-width: 15rem !important; max-height: 6rem !important"> --}}
                         <img src="assets/images/logos/logoSimple.svg" alt="Logo" style="max-width: 15rem !important; max-height: 6rem !important">
                     </a>
                     <button class="block navbar-toggler focus:outline-none lg:hidden" type="button" data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,22 +40,15 @@
                             <li class="nav-item">
                                 <a class="page-scroll" href="#footer">Comunidad</a>
                             </li>
+                            <li class="nav-item">
+                                @include('welcome.partials.header.access.links')
+                            </li>
                         </ul>
                     </div> <!-- navbar collapse -->
                     
-                    <div class="absolute right-0 hidden mt-2 mr-24 navbar-btn sm:inline-block lg:mt-0 lg:static lg:mr-0">
-                        @auth
-                            <a href="{{ route('dashboard') }}" class="border-2 rounded p-2">Dashboard</a>
-                        @else
-                            {{-- <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Ingresar</a> --}}
-                            <a class="border-2 rounded p-2 text-white" data-scroll-nav="0" href="{{ route('login') }}" rel="nofollow">Acceder</a>
-
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="border-2 rounded p-2">Registrar</a>
-                            @endif
-                        @endauth
-                        {{-- <a class="main-btn gradient-btn-2" data-scroll-nav="0" href="#" rel="nofollow">Acceder</a> --}}
-                    </div>
+                    {{-- <div class="absolute right-0 hidden mt-2 mr-24 navbar-btn sm:inline-block lg:mt-0 lg:static lg:mr-0"> --}}
+                        {{-- @include('welcome.partials.header.access.links') --}}
+                    {{-- </div> --}}
                 </nav> <!-- navbar -->
             </div>
         </div> <!-- row -->

@@ -93,12 +93,22 @@ trait TraitsMiddleware {
         }
     }
 
+    public function IsCandidate()
+    {
+        if ($this->status) {    
+            $arr_area = ['ASPIRANTADO'];                    
+            $arr_rol = ['ASPIRANTE'];                    
+            return  $this->hasAreRol($arr_area,$arr_rol);
+        }
+    }
+
     public function getPrefixAttribute()
     {
         $prefix = ($this->isAdmin()) ? 'admin' : null ;
         $prefix = ($this->IsDirector()) ? 'director' : $prefix ;
         $prefix = ($this->IsCooperator()) ? 'cooperator' : $prefix ;
         $prefix = ($this->IsPostulant()) ? 'postulant' : $prefix ;
+        $prefix = ($this->IsCandidate()) ? 'candidate' : $prefix ;
         $prefix = ($this->IsCoordinator()) ? 'coordinator' : $prefix ;
         $prefix = ($this->IsSubcoordinator()) ? 'subcoordinator' : $prefix ;
         $prefix = ($this->IsEstudiant()) ? 'estudiant' : $prefix ;
