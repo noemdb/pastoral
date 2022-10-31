@@ -97,8 +97,11 @@
 
                 <td class="{{ $class['action'] ?? '' }}">
 
-                    <div class="flex items-center justify-center justify-between mb-3 shadow">
-                        <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
+                    <div class="flex items-center justify-center mb-3 shadow">
+                        <x-elements.form.button-incription class="mr-2" wire:key="enrollment-incription-{{$enrollment->id}}" wire:click="inscription({{ $enrollment->id }})" >
+                            <x-icon-list class="w-4 h-4 mr-0.5" />
+                        </x-elements.form.button-incription>
+                        <div class="inline-flex hover:shadow-lg focus:shadow-lg" role="group">
                             <x-elements.form.button-edit wire:key="enrollment-edit-{{$enrollment->id}}" wire:click="edit({{ $enrollment->id }})" >
                                 <x-icon-pen class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-edit>

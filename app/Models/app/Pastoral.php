@@ -46,6 +46,11 @@ class Pastoral extends Model
         return Pastoral::pluck('name','id');
     }
 
+    public static function pescolars_list() 
+    {
+        return Pastoral::select('pescolars.id','pescolars.name')->pluck('name','id')->join('pescolars', 'pastorals.id', '=', 'pescolars.pastoral_id')->pluck('id','name');
+    }
+
     public function curriculum_list() /* usada para llenar los objetos de formularios select*/
     {
         $list = Curriculum::select('curricula.*')

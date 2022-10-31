@@ -5,6 +5,7 @@ php artisan make:component Elements/Form/button
 
 php artisan make:component Elements/Form/button-edit
 php artisan make:component Elements/Form/button-del
+php artisan make:component Elements/Form/button-incription
 
 php artisan make:component Elements/Form/button-ini
 php artisan make:component Elements/Form/button-mid

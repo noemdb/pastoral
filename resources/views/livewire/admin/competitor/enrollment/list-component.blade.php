@@ -34,6 +34,15 @@
             </div>
     
         @endif
+
+        @if ($modeIncriptions)
+    
+            <div class="mb-4 pb-4">
+                @include('livewire.admin.competitor.enrollment.form.inscriptions.create')...
+                {{-- /home/nuser/code/pastoral/resources/views/livewire/admin/competitor/enrollment/form/inscriptions/create.blade.php --}}
+            </div>
+    
+        @endif
     
     
     

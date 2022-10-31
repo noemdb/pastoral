@@ -18,6 +18,8 @@ class Inscription extends Model
     protected $dates = ['created_at','updated_at'];
 
     const COLUMN_COMMENTS = [
+        'pastoral_id' => 'Institución',
+        'pescolar_id' => 'Período de Formación',
         'tinscription_id' => 'Tipo',
         'section_id' => 'Grupo',
         'estudiant_id' => 'Estudiante',

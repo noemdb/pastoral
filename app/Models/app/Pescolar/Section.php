@@ -40,15 +40,20 @@ class Section extends Model
         return "{$this->code} {$this->name}";
     }
 
-    public static function section_list_fullname() 
+    public static function section_list_fullname($pastoral_id = null, $pescolar_id = null, $curriculum_id = null) 
     {
         $sections = Section::select('sections.id')
             ->SelectRaw(' pastorals.name || " - " || pescolars.name || " - " || curricula.name || " - " || levels.name || " - " || sections.name as name ')
             ->join('levels', 'levels.id', '=', 'sections.level_id')
             ->join('curricula', 'curricula.id', '=', 'levels.curriculum_id')
             ->join('pescolars', 'pescolars.id', '=', 'curricula.pescolar_id')
-            ->join('pastorals', 'pastorals.id', '=', 'pescolars.pastoral_id')
-            ->pluck('name','id');
+            ->join('pastorals', 'pastorals.id', '=', 'pescolars.pastoral_id');
+
+        $sections = (isset($pastoral_id)) ? $sections->where('pastorals.id',$pastoral_id) : $sections;
+        $sections = (isset($pescolar_id)) ? $sections->where('pescolars.id',$pescolar_id) : $sections;
+        $sections = (isset($curriculum_id)) ? $sections->where('curricula.id',$curriculum_id) : $sections;
+
+        $sections = $sections->pluck('name','id');
         return $sections;
     }
 
