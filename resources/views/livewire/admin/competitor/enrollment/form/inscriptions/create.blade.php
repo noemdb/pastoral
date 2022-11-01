@@ -14,7 +14,7 @@
         
         <div class="grid grid-cols-3 gap-4">
             <div>@include('livewire.admin.competitor.enrollment.form.representants.fields')</div>
-            {{-- <div>@include('livewire.admin.competitor.enrollment.form.estudiants.fields')</div> --}}
+            <div>@include('livewire.admin.competitor.enrollment.form.estudiants.fields')</div>
             {{-- <div>@include('livewire.admin.competitor.enrollment.form.inscriptions.fields')</div> --}}
         </div>
 

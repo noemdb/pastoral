@@ -12,7 +12,7 @@ class Enrollment extends Model
     use HasFactory;
     use EnrollmentRelations;
 
-    protected $dates = ['created_at','updated_at'];
+    protected $dates = ['date_birth','created_at','updated_at'];
 
     protected $fillable = [
         'pastoral_id','name','lastname','citype_id','ci','curriculum_id','gender','laterality','date_birth','country_id','state_id','city_id','dir_address','christening_place','christening_date','phone','extracathedra','email','institution','academic_level','academic_section','representant_name','representant_ci','representant_email','kinship','profession','representant_phone','twitter','instagram','whatsapp','facebook','patology','status_nacionality','status_patology','status','description','observations',

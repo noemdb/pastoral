@@ -38,7 +38,7 @@ trait EnrollmentRules
         'status_patology' => 'nullable|string',
         'status' => 'nullable|string',
         'description' => 'nullable|string',
-        'observations' => 'nullable|string'
+        'observations' => 'nullable|string',
     ];
 
     protected function validationAttributes()

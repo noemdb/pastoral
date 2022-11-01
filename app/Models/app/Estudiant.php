@@ -30,7 +30,14 @@ class Estudiant extends Model
         'dir_address'=>'Direccón de residencia',
         'phone'=>'Teléfono',
         'email'=>'Correo Electrónico',
-        'status_nacionality'=>'Nacionalizado'
+        'status_nacionality'=>'Nacionalizado',
+        'laterality'=>'Lateralidad',
+        'christening_place'=>'Lugar del bautizo',
+        'christening_date'=>'Fecha del bautizo',
+        'extracathedra'=>'Actividad Extracatedra',
+        'institution'=>'Institución Educativa',
+        'academic_level'=>'Año académico',
+        'academic_section'=>'Sección',
     ];
 
     public function getFullNameAttribute()
@@ -67,6 +74,22 @@ dir_address
 phone
 email
 status_nacionality
+
+laterality
+christening_place
+christening_date
+extracathedra
+institution
+academic_level
+academic_section
+
+'laterality'=>'Lateralidad'
+'christening_place'=>'Lugar del bautizo'
+'christening_date'=>'Fecha del bautizo'
+'extracathedra'=>'Actividad Extracatedra'
+'institution'=>'Institución Educativa'
+'academic_level'=>'Año académico'
+'academic_section'=>'Sección'
 
 'user_id' => 'user_id'
 'representant_id' => 'representant_id'

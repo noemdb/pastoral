@@ -1,5 +1,6 @@
 {{-- 'user_id','citype_id','ci','name','phone','email','whatsapp','telegram','twitter','instagram','status_adviders' --}}
-
+<div class="border rounded bg-white shadow p-2">
+<h3 class="font-semibold">Representante</h3>
 <div class="grid grid-cols-2 gap-4">
     
     <div class="mb-4">
@@ -65,4 +66,5 @@
         @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
     </div>
 
+</div>
 </div>

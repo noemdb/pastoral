@@ -23,6 +23,10 @@ use App\Models\app\Pescolar\Level;
 use App\Models\app\Pescolar\Section;
 use Illuminate\Support\Facades\Validator;
 
+use App\Models\app\Word\City;
+use App\Models\app\Word\State;
+use App\Models\app\Word\Country;
+
 class ListComponent extends Component
 {
     use WithPagination;
@@ -32,9 +36,15 @@ class ListComponent extends Component
 
     public Enrollment $enrollment;
 
-    public Representant $representant;
-    public Estudiant $estudiant;
-    public Inscription $inscription;
+    // public Representant $representant;
+    // public Estudiant $estudiant;
+    // public Inscription $inscription;
+
+    public Array  $representant;
+    public Array  $estudiant;
+    public Array  $inscription;
+
+    public $city,$state,$country;
 
     public $tinscription_id,$estudiant_id,$observations;
 
@@ -52,7 +62,7 @@ class ListComponent extends Component
 
     public $status_last,$status_first,$saveInto;
 
-    public $curricula_list,$pastorals_list,$pescolars_list,$curriculum_list,$levels_list,$section_list,$citype_list;
+    public $curricula_list,$pastorals_list,$pescolars_list,$curriculum_list,$levels_list,$section_list,$citype_list,$genders_list,$country_list;
 
     protected $listeners = [ 'remove' ];
 
@@ -72,10 +82,12 @@ class ListComponent extends Component
 
         $this->pastorals_list = Pastoral::pastorals_list()->toArray();
         $this->tinscription_list = Tinscription::tinscription_list()->toArray();
+        $this->genders_list = ['Masculino'=>'Masculino', 'Femenino'=>'Femenino'];
+        $this->country_list = Country::all()->pluck('name','id')->toArray();
 
-        $this->representant = new Representant;
-        $this->estudiant = new Estudiant;
-        $this->inscription = new Inscription;
+        // $this->representant = new Representant;
+        // $this->estudiant = new Estudiant;
+        // $this->inscription = new Inscription;
     }
 
     public function render()
@@ -149,6 +161,7 @@ class ListComponent extends Component
 
     public function closeCreateMode()
     {
+        /////////////////////////////////////
         $this->modeCreate = false;
     }
 
@@ -212,9 +225,40 @@ class ListComponent extends Component
             $this->enrollment = $enrollment;
             $this->enrollment_id = $enrollment->id;
 
-            $this->representant->fill($this->enrollment->toArray()); //dd($this->representant);
+            $representant = new Representant;
 
-            $this->estudiant->fill($this->enrollment->toArray()); //dd($this->estudiant);            
+            $this->representant = [
+                    'citype_id' =>$this->enrollment->citype_id,
+                    'ci' =>$this->enrollment->representant_ci,
+                    'name'=>$this->enrollment->representant_name,
+                    'phone'=>$this->enrollment->representant_phone,
+                    'email'=>$this->enrollment->representant_email,
+                    'whatsapp'=>$this->enrollment->whatsapp,
+                    'twitter'=>$this->enrollment->twitter,
+                    'instagram'=>$this->enrollment->instagram,
+            ];
+
+            $estudiant = new Estudiant;
+
+            $this->estudiant = [
+                    'citype_id' =>$this->enrollment->citype_id,
+                    'ci' =>$this->enrollment->representant_ci,
+                    'name'=>$this->enrollment->representant_name,
+                    'lastname'=>$this->enrollment->lastname,
+                    'gender'=>$this->enrollment->gender,
+                    'date_birth'=>$this->enrollment->date_birth->format('Y-m-d'),
+                    'country_id'=>$this->enrollment->country_id,
+                    'state_id'=>$this->enrollment->state_id,
+                    'city_id'=>$this->enrollment->city_id,
+                    'dir_address'=>$this->enrollment->dir_address,
+                    'phone'=>$this->enrollment->phone,
+                    'email'=>$this->enrollment->email,
+                    'status_nacionality'=>$this->enrollment->status_nacionality,
+            ];
+            // $estudiant->fill($this->enrollment->toArray()); //dd($estudiant);
+            // $this->estudiant = $estudiant->toArray(); //dd($this->representant);
+
+           // $this->estudiant->fill($this->enrollment->toArray()); //dd($this->estudiant);            
 
             $this->modeIncriptions = true;
             $this->modeEdit = true;
