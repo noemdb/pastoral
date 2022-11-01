@@ -3,23 +3,31 @@
         <div class="flex justify-between w1/2">
             <h1 class="block font-semibold text-lg text-gray-700 dark:text-gray-100">Registrar <span class="text-gray-500">Inscripción.</span></h1>
         </div>
-        <button type="button" @click="open = false" wire:click="closeCreateMode" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-900 ">
+        <button type="button" @click="open = false" wire:click="close" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-900 ">
             <span class="sr-only">Cerrar</span>
             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
     </div>
-    <form wire:submit.prevent="save">
+    <form wire:submit.prevent="saveInscription">
         
-
-        @include('livewire.admin.competitor.enrollment.form.inscriptions.fields')
-        {{-- /home/nuser/code/pastoral/resources/views/livewire/admin/competitor/enrollment/form/inscriptions/fields.blade.php --}}
-
-        <div class="flex justify-between">
-            <x-jet-button type="submit" class="ml-1 bg-green-500 shadow" > {{ __('Enviar') }} </x-jet-button>
-            <x-jet-button type="button" class="ml-1 bg-gray-900 shadow" wire:click="closeEditMode"> {{ __('Cerrar') }} </x-jet-button>
+        <div class="grid grid-cols-3 gap-4">
+            <div>@include('livewire.admin.competitor.enrollment.form.representants.fields')</div>
+            {{-- <div>@include('livewire.admin.competitor.enrollment.form.estudiants.fields')</div> --}}
+            {{-- <div>@include('livewire.admin.competitor.enrollment.form.inscriptions.fields')</div> --}}
         </div>
+
+        {{-- @include('livewire.admin.competitor.enrollment.form.inscriptions.fields') --}}
+
+        {{--
+            
+        <div class="flex justify-between mt-2">
+            <x-jet-button type="submit" class="ml-1 bg-green-500 shadow" > {{ __('Enviar') }} </x-jet-button>
+            <x-jet-button type="button" class="ml-1 bg-gray-900 shadow" wire:click="close"> {{ __('Cerrar') }} </x-jet-button>
+        </div>
+        
+        --}}
 
     </form>
 

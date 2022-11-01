@@ -22,7 +22,7 @@
     <form wire:submit.prevent="save">
         {{-- <div class="flex justify-between">
             <h1 class="block font-semibold text-lg text-gray-700 dark:text-gray-100">Edición de datos de la institución</h1>
-            <div wire:loading class="text-gray-400 text-sm"> Cargando... </div>
+            <div wire:loading class="text-black font-semibold fixed	 bottom-0 right-0 z-10 bg-white rounded border shadow mr-2 mb-2 dark:text-gray-100"> Cargando... </div>
         </div> --}}
 
         @include('livewire.admin.institution.pastoral.form.fields')

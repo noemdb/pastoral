@@ -10,7 +10,7 @@
         </div>
 
         <div>       
-            <div wire:loading class="text-gray-400 text-sm"> Cargando... </div>
+            <div wire:loading class="text-black font-semibold fixed	 bottom-0 right-0 z-10 bg-white rounded border shadow mr-2 mb-2 dark:text-gray-100"> Cargando... </div>
             {{-- <x-jet-button type="button" class="mx-1 bg-blue-900 shadow w-8 h-8 !p-0 flex justify-center items-center shadow" wire:click="create">
                 <x-icon-plus class="w-4 h-4" />
             </x-jet-button>     --}}

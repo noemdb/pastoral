@@ -16,7 +16,7 @@
             @php $name = 'search'; $model = 'pastoral.'.$name; @endphp
             <div class="flex justify-between">
                 <x-jet-label for="{{$name}}" value="Buscar" />
-                <div wire:loading class="text-gray-400 text-sm"> Cargando... </div>
+                <div wire:loading class="text-black font-semibold fixed	 bottom-0 right-0 z-10 bg-white rounded border shadow mr-2 mb-2 dark:text-gray-100"> Cargando... </div>
             </div>        
             <x-input wire:model.debounce.500ms="{{$name}}" name="{{$name}}" class="block w-full" />
         </div>

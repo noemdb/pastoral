@@ -13,12 +13,15 @@ use App\Models\app\Pescolar;
 use App\Models\app\Pescolar\Curriculum;
 
 use App\Models\app\Estudiant;
+use App\Models\app\Estudiant\Citype;
 use App\Models\app\Estudiant\Enrollment;
 use App\Models\app\Estudiant\Inscription;
+use App\Models\app\Estudiant\Representant;
 use App\Models\app\Estudiant\Tinscription;
 use App\Models\app\Pastoral;
 use App\Models\app\Pescolar\Level;
 use App\Models\app\Pescolar\Section;
+use Illuminate\Support\Facades\Validator;
 
 class ListComponent extends Component
 {
@@ -29,19 +32,27 @@ class ListComponent extends Component
 
     public Enrollment $enrollment;
 
+    public Representant $representant;
+    public Estudiant $estudiant;
+    public Inscription $inscription;
+
+    public $tinscription_id,$estudiant_id,$observations;
+
     public $enrollment_id;
 
     public $pastoral,$pastoral_id,$pescolar,$pescolar_id,$currilum,$curriculum_id,$level,$level_id,$section,$section_id;
 
     public $search = ''; //'name','description'
 
+    public $step=1;
+
     public $modeEdit,$modeCreate,$modeIncriptions;
 
-    public $list_comment;
+    public $list_comment,$list_comment_inscription,$list_comment_estudiant;
 
     public $status_last,$status_first,$saveInto;
 
-    public $curricula_list,$pastorals_list,$pescolars_list,$curriculum_list,$levels_list,$section_list;
+    public $curricula_list,$pastorals_list,$pescolars_list,$curriculum_list,$levels_list,$section_list,$citype_list;
 
     protected $listeners = [ 'remove' ];
 
@@ -50,12 +61,21 @@ class ListComponent extends Component
         $this->modeCreate = false;
         $this->modeEdit = false;
         $this->modeIncriptions = false;
+        $this->step = 1;
+        
         $this->list_comment = Enrollment::COLUMN_COMMENTS; 
-        $this->list_comment_inscription = Inscription::COLUMN_COMMENTS; 
+        $this->list_comment_inscription = Inscription::COLUMN_COMMENTS;
+
+        $this->citype_list = Citype::citype_list()->toArray();
+        $this->list_comment_estudiant = Estudiant::COLUMN_COMMENTS; 
+        $this->list_comment_representant = Representant::COLUMN_COMMENTS; 
 
         $this->pastorals_list = Pastoral::pastorals_list()->toArray();
         $this->tinscription_list = Tinscription::tinscription_list()->toArray();
-        // $this->section_list = Section::section_list_fullname()->toArray();
+
+        $this->representant = new Representant;
+        $this->estudiant = new Estudiant;
+        $this->inscription = new Inscription;
     }
 
     public function render()
@@ -100,23 +120,6 @@ class ListComponent extends Component
         $this->modeCreate = false;
     }
 
-    public function inscription($id)
-    {
-        $enrollment = Enrollment::find($id);
-        if ($enrollment) {
-            $this->enrollment = $enrollment;
-            $this->enrollment_id = $enrollment->id;
-            
-            $curriculum = Curriculum::find($enrollment->curriculum_id);
-            $curriculum_id = ($curriculum) ? $curriculum->id : null;
-            // $this->section_list = Section::section_list_fullname(null,null,$curriculum_id)->toArray();
-
-            $this->modeIncriptions = true;
-            $this->modeEdit = true;
-            $this->modeCreate = false;
-        }
-    }
-
     public function save()
     {
         $this->validate();
@@ -128,6 +131,14 @@ class ListComponent extends Component
         $this->modeEdit = false;
         $this->enrollment = new Enrollment;
         $this->reset(['enrollment_id']);
+    }
+
+    public function close()
+    {
+        $this->enrollment_id = false;
+        $this->modeEdit = false;
+        $this->modeCreate = false;
+        $this->modeIncriptions = false;
     }
 
     public function closeEditMode()
@@ -162,30 +173,87 @@ class ListComponent extends Component
         $this->alert('success', 'Los datos fueron eliminados satisfactoriamente!');
     }
 
-    //////////////////////updated////////////////////////////////
+    //////////////////////INI updated////////////////////////////////
 
-    public function updatedPastoralId()
+        public function updatedPastoralId()
+        {
+            $this->pastoral = Pastoral::find($this->pastoral_id);
+            $this->pescolars_list = ($this->pastoral) ? $this->pastoral->pescolars_full_list()->toArray() : Array() ;
+            $this->step = ($this->pastoral) ? 2 : 1 ;
+        }
+
+        public function updatedPescolarId()
+        {
+            $this->pescolar = Pescolar::find($this->pescolar_id);
+            $this->curricula_list = ($this->pescolar) ? $this->pescolar->curricula_full_list()->toArray() : Array() ;
+            $this->step = ($this->pescolar) ? 3 : 2 ;
+        }
+
+        public function updatedCurriculumId()
+        {
+            $this->curriculum = Curriculum::find($this->curriculum_id); 
+            $this->levels_list = ($this->curriculum) ? $this->curriculum->levels_list()->toArray() : Array() ;
+            $this->step = ($this->curriculum) ? 4 : 3 ;
+        }
+
+        public function updatedLevelId()
+        {
+            $this->level = Level::find($this->level_id); 
+            $this->section_list = ($this->level) ? $this->level->sections_list()->toArray() : Array() ;
+            $this->step = ($this->level) ? 5 : 4 ;
+        }
+
+    //////////////////////FIN updated////////////////////////////////
+
+    public function inscription($id)
     {
-        $this->pastoral = Pastoral::find($this->pastoral_id);
-        $this->pescolars_list = ($this->pastoral) ? $this->pastoral->pescolars_full_list()->toArray() : Array() ;
+        $enrollment = Enrollment::find($id);
+        if ($enrollment) {
+            $this->enrollment = $enrollment;
+            $this->enrollment_id = $enrollment->id;
+
+            $this->representant->fill($this->enrollment->toArray()); //dd($this->representant);
+
+            $this->estudiant->fill($this->enrollment->toArray()); //dd($this->estudiant);            
+
+            $this->modeIncriptions = true;
+            $this->modeEdit = true;
+            $this->modeCreate = false;
+        }
     }
 
-    public function updatedPescolarId()
+    public function saveInscription()
     {
-        $this->pescolar = Pescolar::find($this->pescolar_id);
-        $this->curricula_list = ($this->pescolar) ? $this->pescolar->curricula_full_list()->toArray() : Array() ;
-    }
 
-    public function updatedCurriculumId()
-    {
-        $this->curriculum = Curriculum::find($this->curriculum_id); 
-        $this->levels_list = ($this->curriculum) ? $this->curriculum->levels_list()->toArray() : Array() ;
-    }
+        $validatedData = Validator::make(
+            ['email' => $this->email],
+            ['email' => 'required|email'],
+            ['required' => 'The :attribute field is required'],
+        )->validate();
+       
+        //'tinscription_id','section_id','estudiant_id','observations'
 
-    public function updatedLevelId()
-    {
-        $this->level = Level::find($this->level_id); 
-        $this->section_list = ($this->level) ? $this->level->sections_list()->toArray() : Array() ;
+        $validatedData = $this->validate([
+                'tinscription_id' => 'required|integer',
+                'section_id' => 'required|integer',
+                'observations' => 'nullable|string',
+            ],
+            [
+                'required.tinscription_id' => 'El campo :attribute no puede ser nulo.',
+            ],
+            [
+                'tinscription_id' => 'Tipo de Inscripción',
+                'section_id' => 'Grupo',
+                'observations' => 'Observaciones',
+            ]
+        );
+
+        $this->alert('success', 'Los datos fueron almacenados satisfactoriamente!');
+
+        $this->modeCreate = false;
+        $this->modeEdit = false;
+        $this->enrollment = new Enrollment;
+        $this->reset(['enrollment_id']);
     }
 
 }

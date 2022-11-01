@@ -9,6 +9,8 @@ trait EnrollmentRules
    laterality,date_birth,city_id,state_id,country_id,dir_address,phone,email,twitter,whatsapp,facebook,patology,
    status_nacionality,status_patology,status,description,observations,*/
 
+   //'user_id','citype_id','ci','name','phone','email','whatsapp','telegram','twitter','instagram','status_adviders',
+
     protected $rules = [
         'pastoral_id' => 'required|integer',
         'representant_ci' => 'required|string|min:2|max:10',
@@ -36,7 +38,7 @@ trait EnrollmentRules
         'status_patology' => 'nullable|string',
         'status' => 'nullable|string',
         'description' => 'nullable|string',
-        'observations' => 'nullable|string',
+        'observations' => 'nullable|string'
     ];
 
     protected function validationAttributes()
