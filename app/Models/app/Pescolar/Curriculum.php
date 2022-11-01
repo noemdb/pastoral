@@ -57,6 +57,16 @@ class Curriculum extends Model
         return $pastoral;
 	}
 
+	public function levels_list() 
+    {
+        $levels = Level::select('levels.id')
+            ->SelectRaw(' levels.code  || " - " || levels.name as name ')
+            ->join('curricula', 'curricula.id', '=', 'levels.curriculum_id')
+            ->where('curricula.id',$this->id)
+            ->pluck('name','id');
+        return $levels;
+    }
+
 	public static function curricula_list_fullname() 
 	{
 		$curricula_list = Curriculum::select('curricula.id',DB::raw('curricula.name || " | PE. "  || pescolars.name || " | INS. " || pastorals.name as fullnamename' ))

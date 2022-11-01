@@ -48,6 +48,16 @@ class Pescolar extends Model
 		return Pescolar::pluck('name','id');
 	}
 
+	public function curricula_full_list() 
+    {
+        $pescolars = Pescolar::select('curricula.id')
+            ->SelectRaw(' curricula.code  || " - " || curricula.name as name ')
+            ->join('curricula', 'pescolars.id', '=', 'curricula.pescolar_id')
+            ->where('pescolars.id',$this->id)
+            ->pluck('name','id');
+        return $pescolars;
+    }
+
     public function getFullNameAttribute()
     {
 		$pastoral = $this->pastoral;

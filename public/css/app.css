@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
+! tailwindcss v3.2.1 | MIT License | https://tailwindcss.com
 *//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
@@ -366,6 +366,11 @@ img,
 video {
   max-width: 100%;
   height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+[hidden] {
+  display: none;
 }
 
 [type='text'],[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {
@@ -2493,6 +2498,9 @@ select {
 .pointer-events-none {
   pointer-events: none;
 }
+.collapse {
+  visibility: collapse;
+}
 .fixed {
   position: fixed;
 }
@@ -2518,11 +2526,11 @@ select {
 .right-0 {
   right: 0px;
 }
-.top-0 {
-  top: 0px;
-}
 .bottom-0 {
   bottom: 0px;
+}
+.top-0 {
+  top: 0px;
 }
 .top-4 {
   top: 1rem;
@@ -2660,24 +2668,6 @@ select {
 .mb-8 {
   margin-bottom: 2rem;
 }
-.mb-12 {
-  margin-bottom: 3rem;
-}
-.mb-3 {
-  margin-bottom: 0.75rem;
-}
-.-mt-px {
-  margin-top: -1px;
-}
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-.mb-1 {
-  margin-bottom: 0.25rem;
-}
-.mr-1 {
-  margin-right: 0.25rem;
-}
 .mr-4 {
   margin-right: 1rem;
 }
@@ -2687,14 +2677,32 @@ select {
 .mr-24 {
   margin-right: 6rem;
 }
+.mb-12 {
+  margin-bottom: 3rem;
+}
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
 .-ml-8 {
   margin-left: -2rem;
 }
 .mr-6 {
   margin-right: 1.5rem;
 }
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
 .mb-5 {
   margin-bottom: 1.25rem;
+}
+.mr-1 {
+  margin-right: 0.25rem;
+}
+.-mt-px {
+  margin-top: -1px;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 .-mt-0\.5 {
   margin-top: -0.125rem;
@@ -2810,6 +2818,12 @@ select {
 .w-20 {
   width: 5rem;
 }
+.w-4\/5 {
+  width: 80%;
+}
+.w-40 {
+  width: 10rem;
+}
 .w-1\/5 {
   width: 20%;
 }
@@ -2818,12 +2832,6 @@ select {
 }
 .w-3 {
   width: 0.75rem;
-}
-.w-4\/5 {
-  width: 80%;
-}
-.w-40 {
-  width: 10rem;
 }
 .w-2 {
   width: 0.5rem;
@@ -3175,10 +3183,6 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
-.bg-gray-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-}
 .bg-blue-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(30 58 138 / var(--tw-bg-opacity));
@@ -3191,17 +3195,21 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
+.bg-gray-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
 .bg-red-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 242 242 / var(--tw-bg-opacity));
 }
-.bg-purple-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 232 255 / var(--tw-bg-opacity));
-}
 .bg-yellow-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 249 195 / var(--tw-bg-opacity));
+}
+.bg-purple-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 232 255 / var(--tw-bg-opacity));
 }
 .bg-green-100 {
   --tw-bg-opacity: 1;
@@ -3233,11 +3241,11 @@ select {
 .p-6 {
   padding: 1.5rem;
 }
-.\!p-0 {
-  padding: 0px !important;
-}
 .p-8 {
   padding: 2rem;
+}
+.\!p-0 {
+  padding: 0px !important;
 }
 .p-4 {
   padding: 1rem;
@@ -3360,6 +3368,21 @@ select {
 .pt-8 {
   padding-top: 2rem;
 }
+.pt-32 {
+  padding-top: 8rem;
+}
+.pb-10 {
+  padding-bottom: 2.5rem;
+}
+.pt-24 {
+  padding-top: 6rem;
+}
+.pb-8 {
+  padding-bottom: 2rem;
+}
+.pl-0 {
+  padding-left: 0px;
+}
 .pt-10 {
   padding-top: 2.5rem;
 }
@@ -3371,21 +3394,6 @@ select {
 }
 .pr-40 {
   padding-right: 10rem;
-}
-.pt-32 {
-  padding-top: 8rem;
-}
-.pb-10 {
-  padding-bottom: 2.5rem;
-}
-.pb-8 {
-  padding-bottom: 2rem;
-}
-.pt-24 {
-  padding-top: 6rem;
-}
-.pl-0 {
-  padding-left: 0px;
 }
 .pr-10 {
   padding-right: 2.5rem;
@@ -3442,14 +3450,14 @@ select {
 .font-semibold {
   font-weight: 600;
 }
+.font-light {
+  font-weight: 300;
+}
 .font-bold {
   font-weight: 700;
 }
 .font-normal {
   font-weight: 400;
-}
-.font-light {
-  font-weight: 300;
 }
 .\!font-bold {
   font-weight: 700 !important;
@@ -3554,13 +3562,13 @@ select {
   --tw-text-opacity: 1;
   color: rgb(185 28 28 / var(--tw-text-opacity));
 }
-.text-purple-700 {
-  --tw-text-opacity: 1;
-  color: rgb(126 34 206 / var(--tw-text-opacity));
-}
 .text-yellow-700 {
   --tw-text-opacity: 1;
   color: rgb(161 98 7 / var(--tw-text-opacity));
+}
+.text-purple-700 {
+  --tw-text-opacity: 1;
+  color: rgb(126 34 206 / var(--tw-text-opacity));
 }
 .text-green-800 {
   --tw-text-opacity: 1;
@@ -3967,13 +3975,13 @@ select {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-.dark .dark\:text-gray-100 {
-  --tw-text-opacity: 1;
-  color: rgb(243 244 246 / var(--tw-text-opacity));
-}
 .dark .dark\:text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+.dark .dark\:text-gray-100 {
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246 / var(--tw-text-opacity));
 }
 .dark .dark\:text-gray-500 {
   --tw-text-opacity: 1;
@@ -4064,12 +4072,12 @@ select {
     width: 66.666667%;
   }
 
-  .sm\:w-1\/3 {
-    width: 33.333333%;
-  }
-
   .sm\:w-1\/2 {
     width: 50%;
+  }
+
+  .sm\:w-1\/3 {
+    width: 33.333333%;
   }
 
   .sm\:max-w-md {
@@ -4215,10 +4223,6 @@ select {
     margin-top: 0px;
   }
 
-  .md\:flex {
-    display: flex;
-  }
-
   .md\:table-cell {
     display: table-cell;
   }
@@ -4227,8 +4231,8 @@ select {
     display: grid;
   }
 
-  .md\:w-2\/5 {
-    width: 40%;
+  .md\:w-2\/3 {
+    width: 66.666667%;
   }
 
   .md\:w-3\/5 {
@@ -4239,8 +4243,8 @@ select {
     width: 50%;
   }
 
-  .md\:w-2\/3 {
-    width: 66.666667%;
+  .md\:w-2\/5 {
+    width: 40%;
   }
 
   .md\:grid-cols-3 {
@@ -4290,16 +4294,16 @@ select {
     grid-column: span 4 / span 4;
   }
 
-  .lg\:mt-12 {
-    margin-top: 3rem;
-  }
-
   .lg\:mt-0 {
     margin-top: 0px;
   }
 
   .lg\:mr-0 {
     margin-right: 0px;
+  }
+
+  .lg\:mt-12 {
+    margin-top: 3rem;
   }
 
   .lg\:block {
@@ -4322,6 +4326,10 @@ select {
     width: 50%;
   }
 
+  .lg\:w-auto {
+    width: auto;
+  }
+
   .lg\:w-2\/3 {
     width: 66.666667%;
   }
@@ -4332,10 +4340,6 @@ select {
 
   .lg\:w-2\/6 {
     width: 33.333333%;
-  }
-
-  .lg\:w-auto {
-    width: auto;
   }
 
   .lg\:justify-end {

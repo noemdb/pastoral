@@ -18,6 +18,7 @@ class Pastoral extends Model
     ];
 
     protected $dates = ['finicial','ffinal','created_at','updated_at'];
+    
 
     const COLUMN_COMMENTS = [
         'name' => 'Nombre',
@@ -41,14 +42,29 @@ class Pastoral extends Model
         'txt_contract_study'=>'Contrato de Estudio',
     ];
 
+    public function pescolars()
+    {
+        return $this->hasMany(Pescolar::class);
+    }
+
     public static function pastorals_list() 
     {
         return Pastoral::pluck('name','id');
     }
 
-    public static function pescolars_list() 
+    public function pescolars_list() 
     {
-        return Pastoral::select('pescolars.id','pescolars.name')->pluck('name','id')->join('pescolars', 'pastorals.id', '=', 'pescolars.pastoral_id')->pluck('id','name');
+        return $this->pescolars->pluck('name','id');
+    }
+
+    public function pescolars_full_list() 
+    {
+        $pescolars = Pastoral::select('pescolars.id')
+            ->SelectRaw(' pescolars.name  || " [" || pescolars.finicial || " - " || pescolars.ffinal || "]" as name ')
+            ->join('pescolars', 'pastorals.id', '=', 'pescolars.pastoral_id')
+            ->where('pastorals.id',$this->id)
+            ->pluck('name','id');
+        return $pescolars;
     }
 
     public function curriculum_list() /* usada para llenar los objetos de formularios select*/

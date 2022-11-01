@@ -34,9 +34,20 @@ class Level extends Model
         'status'=>'Estado',
     ];
     
+    
     public function getFullNameAttribute()
     {
         return "{$this->code} {$this->name}";
+    }
+
+    public function sections_list() 
+    {
+        $levels = Section::select('sections.id')
+            ->SelectRaw(' sections.code  || " - " || sections.name as name ')
+            ->join('levels', 'levels.id', '=', 'sections.level_id')
+            ->where('levels.id',$this->id)
+            ->pluck('name','id');
+        return $levels;
     }
 
     public static function levels_list() 

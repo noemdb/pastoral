@@ -17,6 +17,7 @@ use App\Models\app\Estudiant\Enrollment;
 use App\Models\app\Estudiant\Inscription;
 use App\Models\app\Estudiant\Tinscription;
 use App\Models\app\Pastoral;
+use App\Models\app\Pescolar\Level;
 use App\Models\app\Pescolar\Section;
 
 class ListComponent extends Component
@@ -30,7 +31,7 @@ class ListComponent extends Component
 
     public $enrollment_id;
 
-    public $pastoral,$pastoral_id;
+    public $pastoral,$pastoral_id,$pescolar,$pescolar_id,$currilum,$curriculum_id,$level,$level_id,$section,$section_id;
 
     public $search = ''; //'name','description'
 
@@ -40,7 +41,7 @@ class ListComponent extends Component
 
     public $status_last,$status_first,$saveInto;
 
-    public $curricula_list,$pastorals_list,$pescolars_list,$curriculum_list;
+    public $curricula_list,$pastorals_list,$pescolars_list,$curriculum_list,$levels_list,$section_list;
 
     protected $listeners = [ 'remove' ];
 
@@ -51,10 +52,10 @@ class ListComponent extends Component
         $this->modeIncriptions = false;
         $this->list_comment = Enrollment::COLUMN_COMMENTS; 
         $this->list_comment_inscription = Inscription::COLUMN_COMMENTS; 
-        // $this->curricula_list = Curriculum::curricula_list_fullname()->toArray();
+
         $this->pastorals_list = Pastoral::pastorals_list()->toArray();
         $this->tinscription_list = Tinscription::tinscription_list()->toArray();
-        $this->section_list = Section::section_list_fullname()->toArray();
+        // $this->section_list = Section::section_list_fullname()->toArray();
     }
 
     public function render()
@@ -108,7 +109,7 @@ class ListComponent extends Component
             
             $curriculum = Curriculum::find($enrollment->curriculum_id);
             $curriculum_id = ($curriculum) ? $curriculum->id : null;
-            $this->section_list = Section::section_list_fullname(null,null,$curriculum_id)->toArray();
+            // $this->section_list = Section::section_list_fullname(null,null,$curriculum_id)->toArray();
 
             $this->modeIncriptions = true;
             $this->modeEdit = true;
@@ -166,12 +167,25 @@ class ListComponent extends Component
     public function updatedPastoralId()
     {
         $this->pastoral = Pastoral::find($this->pastoral_id);
-        $this->pescolars_list = ($this->pastoral) ? $this->pastoral->pescolars->pluck('id','name')->toArray() : Array() ;
+        $this->pescolars_list = ($this->pastoral) ? $this->pastoral->pescolars_full_list()->toArray() : Array() ;
+    }
+
+    public function updatedPescolarId()
+    {
+        $this->pescolar = Pescolar::find($this->pescolar_id);
+        $this->curricula_list = ($this->pescolar) ? $this->pescolar->curricula_full_list()->toArray() : Array() ;
     }
 
     public function updatedCurriculumId()
     {
-        $this->curriculum = Curriculum::findOrfail($this->curriculum_id);
+        $this->curriculum = Curriculum::find($this->curriculum_id); 
+        $this->levels_list = ($this->curriculum) ? $this->curriculum->levels_list()->toArray() : Array() ;
+    }
+
+    public function updatedLevelId()
+    {
+        $this->level = Level::find($this->level_id); 
+        $this->section_list = ($this->level) ? $this->level->sections_list()->toArray() : Array() ;
     }
 
 }

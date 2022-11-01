@@ -20,6 +20,8 @@ class Inscription extends Model
     const COLUMN_COMMENTS = [
         'pastoral_id' => 'Institución',
         'pescolar_id' => 'Período de Formación',
+        'curriculum_id' => 'Planes de Formación',
+        'level_id' => 'Niveles de Formación',
         'tinscription_id' => 'Tipo',
         'section_id' => 'Grupo',
         'estudiant_id' => 'Estudiante',
