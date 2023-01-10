@@ -17,7 +17,6 @@
     </div>
 
 
-
     @if ($modeEdit)
 
         <div class="mb-4 pb-4">
@@ -38,6 +37,9 @@
     <div class="mx-4 px-4">
         @include('livewire.admin.institution.pastoral.table.index')
     </div>
+
+
+
 
 
 </div>

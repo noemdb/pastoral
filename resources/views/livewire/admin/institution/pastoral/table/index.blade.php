@@ -3,6 +3,7 @@
     $class['name']="text-left px-4";
     $class['legalname']="hidden md:table-cell text-left px-4";
     $class['description']="hidden lg:table-cell text-left px-4";
+    $class['count_pescolars']="hidden lg:table-cell text-left px-4";
     $class['assit_schedule']="hidden lg:table-cell text-left px-4";
     $class['action']="text-left px-4";
     $table_id = 'table_id';
@@ -17,7 +18,7 @@
             <div class="flex justify-between">
                 <x-jet-label for="{{$name}}" value="Buscar" />
                 <div wire:loading class="text-black font-semibold fixed	 bottom-0 right-0 z-10 bg-white rounded border shadow mr-2 mb-2 dark:text-gray-100"> Cargando... </div>
-            </div>        
+            </div>
             <x-input wire:model.debounce.500ms="{{$name}}" name="{{$name}}" class="block w-full" />
         </div>
         <div class="w-1/5">
@@ -32,7 +33,7 @@
             <tr class="text-center">
                 <th class="{{ $class['iteration'] ?? ''}}">
                     <div class="flex  justify-between">
-                         N
+                        N
                     </div>
                 </th>
                 <th class="{{ $class['name'] ?? ''}}">
@@ -59,13 +60,23 @@
                         @endif
                     </div>
                 </th>
+                <th class="{{ $class['count_pescolars'] ?? ''}}">
+                    <div class="flex  justify-between">
+                        <div>{{$list_comment['count_pescolars'] ?? ''}}</div>
+                        {{-- @if($pastorals->isNotEmpty())
+                            <x-elements.crud.sort-by field="description" :sortBy="$sortBy" :sortDirection="$sortDirection" />
+                        @endif --}}
+                    </div>
+                </th>
                 <th class="{{ $class['action'] ?? ''}}">Acciones</th>
             </tr>
         </thead>
 
         <tbody id="tdatos">
         @forelse($pastorals as $pastoral)
-
+            @php
+                $count_pescolars = $pastoral->pescolars->count()
+            @endphp
             {{-- 'name', 'legalname', 'code', 'code_official', 'code_private', 'description', 'observations', 'header', 'body', 'footer', 'rif_institution', 'phone', 'address', 'city', 'state_code', 'country', 'email_institution', 'password', 'txt_contract_study' --}}
 
             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($pastoral->id == $pastoral_id) ? 'bg-gray-200' : null}}">
@@ -73,6 +84,7 @@
                 <td class="{{ $class['name'] ?? ''}}">{{$pastoral->name ?? ''}}</td>
                 <td class="{{ $class['legalname'] ?? ''}}">{{$pastoral->legalname ?? ''}}</td>
                 <td class="{{ $class['description'] ?? ''}}">{{$pastoral->description ?? ''}}</td>
+                <td class="{{ $class['count_pescolars'] ?? ''}}">{{$count_pescolars ?? ''}}</td>
 
                 <td class="{{ $class['action'] ?? '' }}">
 
@@ -81,7 +93,7 @@
                                 <x-elements.form.button-edit wire:key="pastoral-edit-{{$pastoral->id}}" wire:click="edit({{ $pastoral->id }})" >
                                     <x-icon-pen class="w-4 h-4 mr-0.5" />
                                 </x-elements.form.button>
-                                <x-elements.form.button-del wire:key="pastoral-delete-{{$pastoral->id}}" wire:click="delete({{ $pastoral->id }})" >
+                                <x-elements.form.button-del disabled="{{$pastoral->status_delete}}" wire:key="pastoral-delete-{{$pastoral->id}}" wire:click="delete({{ $pastoral->id }})" >
                                     <x-icon-trash-can class="w-4 h-4 mr-0.5" />
                                 </x-elements.form.button>
                             </div>

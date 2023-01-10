@@ -18,7 +18,7 @@ class Pastoral extends Model
     ];
 
     protected $dates = ['finicial','ffinal','created_at','updated_at'];
-    
+
 
     const COLUMN_COMMENTS = [
         'name' => 'Nombre',
@@ -40,6 +40,8 @@ class Pastoral extends Model
         'email_institution'=>'Correo Electrónico',
         'password'=>'Contraseña',
         'txt_contract_study'=>'Contrato de Estudio',
+        ////////////////////////////////////////////////
+        'count_pescolars'=>'N. de Períodos',
     ];
 
     public function pescolars()
@@ -47,17 +49,17 @@ class Pastoral extends Model
         return $this->hasMany(Pescolar::class);
     }
 
-    public static function pastorals_list() 
+    public static function pastorals_list()
     {
         return Pastoral::pluck('name','id');
     }
 
-    public function pescolars_list() 
+    public function pescolars_list()
     {
         return $this->pescolars->pluck('name','id');
     }
 
-    public function pescolars_full_list() 
+    public function pescolars_full_list()
     {
         $pescolars = Pastoral::select('pescolars.id')
             ->SelectRaw(' pescolars.name  || " [" || pescolars.finicial || " - " || pescolars.ffinal || "]" as name ')
@@ -77,5 +79,10 @@ class Pastoral extends Model
             // ->where('pescolars.ffinal','>=',Carbon::now()->endOfYear())
             ->pluck('name','id');
         return $list;
+    }
+
+    public function getStatusDeleteAttribute()
+    {
+        return $this->pescolars->isEmpty();
     }
 }

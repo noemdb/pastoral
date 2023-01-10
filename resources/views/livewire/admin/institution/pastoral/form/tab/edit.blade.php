@@ -13,6 +13,7 @@
     <div class="p-1 m-1 rounded shadow bg-white dark:bg-gray-800">
         <form wire:submit.prevent="save">
 
+            {{-- @include('livewire.admin.institution.pastoral.form.stepper.main') --}}
             @include('livewire.admin.institution.pastoral.form.tab.main')
             {{-- @include('livewire.admin.institution.pastoral.form.fields') --}}
 
