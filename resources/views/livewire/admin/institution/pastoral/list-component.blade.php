@@ -6,7 +6,7 @@
             <div class="flex justify-start pt-2">
                 {{-- <x-fas-cloud class="mr-2 w-6 h-6 text-gray-500" style="color: #555" /> --}}
                 <x-icon-building class="w-6 h-6 mr-0.5" />
-                <div class="mr-2">Instituciones</div>                
+                <div class="mr-2">Instituciones</div>
             </div>
         </div>
 
@@ -16,10 +16,13 @@
 
     </div>
 
+
+
     @if ($modeEdit)
 
-        <div class="mb-4 pb-4"> 
-            @include('livewire.admin.institution.pastoral.form.edit')
+        <div class="mb-4 pb-4">
+            {{-- @include('livewire.admin.institution.pastoral.form.edit') --}}
+            @include('livewire.admin.institution.pastoral.form.tab.edit')
         </div>
 
     @endif
