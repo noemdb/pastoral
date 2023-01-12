@@ -6,6 +6,7 @@
     $class['name']="text-left px-4";
     $class['capacity']="hidden md:table-cell text-left px-4";
     $class['description']="hidden lg:table-cell text-left px-4";
+    $class['count_lapses']="hidden lg:table-cell text-left px-4";
     $class['action']="text-left px-4";
     $table_id = 'table_id';
 @endphp
@@ -76,7 +77,7 @@
                         @endif
                     </div>
                 </th>
-                <th class="{{ $class['action'] ?? ''}}">{{$list_comment['count_curricula'] ?? ''}}</th>
+                <th class="{{ $class['count_lapses'] ?? ''}}">{{$list_comment['count_lapses'] ?? ''}}</th>
 
                 <th class="{{ $class['action'] ?? ''}}">Acciones</th>
             </tr>
@@ -89,7 +90,7 @@
             @php
                 $pescolar = $curriculum->pescolar;
                 $pastoral = $pescolar->pastoral;
-             @endphp
+            @endphp
 
             {{-- 'pescolar_id','name','code','capacity','ffinal','description','observations','color','header','body','footer', --}}
 
@@ -103,7 +104,7 @@
                 <td class="{{ $class['name'] ?? ''}}">{{$curriculum->name ?? ''}}</td>
                 <td class="{{ $class['capacity'] ?? ''}}">{{$curriculum->capacity ?? ''}}</td>
                 <td class="{{ $class['description'] ?? ''}}">{{$curriculum->description ?? ''}}</td>
-                <td class="{{ $class['count_curricula'] ?? '' }}"></td>
+                <td class="{{ $class['count_lapses'] ?? '' }}">{{$curriculum->count_lapses ?? ''}}</td>
 
                 <td class="{{ $class['action'] ?? '' }}">
 

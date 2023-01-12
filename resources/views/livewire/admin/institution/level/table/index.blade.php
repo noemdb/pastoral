@@ -5,6 +5,7 @@
     $class['name']="text-left px-4";
     $class['description']="hidden lg:table-cell text-left px-4";
     $class['action']="text-left px-4";
+    $class['count_levels']="hidden lg:table-cell text-left px-4";
     $table_id = 'table_id';
 @endphp
 
@@ -16,8 +17,8 @@
             @php $name = 'search'; $model = 'level.'.$name; @endphp
             <div class="flex justify-start">
                 <x-jet-label for="{{$name}}" value="Buscar:" />
-                <span class="text-gray-400 mx-2 font-medium">nombre, descripción</span>                
-            </div>        
+                <span class="text-gray-400 mx-2 font-medium">nombre, descripción</span>
+            </div>
             <x-input wire:model.debounce.500ms="{{$name}}" name="{{$name}}" class="block w-full" />
         </div>
         <div class="w-1/5">
@@ -57,6 +58,7 @@
                         @endif
                     </div>
                 </th>
+                <th class="{{ $class['count_levels'] ?? ''}}">{{$list_comment['count_levels'] ?? ''}}</th>
                 <th class="{{ $class['action'] ?? ''}}">Acciones</th>
             </tr>
 
@@ -64,7 +66,7 @@
 
         <tbody id="tdatos">
         @forelse($levels as $level)
-            @php 
+            @php
                 $curriculum = $level->curriculum;
                 $pescolar = $curriculum->pescolar;
                 $pastoral = $curriculum->pastoral;
@@ -81,6 +83,7 @@
                 </td>
                 <td class="{{ $class['name'] ?? ''}}">{{$level->name ?? ''}}</td>
                 <td class="{{ $class['description'] ?? ''}}">{{$level->description ?? ''}}</td>
+                <td class="{{ $class['count_levels'] ?? '' }}">{{$level->count_levels ?? ''}}</td>
 
                 <td class="{{ $class['action'] ?? '' }}">
 
@@ -89,7 +92,7 @@
                             <x-elements.form.button-edit wire:key="level-edit-{{$level->id}}" wire:click="edit({{ $level->id }})" >
                                 <x-icon-pen class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-edit>
-                            <x-elements.form.button-del wire:key="level-delete-{{$level->id}}" wire:click="delete({{ $level->id }})" >
+                            <x-elements.form.button-del :disabled="!$level->status_delete" wire:key="level-delete-{{$level->id}}" wire:click="delete({{ $level->id }})" >
                                 <x-icon-trash-can class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-del>
                         </div>

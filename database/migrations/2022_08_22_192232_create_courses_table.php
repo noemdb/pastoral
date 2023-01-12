@@ -15,7 +15,7 @@ class CreateCoursesTable extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->integer('curriculum_id')->unsigned()->comment('Plan de Estudio');
+            $table->integer('curriculum_id')->unsigned()->comment('Plan de Formación');
 
             $table->string('code')->comment('Código');
             $table->string('code_sm')->comment('Abreviación');

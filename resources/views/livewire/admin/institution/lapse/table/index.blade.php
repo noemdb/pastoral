@@ -7,6 +7,7 @@
     $class['ffinal']="hidden md:table-cell text-left px-4";
     $class['description']="hidden lg:table-cell text-left px-4";
     $class['action']="text-left px-4";
+    $class['count_levels']="hidden lg:table-cell text-left px-4";
     $table_id = 'table_id';
 @endphp
 
@@ -18,8 +19,8 @@
             @php $name = 'search'; $model = 'lapse.'.$name; @endphp
             <div class="flex justify-start">
                 <x-jet-label for="{{$name}}" value="Buscar:" />
-                <span class="text-gray-400 mx-2 font-medium">nombre, descripción</span>                
-            </div>        
+                <span class="text-gray-400 mx-2 font-medium">nombre, descripción</span>
+            </div>
             <x-input wire:model.debounce.500ms="{{$name}}" name="{{$name}}" class="block w-full" />
         </div>
         <div class="w-1/5">
@@ -51,7 +52,7 @@
                         @endif
                     </div>
                 </th>
-                
+
                 <th class="{{ $class['finicial'] ?? ''}}">
                     <div class="flex justify-between">
                         <div> {{$list_comment['finicial'] ?? ''}} </div>
@@ -76,6 +77,7 @@
                         @endif
                     </div>
                 </th>
+                <th class="{{ $class['count_levels'] ?? ''}}">{{$list_comment['count_levels'] ?? ''}}</th>
                 <th class="{{ $class['action'] ?? ''}}">Acciones</th>
             </tr>
 
@@ -84,7 +86,7 @@
         <tbody id="tdatos">
         @forelse($lapses as $lapse)
 
-            @php 
+            @php
                 $curriculum = $lapse->curriculum;
                 $pescolar = $curriculum->pescolar;
                 $pastoral = $curriculum->pastoral;
@@ -101,7 +103,8 @@
                 <td class="{{ $class['finicial'] ?? ''}}">{{$lapse->finicial ?? ''}}</td>
                 <td class="{{ $class['ffinal'] ?? ''}}">{{$lapse->ffinal ?? ''}}</td>
                 <td class="{{ $class['description'] ?? ''}}">{{$lapse->description ?? ''}}</td>
-
+                {{-- <td class="{{ $class['count_levels'] ?? '' }}">{{$lapse->count_levels ?? ''}}</td> --}}
+                <td class="{{ $class['count_levels'] ?? '' }}"></td>
                 <td class="{{ $class['action'] ?? '' }}">
 
                     <div class="flex items-center justify-center justify-between mb-3 shadow">
@@ -109,7 +112,7 @@
                             <x-elements.form.button-edit wire:key="lapse-edit-{{$lapse->id}}" wire:click="edit({{ $lapse->id }})" >
                                 <x-icon-pen class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-edit>
-                            <x-elements.form.button-del wire:key="lapse-delete-{{$lapse->id}}" wire:click="delete({{ $lapse->id }})" >
+                            <x-elements.form.button-del :disabled="!$lapse->status_delete" wire:key="lapse-delete-{{$lapse->id}}" wire:click="delete({{ $lapse->id }})" >
                                 <x-icon-trash-can class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-del>
                         </div>

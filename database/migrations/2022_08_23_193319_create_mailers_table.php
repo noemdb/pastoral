@@ -20,11 +20,11 @@ class CreateMailersTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('section_id')->unsigned()->nullable()->comment('Grupo');
             $table->integer('level_id')->unsigned()->nullable()->comment('Grado');
-            $table->integer('curriculum_id')->unsigned()->nullable()->comment('Plan de Estudio');
+            $table->integer('curriculum_id')->unsigned()->nullable()->comment('Plan de Formación');
             $table->string('description')->nullable()->comment('Descripción');
             $table->date('fecha')->comment('Fecha Programada');
             $table->time('time')->comment('Hora Programada');
-            
+
             $table->text('subject')->comment('asunto');
             $table->text('title')->comment('Título');
             $table->text('subtitle')->nullable()->comment('Subtítulo');

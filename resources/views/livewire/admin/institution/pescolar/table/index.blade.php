@@ -6,6 +6,7 @@
     $class['finicial']="hidden md:table-cell text-left px-4";
     $class['ffinal']="hidden md:table-cell text-left px-4";
     $class['description']="hidden lg:table-cell text-left px-4";
+    $class['count_curricula']="hidden lg:table-cell text-left px-4";
     $class['action']="text-left px-4";
     $table_id = 'table_id';
 @endphp
@@ -18,8 +19,8 @@
             @php $name = 'search'; $model = 'pescolar.'.$name; @endphp
             <div class="flex justify-start">
                 <x-jet-label for="{{$name}}" value="Buscar:" />
-                <span class="text-gray-400 mx-2 font-medium">nombre, ci</span>                
-            </div>        
+                <span class="text-gray-400 mx-2 font-medium">nombre, ci</span>
+            </div>
             <x-input wire:model.debounce.500ms="{{$name}}" name="{{$name}}" class="block w-full" />
         </div>
         <div class="w-1/5">
@@ -51,7 +52,7 @@
                         @endif
                     </div>
                 </th>
-                
+
                 <th class="{{ $class['finicial'] ?? ''}}">
                     <div class="flex justify-between">
                         <div> {{$list_comment['finicial'] ?? ''}} </div>
@@ -76,6 +77,7 @@
                         @endif
                     </div>
                 </th>
+                <th class="{{ $class['count_curricula'] ?? ''}}"><div> {{$list_comment['count_curricula'] ?? ''}} </div></th>
                 <th class="{{ $class['action'] ?? ''}}">Acciones</th>
             </tr>
 
@@ -93,6 +95,7 @@
                 <td class="{{ $class['finicial'] ?? ''}}">{{$pescolar->finicial ?? ''}}</td>
                 <td class="{{ $class['ffinal'] ?? ''}}">{{$pescolar->ffinal ?? ''}}</td>
                 <td class="{{ $class['description'] ?? ''}}">{{$pescolar->description ?? ''}}</td>
+                <td class="{{ $class['count_curricula'] ?? ''}}">{{$pescolar->description ?? ''}}</td>
 
                 <td class="{{ $class['action'] ?? '' }}">
 
@@ -101,7 +104,7 @@
                             <x-elements.form.button-edit wire:key="pescolar-edit-{{$pescolar->id}}" wire:click="edit({{ $pescolar->id }})" >
                                 <x-icon-pen class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-edit>
-                            <x-elements.form.button-del wire:key="pescolar-delete-{{$pescolar->id}}" wire:click="delete({{ $pescolar->id }})" >
+                            <x-elements.form.button-del :disabled="!$pescolar->status_delete" wire:key="pescolar-delete-{{$pescolar->id}}" wire:click="delete({{ $pescolar->id }})" >
                                 <x-icon-trash-can class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-del>
                         </div>

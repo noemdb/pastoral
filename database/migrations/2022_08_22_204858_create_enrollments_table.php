@@ -16,15 +16,15 @@ class CreateEnrollmentsTable extends Migration
         Schema::create('enrollments', function (Blueprint $table) {
             $table->id();
             $table->integer('pastoral_id')->default(1)->unsigned()->comment('Pastoral');
-            
+
             $table->string('name')->comment('Nombres');
             $table->string('lastname')->comment('Apellidos');
             $table->integer('citype_id')->unsigned()->default(1)->comment('Tipo de identificación');
             $table->string('ci')->comment('N. de Identificación');
-            $table->integer('curriculum_id')->unsigned()->comment('Plan de Estudio');
+            $table->integer('curriculum_id')->unsigned()->comment('Plan de Formación');
             $table->enum('gender',['Masculino', 'Femenino'])->nullable()->comment('Genero');//Másculino,Femenino
             $table->enum('laterality',['Izquierda(o)', 'Derecha(o)'])->nullable()->comment('Lateralidad');//Másculino,Femenino
-            
+
             $table->date('date_birth')->nullable()->comment('Fecha de nacimiento');
             $table->integer('country_id')->nullable()->comment('País de nacimiento');
             $table->integer('state_id')->nullable()->comment('Estado de nacimiento');
@@ -46,7 +46,7 @@ class CreateEnrollmentsTable extends Migration
             $table->string('representant_ci')->comment('CI del representante');
             $table->enum('kinship',['Abuelo(a)','Padre/Madre','Tío(a)','Hermano(a)','Otro'])->nullable()->comment('Parentesco');
             $table->string('profession')->nullable()->comment('Profesión');
-            
+
             $table->string('representant_phone')->nullable()->comment('Número de teléfono del representante');
             $table->string('representant_email')->nullable()->comment('Correo electrónico del representante');
             $table->string('twitter')->nullable()->comment('Twitter');

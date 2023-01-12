@@ -42,7 +42,7 @@ class Pescolar extends Model
 		'body'=>'Cuerpo',
 		'footer'=>'Pie de página',
         ////////////////////////////
-		'count_curricula'=>'N. Planes F.',
+		'count_curricula'=>'N.Planes F.',
 
     ];
 
@@ -79,6 +79,11 @@ class Pescolar extends Model
     public function getStatusDeleteAttribute()
     {
         return $this->curricula->isEmpty();
+    }
+
+    public function getCountCurriculaAttribute()
+    {
+        return $this->curricula->count();
     }
 }
 

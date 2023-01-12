@@ -20,7 +20,7 @@ class Curriculum extends Model
         'pescolar_id','code','name','order','capacity','description','observations','status_build_promotion','title',
         'profile','txt_contract_study','status','color','header','body','footer'
 	];
-	
+
 	protected $dates = ['created_at','updated_at'];
 
     const COLUMN_COMMENTS = [
@@ -40,8 +40,11 @@ class Curriculum extends Model
 		'header'=>'Tìtulo',
 		'body'=>'Cuerpo',
 		'footer'=>'Pie de página',
+        ////////////////////////////
+		'count_lapses'=>'N.Cortes',
+
     ];
-    
+
     public function getFullNameAttribute()
     {
         return "{$this->code} {$this->name}";
@@ -57,7 +60,7 @@ class Curriculum extends Model
         return $pastoral;
 	}
 
-	public function levels_list() 
+	public function levels_list()
     {
         $levels = Level::select('levels.id')
             ->SelectRaw(' levels.code  || " - " || levels.name as name ')
@@ -67,7 +70,7 @@ class Curriculum extends Model
         return $levels;
     }
 
-	public static function curricula_list_fullname() 
+	public static function curricula_list_fullname()
 	{
 		$curricula_list = Curriculum::select('curricula.id',DB::raw('curricula.name || " | PE. "  || pescolars.name || " | INS. " || pastorals.name as fullnamename' ))
 			->join('pescolars', 'pescolars.id', '=', 'curricula.pescolar_id')
@@ -76,10 +79,20 @@ class Curriculum extends Model
 		return $curricula_list;
 	}
 
-    public static function curricula_list() 
+    public static function curricula_list()
 	{
 		return Curriculum::pluck('name','id');
 	}
+
+    public function getStatusDeleteAttribute()
+    {
+        return $this->lapses->isEmpty();
+    }
+
+    public function getCountLapsesAttribute()
+    {
+        return $this->lapses->count();
+    }
 }
 
 //'pescolar_id','code','name','order','capacity','description','observations','status_build_promotion','title','profile','status','color','header','body','footer',

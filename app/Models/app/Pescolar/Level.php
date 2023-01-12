@@ -17,11 +17,11 @@ class Level extends Model
     protected $fillable = [
         'curriculum_id','code','code_sm','name','description','observations','color','header','body','footer','status',
     ];
-    
+
     protected $dates = ['created_at','updated_at'];
 
     const COLUMN_COMMENTS = [
-        'curriculum_id' => 'Plan de Estudio',
+        'curriculum_id' => 'Plan de Formación',
         'code' => 'Código',
         'code_sm' => 'Código abreviado',
         'name' => 'Nombre',
@@ -33,14 +33,14 @@ class Level extends Model
         'footer' => 'Pie de Página',
         'status'=>'Estado',
     ];
-    
-    
+
+
     public function getFullNameAttribute()
     {
         return "{$this->code} {$this->name}";
     }
 
-    public function sections_list() 
+    public function sections_list()
     {
         $levels = Section::select('sections.id')
             ->SelectRaw(' sections.code  || " - " || sections.name as name ')
@@ -50,12 +50,12 @@ class Level extends Model
         return $levels;
     }
 
-    public static function levels_list() 
+    public static function levels_list()
     {
         return Level::pluck('name','id');
     }
 
-    public static function levels_list_fullname() 
+    public static function levels_list_fullname()
 	{
 		$curricula_list = Level::select('levels.id',DB::raw('curricula.name || " | PE. "  || pescolars.name || " | INS. " || pastorals.name || " | N. " || levels.name as fullnamename' ))
 			->join('curricula', 'curricula.id', '=', 'levels.curriculum_id')
@@ -65,14 +65,14 @@ class Level extends Model
 		return $curricula_list;
 	}
 
-    public function getPensumsAttribute() 
+    public function getPensumsAttribute()
     {
         $level = Level::find($this->id);
         $courses = ($level) ? Course::select('courses.id',DB::raw('courses.code || " - " || courses.name as name' ))
             ->join('pensums', 'courses.id', '=', 'pensums.course_id')
             ->where('pensums.level_id',$level->id)
-            ->get() 
-            :  collect(); 
+            ->get()
+            :  collect();
         return $courses;
     }
 

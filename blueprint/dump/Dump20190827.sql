@@ -893,7 +893,7 @@ DROP TABLE IF EXISTS `seccions`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `seccions` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `grado_id` int(10) unsigned NOT NULL COMMENT 'Grado del Plan de Estudio',
+  `grado_id` int(10) unsigned NOT NULL COMMENT 'Grado del Plan de Formación',
   `name` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Nombre',
   `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Descripción',
   `amount_student` int(11) NOT NULL DEFAULT '40' COMMENT 'Cantidad de Estudiantes',

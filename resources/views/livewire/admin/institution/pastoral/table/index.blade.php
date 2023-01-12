@@ -74,8 +74,7 @@
 
         <tbody id="tdatos">
         @forelse($pastorals as $pastoral)
-            @php
-                $count_pescolars = $pastoral->pescolars->count()
+            @php $count_pescolars = $pastoral->pescolars->count()
             @endphp
             {{-- 'name', 'legalname', 'code', 'code_official', 'code_private', 'description', 'observations', 'header', 'body', 'footer', 'rif_institution', 'phone', 'address', 'city', 'state_code', 'country', 'email_institution', 'password', 'txt_contract_study' --}}
 

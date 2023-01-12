@@ -16,7 +16,7 @@ class CreateSectionsTable extends Migration
         Schema::create('sections', function (Blueprint $table) {
             $table->id();
 
-            $table->integer('level_id')->unsigned()->comment('Plan de Estudio');
+            $table->integer('level_id')->unsigned()->comment('Plan de Formación');
 
             $table->string('code')->comment('Código');
             $table->string('code_sm')->comment('Abreviación');
