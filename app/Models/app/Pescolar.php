@@ -23,7 +23,7 @@ class Pescolar extends Model
     {
         return  Carbon::parse($this->attributes['finicial'])->format('Y-m-d');
 	}
-	
+
 	public function getFfinalAttribute()
     {
         return  Carbon::parse($this->attributes['ffinal'])->format('Y-m-d');
@@ -41,14 +41,17 @@ class Pescolar extends Model
 		'header'=>'Tìtulo',
 		'body'=>'Cuerpo',
 		'footer'=>'Pie de página',
+        ////////////////////////////
+		'count_curricula'=>'N. Planes F.',
+
     ];
 
-	public static function pescolars_list() 
+	public static function pescolars_list()
 	{
 		return Pescolar::pluck('name','id');
 	}
 
-	public function curricula_full_list() 
+	public function curricula_full_list()
     {
         $pescolars = Pescolar::select('curricula.id')
             ->SelectRaw(' curricula.code  || " - " || curricula.name as name ')
@@ -65,13 +68,18 @@ class Pescolar extends Model
 		return $fullname;
 	}
 
-	public static function pescolar_list_fullname() 
+	public static function pescolar_list_fullname()
 	{
 		$pescolar_list = Pescolar::select('pescolars.id',DB::raw('pescolars.name || " | INS. " || pastorals.name as fullnamename' ))
 			->join('pastorals', 'pastorals.id', '=', 'pescolars.pastoral_id')
 			->pluck('fullnamename','id');
 		return $pescolar_list;
 	}
+
+    public function getStatusDeleteAttribute()
+    {
+        return $this->curricula->isEmpty();
+    }
 }
 
 /*

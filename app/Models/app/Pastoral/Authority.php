@@ -21,7 +21,7 @@ class Authority extends Model
     protected $fillable = [
         'tauthority_id','pastoral_id','name','lastname','ci','position','profile_professional','photo','finicial','ffinal'
 	];
-	
+
 	protected $dates = ['finicial','ffinal','created_at','updated_at'];
 
     const COLUMN_COMMENTS = [
@@ -41,20 +41,28 @@ class Authority extends Model
     {
         return  Carbon::parse($this->attributes['finicial'])->format('Y-m-d');
     }
-    
+
     public function getFfinalAttribute()
     {
         return  Carbon::parse($this->attributes['ffinal'])->format('Y-m-d');
     }
-	
+
 	public function getFullNameAttribute()
     {
         return "{$this->name} {$this->lastname}";
     }
+
+    public function getStatusDeleteAttribute()
+    {
+        $today = Carbon::now()->format('Y-m-d');
+        $finicial = $this->finicial;
+        $ffinal = $this->ffinal;
+        return (($today < $finicial && $today < $ffinal) || ($today > $finicial && $today > $ffinal)) ? true : false;
+    }
 }
 
 
-/* 
+/*
 
 'tauthority_id','pescolar_id','pastoral_id','name','lastname','ci','position','profile_professional','photo','finicial','ffinal',
 

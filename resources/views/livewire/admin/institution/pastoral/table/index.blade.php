@@ -93,7 +93,7 @@
                                 <x-elements.form.button-edit wire:key="pastoral-edit-{{$pastoral->id}}" wire:click="edit({{ $pastoral->id }})" >
                                     <x-icon-pen class="w-4 h-4 mr-0.5" />
                                 </x-elements.form.button>
-                                <x-elements.form.button-del disabled="{{$pastoral->status_delete}}" wire:key="pastoral-delete-{{$pastoral->id}}" wire:click="delete({{ $pastoral->id }})" >
+                                <x-elements.form.button-del :disabled="!$pastoral->status_delete" wire:key="pastoral-delete-{{$pastoral->id}}" wire:click="delete({{ $pastoral->id }})" >
                                     <x-icon-trash-can class="w-4 h-4 mr-0.5" />
                                 </x-elements.form.button>
                             </div>
