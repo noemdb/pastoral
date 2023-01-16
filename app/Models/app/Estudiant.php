@@ -30,7 +30,7 @@ class Estudiant extends Model
         'dir_address'=>'Direccón de residencia',
         'phone'=>'Teléfono',
         'email'=>'Correo Electrónico',
-        'status_nacionality'=>'Nacionalizado',
+        'status_nacionality'=>'Nacionalizado(a)',
         'laterality'=>'Lateralidad',
         'christening_place'=>'Lugar del bautizo',
         'christening_date'=>'Fecha del bautizo',

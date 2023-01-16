@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
         
         $this->call(TauthoritySeeder::class);
         $this->call(AuthoritySeeder::class);
+        $this->call(CharismaSeeder::class);
         $this->call(LapseSeeder::class);
         $this->call(LevelSeeder::class);
         $this->call(SectionSeeder::class);

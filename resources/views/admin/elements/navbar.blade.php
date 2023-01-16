@@ -34,9 +34,9 @@
             <x-icon-window-restore class="w-6 h-6 mr-0.5" />
             <div class="mr-0.5 hidden lg:flex">{{ __('Asignaturas') }} </div>
         </x-jet-nav-link>
-        <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" title="Programas de Formación" href="{{ route($userPrefix.'.pensums.index') }}" :active="request()->routeIs('*pensums*')">
+        <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" title="Pensums de Formación" href="{{ route($userPrefix.'.pensums.index') }}" :active="request()->routeIs('*pensums*')">
             <x-icon-archive class="w-6 h-6 mr-0.5" />
-            <div class="mr-0.5 hidden lg:flex">{{ __('Programas') }} </div>
+            <div class="mr-0.5 hidden lg:flex">{{ __('Pensums') }} </div>
         </x-jet-nav-link>
         <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" title="Biblioteca Amigoniana" href="{{ route($userPrefix.'.libraries.index') }}" :active="request()->routeIs('*libraries*')">
             <x-icon-book class="w-6 h-6 mr-0.5" />

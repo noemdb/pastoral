@@ -31,10 +31,10 @@ class CreateEstudiantsTable extends Migration
             $table->string('email')->nullable()->comment('Correo electrónico');
             $table->boolean('status_nacionality')->nullable()->comment('Nacionalizado');
 
+            $table->string('extracathedra')->nullable()->comment('Actividad Extracatedra');
             $table->enum('laterality',['Izquierda(o)', 'Derecha(o)'])->nullable()->comment('Lateralidad');//Másculino,Femenino
             $table->string('christening_place')->nullable()->comment('Lugar del bautizo');
             $table->string('christening_date')->nullable()->comment('Fecha del bautizo');
-            $table->string('extracathedra')->nullable()->comment('Actividad Extracatedra');
             $table->string('institution')->nullable()->comment('Institución Educativa');
             $table->string('academic_level')->nullable()->comment('Año académico');
             $table->string('academic_section')->nullable()->comment('Sección');

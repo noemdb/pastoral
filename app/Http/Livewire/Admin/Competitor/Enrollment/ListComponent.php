@@ -56,18 +56,21 @@ class ListComponent extends Component
 
     public $step=1;
 
-    public $modeEdit,$modeCreate,$modeIncriptions;
+    public $modeIndex,$modeEdit,$modeCreate,$modeIncriptions;
 
     public $list_comment,$list_comment_inscription,$list_comment_estudiant;
 
     public $status_last,$status_first,$saveInto;
 
-    public $curricula_list,$pastorals_list,$pescolars_list,$curriculum_list,$levels_list,$section_list,$citype_list,$genders_list,$country_list;
+    public $curricula_list,$pastorals_list,$pescolars_list,$curriculum_list,$levels_list,$section_list,$citype_list,$genders_list;
+
+    public $country_list,$state_list,$city_list;
 
     protected $listeners = [ 'remove' ];
 
     public function mount()
     {
+        $this->modeIndex = true;
         $this->modeCreate = false;
         $this->modeEdit = false;
         $this->modeIncriptions = false;
@@ -83,11 +86,6 @@ class ListComponent extends Component
         $this->pastorals_list = Pastoral::pastorals_list()->toArray();
         $this->tinscription_list = Tinscription::tinscription_list()->toArray();
         $this->genders_list = ['Masculino'=>'Masculino', 'Femenino'=>'Femenino'];
-        $this->country_list = Country::all()->pluck('name','id')->toArray();
-
-        // $this->representant = new Representant;
-        // $this->estudiant = new Estudiant;
-        // $this->inscription = new Inscription;
     }
 
     public function render()
@@ -105,19 +103,19 @@ class ListComponent extends Component
 
         $enrollments = ($this->sortBy && $this->sortDirection) ? $enrollments->orderBy($this->sortBy,$this->sortDirection) : $enrollments;
         
-        $enrollments = $enrollments->paginate($this->paginate);
-
-        //dd($enrollments);
+        $enrollments = $enrollments->paginate($this->paginate);        
 
         return view('livewire.admin.competitor.enrollment.list-component', [
             'enrollments' => $enrollments,
-        ]); //views/livewire/admin/competitor/enrollment/list-component.blade.php
+        ]);
     }
 
     public function create()
     {
         $this->enrollment = new Enrollment;
         $this->enrollment_id = null;
+
+        $this->modeIndex = false;
         $this->modeCreate = true;
         $this->modeEdit = false;
         $this->modeIncriptions = false;
@@ -127,6 +125,7 @@ class ListComponent extends Component
     {
         $this->enrollment = Enrollment::find($id);
         $this->enrollment_id = ($this->enrollment) ? $this->enrollment->id:null;
+        $this->modeIndex = false;
         $this->modeEdit = true;
         $this->modeIncriptions = false;
         $this->modeCreate = false;
@@ -148,6 +147,7 @@ class ListComponent extends Component
     public function close()
     {
         $this->enrollment_id = false;
+        $this->modeIndex = true;
         $this->modeEdit = false;
         $this->modeCreate = false;
         $this->modeIncriptions = false;
@@ -155,14 +155,13 @@ class ListComponent extends Component
 
     public function closeEditMode()
     {
-        $this->enrollment_id = false;
-        $this->modeEdit = false;
+        $this->close();
     }
 
     public function closeCreateMode()
     {
         /////////////////////////////////////
-        $this->modeCreate = false;
+        $this->close();
     }
 
     public function delete ($id)
@@ -225,8 +224,6 @@ class ListComponent extends Component
             $this->enrollment = $enrollment;
             $this->enrollment_id = $enrollment->id;
 
-            $representant = new Representant;
-
             $this->representant = [
                     'citype_id' =>$this->enrollment->citype_id,
                     'ci' =>$this->enrollment->representant_ci,
@@ -238,12 +235,10 @@ class ListComponent extends Component
                     'instagram'=>$this->enrollment->instagram,
             ];
 
-            $estudiant = new Estudiant;
-
             $this->estudiant = [
                     'citype_id' =>$this->enrollment->citype_id,
-                    'ci' =>$this->enrollment->representant_ci,
-                    'name'=>$this->enrollment->representant_name,
+                    'ci' =>$this->enrollment->ci,
+                    'name'=>$this->enrollment->name,
                     'lastname'=>$this->enrollment->lastname,
                     'gender'=>$this->enrollment->gender,
                     'date_birth'=>$this->enrollment->date_birth->format('Y-m-d'),
@@ -255,14 +250,11 @@ class ListComponent extends Component
                     'email'=>$this->enrollment->email,
                     'status_nacionality'=>$this->enrollment->status_nacionality,
             ];
-            // $estudiant->fill($this->enrollment->toArray()); //dd($estudiant);
-            // $this->estudiant = $estudiant->toArray(); //dd($this->representant);
-
-           // $this->estudiant->fill($this->enrollment->toArray()); //dd($this->estudiant);            
 
             $this->modeIncriptions = true;
             $this->modeEdit = true;
             $this->modeCreate = false;
+            $this->modeIndex = false;
         }
     }
 
@@ -270,27 +262,14 @@ class ListComponent extends Component
     {
 
         $validatedData = Validator::make(
-            ['email' => $this->email],
-            ['email' => 'required|email'],
+            ['representant.name' => $this->representant['name']],
+            ['representant.name' => 'required|email'],
             ['required' => 'The :attribute field is required'],
         )->validate();
-       
-        //'tinscription_id','section_id','estudiant_id','observations'
 
-        $validatedData = $this->validate([
-                'tinscription_id' => 'required|integer',
-                'section_id' => 'required|integer',
-                'observations' => 'nullable|string',
-            ],
-            [
-                'required.tinscription_id' => 'El campo :attribute no puede ser nulo.',
-            ],
-            [
-                'tinscription_id' => 'Tipo de Inscripción',
-                'section_id' => 'Grupo',
-                'observations' => 'Observaciones',
-            ]
-        );
+        dd('123');
+
+        //citype_id,ci,name,phone,email,whatsapp,twitter,instagram
 
         $this->alert('success', 'Los datos fueron almacenados satisfactoriamente!');
 

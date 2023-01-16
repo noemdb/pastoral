@@ -16,10 +16,13 @@ class CreateLapsesTable extends Migration
         Schema::create('lapses', function (Blueprint $table) {
             $table->id();
             $table->integer('curriculum_id')->unsigned()->comment('Plan de Formación');
+            $table->integer('charisma_id')->unsigned()->comment('Carisma');
 
             $table->string('code')->comment('Código');
             $table->string('code_sm')->comment('Abreviación');
             $table->string('name')->comment('Nombre');
+            $table->string('age_category')->nullable()->comment('Rango de edad');
+            $table->string('charisma')->nullable()->comment('Carisma');
             $table->string('description')->nullable();
             $table->string('observations')->nullable();
             $table->date('finicial')->comment('Fecha inicial');
@@ -33,6 +36,7 @@ class CreateLapsesTable extends Migration
 
             $table->timestamps();
             // $table->foreign('curriculum_id')->references('id')->on('curricula')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('charisma_id')->references('id')->on('charismas')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

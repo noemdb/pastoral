@@ -16,7 +16,8 @@ class LevelSeeder extends Seeder
     {
         DB::table('levels')->insert(
             [
-                'curriculum_id' => 1,
+                // 'curriculum_id' => 1,
+                'lapse_id' => 1,
                 'code' => 'NV1',
                 'code_sm' => 'N1',
                 'name' => 'Nivel 1',
@@ -32,7 +33,8 @@ class LevelSeeder extends Seeder
         
         DB::table('levels')->insert(
             [
-                'curriculum_id' => 1,
+                // 'curriculum_id' => 1,
+                'lapse_id' => 1,
                 'code' => 'NV2',
                 'code_sm' => 'N2',
                 'name' => 'Nivel 2',
@@ -48,7 +50,8 @@ class LevelSeeder extends Seeder
 
         DB::table('levels')->insert(
             [
-                'curriculum_id' => 2,
+                // 'curriculum_id' => 2,
+                'lapse_id' => 2,
                 'code' => 'NV1',
                 'code_sm' => 'N1',
                 'name' => 'Nivel 1',
@@ -64,7 +67,8 @@ class LevelSeeder extends Seeder
         
         DB::table('levels')->insert(
             [
-                'curriculum_id' => 2,
+                // 'curriculum_id' => 2,
+                'lapse_id' => 2,
                 'code' => 'NV2',
                 'code_sm' => 'N2',
                 'name' => 'Nivel 2',
@@ -80,7 +84,8 @@ class LevelSeeder extends Seeder
 
         DB::table('levels')->insert(
             [
-                'curriculum_id' => 3,
+                // 'curriculum_id' => 3,
+                'lapse_id' => 3,
                 'code' => 'PNV1',
                 'code_sm' => 'PN1',
                 'name' => 'Nivel 1',
@@ -96,7 +101,8 @@ class LevelSeeder extends Seeder
 
         DB::table('levels')->insert(
             [
-                'curriculum_id' => 4,
+                // 'curriculum_id' => 4,
+                'lapse_id' => 4,
                 'code' => 'COOPAN1',
                 'code_sm' => 'CA1',
                 'name' => 'Sencibilización',
@@ -112,7 +118,8 @@ class LevelSeeder extends Seeder
 
         DB::table('levels')->insert(
             [
-                'curriculum_id' => 4,
+                // 'curriculum_id' => 4,
+                'lapse_id' => 4,
                 'code' => 'COOPAN2',
                 'code_sm' => 'CA2',
                 'name' => 'Formación',
@@ -128,7 +135,8 @@ class LevelSeeder extends Seeder
 
         DB::table('levels')->insert(
             [
-                'curriculum_id' => 4,
+                // 'curriculum_id' => 4,
+                'lapse_id' => 4,
                 'code' => 'COOPAN3',
                 'code_sm' => 'CA3',
                 'name' => 'Identificación',
@@ -144,7 +152,8 @@ class LevelSeeder extends Seeder
 
         DB::table('levels')->insert(
             [
-                'curriculum_id' => 4,
+                // 'curriculum_id' => 4,
+                'lapse_id' => 4,
                 'code' => 'COOPAN4',
                 'code_sm' => 'CA4',
                 'name' => 'Sensibilización',

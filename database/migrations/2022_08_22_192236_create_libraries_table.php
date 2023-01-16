@@ -15,8 +15,9 @@ class CreateLibrariesTable extends Migration
     {
         Schema::create('libraries', function (Blueprint $table) {
             $table->id();
-            $table->integer('curriculum_id')->unsigned()->comment('Programas de Formación');
-            $table->integer('level_id')->unsigned()->comment('Nivel');
+            $table->integer('curriculum_id')->nullable()->unsigned()->comment('Planes de Formación');
+            $table->integer('lapse_id')->nullable()->unsigned()->comment('Programas de Formación');
+            $table->integer('level_id')->nullable()->unsigned()->comment('Nivel');
             $table->string('code')->comment('Código');
             $table->string('code_sm')->comment('Abreviación');
             $table->string('name')->comment('Nombre');
@@ -32,6 +33,8 @@ class CreateLibrariesTable extends Migration
 
             $table->timestamps();
             // $table->foreign('curriculum_id')->references('id')->on('curricula')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('lapse_id')->references('id')->on('lapses')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('level_id')->references('id')->on('levels')->onDelete('cascade')->onUpdate('cascade');
             // $table->foreign('level_id')->references('id')->on('levels')->onDelete('cascade')->onUpdate('cascade');
         });
     }

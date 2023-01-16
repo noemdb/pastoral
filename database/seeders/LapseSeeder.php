@@ -20,6 +20,8 @@ class LapseSeeder extends Seeder
                 'curriculum_id' => 1,
                 'code' => 'PER1',
                 'code_sm' => 'P1',
+                'age_category' => 'Niño(a)',
+                'charisma_id' => 1,
                 'name' => 'Primer Corte',
                 'description' => 'Primer Corte',
                 'observations' => 'Primer Corte',
@@ -38,11 +40,13 @@ class LapseSeeder extends Seeder
                 'curriculum_id' => 1,
                 'code' => 'PER2',
                 'code_sm' => 'P2',
+                'age_category' => 'Adolescente',
+                'charisma_id' => 2,
                 'name' => 'Segundo Corte',
                 'description' => 'Segundo Corte',
                 'observations' => 'Segundo Corte',
                 "finicial"=>Carbon::now()->startOfYear()->format('Y-m-d'),
-                "ffinal"=>Carbon::now()->startOfYear()->addMonths(3)->format('Y-m-d'),
+                "ffinal"=>Carbon::now()->startOfYear()->addMonths(5)->format('Y-m-d'),
                 'status' => true,
                 'color' => '#FFAACC',
                 'header'=>'Segundo Corte',
@@ -51,49 +55,57 @@ class LapseSeeder extends Seeder
             ],
         );
 
-        DB::table('lapses')->insert(
-            [
-                'curriculum_id' => 1,
-                'code' => 'PER3',
-                'code_sm' => 'P3',
-                'name' => 'Tercer Corte',
-                'description' => 'Tercer Corte',
-                'observations' => 'Tercer Corte',
-                "finicial"=>Carbon::now()->startOfYear()->format('Y-m-d'),
-                "ffinal"=>Carbon::now()->startOfYear()->addMonths(3)->format('Y-m-d'),
-                'status' => true,
-                'color' => '#FFAAEE',
-                'header'=>'Tercer Corte',
-                'body'=>'Identidad y Carisma Amigoniano',
-                'footer'=>'Identidad y Carisma Amigoniano',
-            ],
-        );
-
-        DB::table('lapses')->insert(
-            [
-                'curriculum_id' => 1,
-                'code' => 'PER4',
-                'code_sm' => 'P4',
-                'name' => 'Cuarto Corte',
-                'description' => 'Cuarto Corte',
-                'observations' => 'Cuarto Corte',
-                "finicial"=>Carbon::now()->startOfYear()->format('Y-m-d'),
-                "ffinal"=>Carbon::now()->startOfYear()->addMonths(3)->format('Y-m-d'),
-                'status' => true,
-                'color' => '#FFAACC',
-                'header'=>'Cuarto Corte',
-                'body'=>'Identidad y Carisma Amigoniano',
-                'footer'=>'Identidad y Carisma Amigoniano',
-            ],
-        );
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////
 
         DB::table('lapses')->insert(
             [
                 'curriculum_id' => 2,
                 'code' => 'PER1',
                 'code_sm' => 'P1',
+                'age_category' => 'Niño(a)',
+                'charisma_id' => 3,
+                'name' => 'Primer Corte',
+                'description' => 'Primer Corte',
+                'observations' => 'Primer Corte',
+                "finicial"=>Carbon::now()->startOfYear()->format('Y-m-d'),
+                "ffinal"=>Carbon::now()->startOfYear()->addMonths(4)->format('Y-m-d'),
+                'status' => true,
+                'color' => '#FFDDCC',
+                'header'=>'Primer Corte',
+                'body'=>'Identidad y Carisma Amigoniano',
+                'footer'=>'Identidad y Carisma Amigoniano',
+            ],
+        );
+
+        DB::table('lapses')->insert(
+            [
+                'curriculum_id' => 2,
+                'code' => 'PER2',
+                'code_sm' => 'P2',
+                'age_category' => 'Adolescente',
+                'charisma_id' => 4,
+                'name' => 'Segundo Corte',
+                'description' => 'Segundo Corte',
+                'observations' => 'Segundo Corte',
+                "finicial"=>Carbon::now()->startOfYear()->addMonths(3)->format('Y-m-d'),
+                "ffinal"=>Carbon::now()->startOfYear()->addMonths(7)->format('Y-m-d'),
+                'status' => true,
+                'color' => '#FFAACC',
+                'header'=>'Segundo Corte',
+                'body'=>'Identidad y Carisma Amigoniano',
+                'footer'=>'Identidad y Carisma Amigoniano',
+            ],
+        );
+
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
+        DB::table('lapses')->insert(
+            [
+                'curriculum_id' => 3,
+                'code' => 'PER1',
+                'code_sm' => 'P1',
+                'age_category' => 'Niño(a)',
+                'charisma_id' => 5,
                 'name' => 'Primer Corte',
                 'description' => 'Primer Corte',
                 'observations' => 'Primer Corte',
@@ -109,14 +121,16 @@ class LapseSeeder extends Seeder
 
         DB::table('lapses')->insert(
             [
-                'curriculum_id' => 2,
+                'curriculum_id' => 3,
                 'code' => 'PER2',
                 'code_sm' => 'P2',
+                'age_category' => 'Adolescente',
+                'charisma_id' => 6,
                 'name' => 'Segundo Corte',
                 'description' => 'Segundo Corte',
                 'observations' => 'Segundo Corte',
-                "finicial"=>Carbon::now()->startOfYear()->addMonths(3)->format('Y-m-d'),
-                "ffinal"=>Carbon::now()->startOfYear()->addMonths(6)->format('Y-m-d'),
+                "finicial"=>Carbon::now()->startOfYear()->format('Y-m-d'),
+                "ffinal"=>Carbon::now()->startOfYear()->addMonths(5)->format('Y-m-d'),
                 'status' => true,
                 'color' => '#FFAACC',
                 'header'=>'Segundo Corte',
@@ -127,17 +141,19 @@ class LapseSeeder extends Seeder
 
         DB::table('lapses')->insert(
             [
-                'curriculum_id' => 2,
-                'code' => 'PER3',
-                'code_sm' => 'P3',
-                'name' => 'Tercer Corte',
-                'description' => 'Tercer Corte',
-                'observations' => 'Tercer Corte',
-                "finicial"=>Carbon::now()->startOfYear()->addMonths(6)->format('Y-m-d'),
-                "ffinal"=>Carbon::now()->startOfYear()->addMonths(9)->format('Y-m-d'),
+                'curriculum_id' => 4,
+                'code' => 'PEZ1',
+                'code_sm' => 'Z1',
+                'age_category' => 'Niño(a)',
+                'charisma_id' => 7,
+                'name' => 'Primer Corte',
+                'description' => 'Primer Corte',
+                'observations' => 'Primer Corte',
+                "finicial"=>Carbon::now()->startOfYear()->format('Y-m-d'),
+                "ffinal"=>Carbon::now()->startOfYear()->addMonths(3)->format('Y-m-d'),
                 'status' => true,
-                'color' => '#FFAAEE',
-                'header'=>'Tercer Corte',
+                'color' => '#FFDDCC',
+                'header'=>'Primer Corte',
                 'body'=>'Identidad y Carisma Amigoniano',
                 'footer'=>'Identidad y Carisma Amigoniano',
             ],
@@ -145,17 +161,19 @@ class LapseSeeder extends Seeder
 
         DB::table('lapses')->insert(
             [
-                'curriculum_id' => 2,
-                'code' => 'PER4',
-                'code_sm' => 'P4',
-                'name' => 'Cuarto Corte',
-                'description' => 'Cuarto Corte',
-                'observations' => 'Cuarto Corte',
-                "finicial"=>Carbon::now()->startOfYear()->addMonths(9)->format('Y-m-d'),
-                "ffinal"=>Carbon::now()->startOfYear()->addMonths(12)->format('Y-m-d'),
+                'curriculum_id' => 4,
+                'code' => 'PEX2',
+                'code_sm' => 'P2',
+                'age_category' => 'Adolescente',
+                'charisma_id' => 8,
+                'name' => 'Segundo Corte',
+                'description' => 'Segundo Corte',
+                'observations' => 'Segundo Corte',
+                "finicial"=>Carbon::now()->startOfYear()->format('Y-m-d'),
+                "ffinal"=>Carbon::now()->startOfYear()->addMonths(5)->format('Y-m-d'),
                 'status' => true,
                 'color' => '#FFAACC',
-                'header'=>'Cuarto Corte',
+                'header'=>'Segundo Corte',
                 'body'=>'Identidad y Carisma Amigoniano',
                 'footer'=>'Identidad y Carisma Amigoniano',
             ],

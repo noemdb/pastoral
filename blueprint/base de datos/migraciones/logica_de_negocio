@@ -11,6 +11,7 @@ Detalles del Pescolar
 	php artisan make:model 'app\Pescolar\Scale' -m -a
 	php artisan make:model 'app\Pescolar\Noun' -m -a
 	php artisan make:model 'app\Pescolar\Curriculum' -m -a
+	php artisan make:model 'app\Pescolar\Charisma' -m -a
 	php artisan make:model 'app\Pescolar\Lapse' -m -a
 	php artisan make:model 'app\Pescolar\Level' -m -a
 	php artisan make:model 'app\Pescolar\Section' -m -a

@@ -15,7 +15,8 @@ class CreateLevelsTable extends Migration
     {
         Schema::create('levels', function (Blueprint $table) {
             $table->id();
-            $table->integer('curriculum_id')->unsigned()->comment('Plan de Formación');
+            // $table->integer('curriculum_id')->unsigned()->comment('Plan de Formación');
+            $table->integer('lapse_id')->unsigned()->comment('Programas de Formación');
 
             $table->string('code')->comment('Código');
             $table->string('code_sm')->comment('Abreviación');
@@ -31,6 +32,7 @@ class CreateLevelsTable extends Migration
 
             $table->timestamps();
             // $table->foreign('curriculum_id')->references('id')->on('curricula')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('lapse_id')->references('id')->on('lapses')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
