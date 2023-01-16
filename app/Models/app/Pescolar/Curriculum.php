@@ -41,7 +41,7 @@ class Curriculum extends Model
 		'body'=>'Cuerpo',
 		'footer'=>'Pie de página',
         ////////////////////////////
-		'count_lapses'=>'N.Cortes',
+		'count_lapses'=>'N.Progr.',
 
     ];
 

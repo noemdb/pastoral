@@ -15,13 +15,14 @@ class Level extends Model
     use LevelRelations;
 
     protected $fillable = [
-        'curriculum_id','code','code_sm','name','description','observations','color','header','body','footer','status',
+        'lapse_id','code','code_sm','name','description','observations','color','header','body','footer','status',
     ];
 
     protected $dates = ['created_at','updated_at'];
 
     const COLUMN_COMMENTS = [
         'curriculum_id' => 'Plan de Formación',
+        'lapse_id' => 'Programa de Formación',
         'code' => 'Código',
         'code_sm' => 'Código abreviado',
         'name' => 'Nombre',
@@ -38,6 +39,11 @@ class Level extends Model
     public function getFullNameAttribute()
     {
         return "{$this->code} {$this->name}";
+    }
+
+    public function getCurriculumAttribute()
+    {
+        return ($this->lapse) ? $this->lapse->curriculum : null;
     }
 
     public function sections_list()
@@ -57,12 +63,13 @@ class Level extends Model
 
     public static function levels_list_fullname()
 	{
-		$curricula_list = Level::select('levels.id',DB::raw('curricula.name || " | PE. "  || pescolars.name || " | INS. " || pastorals.name || " | N. " || levels.name as fullnamename' ))
-			->join('curricula', 'curricula.id', '=', 'levels.curriculum_id')
+		$lapses_list = Level::select('levels.id',DB::raw('lapses.name || " | PE. "  || pescolars.name || " | INS. " || pastorals.name || " | N. " || levels.name as fullnamename' ))
+			->join('lapses', 'lapses.id', '=', 'levels.lapse_id')
+			->join('curricula', 'curricula.id', '=', 'lapses.curriculum_id')
 			->join('pescolars', 'pescolars.id', '=', 'curricula.pescolar_id')
 			->join('pastorals', 'pastorals.id', '=', 'pescolars.pastoral_id')
 			->pluck('fullnamename','id'); //dd($curricula_list_fullname);
-		return $curricula_list;
+		return $lapses_list;
 	}
 
     public function getPensumsAttribute()

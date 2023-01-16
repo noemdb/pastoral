@@ -70,7 +70,7 @@ class Pescolar extends Model
 
 	public static function pescolar_list_fullname()
 	{
-		$pescolar_list = Pescolar::select('pescolars.id',DB::raw('pescolars.name || " | INS. " || pastorals.name as fullnamename' ))
+		$pescolar_list = Pescolar::select('pescolars.id',DB::raw('pescolars.code || " - " || pescolars.name || " | INS. " || pastorals.name as fullnamename' ))
 			->join('pastorals', 'pastorals.id', '=', 'pescolars.pastoral_id')
 			->pluck('fullnamename','id');
 		return $pescolar_list;

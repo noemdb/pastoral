@@ -3,11 +3,11 @@ namespace App\Models\app\Pescolar\Traits\Level;
 
 trait LevelRelations {
 
-    public function curriculum()
+    public function lapse()
     {
-        return $this->belongsTo('App\Models\app\Pescolar\Curriculum');
+        return $this->belongsTo('App\Models\app\Pescolar\Lapse');
     }
-    ///////////////////////////////////////////////////////////////////////////////////    
+    ///////////////////////////////////////////////////////////////////////////////////
 }
 
 ?>

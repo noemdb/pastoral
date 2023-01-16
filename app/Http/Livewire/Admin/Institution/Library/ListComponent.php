@@ -53,19 +53,20 @@ class ListComponent extends Component
     {
         $this->modeCreate = false;
         $this->modeEdit = false;
-        $this->list_comment = Library::COLUMN_COMMENTS; 
+        $this->list_comment = Library::COLUMN_COMMENTS;
         $this->curricula_list = Curriculum::curricula_list()->toArray();
         $this->levels_list = Level::levels_list_fullname()->toArray();
     }
 
     public function render()
     {
-        $search = $this->search; 
+        $search = $this->search;
 
         $libraries = Library::select('libraries.*')
             ->leftjoin('levels', 'levels.id', '=', 'libraries.level_id')
-            ->leftjoin('curricula', 'curricula.id', '=', 'levels.curriculum_id')
-            ;  
+            ->leftjoin('lapses', 'lapses.id', '=', 'levels.lapse_id')
+            ->leftjoin('curricula', 'curricula.id', '=', 'lapses.curriculum_id')
+            ;
 
         $libraries = (!empty($search)) ? $libraries->orwhere(
             function($query) use ($search) {
@@ -75,11 +76,11 @@ class ListComponent extends Component
                     ->orWhere('levels.name','like','%'.$search.'%')
                     ->orWhere('levels.description','like','%'.$search.'%')
                     ;
-            }) 
+            })
             : $libraries ;
 
         $libraries = ($this->sortBy && $this->sortDirection) ? $libraries->orderBy($this->sortBy,$this->sortDirection) : $libraries;
-        
+
         $libraries = $libraries->paginate($this->paginate);
 
         return view('livewire.admin.institution.library.list-component', [
@@ -103,7 +104,7 @@ class ListComponent extends Component
             $this->library_id = ($this->library) ? $this->library->id:null;
             $this->modeEdit = true;
             $this->modeCreate = false;
-        }       
+        }
     }
 
     public function save()

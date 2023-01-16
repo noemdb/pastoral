@@ -8,6 +8,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use App\Http\Livewire\Admin\Institution\Lapse\Traits\LapseRules;
 use App\Models\app\Pescolar;
+use App\Models\app\Pescolar\Charisma;
 use App\Models\app\Pescolar\Lapse;
 use App\Models\app\Pescolar\Curriculum;
 
@@ -30,7 +31,7 @@ class ListComponent extends Component
 
     public $status_last,$status_first,$saveInto;
 
-    public $curricula_list;
+    public $curricula_list,$age_category_list,$charismas_list;
 
     protected $listeners = [ 'remove' ];
 
@@ -38,25 +39,27 @@ class ListComponent extends Component
     {
         $this->modeCreate = false;
         $this->modeEdit = false;
-        $this->list_comment = Lapse::COLUMN_COMMENTS; 
-        $this->curricula_list = Curriculum::curricula_list_fullname()->toArray(); 
+        $this->list_comment = Lapse::COLUMN_COMMENTS;
+        $this->age_category_list = Lapse::age_category_list();
+        $this->charismas_list = Charisma::charismas_list()->toArray();
+        $this->curricula_list = Curriculum::curricula_list_fullname()->toArray();
     }
 
     public function render()
     {
-        $search = $this->search; 
+        $search = $this->search;
 
-        $lapses = Lapse::select('lapses.*');  
+        $lapses = Lapse::select('lapses.*');
 
         $lapses = (!empty($search)) ? $lapses->orwhere(
             function($query) use ($search) {
                 $query->orWhere('description','like', '%'.$search.'%')
                     ->orWhere('name','like','%'.$search.'%');
-            }) 
+            })
             : $lapses ; //dd($lapses);
 
         $lapses = ($this->sortBy && $this->sortDirection) ? $lapses->orderBy($this->sortBy,$this->sortDirection) : $lapses;
-        
+
         $lapses = $lapses->paginate($this->paginate);
 
         return view('livewire.admin.institution.lapse.list-component', [

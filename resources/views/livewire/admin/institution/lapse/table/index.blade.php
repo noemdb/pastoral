@@ -102,7 +102,7 @@
                 <td class="{{ $class['name'] ?? ''}}">{{$lapse->name ?? ''}}</td>
                 <td class="{{ $class['finicial'] ?? ''}}">{{$lapse->finicial ?? ''}}</td>
                 <td class="{{ $class['ffinal'] ?? ''}}">{{$lapse->ffinal ?? ''}}</td>
-                <td class="{{ $class['description'] ?? ''}}">{{$lapse->description ?? ''}}</td>
+                <td class="{{ $class['description'] ?? ''}}">{{$lapse->description ?? ''}} <span>{{$lapse->charisma->name ?? ''}}</span> </td>
                 {{-- <td class="{{ $class['count_levels'] ?? '' }}">{{$lapse->count_levels ?? ''}}</td> --}}
                 <td class="{{ $class['count_levels'] ?? '' }}"></td>
                 <td class="{{ $class['action'] ?? '' }}">

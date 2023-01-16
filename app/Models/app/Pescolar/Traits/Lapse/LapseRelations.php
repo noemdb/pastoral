@@ -9,6 +9,12 @@ trait LapseRelations {
     {
         return $this->belongsTo('App\Models\app\Pescolar\Curriculum');
     }
+
+    public function charisma()
+    {
+        return $this->belongsTo('App\Models\app\Pescolar\Charisma');
+    }
+
     // public function levels()
     // {
     //     return $this->hasMany(Level::class);

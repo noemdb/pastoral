@@ -16,7 +16,7 @@ class Lapse extends Model
     use LapseRelations;
 
     protected $fillable = [
-        'curriculum_id','code','code_sm','name','description','observations','finicial','ffinal','status','color','header','footer','body'
+        'curriculum_id','charisma_id','code','code_sm','name','age_category','description','observations','finicial','ffinal','status','color','header','footer','body'
     ];
 
     protected $dates = ['created_at','updated_at'];
@@ -33,9 +33,11 @@ class Lapse extends Model
 
     const COLUMN_COMMENTS = [
         'curriculum_id' => 'Plan de Formación',
+        'charisma_id' => 'Carisma',
         'code' => 'Código',
         'code_sm' => 'Código abreviado',
         'name' => 'Nombre',
+        'age_category' => 'Rango de edad',
         'description' => 'Descripción',
         'observations' => 'Observaciones',
         'finicial' => 'F.Inicial',
@@ -49,6 +51,15 @@ class Lapse extends Model
         'count_levels'=>'N.Niveles',
     ];
 
+    public static function age_category_list()
+    {
+        return [
+            'Niño(a)'=>'Niño(a)',
+            'Adolescente'=>'Adolescente',
+            'Adulto'=>'Adulto',
+        ];
+    }
+
     public function getFullNameAttribute()
     {
         return "{$this->code} {$this->name}";
@@ -56,7 +67,7 @@ class Lapse extends Model
 
     public static function lapses_list()
     {
-        $lapses = Lapse::select('lapses.*',DB::raw('pescolars.code || " - " || curricula.code || " - " || curricula.name as name' ))
+        $lapses = Lapse::select('lapses.*',DB::raw(' pescolars.code || " - " || curricula.code || " - " || curricula.name || " - " || lapses.code as name ' ))
             ->join('curricula', 'curricula.id', '=', 'lapses.curriculum_id')
             ->join('pescolars', 'pescolars.id', '=', 'curricula.pescolar_id')
             ->pluck('name','id');

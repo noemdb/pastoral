@@ -30,7 +30,7 @@ class ListComponent extends Component
 
     public $status_last,$status_first,$saveInto;
 
-    public $curricula_list;
+    public $curricula_list,$levels_list;
 
     protected $listeners = [ 'remove' ];
 
@@ -38,25 +38,25 @@ class ListComponent extends Component
     {
         $this->modeCreate = false;
         $this->modeEdit = false;
-        $this->list_comment = Section::COLUMN_COMMENTS; 
-        $this->levels_list = Level::levels_list_fullname()->toArray(); 
+        $this->list_comment = Section::COLUMN_COMMENTS;
+        $this->levels_list = Level::levels_list_fullname()->toArray();
     }
 
     public function render()
     {
-        $search = $this->search; 
+        $search = $this->search;
 
-        $sections = Section::select('sections.*');  
+        $sections = Section::select('sections.*');
 
         $sections = (!empty($search)) ? $sections->orwhere(
             function($query) use ($search) {
                 $query->orWhere('description','like', '%'.$search.'%')
                     ->orWhere('name','like','%'.$search.'%');
-            }) 
+            })
             : $sections ; //dd($sections);
 
         $sections = ($this->sortBy && $this->sortDirection) ? $sections->orderBy($this->sortBy,$this->sortDirection) : $sections;
-        
+
         $sections = $sections->paginate($this->paginate);
 
         return view('livewire.admin.institution.section.list-component', [

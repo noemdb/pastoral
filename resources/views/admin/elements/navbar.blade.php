@@ -4,11 +4,11 @@
     <div class="flex justify-start">
         <x-jet-nav-link class=" shadow py-2 mx-1 rounded" href="{{ route($userPrefix.'.institutions.index') }}" :active="request()->routeIs('*institutions*')">
             <x-icon-building class="w-6 h-6 mr-0.5" />
-            <div class="mr-0.5 hidden lg:flex">{{ __('Instituciones') }} </div>                        
+            <div class="mr-0.5 hidden lg:flex">{{ __('Instituciones') }} </div>
         </x-jet-nav-link>
         <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" href="{{ route($userPrefix.'.authorities.index') }}" :active="request()->routeIs('*authorities*')">
             <x-icon-stop class="w-6 h-6 mr-0.5" />
-            <div class="mr-0.5 hidden lg:flex">{{ __('Autoridades') }} </div> 
+            <div class="mr-0.5 hidden lg:flex">{{ __('Autoridades') }} </div>
         </x-jet-nav-link>
         <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" title="Perídos Educativo"  href="{{ route($userPrefix.'.pescolars.index') }}" :active="request()->routeIs('*pescolars*')">
             <x-icon-calendar class="w-6 h-6 mr-0.5" />
@@ -20,7 +20,7 @@
         </x-jet-nav-link>
         <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" href="{{ route($userPrefix.'.lapses.index') }}" :active="request()->routeIs('*lapses*')">
             <x-icon-clock class="w-6 h-6 mr-0.5" />
-            <div class="mr-0.5 hidden lg:flex">{{ __('Cortes') }} </div>
+            <div class="mr-0.5 hidden lg:flex">{{ __('Programas') }} </div>
         </x-jet-nav-link>
         <x-jet-nav-link class="shadow py-2 mx-1 rounded dark:border-gray-400" href="{{ route($userPrefix.'.levels.index') }}" :active="request()->routeIs('*levels*')">
             <x-icon-chart-bar-v class="w-6 h-6 mr-0.5" />
@@ -43,4 +43,4 @@
             <div class="mr-0.5 hidden lg:flex">{{ __('Amigoteca') }} </div>
         </x-jet-nav-link>
     </div>
-</x-slot> 
+</x-slot>

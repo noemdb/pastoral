@@ -17,8 +17,8 @@
             @php $name = 'search'; $model = 'inscription.'.$name; @endphp
             <div class="flex justify-start">
                 <x-jet-label for="{{$name}}" value="Buscar:" />
-                <span class="text-gray-400 mx-2 font-medium">nombre</span>                
-            </div>        
+                <span class="text-gray-400 mx-2 font-medium">nombre</span>
+            </div>
             <x-input wire:model.debounce.500ms="{{$name}}" name="{{$name}}" class="block w-full" />
         </div>
         <div class="w-1/5">
@@ -75,9 +75,10 @@
         <tbody id="tdatos">
         @forelse($inscriptions as $inscription)
 
-            @php 
+            @php
                 $section = $inscription->section;
                 $level = $section->level;
+                $lapse = $level->lapse;
                 $curriculum = $level->curriculum;
                 $pescolar = $curriculum->pescolar;
                 $pastoral = $pescolar->pastoral;
@@ -98,7 +99,7 @@
                     <div class="flex justify-end text-gray-400 text-sm">{{$pescolar->name ?? ''}}</div>
                     <div class="flex justify-end text-gray-400 text-sm">{{$pastoral->name ?? ''}}</div>
                 </td>
-                
+
                 <td class="{{ $class['estudiant_id'] ?? ''}}">{{$estudiant->fullname ?? ''}}</td>
                 <td class="{{ $class['estudiant_id'] ?? ''}}">{{$estudiant->ci ?? ''}}</td>
 

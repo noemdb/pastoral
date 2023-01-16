@@ -29,7 +29,7 @@
     @if ($modeCreate)
 
         <div class="mb-4 pb-4">
-            @include('livewire.admin.institution.pastoral.form.create')
+            @include('livewire.admin.institution.pastoral.form.tab.create')
         </div>
 
     @endif

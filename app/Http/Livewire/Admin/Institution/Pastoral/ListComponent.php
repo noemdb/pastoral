@@ -98,25 +98,26 @@ class ListComponent extends Component
     public function render()
     {
 
-        $search = $this->search; 
+        $search = $this->search;
 
-        $pastorals = Pastoral::select('pastorals.*');  
+        $pastorals = Pastoral::select('pastorals.*');
 
-        $pastorals = (!empty($search)) ? $pastorals->orWhere( function($query) use ($search) {$query->orWhere('name','like', '%'.$search.'%')->orWhere('legalname','like','%'.$search.'%')->orWhere('description','like','%'.$search.'%');}) : $pastorals ;     
+        $pastorals = (!empty($search)) ? $pastorals->orWhere( function($query) use ($search) {$query->orWhere('name','like', '%'.$search.'%')->orWhere('legalname','like','%'.$search.'%')->orWhere('description','like','%'.$search.'%');}) : $pastorals ;
 
         $pastorals = ($this->sortBy && $this->sortDirection) ? $pastorals->orderBy($this->sortBy,$this->sortDirection) : $pastorals;
-        
+
         $pastorals = $pastorals->paginate($this->paginate);
 
         return view('livewire.admin.institution.pastoral.list-component', [
             'pastorals' => $pastorals,
         ]);
-    }    
+    }
 
     public function create()
     {
         $this->pastoral = new Pastoral;
         $this->modeCreate = true;
+        $this->modeEdit = false;
     }
 
     public function store()
@@ -125,13 +126,16 @@ class ListComponent extends Component
         $this->pastoral->save();
         $this->alert('success', 'Los datos fueron almacenados satisfactoriamente!');
         $this->modeCreate = false;
+        $this->modeEdit = false;
+        $this->reset(['pastoral_id']);
     }
 
     public function edit($id)
     {
         $this->pastoral = Pastoral::find($id); //dd($this->pastoral->toArray());
         $this->pastoral_id = ($this->pastoral) ? $this->pastoral->id:null;
-        $this->modeEdit = ($this->pastoral) ? true:false;
+        $this->modeCreate = false;
+        $this->modeEdit = true;
     }
 
     public function save()
@@ -142,18 +146,22 @@ class ListComponent extends Component
         $this->alert('success', 'Los datos fueron almacenados satisfactoriamente!');
 
         $this->modeEdit = false;
+        $this->modeCreate = false;
         $this->reset(['pastoral_id']);
     }
 
     public function closeEditMode()
     {
         $this->pastoral_id = false;
+        $this->modeCreate = false;
         $this->modeEdit = false;
     }
 
     public function closeCreateMode()
     {
+        $this->pastoral_id = false;
         $this->modeCreate = false;
+        $this->modeEdit = false;
     }
 
     public function delete ($id)

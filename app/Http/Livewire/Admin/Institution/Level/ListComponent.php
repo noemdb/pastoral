@@ -10,6 +10,7 @@ use App\Http\Livewire\Admin\Institution\Level\Traits\LevelRules; //app/Http/Live
 use App\Models\app\Pescolar;
 use App\Models\app\Pescolar\Level;
 use App\Models\app\Pescolar\Curriculum;
+use App\Models\app\Pescolar\Lapse;
 
 class ListComponent extends Component
 {
@@ -30,7 +31,7 @@ class ListComponent extends Component
 
     public $status_last,$status_first,$saveInto;
 
-    public $curricula_list;
+    public $curricula_list,$lapses_list;
 
     protected $listeners = [ 'remove' ];
 
@@ -38,25 +39,26 @@ class ListComponent extends Component
     {
         $this->modeCreate = false;
         $this->modeEdit = false;
-        $this->list_comment = Level::COLUMN_COMMENTS; 
+        $this->list_comment = Level::COLUMN_COMMENTS;
         $this->curricula_list = Curriculum::curricula_list_fullname()->toArray();
+        $this->lapses_list = Lapse::lapses_list()->toArray();
     }
 
     public function render()
     {
-        $search = $this->search; 
+        $search = $this->search;
 
-        $levels = Level::select('levels.*');  
+        $levels = Level::select('levels.*');
 
         $levels = (!empty($search)) ? $levels->orwhere(
             function($query) use ($search) {
                 $query->orWhere('description','like', '%'.$search.'%')
                     ->orWhere('name','like','%'.$search.'%');
-            }) 
+            })
             : $levels ; //dd($levels);
 
         $levels = ($this->sortBy && $this->sortDirection) ? $levels->orderBy($this->sortBy,$this->sortDirection) : $levels;
-        
+
         $levels = $levels->paginate($this->paginate);
 
         return view('livewire.admin.institution.level.list-component', [

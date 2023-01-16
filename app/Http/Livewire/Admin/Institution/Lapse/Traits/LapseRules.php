@@ -8,9 +8,11 @@ trait LapseRules
 
     protected $rules = [
         'lapse.curriculum_id' => 'required|integer',
+        'lapse.charisma_id' => 'required|integer',
         'lapse.code' => 'required|string|min:2|max:10',
         'lapse.code_sm' => 'required|string|min:2|max:5',
         'lapse.name' => 'required|string',
+        'lapse.age_category' => 'required|string',
         'lapse.description' => 'required|string',
         'lapse.observations' => 'nullable|string',
         'lapse.finicial' => 'required|date',
@@ -26,9 +28,11 @@ trait LapseRules
     {
         return [
             'lapse.curriculum_id' => $this->list_comment['curriculum_id'],
+            'lapse.charisma_id' => $this->list_comment['charisma_id'],
             'lapse.code' => $this->list_comment['code'],
             'lapse.code_sm' => $this->list_comment['code_sm'],
             'lapse.name' => $this->list_comment['name'],
+            'lapse.age_category' => $this->list_comment['age_category'],
             'lapse.description' => $this->list_comment['description'],
             'lapse.observations' => $this->list_comment['observations'],
             'lapse.finicial' => $this->list_comment['finicial'],
