@@ -9,7 +9,7 @@
         @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
         <div class="mb-4">
             @php $name = 'charisma_id'; $model = 'lapse.'.$name; $key = Str::random(10); @endphp
@@ -33,19 +33,21 @@
             <x-input wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" id="{{$model}}" class="block mt-1 w-full" />
             @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
-        <div class="mb-4">
-            @php $name = 'code'; $model = 'lapse.'.$name; $key = Str::random(10); @endphp
-            <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
-            <x-input wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" id="{{$model}}" class="block mt-1 w-full" />
-            @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
-        </div>
-        <div class="mb-4">
-            @php $name = 'code_sm'; $model = 'lapse.'.$name; $key = Str::random(10); @endphp
-            <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
-            <x-input wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" id="{{$model}}" class="block mt-1 w-full" />
-            @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
-        </div>
 
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="mb-4">
+                @php $name = 'code'; $model = 'lapse.'.$name; $key = Str::random(10); @endphp
+                <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
+                <x-input wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" id="{{$model}}" class="block mt-1 w-full" />
+                @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+            </div>
+            <div class="mb-4">
+                @php $name = 'code_sm'; $model = 'lapse.'.$name; $key = Str::random(10); @endphp
+                <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
+                <x-input wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" id="{{$model}}" class="block mt-1 w-full" />
+                @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+            </div>
+        </div>
         {{-- ////////////////////////////////////// --}}
 
         <div class="mb-4">
@@ -60,22 +62,43 @@
             <x-textarea wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" id="{{$model}}" class="block mt-1 w-full" rows="2"/>
             @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="mb-4">
+                @php $name = 'finicial'; $model = 'lapse.'.$name; $key = Str::random(10);@endphp
+                <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
+                <x-input type="date" wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" class="block mt-1 w-full" />
+                @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+            </div>
 
-        <div class="mb-4">
-            @php $name = 'finicial'; $model = 'lapse.'.$name; $key = Str::random(10);@endphp
-            <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
-            <x-input type="date" wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" class="block mt-1 w-full" />
-            @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+            <div class="mb-4">
+                @php $name = 'ffinal'; $model = 'lapse.'.$name; $key = Str::random(10);@endphp
+                <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
+                <x-input type="date" wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" class="block mt-1 w-full" />
+                @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+            </div>
         </div>
 
-        <div class="mb-4">
-            @php $name = 'ffinal'; $model = 'lapse.'.$name; $key = Str::random(10);@endphp
-            <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
-            <x-input type="date" wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" class="block mt-1 w-full" />
-            @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="mb-4">
+                @php $name = 'status'; $model = 'lapse.'.$name; $key = Str::random(10);@endphp
+                <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
+                <x-select  wire:key="{{$key}}" wire:model.defer="{{$model}}" :options="[1=>'SI',0=>'NO']" class="block mt-1 w-full" rows="2" />
+                @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+            </div>
+
+            <div class="mb-4">
+                @php $name = 'color'; $model = 'lapse.'.$name; $key = Str::random(10);@endphp
+                <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
+                <x-input type="color" wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" class="block mt-1 h-10 w-full" />
+                @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+            </div>
         </div>
+    </div>
 
+    <hr class="my-2">
+    <h5 class="text-center font-bold">HTML</h5>
 
+    <div class="grid grid-cols-1 gap-4">
         <div class="mb-4">
             @php $name = 'header'; $model = 'lapse.'.$name; $key = Str::random(10);@endphp
             <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
@@ -94,25 +117,8 @@
             <x-textarea wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" id="{{$model}}" class="block mt-1 w-full" rows="2"/>
             @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
-
-        {{-- <hr> --}}
-
-        <div class="mb-4">
-            @php $name = 'color'; $model = 'lapse.'.$name; $key = Str::random(10);@endphp
-            <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
-            <x-input type="color" wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" class="block mt-1 h-10 w-10" />
-            @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
-        </div>
-
-        <div class="mb-4">
-            @php $name = 'status'; $model = 'lapse.'.$name; $key = Str::random(10);@endphp
-            <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
-            <x-select  wire:key="{{$key}}" wire:model.defer="{{$model}}" :options="[1=>'SI',0=>'NO']" class="block mt-1 w-full" rows="2" />
-            @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
-        </div>
-
-
     </div>
+
 </div>
 
 {{-- ////////////////////////////////////// --}}
@@ -207,7 +213,7 @@
     <div class="mb-4">
         @php $name = 'color'; $model = 'lapse.'.$name; $key = Str::random(10);@endphp
         <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
-        <x-input type="color" wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" class="block mt-1 h-10 w-10" />
+        <x-input type="color" wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" class="block mt-1 h-10 w-full" />
         @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
     </div>
 

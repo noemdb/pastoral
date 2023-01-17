@@ -11,23 +11,12 @@
         </button>
     </div>
     <form wire:submit.prevent="saveInscription">
-        
-        <div class="grid grid-cols-3 gap-4">
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>@include('livewire.admin.competitor.enrollment.form.representants.fields')</div>
             <div>@include('livewire.admin.competitor.enrollment.form.estudiants.fields')</div>
             <div>@include('livewire.admin.competitor.enrollment.form.inscriptions.fields')</div>
         </div>
-
-        {{-- @include('livewire.admin.competitor.enrollment.form.inscriptions.fields') --}}
-
-        {{--
-            
-        <div class="flex justify-between mt-2">
-            <x-jet-button type="submit" class="ml-1 bg-green-500 shadow" > {{ __('Enviar') }} </x-jet-button>
-            <x-jet-button type="button" class="ml-1 bg-gray-900 shadow" wire:click="close"> {{ __('Cerrar') }} </x-jet-button>
-        </div>
-        
-        --}}
 
     </form>
 

@@ -27,22 +27,22 @@
         <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
         <x-select wire:key="{{$key}}" wire:model.defer="{{$model}}" :options="$lapses_list" id="{{$model}}" class=" w-full " />
         @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
-    </div>    
+    </div>
 </div>
 
-<div class="grid grid-cols-1 gap-4"> 
+<div class="grid grid-cols-1 gap-4">
     <div class="mb-4">
         @php $name = 'objetivo'; $model = 'pevaluation.'.$name; $key = Str::random(10); @endphp
         <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
         <x-textarea wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" id="{{$model}}" class="block mt-1 w-full" />
         @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
-    </div>   
+    </div>
     <div class="mb-4">
         @php $name = 'description'; $model = 'pevaluation.'.$name; $key = Str::random(10); @endphp
         <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
         <x-textarea wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" id="{{$model}}" class="block mt-1 w-full" />
         @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
-    </div>   
+    </div>
     <div class="mb-4">
         @php $name = 'observations'; $model = 'pevaluation.'.$name; $key = Str::random(10); @endphp
         <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
@@ -51,11 +51,11 @@
     </div>
 </div>
 
-<div class="grid grid-cols-2 gap-4">    
+<div class="grid grid-cols-2 gap-4">
     <div class="mb-4">
         @php $name = 'color'; $model = 'pevaluation.'.$name; $key = Str::random(10); @endphp
         <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
-        <x-input type="color" wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" id="{{$model}}" class="block mt-1 h-10 w-10" />
+        <x-input type="color" wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" id="{{$model}}" class="block mt-1 h-10 w-full" />
         @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
     </div>
     <div class="mb-4">

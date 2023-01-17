@@ -14,13 +14,14 @@ class Inscription extends Model
     protected $fillable = [
         'tinscription_id','section_id','estudiant_id','observations'
     ];
-    
+
     protected $dates = ['created_at','updated_at'];
 
     const COLUMN_COMMENTS = [
         'pastoral_id' => 'Institución',
         'pescolar_id' => 'Período de Formación',
         'curriculum_id' => 'Planes de Formación',
+        'lapse_id' => 'Programas de Formación',
         'level_id' => 'Niveles de Formación',
         'tinscription_id' => 'Tipo',
         'section_id' => 'Grupo',
@@ -28,18 +29,18 @@ class Inscription extends Model
         'ci' => 'CI',
         'observations' => 'Observaciones',
     ];
-    
+
     public function getFullNameAttribute()
     {
         return "{$this->tinscription->name} {$this->section->level->name} {$this->section->name}";
     }
 
-    public static function courses_list() 
+    public static function courses_list()
     {
         //return Course::pluck('name','id');
     }
 
-    public static function coursesLevelId_list($level_id) 
+    public static function coursesLevelId_list($level_id)
     {
         // $level = Level::find($level_id);
         // $courses_list = ($level) ? Course::select('courses.id',DB::raw('courses.code || " - " || courses.name as name' ))->where('curriculum_id',$level->curriculum_id)->pluck('name','id') :  collect(); //dd($level_id,$level);

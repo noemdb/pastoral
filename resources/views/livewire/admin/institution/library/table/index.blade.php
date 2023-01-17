@@ -18,8 +18,8 @@
             @php $name = 'search'; $model = 'library.'.$name; @endphp
             <div class="flex justify-start">
                 <x-jet-label for="{{$name}}" value="Buscar:" />
-                <span class="text-gray-400 mx-2 font-medium">Nombre, descripción, nivel</span>                
-            </div>        
+                <span class="text-gray-400 mx-2 font-medium">Nombre, descripción, nivel</span>
+            </div>
             <x-input wire:model.debounce.500ms="{{$name}}" name="{{$name}}" class="block w-full" />
         </div>
         <div class="w-1/5">
@@ -71,7 +71,7 @@
                         @endif
                     </div>
                 </th>
-                
+
                 <th class="{{ $class['action'] ?? ''}}">Acciones</th>
             </tr>
 
@@ -80,14 +80,14 @@
         <tbody id="tdatos">
         @forelse($libraries as $library)
 
-            @php 
+            @php
                 $curriculum = $library->curriculum;
                 $level = $library->level;
             @endphp
 
             {{-- 'user_id','curriculum_id','description','observations','color','header','body','footer','attachment','status', --}}
 
-            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($library->id == $document_id) ? 'bg-gray-200' : null}}">
+            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($library->id == $library_id) ? 'bg-gray-200' : null}}">
                 <td class="{{ $class['iteration'] ?? ''}}">{{$loop->iteration}}</td>
                 <td class="{{ $class['curriculum_id'] ?? ''}}">
                     {{$curriculum->name ?? ''}}
@@ -97,7 +97,7 @@
                     <div>{{ Str::limit($library->description,40) ?? ''}}</div>
                     <div class="flex justify-end text-gray-400 text-sm">{{$description->name ?? ''}}</div>
                 </td>
-                
+
                 <td class="{{ $class['observations'] ?? ''}}">{{$library->description ?? ''}}</td>
 
                 <td class="{{ $class['color'] ?? ''}}">
@@ -111,7 +111,7 @@
                             <x-elements.form.button-edit wire:key="library-edit-{{$library->id}}" wire:click="edit({{ $library->id }})" >
                                 <x-icon-pen class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-edit>
-                            <x-elements.form.button-del wire:key="library-delete-{{$library->id}}" wire:click="delete({{ $library->id }})" >
+                            <x-elements.form.button-del :disabled="!$library->status_delete" wire:key="library-delete-{{$library->id}}" wire:click="delete({{ $library->id }})" >
                                 <x-icon-trash-can class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-del>
                         </div>

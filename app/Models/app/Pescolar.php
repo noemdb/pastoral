@@ -51,6 +51,11 @@ class Pescolar extends Model
 		return Pescolar::pluck('name','id');
 	}
 
+    public function curricula_list()
+    {
+        return $this->curricula->pluck('name','id');
+    }
+
 	public function curricula_full_list()
     {
         $pescolars = Pescolar::select('curricula.id')

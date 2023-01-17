@@ -13,6 +13,7 @@ use App\Models\app\Pescolar;
 use App\Models\app\Pescolar\Pensum;
 use App\Models\app\Pescolar\Level;
 use App\Models\app\Pescolar\Course;
+use App\Models\app\Pescolar\Curriculum;
 
 class ListComponent extends Component
 {
@@ -23,7 +24,7 @@ class ListComponent extends Component
 
     public Pensum $pensum;
 
-    public $pensum_id,$course_id,$level_id,$level,$levels,$course,$courses;
+    public $level_pensums,$pensum_id,$course_id,$level_id,$level,$levels,$course,$courses;
 
     public $search = ''; //'name','description'
 
@@ -33,7 +34,7 @@ class ListComponent extends Component
 
     public $status_last,$status_first,$saveInto;
 
-    public $courses_list,$levels_list;
+    public $courses_list,$levels_list,$pensums_list;
 
     protected $listeners = [ 'remove' ];
 
@@ -41,51 +42,37 @@ class ListComponent extends Component
     {
         $this->modeCreate = false;
         $this->modeEdit = false;
-        $this->list_comment = Pensum::COLUMN_COMMENTS; 
-        $this->levels_list = Level::levels_list_fullname()->toArray(); 
-        $this->courses_list =  Array(); 
-        $this->pensums_list = Pensum::pensums_list()->toArray(); 
+        $this->level_pensums = Array();
+        $this->list_comment = Pensum::COLUMN_COMMENTS;
+        $this->levels_list = Level::levels_list_fullname()->toArray();
+        // $this->courses_list =  Array();
+        $this->loadCourses();
+        $this->pensums_list = Pensum::pensums_list()->toArray();
     }
 
-    public function loadCourses($level_id)
+    public function loadCourses($level_id = null)
     {
-        $level = Level::find($level_id);
-        if ($level) {
-            $this->level_id = $level->id ; 
-            // $courses = Course::select('courses.id',DB::raw('courses.code || " - " || courses.name as name' ))->where('curriculum_id',$level->curriculum_id)->get(); //dd($courses);
-            $courses = Course::coursesLevelId_list($this->level_id);
-
-            if ($courses->isNotEmpty()) {
-                $this->courses = $courses;
-                $this->courses_list = $courses->pluck('name','id')->toArray();
-            }
-        } else {
-            $this->level_id =  null;
-            $this->courses = null;
-            $this->courses_list = Array();
-        }
+        $level = Level::find($level_id); //dd($level);
+        $this->courses_list = ($level) ? $level->courses_list->toArray() : Array() ;
     }
 
     public function render()
     {
-        
-        $this->courses_list = ($this->level_id) ? Course::coursesLevelId_list ($this->level_id)->toArray() : Array();
-
-        $search = $this->search; 
+        $search = $this->search;
 
         $pensums = Pensum::select('pensums.*')
             ->join('levels', 'levels.id', '=', 'pensums.level_id')
-            ->join('courses', 'courses.id', '=', 'pensums.course_id');  
+            ->join('courses', 'courses.id', '=', 'pensums.course_id');
 
         $pensums = (!empty($search)) ? $pensums->orwhere(
             function($query) use ($search) {
                 $query->orWhere('courses.description','like', '%'.$search.'%')
                     ->orWhere('courses.name','like','%'.$search.'%');
-            }) 
+            })
             : $pensums ; //dd($pensums);
 
         $pensums = ($this->sortBy && $this->sortDirection) ? $pensums->orderBy($this->sortBy,$this->sortDirection) : $pensums;
-        
+
         $pensums = $pensums->paginate($this->paginate);
 
         return view('livewire.admin.institution.pensum.list-component', [
@@ -99,6 +86,7 @@ class ListComponent extends Component
         $this->pensum_id = null;
         $this->modeCreate = true;
         $this->modeEdit = false;
+        $this->level_pensums = Array();
     }
 
     public function edit($id)
@@ -107,10 +95,13 @@ class ListComponent extends Component
         if ($pensum) {
             $this->pensum = $pensum;
             $this->pensum_id = $pensum->id;
+            $this->level = $pensum->level;
+            $this->level_id = $pensum->level_id;
+            $this->level_pensums = $this->level->pensums;
             $this->modeEdit = true;
             $this->modeCreate = false;
-            $this->loadCourses($this->pensum_id);
-        }        
+            $this->loadCourses($this->level->id);
+        }
     }
 
     public function save()
@@ -123,7 +114,7 @@ class ListComponent extends Component
         $this->modeCreate = false;
         $this->modeEdit = false;
         $this->pensum = new Pensum;
-        $this->reset(['pensum_id']);
+        // $this->reset(['pensum_id']);
     }
 
     public function closeEditMode()

@@ -5,7 +5,7 @@
     $class['name']="text-left px-4";
     $class['description']="hidden lg:table-cell text-left px-4";
     $class['action']="text-left px-4";
-    $class['count_levels']="hidden lg:table-cell text-left px-4";
+    $class['count_sections']="hidden lg:table-cell text-left px-4";
     $table_id = 'table_id';
 @endphp
 
@@ -58,7 +58,7 @@
                         @endif
                     </div>
                 </th>
-                <th class="{{ $class['count_levels'] ?? ''}}">{{$list_comment['count_levels'] ?? ''}}</th>
+                <th class="{{ $class['count_sections'] ?? ''}}">{{$list_comment['count_sections'] ?? ''}}</th>
                 <th class="{{ $class['action'] ?? ''}}">Acciones</th>
             </tr>
 
@@ -83,7 +83,7 @@
                 </td>
                 <td class="{{ $class['name'] ?? ''}}">{{$level->name ?? ''}}</td>
                 <td class="{{ $class['description'] ?? ''}}">{{$level->description ?? ''}}</td>
-                <td class="{{ $class['count_levels'] ?? '' }}">{{$level->count_levels ?? ''}}</td>
+                <td class="{{ $class['count_sections'] ?? '' }}">{{$level->count_sections ?? ''}}</td>
 
                 <td class="{{ $class['action'] ?? '' }}">
 

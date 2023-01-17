@@ -21,9 +21,10 @@ class Library extends Model
     const COLUMN_COMMENTS = [
         'pastoral_id'=>'Instirución',
         'pescolar_id'=>'Período',
+        'curriculum_id' => 'Plan',
         'lapse_id'=>'Programa',
-        'curriculum_id' => 'Planes de formación',
         'level_id' => 'Nivel',
+        'section_id' => 'Grupo',
         'code' => 'Código',
         'code_sm' => 'Código abreviado',
         'name' => 'Nombre',
@@ -41,6 +42,10 @@ class Library extends Model
     public function getFullNameAttribute()
     {
         return "{$this->code} {$this->name} {$this->description}";
+    }
+    public function getStatusDeleteAttribute()
+    {
+        return ($this->pescolar) ? false:true;
     }
 }
 

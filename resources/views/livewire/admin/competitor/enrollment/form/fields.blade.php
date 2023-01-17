@@ -8,7 +8,7 @@
         @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
     </div>
 </div>
-<div class="grid grid-cols-2 gap-4">    
+<div class="grid grid-cols-2 gap-4">
     <div class="mb-4">
         @php $name = 'name'; $model = 'course.'.$name; $key = Str::random(10);@endphp
         <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
@@ -67,7 +67,7 @@
     <div class="mb-4">
         @php $name = 'color'; $model = 'course.'.$name; $key = Str::random(10);@endphp
         <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
-        <x-input  type="color" wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" class="block mt-1 h-10 w-10" />
+        <x-input  type="color" wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" class="block mt-1 h-10 w-full" />
         @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
     </div>
 

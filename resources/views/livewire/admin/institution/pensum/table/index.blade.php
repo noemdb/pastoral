@@ -4,6 +4,7 @@
     $class['level_id']="text-left px-4";
     $class['location']="text-left px-4";
     $class['course_id']="text-left px-4";
+    $class['pevaluations_count']="text-left px-4";
     $class['action']="text-left px-4";
     $table_id = 'table_id';
 @endphp
@@ -15,8 +16,8 @@
             @php $name = 'search'; $model = 'pensum.'.$name; @endphp
             <div class="flex justify-start">
                 <x-jet-label for="{{$name}}" value="Buscar:" />
-                <span class="text-gray-400 mx-2 font-medium">nombre o descripción</span>                
-            </div>        
+                <span class="text-gray-400 mx-2 font-medium">nombre o descripción</span>
+            </div>
             <x-input wire:model.debounce.500ms="{{$name}}" name="{{$name}}" class="block w-full" />
         </div>
         <div class="w-1/5">
@@ -54,6 +55,7 @@
                         @endif
                     </div>
                 </th>
+                <th class="{{ $class['pevaluations_count'] ?? ''}}">{{$list_comment['pevaluations_count'] ?? ''}}</th>
                 <th class="{{ $class['action'] ?? ''}}">Acciones</th>
             </tr>
 
@@ -62,11 +64,12 @@
         <tbody id="tdatos">
         @forelse($pensums as $pensum)
 
-            @php 
+            @php
                 $level = $pensum->level;
                 $curriculum = $level->curriculum;
                 $pescolar = $curriculum->pescolar;
                 $pastoral = $curriculum->pastoral;
+                $pevaluations_count = $pensum->pevaluations_count;
             @endphp
 
             {{-- 'level_id','course_id','order','hour_t_week','hour_p_week','unid_credit','approved_credit_unir','enable_academic_index', --}}
@@ -83,6 +86,8 @@
                 </td>
                 <td class="{{ $class['course_id'] ?? ''}}">{{$pensum->course->fullname ?? ''}}</td>
 
+                <td class="{{ $class['pevaluations_count'] ?? ''}}">{{$pevaluations_count ?? ''}}</td>
+
                 <td class="{{ $class['action'] ?? '' }}">
 
                     <div class="flex items-center justify-center justify-between mb-3 shadow">
@@ -90,7 +95,7 @@
                             <x-elements.form.button-edit wire:key="pensum-edit-{{$pensum->id}}" wire:click="edit({{ $pensum->id }})" >
                                 <x-icon-pen class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-edit>
-                            <x-elements.form.button-del wire:key="pensum-delete-{{$pensum->id}}" wire:click="delete({{ $pensum->id }})" >
+                            <x-elements.form.button-del :disabled="!$pensum->status_delete" wire:key="pensum-delete-{{$pensum->id}}" wire:click="delete({{ $pensum->id }})" >
                                 <x-icon-trash-can class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-del>
                         </div>

@@ -1,7 +1,7 @@
 <div class="p-2 m-2 rounded shadow bg-gray-100 dark:bg-gray-800 ">
     <div class="flex justify-between">
         <div class="flex justify-between w1/2">
-            <h1 class="block font-semibold text-lg text-gray-700 dark:text-gray-100">Registrar <span class="text-gray-500">Documento.</span></h1>
+            <h1 class="block font-semibold text-lg text-gray-700 dark:text-gray-100">Registrar <span class="text-gray-500">Libro.</span></h1>
         </div>
         <button type="button" wire:click="close" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-900 ">
             <span class="sr-only">Cerrar</span>
@@ -11,9 +11,10 @@
         </button>
     </div>
     <form wire:submit.prevent="save">
-        
+
 
         @include('livewire.admin.institution.library.form.fields')
+        {{-- /home/nuser/code/pastoral/resources/views/livewire/admin/institution/library/form/fields.blade.php --}}
 
         <div class="flex justify-between">
             <x-jet-button type="submit" class="ml-1 bg-green-500 shadow" > {{ __('Enviar') }} </x-jet-button>

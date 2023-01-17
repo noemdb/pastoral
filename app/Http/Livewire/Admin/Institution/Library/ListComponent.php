@@ -7,7 +7,7 @@ namespace App\Http\Livewire\Admin\Institution\Library;
 
 use App\Http\Livewire\Admin\Institution\Library\Traits\LibraryRules;
 use App\Http\Livewire\traits\WithSortingTrait;
-
+use App\Models\app\Pastoral;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -34,7 +34,7 @@ class ListComponent extends Component
 
     public Library $library;
 
-    public $library_id,$section_id;
+    public $pastoral_id,$pescolar_id,$curricula_id,$lapse_id,$level_id,$section_id,$library_id;
 
     public $search = ''; //'name',description,cource
     public $pensums;
@@ -45,17 +45,101 @@ class ListComponent extends Component
 
     public $status_last,$status_first,$saveInto;
 
-    public $curricula_list,$levels_list;
+    public $pastorals_list,$pescolars_list,$curricula_list,$lapses_list,$levels_list,$sections_list;
+
+    public $pescolar,$level;
+
+    public $pevaluation_id;
 
     protected $listeners = [ 'remove' ];
+
+    public function loadPescolars($pastoral_id = null)
+    {
+        $pastoral = Pastoral::find($pastoral_id);
+        if ($pastoral) {
+            $this->pescolars_list = $pastoral->pescolars_list()->toArray();
+        } else {
+            $this->library->pescolar_id= null;
+            $this->pescolars_list = Array();
+        }
+
+        $this->curricula_list = Array();
+        $this->lapses_list = Array();
+        $this->levels_list = Array();
+        $this->sections_list = Array();
+
+        $this->library->curriculum_id = null;
+        $this->library->lapse_id = null;
+        $this->library->level_id = null;
+        $this->library->section_id = null;
+    }
+
+    public function loadCurricula($pescolar_id = null)
+    {
+        $pescolar = Pescolar::find($pescolar_id); //dd($level);
+
+        if ($pescolar) {
+            $this->curricula_list = $pescolar->curricula_list()->toArray();
+        } else {
+            $this->library->curriculum_id = null;
+            $this->curricula_list = Array();
+        }
+
+        $this->lapses_list = Array();
+        $this->levels_list = Array();
+        $this->sections_list = Array();
+
+        $this->library->lapse_id = null;
+        $this->library->level_id = null;
+        $this->library->section_id = null;
+    }
+
+    public function loadLapses($curriculum_id = null)
+    {
+        $curriculum = Curriculum::find($curriculum_id);
+        if ($curriculum) {
+            $this->lapses_list = $curriculum->lapses_list()->toArray();
+        } else {
+            $this->library->lapse_id = null;
+            $this->lapses_list = Array();
+        }
+        $this->lapses_list = ($curriculum) ? $curriculum->lapses_list()->toArray() : Array() ;
+        $this->levels_list = Array();
+        $this->sections_list = Array();
+
+        $this->library->level_id = null;
+        $this->library->section_id = null;
+    }
+
+    public function loadLevels($lapse_id = null)
+    {
+        $lapse = lapse::find($lapse_id);
+        if ($lapse) {
+            $this->levels_list = $lapse->levels_list()->toArray();
+        } else {
+            $this->library->section_id = null;
+            $this->sections_list = Array();
+        }
+        $this->sections_list = Array(); $this->library->section_id = null;
+    }
+
+    public function loadSections($level_id = null)
+    {
+        $level = Level::find($level_id); //dd($level);
+        $this->sections_list = ($level) ? $level->sections_list()->toArray() : Array() ;
+    }
 
     public function mount()
     {
         $this->modeCreate = false;
         $this->modeEdit = false;
         $this->list_comment = Library::COLUMN_COMMENTS;
-        $this->curricula_list = Curriculum::curricula_list()->toArray();
-        $this->levels_list = Level::levels_list_fullname()->toArray();
+        $this->pastorals_list = Pastoral::pastorals_list()->toArray();
+        $this->pescolars_list = Array();
+        $this->curricula_list = Array();
+        $this->lapses_list = Array();
+        $this->levels_list = Array();
+        $this->sections_list = Array();
     }
 
     public function render()
@@ -98,19 +182,42 @@ class ListComponent extends Component
 
     public function edit($id)
     {
-        $library = Library::find($id);
+        $library = Library::find($id); //dd($library);
         if ($library) {
             $this->library = $library;
-            $this->library_id = ($this->library) ? $this->library->id:null;
+            $this->library_id = $this->library->id;
             $this->modeEdit = true;
             $this->modeCreate = false;
+
+            if ($this->library->pastoral_id) {
+                $pastoral = Pastoral::find($this->library->pastoral_id);
+                $this->pescolars_list = ($pastoral) ? $pastoral->pescolars_list()->toArray() : Array() ;
+                if ($this->library->pescolar_id) {
+                    $pescolar = Pescolar::find($this->library->pescolar_id); //dd($level);
+                    $this->curricula_list = ($pescolar) ? $pescolar->curricula_list()->toArray() : Array() ;
+                    if ($this->library->curriculum_id) {
+                        $curriculum = Curriculum::find($this->library->curriculum_id); //dd($level);
+                        $this->lapses_list = ($curriculum) ? $curriculum->lapses_list()->toArray() : Array() ;
+                        if ($this->library->lapse_id) {
+                            $lapse = lapse::find($this->library->lapse_id); //dd($level);
+                            $this->levels_list = ($lapse) ? $lapse->levels_list()->toArray() : Array() ;
+                            if ($this->library->level_id) {
+                                $this->loadSections($this->library->level_id);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
     public function save()
     {
         $this->validate();
+        // dd($this->library);
         $this->library->save();
+
+        $this->library_id = $this->library->id;
 
         $this->alert('success', 'Los datos fueron almacenados satisfactoriamente!');
         $this->close();

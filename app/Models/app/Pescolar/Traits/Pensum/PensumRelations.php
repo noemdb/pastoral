@@ -1,6 +1,8 @@
 <?php
 namespace App\Models\app\Pescolar\Traits\Pensum;
 
+use App\Models\app\Teacher\Pevaluation;
+
 trait PensumRelations {
 
     public function level()
@@ -12,7 +14,12 @@ trait PensumRelations {
     {
         return $this->belongsTo('App\Models\app\Pescolar\Course');
     }
-    ///////////////////////////////////////////////////////////////////////////////////    
+
+    public function pevaluations()
+    {
+        return $this->hasMany(Pevaluation::class);
+    }
+    ///////////////////////////////////////////////////////////////////////////////////
 }
 
 ?>

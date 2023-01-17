@@ -65,6 +65,11 @@ class Lapse extends Model
         return "{$this->code} {$this->name}";
     }
 
+    public function levels_list()
+    {
+        return $this->levels->pluck('name','id');
+    }
+
     public static function lapses_list()
     {
         $lapses = Lapse::select('lapses.*',DB::raw(' pescolars.code || " - " || curricula.code || " - " || curricula.name || " - " || lapses.code as name ' ))

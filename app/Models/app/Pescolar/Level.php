@@ -33,6 +33,8 @@ class Level extends Model
         'body' => 'Cuerpo',
         'footer' => 'Pie de Página',
         'status'=>'Estado',
+        ///////////////////////////////////////////////////////////
+        'count_sections'=>'N.Grupos',
     ];
 
 
@@ -63,7 +65,7 @@ class Level extends Model
 
     public static function levels_list_fullname()
 	{
-		$lapses_list = Level::select('levels.id',DB::raw('lapses.name || " | PE. "  || pescolars.name || " | INS. " || pastorals.name || " | N. " || levels.name as fullnamename' ))
+		$lapses_list = Level::select('levels.id',DB::raw('curricula.code || " - " || lapses.name || " | PE. "  || pescolars.name || " | INS. " || pastorals.name || " | N. " || levels.name as fullnamename' ))
 			->join('lapses', 'lapses.id', '=', 'levels.lapse_id')
 			->join('curricula', 'curricula.id', '=', 'lapses.curriculum_id')
 			->join('pescolars', 'pescolars.id', '=', 'curricula.pescolar_id')
@@ -71,6 +73,17 @@ class Level extends Model
 			->pluck('fullnamename','id'); //dd($curricula_list_fullname);
 		return $lapses_list;
 	}
+
+    public function getCoursesListAttribute()
+    {
+        $list = Course::select('courses.id', DB::raw('courses.code || " - " || courses.name as course_name' ) )
+            ->join('curricula', 'curricula.id', '=', 'courses.curriculum_id')
+            ->join('lapses', 'curricula.id', '=', 'lapses.curriculum_id')
+            ->join('levels', 'lapses.id', '=', 'levels.lapse_id')
+            ->where('levels.id',$this->id)
+            ->pluck('course_name','id'); //dd($list);
+        return $list;
+    }
 
     public function getPensumsAttribute()
     {
@@ -81,6 +94,16 @@ class Level extends Model
             ->get()
             :  collect();
         return $courses;
+    }
+
+    public function getStatusDeleteAttribute()
+    {
+        return $this->sections->isEmpty();
+    }
+
+    public function getCountSectionsAttribute()
+    {
+        return $this->sections->count();
     }
 
 }

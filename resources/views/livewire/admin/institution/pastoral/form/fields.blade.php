@@ -23,7 +23,7 @@
             @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
     </div>
-    <div>        
+    <div>
         <div class="mb-4">
             @php $name = 'code_official'; $model = 'pastoral.'.$name; @endphp
             <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
@@ -90,7 +90,7 @@
             @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
     </div>
-    <div>        
+    <div>
         <div class="mb-4">
             @php $name = 'city'; $model = 'pastoral.'.$name; @endphp
             <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
@@ -133,7 +133,8 @@
     </div>
 </div>
 
-<hr class="my-4">
+<hr class="my-2">
+<h5 class="text-center font-bold">HTML</h5>
 
 <div class="grid grid-cols-2 gap-4">
     <div>

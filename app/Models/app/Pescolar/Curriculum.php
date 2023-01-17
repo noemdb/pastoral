@@ -50,6 +50,11 @@ class Curriculum extends Model
         return "{$this->code} {$this->name}";
     }
 
+    public function lapses_list()
+    {
+        return $this->lapses->pluck('name','id');
+    }
+
     public function getPastoralAttribute()
     {
         $pastoral = Pastoral::select('pastorals.*')

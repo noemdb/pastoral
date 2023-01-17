@@ -18,7 +18,7 @@ class Section extends Model
     protected $fillable = [
        'level_id','code','code_sm','name','description','observations','color','header','body','footer','status',
     ];
-    
+
     protected $dates = ['created_at','updated_at'];
 
     const COLUMN_COMMENTS = [
@@ -34,15 +34,15 @@ class Section extends Model
         'footer'=>'Pie de página',
         'status' => 'Estado',
         ///////////////////////
-        'inscription_count' => 'Inscritos',
+        'inscriptions_count' => 'Inscritos',
     ];
-    
+
     public function getFullNameAttribute()
     {
         return "{$this->code} {$this->name}";
     }
 
-    public static function section_list_fullname($pastoral_id = null, $pescolar_id = null, $curriculum_id = null) 
+    public static function section_list_fullname($pastoral_id = null, $pescolar_id = null, $curriculum_id = null)
     {
         $sections = Section::select('sections.id')
             ->SelectRaw(' pastorals.name || " - " || pescolars.name || " - " || curricula.name || " - " || levels.name || " - " || sections.name as name ')
@@ -60,7 +60,7 @@ class Section extends Model
         return $sections;
     }
 
-    public function getPensumsAttribute() 
+    public function getPensumsAttribute()
     {
         $section = Section::find($this->id);
         $level = ($section) ? $section->level : null ;
@@ -68,12 +68,12 @@ class Section extends Model
             ->SelectRaw('courses.code || " - " || courses.name as name' )
             ->join('pensums', 'courses.id', '=', 'pensums.course_id')
             ->where('pensums.level_id',$level->id)
-            ->get() 
+            ->get()
             :  collect(); //dd($courses);
         return $courses;
     }
 
-    public function getLapsesAttribute() 
+    public function getLapsesAttribute()
     {
         $lapses = Section::select('lapses.id','lapses.name as lapseName')
         ->SelectRaw(' pastorals.name || " - " || pescolars.name || " - " || curricula.name || " - " || lapses.name as lapseFullName ')
@@ -92,7 +92,7 @@ class Section extends Model
         return $this->inscriptions->isEmpty();
     }
 
-    public function getCountInscriptionsAttribute()
+    public function getInscriptionsCountAttribute()
     {
         return $this->inscriptions->count();
     }

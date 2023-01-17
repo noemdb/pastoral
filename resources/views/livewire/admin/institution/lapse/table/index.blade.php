@@ -103,8 +103,7 @@
                 <td class="{{ $class['finicial'] ?? ''}}">{{$lapse->finicial ?? ''}}</td>
                 <td class="{{ $class['ffinal'] ?? ''}}">{{$lapse->ffinal ?? ''}}</td>
                 <td class="{{ $class['description'] ?? ''}}">{{$lapse->description ?? ''}} <span>{{$lapse->charisma->name ?? ''}}</span> </td>
-                {{-- <td class="{{ $class['count_levels'] ?? '' }}">{{$lapse->count_levels ?? ''}}</td> --}}
-                <td class="{{ $class['count_levels'] ?? '' }}"></td>
+                <td class="{{ $class['count_levels'] ?? '' }}">{{$lapse->count_levels ?? ''}}</td>
                 <td class="{{ $class['action'] ?? '' }}">
 
                     <div class="flex items-center justify-center justify-between mb-3 shadow">
