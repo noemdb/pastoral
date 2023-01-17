@@ -1,23 +1,37 @@
-{{-- curriculum_id, level_id, code, code_sm, name, description, observations, autor, color, header, body, attachment, footer, status
---}}
+{{-- 'pastoral_id','pescolar_id','curriculum_id','lapse_id','level_id','section_id','code','code_sm','name','description','observations','autor','color','header','body','attachment','footer','status', --}}
 
-<div class="grid grid-cols-2 gap-4">
-    <div class="mb-4">
-        @php $name = 'curriculum_id'; $model = 'library.'.$name; $key = Str::random(10); @endphp
-        <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
-        <x-select wire:key="{{$key}}" wire:model.defer="{{$model}}" :options="$curricula_list" id="{{$model}}" class=" w-full " />
-        @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
-    </div>
-    <div class="mb-4">
-        @php $name = 'level_id'; $model = 'library.'.$name; $key = Str::random(10); @endphp
-        <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
-        <x-select wire:key="{{$key}}" wire:model.defer="{{$model}}" :options="$levels_list" id="{{$model}}" class=" w-full " />
-        @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
-    </div>
-</div>
+<div class="md:container md:mx-auto">
 
-<div class="container mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="grid grid-cols-2 gap-4">
+        <div class="mb-4">
+            @php $name = 'pastoral_id'; $model = 'library.'.$name; $key = Str::random(10); @endphp
+            <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
+            <x-select wire:key="{{$key}}" wire:model.defer="{{$model}}" :options="$pastorals_list" id="{{$model}}" class=" w-full " />
+            @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+        </div>
+        <div class="mb-4">
+            @php $name = 'pescolar_id'; $model = 'library.'.$name; $key = Str::random(10); @endphp
+            <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
+            <x-select wire:key="{{$key}}" wire:model.defer="{{$model}}" :options="$pescolars_list" id="{{$model}}" class=" w-full " />
+            @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+        </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+        <div class="mb-4">
+            @php $name = 'curriculum_id'; $model = 'library.'.$name; $key = Str::random(10); @endphp
+            <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
+            <x-select wire:key="{{$key}}" wire:model.defer="{{$model}}" :options="$curricula_list" id="{{$model}}" class=" w-full " />
+            @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+        </div>
+        <div class="mb-4">
+            @php $name = 'level_id'; $model = 'library.'.$name; $key = Str::random(10); @endphp
+            <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
+            <x-select wire:key="{{$key}}" wire:model.defer="{{$model}}" :options="$levels_list" id="{{$model}}" class=" w-full " />
+            @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+        </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="mb-4">
             @php $name = 'name'; $model = 'library.'.$name; $key = Str::random(10);@endphp
             <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
