@@ -2,12 +2,14 @@
 
 namespace App\Models\app\Estudiant;
 
+use App\Models\app\Estudiant\Traits\Competitor\RepresentantRelations;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Representant extends Model
 {
     use HasFactory;
+    use RepresentantRelations;
 
     protected $fillable = [
         'user_id','citype_id','ci','name','phone','email','whatsapp','telegram','twitter','instagram','status_adviders',
@@ -25,15 +27,27 @@ class Representant extends Model
         'twitter'=>'twitter',
         'instagram'=>'instagram',
         'status_adviders'=>'Delegado',
+        ////////////////////////////////////////
+        'count_estudiants'=>'N.Participantes',
     ];
 
 
-    public static function representant_list() 
+    public static function representant_list()
     {
         $representants = Representant::select('representants.id')
             ->SelectRaw(' representants.ci || " - " || representants.name as name ')
             ->pluck('name','id');
         return $representants;
+    }
+
+    public function getStatusDeleteAttribute()
+    {
+        return $this->estudiants->isEmpty();
+    }
+
+    public function getCountEstudiantsAttribute()
+    {
+        return $this->estudiants->count();
     }
 
 }

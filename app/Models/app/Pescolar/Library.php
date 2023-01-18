@@ -37,6 +37,9 @@ class Library extends Model
         'attachment'=>'Abjunto',
         'footer'=>'Pie de pag.',
         'status'=>'Estado',
+        ///////////////////////
+        'count_pescolars'=>'N.P.Formación',
+        'locations'=>'Pertenencias',
     ];
 
     public function getFullNameAttribute()
@@ -47,6 +50,12 @@ class Library extends Model
     {
         return ($this->pescolar) ? false:true;
     }
+
+    public function getCountPescolarsAttribute()
+    {
+        return ($this->pescolar) ? 1:0;
+    }
+
 }
 
 /*

@@ -4,6 +4,7 @@
     $class['curriculum_id']="text-left px-4";
     $class['name']="text-left px-4";
     $class['description']="hidden lg:table-cell text-left px-4";
+    $class['count_pensums']="hidden lg:table-cell text-left px-4";
     $class['action']="text-left px-4";
     $table_id = 'table_id';
 @endphp
@@ -16,8 +17,8 @@
             @php $name = 'search'; $model = 'course.'.$name; @endphp
             <div class="flex justify-start">
                 <x-jet-label for="{{$name}}" value="Buscar:" />
-                <span class="text-gray-400 mx-2 font-medium">nombre, descripción</span>                
-            </div>        
+                <span class="text-gray-400 mx-2 font-medium">nombre, descripción</span>
+            </div>
             <x-input wire:model.debounce.500ms="{{$name}}" name="{{$name}}" class="block w-full" />
         </div>
         <div class="w-1/5">
@@ -57,6 +58,7 @@
                         @endif
                     </div>
                 </th>
+                <th class="{{ $class['count_pensums'] ?? ''}}">{{$list_comment['count_pensums'] ?? ''}}</th>
                 <th class="{{ $class['action'] ?? ''}}">Acciones</th>
             </tr>
 
@@ -65,7 +67,7 @@
         <tbody id="tdatos">
         @forelse($courses as $course)
 
-            @php 
+            @php
                 $curriculum = $course->curriculum;
                 $pescolar = $curriculum->pescolar;
                 $pastoral = $curriculum->pastoral;
@@ -82,6 +84,7 @@
                 </td>
                 <td class="{{ $class['name'] ?? ''}}">{{$course->name ?? ''}}</td>
                 <td class="{{ $class['description'] ?? ''}}">{{$course->description ?? ''}}</td>
+                <td class="{{ $class['count_pensums'] ?? ''}}">{{$course->count_pensums ?? ''}}</td>
 
                 <td class="{{ $class['action'] ?? '' }}">
 
@@ -90,7 +93,7 @@
                             <x-elements.form.button-edit wire:key="course-edit-{{$course->id}}" wire:click="edit({{ $course->id }})" >
                                 <x-icon-pen class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-edit>
-                            <x-elements.form.button-del wire:key="course-delete-{{$course->id}}" wire:click="delete({{ $course->id }})" >
+                            <x-elements.form.button-del :disabled="!$course->status_delete" wire:key="course-delete-{{$course->id}}" wire:click="delete({{ $course->id }})" >
                                 <x-icon-trash-can class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-del>
                         </div>

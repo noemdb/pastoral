@@ -33,6 +33,8 @@ class Course extends Model
         'body'=>'Cuerpo',
         'footer'=>'Pie de página',
         'status'=>'Estado',
+        //////////////////////////////
+        'count_pensums'=>'N.Pensums',
     ];
 
     public function getFullNameAttribute()
@@ -50,6 +52,16 @@ class Course extends Model
         $level = Level::find($level_id);
         $courses_list = ($level) ? Course::select('courses.id',DB::raw('courses.code || " - " || courses.name as name' ))->where('curriculum_id',$level->curriculum_id)->pluck('name','id') :  collect(); //dd($level_id,$level);
         return $courses_list;
+    }
+
+    public function getStatusDeleteAttribute()
+    {
+        return $this->pensums->isEmpty();
+    }
+
+    public function getCountPensumsAttribute()
+    {
+        return $this->pensums->count();
     }
 
 }

@@ -2,6 +2,7 @@
 
 namespace App\Models\app\Estudiant;
 
+use App\Models\app\Estudiant;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -109,6 +110,50 @@ class Enrollment extends Model
             'Otra'=>'Otra',
         ];
     }
+
+    public function getEstudiantAttribute()
+    {
+        $estudiant = Estudiant::select('estudiants.*')
+        ->join('enrollments', 'enrollments.ci', '=', 'estudiants.ci')
+        ->where('enrollments.id',$this->id)
+        ->first();
+        return $estudiant;
+    }
+
+    public function getRepresentantAttribute()
+    {
+        $representant = Representant::select('representants.*')
+        ->join('enrollments', 'enrollments.representant_ci', '=', 'representants.ci')
+        ->where('enrollments.id',$this->id)
+        ->first();
+        return $representant;
+    }
+
+    public function getInscriptionAttribute()
+    {
+        $inscription = Inscription::select('inscriptions.*')
+        ->join('estudiants', 'estudiants.id', '=', 'inscriptions.estudiant_id')
+        ->join('enrollments', 'enrollments.ci', '=', 'estudiants.ci')
+        ->where('enrollments.id',$this->id)
+        ->first();
+        return $inscription;
+    }
+
+    public function getStatusDeleteAttribute()
+    {
+        return (! $this->representant && ! $this->estudiant) ? true : false ;
+    }
+
+    public function getStatusEditAttribute()
+    {
+        return (! $this->representant && ! $this->estudiant) ? true : false ;
+    }
+
+    public function getStatusInscriptionAttribute()
+    {
+        return ($this->inscription) ? false : true ;
+    }
+
 }
 /*
 

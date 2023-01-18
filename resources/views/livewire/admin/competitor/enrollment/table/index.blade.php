@@ -18,8 +18,8 @@
             @php $name = 'search'; $model = 'enrollment.'.$name; @endphp
             <div class="flex justify-start">
                 <x-jet-label for="{{$name}}" value="Buscar:" />
-                <span class="text-gray-400 mx-2 font-medium">nombre, descripción</span>                
-            </div>        
+                <span class="text-gray-400 mx-2 font-medium">nombre, descripción</span>
+            </div>
             <x-input wire:model.debounce.500ms="{{$name}}" name="{{$name}}" class="block w-full" />
         </div>
         <div class="w-1/5">
@@ -76,7 +76,7 @@
         <tbody id="tdatos">
         @forelse($enrollments as $enrollment)
 
-            @php 
+            @php
                 $curriculum = $enrollment->curriculum;
                 $pescolar = ($curriculum ) ? $curriculum->pescolar:null;
                 $pastoral = $enrollment->pastoral;
@@ -98,14 +98,14 @@
                 <td class="{{ $class['action'] ?? '' }}">
 
                     <div class="flex items-center justify-center mb-3 shadow">
-                        <x-elements.form.button-incription class="mr-2" wire:key="enrollment-incription-{{$enrollment->id}}" wire:click="inscription({{ $enrollment->id }})" >
+                        <x-elements.form.button-incription :disabled="!$enrollment->status_inscription" class="mr-2" wire:key="enrollment-incription-{{$enrollment->id}}" wire:click="inscription({{ $enrollment->id }})" >
                             <x-icon-list class="w-4 h-4 mr-0.5" />
                         </x-elements.form.button-incription>
                         <div class="inline-flex hover:shadow-lg focus:shadow-lg" role="group">
-                            <x-elements.form.button-edit wire:key="enrollment-edit-{{$enrollment->id}}" wire:click="edit({{ $enrollment->id }})" >
+                            <x-elements.form.button-edit :disabled="!$enrollment->status_edit" wire:key="enrollment-edit-{{$enrollment->id}}" wire:click="edit({{ $enrollment->id }})" >
                                 <x-icon-pen class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-edit>
-                            <x-elements.form.button-del wire:key="enrollment-delete-{{$enrollment->id}}" wire:click="delete({{ $enrollment->id }})" >
+                            <x-elements.form.button-del :disabled="!$enrollment->status_delete" wire:key="enrollment-delete-{{$enrollment->id}}" wire:click="delete({{ $enrollment->id }})" >
                                 <x-icon-trash-can class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-del>
                         </div>

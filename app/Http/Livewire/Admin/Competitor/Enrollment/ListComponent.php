@@ -46,7 +46,7 @@ class ListComponent extends Component
 
     public $tinscription_id,$estudiant_id,$observations;
 
-    public $enrollment_id;
+    public $enrollment_id,$representant_exist,$estudiant_exist,$inscription_exist;
 
     public $pastoral,$pastoral_id,$pescolar,$pescolar_id,$curriculum,$curriculum_id,$lapse,$lapse_id,$level,$level_id,$section,$section_id;
 
@@ -54,7 +54,7 @@ class ListComponent extends Component
 
     public $step=1;
 
-    public $modeIndex,$modeEdit,$modeCreate,$modeIncriptions;
+    public $modeIndex,$modeEdit,$modeCreate,$modeInscriptions;
 
     public $list_comment,$list_comment_inscription,$list_comment_estudiant,$list_comment_representant,$tinscription_list;
 
@@ -71,7 +71,7 @@ class ListComponent extends Component
         $this->modeIndex = true;
         $this->modeCreate = false;
         $this->modeEdit = false;
-        $this->modeIncriptions = false;
+        $this->modeInscriptions = false;
         $this->step = 1;
 
         $this->list_comment = Enrollment::COLUMN_COMMENTS;
@@ -116,7 +116,7 @@ class ListComponent extends Component
         $this->modeIndex = false;
         $this->modeCreate = true;
         $this->modeEdit = false;
-        $this->modeIncriptions = false;
+        $this->modeInscriptions = false;
     }
 
     public function edit($id)
@@ -125,7 +125,7 @@ class ListComponent extends Component
         $this->enrollment_id = ($this->enrollment) ? $this->enrollment->id:null;
         $this->modeIndex = false;
         $this->modeEdit = true;
-        $this->modeIncriptions = false;
+        $this->modeInscriptions = false;
         $this->modeCreate = false;
     }
 
@@ -148,7 +148,7 @@ class ListComponent extends Component
         $this->modeIndex = true;
         $this->modeEdit = false;
         $this->modeCreate = false;
-        $this->modeIncriptions = false;
+        $this->modeInscriptions = false;
     }
 
     public function closeEditMode()
@@ -228,6 +228,9 @@ class ListComponent extends Component
         if ($enrollment) {
             $this->enrollment = $enrollment;
             $this->enrollment_id = $enrollment->id;
+            $this->estudiant_exist = Estudiant::where('ci',$enrollment->ci)->first();
+            $this->representant_exist = Representant::where('ci',$enrollment->representant_ci)->first();
+            $this->inscription_exist = ($this->estudiant_exist) ?  Inscription::where('estudiant_id',$this->estudiant_exist->id)->first() : null;
 
             $this->representant = [
                 'citype_id' =>$this->enrollment->citype_id,
@@ -256,7 +259,13 @@ class ListComponent extends Component
                 'status_nacionality'=>$this->enrollment->status_nacionality,
             ];
 
-            $this->modeIncriptions = true;
+            if ($this->inscription_exist) {
+                $this->tinscription_id = $this->inscription_exist->tinscription_id ;
+                $this->section_id = $this->inscription_exist->section_id ;
+                $this->observations = $this->inscription_exist->observations ;
+            }
+
+            $this->modeInscriptions = true;
             $this->modeEdit = true;
             $this->modeCreate = false;
             $this->modeIndex = false;
@@ -316,7 +325,8 @@ class ListComponent extends Component
                 'status_nacionality' => 'required|boolean',
             ],
             [
-                'lastname.required' => 'El campo apellido es requerido',
+                'name.required' => 'El campo nombre del estudiante es requerido',
+                'lastname.required' => 'El campo apellido del estudiante es requerido',
             ]
         )->validate();
 
@@ -334,21 +344,21 @@ class ListComponent extends Component
                 'observations' => 'nullable|string',
             ])->validate();
 
-        $representant = Representant::create($arr_representant);
+        $representant = ($this->representant_exist) ? $this->representant_exist : Representant::create($arr_representant);
 
         $arr_estudiant['representant_id'] = $representant->id; //dd($arr_estudiant);
 
-        $estudiant = Estudiant::create($arr_estudiant);
+        $estudiant = ($this->estudiant_exist) ? $this->estudiant_exist : Estudiant::create($arr_estudiant);
 
         $arr_inscription['estudiant_id'] = $estudiant->id; //dd($arr_inscription);
 
-        $inscription = Inscription::create($arr_inscription); 
+        $inscription = Inscription::create($arr_inscription);
 
         $this->alert('success', 'Los datos fueron almacenados satisfactoriamente!');
 
         $this->modeCreate = false;
         $this->modeEdit = false;
-        $this->modeIncriptions = false;
+        $this->modeInscriptions = false;
 
         // $this->enrollment = new Enrollment;
         // $this->enrollment_id = null;

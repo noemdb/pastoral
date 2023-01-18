@@ -11,7 +11,6 @@
         </button>
     </div>
     <form wire:submit.prevent="save">
-        
 
         @include('livewire.admin.institution.course.form.fields')
 

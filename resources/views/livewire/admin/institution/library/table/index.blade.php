@@ -2,9 +2,11 @@
 @php
     $class['iteration']="text-left px-4";
     $class['curriculum_id']="text-left px-4";
+    $class['locations']="text-left px-4";
     $class['level_id']="text-left px-4";
     $class['description']="text-left px-4";
     $class['observations']="text-left px-4";
+    $class['count_pescolars']="text-left px-4";
     $class['color']="text-left px-4";
     $class['action']="text-left px-4";
     $table_id = 'table_id';
@@ -38,14 +40,17 @@
                 <th class="{{ $class['iteration'] ?? ''}}">
                     <div class="flex  justify-between">N</div>
                 </th>
-                <th class="{{ $class['curriculum_id'] ?? ''}}">
+
+                <th class="{{ $class['locations'] ?? ''}}">{{$list_comment['locations'] ?? ''}}</th>
+
+                {{-- <th class="{{ $class['curriculum_id'] ?? ''}}">
                     <div class="flex justify-between">
                         <div> {{$list_comment['curriculum_id'] ?? ''}} </div>
                         @if($libraries->isNotEmpty())
                             <x-elements.crud.sort-by field="curriculum_id" :sortBy="$sortBy" :sortDirection="$sortDirection" />
                         @endif
                     </div>
-                </th>
+                </th> --}}
 
                 <th class="{{ $class['description'] ?? ''}}">
                     <div class="flex  justify-between">
@@ -72,6 +77,8 @@
                     </div>
                 </th>
 
+                <th class="{{ $class['count_pescolars'] ?? ''}}">{{$list_comment['count_pescolars'] ?? ''}}</th>
+
                 <th class="{{ $class['action'] ?? ''}}">Acciones</th>
             </tr>
 
@@ -80,7 +87,11 @@
         <tbody id="tdatos">
         @forelse($libraries as $library)
 
+            {{-- 'pastoral_id','pescolar_id','curriculum_id','lapse_id','level_id','section_id', --}}
+
             @php
+                $pastoral = $library->pastoral;
+                $pescolar = $library->pescolar;
                 $curriculum = $library->curriculum;
                 $level = $library->level;
             @endphp
@@ -89,9 +100,14 @@
 
             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 {{($library->id == $library_id) ? 'bg-gray-200' : null}}">
                 <td class="{{ $class['iteration'] ?? ''}}">{{$loop->iteration}}</td>
-                <td class="{{ $class['curriculum_id'] ?? ''}}">
-                    {{$curriculum->name ?? ''}}
-                    <div class="flex justify-end text-gray-400 text-sm">{{$level->name ?? ''}}</div>
+                <td class="{{ $class['locations'] ?? ''}}">
+                    <ul class=" list-none">
+                        <li>{{$pastoral->name ?? ''}}</li>
+                        <li>{{$pescolar->name ?? ''}}</li>
+                        <li>{{$curriculum->name ?? ''}}</li>
+                        <li>{{$level->name ?? ''}}</li>
+                    </ul>
+                    {{-- <div class="flex justify-end text-gray-400 text-sm">{{$level->name ?? ''}}</div> --}}
                 </td>
                 <td class="{{ $class['description'] ?? ''}}">
                     <div>{{ Str::limit($library->description,40) ?? ''}}</div>
@@ -103,6 +119,8 @@
                 <td class="{{ $class['color'] ?? ''}}">
                     <div class="h-10 w-10 rounded" style="background-color: {{$library->color ?? ''}}"> </div>
                 </td>
+
+                <td class="{{ $class['count_pescolars'] ?? ''}}">{{$library->count_pescolars ?? ''}}</td>
 
                 <td class="{{ $class['action'] ?? '' }}">
 

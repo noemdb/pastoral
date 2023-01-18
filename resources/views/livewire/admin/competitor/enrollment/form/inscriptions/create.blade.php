@@ -12,10 +12,37 @@
     </div>
     <form wire:submit.prevent="saveInscription">
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div>@include('livewire.admin.competitor.enrollment.form.representants.fields')</div>
-            <div>@include('livewire.admin.competitor.enrollment.form.estudiants.fields')</div>
-            <div>@include('livewire.admin.competitor.enrollment.form.inscriptions.fields')</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <fieldset {{ ($representant_exist) ? 'disabled="disabled"' : null}} >
+                @if ($representant_exist) <div class=" font-bold text-red-200 text-right mr-4">La CI de este responsable ya se encuentra asociada en la base de datos</div> @endif
+                <div class="{{ ($representant_exist) ? 'opacity-40' : null}} ">
+                    @include('livewire.admin.competitor.enrollment.form.representants.fields')
+                </div>
+            </fieldset>
+
+            <fieldset {{ ($estudiant_exist) ? 'disabled="disabled"' : null}} >
+                @if ($estudiant_exist) <div class=" font-bold text-cyan-300 text-right mr-4">La CI de este participante ya se encuentra asociada en la base de datos</div> @endif
+                <div class="{{ ($estudiant_exist) ? 'opacity-40' : null}} ">
+                    <div>@include('livewire.admin.competitor.enrollment.form.estudiants.fields')</div>
+                </div>
+            </fieldset>
+
+        </div>
+
+        <div class="grid grid-cols-1 gap-4">
+            <fieldset {{ ($inscription_exist) ? 'disabled="disabled"' : null}} >
+                @if ($inscription_exist)
+                    <div class=" font-bold text-indigo-300 text-right mr-4">Este participante ya se encuentra asociado a un proceso de inscripción</div>
+                @else
+                    <div>@include('livewire.admin.competitor.enrollment.form.inscriptions.fields')</div>
+                @endif
+
+                {{-- @if ($inscription_exist) <div class=" font-bold text-indigo-300 text-right mr-4">Este participante ya se encuentra asociada a un proceso de inscripción</div> @endif --}}
+                {{-- <div class="{{ ($inscription_exist) ? 'opacity-40' : null}} "></div> --}}
+
+            </fieldset>
+
+            {{-- <div>@include('livewire.admin.competitor.enrollment.form.inscriptions.fields')</div> --}}
         </div>
 
     </form>
