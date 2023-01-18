@@ -261,22 +261,59 @@ class ListComponent extends Component
     public function saveInscription()
     {
 
-        $validatedData = Validator::make(
-            ['representant.name' => $this->representant['name']],
-            ['representant.name' => 'required|email'],
-            ['required' => 'The :attribute field is required'],
-        )->validate();
+        $validator = Validator::make(
+        [
+            'name' => $this->representant['name'],
+            'email' => $this->representant['email'],
+            'ci' => $this->representant['ci'],
+        ],
+        [
+            'name' => 'required',
+            'email' => 'required|email',
+            'ci' => 'required|unique:representants,ci',
+        ])->validate();
 
         dd('123');
 
+        $representant = Representant::create(
+            [
+                'citype_id'=>$this->representant['citype_id'],
+                'ci'=>$this->representant['ci'],
+                'name'=>$this->representant['name'],
+                'phone'=>$this->representant['phone'],
+                'email'=>$this->representant['email'],
+                'whatsapp'=>$this->representant['whatsapp'],
+                'twitter'=>$this->representant['twitter'],
+                'instagram'=>$this->representant['instagram'],
+            ]
+        );
         //citype_id,ci,name,phone,email,whatsapp,twitter,instagram
+
+        dd('123');
+
+        $inscription = Inscription::create(
+            [
+                'tinscription_id'=>$this->tinscription_id,
+                'section_id'=>$this->section_id,
+                'estudiant_id'=>$this->estudiant_id,
+                'observations'=>$this->observations,
+            ]
+        );
+
+        // dd($validator);
+
+        
 
         $this->alert('success', 'Los datos fueron almacenados satisfactoriamente!');
 
         $this->modeCreate = false;
         $this->modeEdit = false;
+        $this->modeIncriptions = false;
+        $this->modeIndex = true;
         $this->enrollment = new Enrollment;
         $this->reset(['enrollment_id']);
+        $this->reset(['representant']);
+        $this->reset(['estudiant']);
     }
 
 }

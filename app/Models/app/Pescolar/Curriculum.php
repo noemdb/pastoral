@@ -64,7 +64,8 @@ class Curriculum extends Model
     {
         $levels = Level::select('levels.id')
             ->SelectRaw(' levels.code  || " - " || levels.name as name ')
-            ->join('curricula', 'curricula.id', '=', 'levels.curriculum_id')
+            ->join('lapses', 'lapses.id', '=', 'levels.lapse_id')
+            ->join('curricula', 'curricula.id', '=', 'lapses.curriculum_id')
             ->where('curricula.id',$this->id)
             ->pluck('name','id');
         return $levels;

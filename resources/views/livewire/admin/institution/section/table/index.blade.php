@@ -4,6 +4,7 @@
     $class['level_id']="text-left px-4";
     $class['name']="text-left px-4";
     $class['description']="hidden lg:table-cell text-left px-4";
+    $class['inscription_count']="hidden lg:table-cell text-left px-4";
     $class['action']="text-left px-4";
     $table_id = 'table_id';
 @endphp
@@ -57,6 +58,7 @@
                         @endif
                     </div>
                 </th>
+                <th class="{{ $class['inscription_count'] ?? ''}}">{{$list_comment['inscription_count'] ?? ''}}</th>
                 <th class="{{ $class['action'] ?? ''}}">Acciones</th>
             </tr>
 
@@ -69,7 +71,7 @@
                 $level = $section->level;
                 $curriculum = $level->curriculum;
                 $pescolar = $curriculum->pescolar;
-                $pastoral = $curriculum->pastoral;
+                $inscription_count = $section->inscription_count;
             @endphp
 
             {{-- 'level_id','code','code_sm','name','description','observations','color','header','body','footer','status',--}}
@@ -84,6 +86,7 @@
                 </td>
                 <td class="{{ $class['name'] ?? ''}}">{{$section->name ?? ''}}</td>
                 <td class="{{ $class['description'] ?? ''}}">{{$section->description ?? ''}}</td>
+                <td class="{{ $class['description'] ?? ''}}">{{$inscription_count ?? ''}}</td>
 
                 <td class="{{ $class['action'] ?? '' }}">
 
@@ -92,7 +95,7 @@
                             <x-elements.form.button-edit wire:key="section-edit-{{$section->id}}" wire:click="edit({{ $section->id }})" >
                                 <x-icon-pen class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-edit>
-                            <x-elements.form.button-del wire:key="section-delete-{{$section->id}}" wire:click="delete({{ $section->id }})" >
+                            <x-elements.form.button-del :disabled="!$section->status_delete" wire:key="section-delete-{{$section->id}}" wire:click="delete({{ $section->id }})" >
                                 <x-icon-trash-can class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-del>
                         </div>

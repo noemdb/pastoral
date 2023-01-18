@@ -33,6 +33,8 @@ class Section extends Model
         'body'=>'Cuerpo',
         'footer'=>'Pie de página',
         'status' => 'Estado',
+        ///////////////////////
+        'inscription_count' => 'Inscritos',
     ];
     
     public function getFullNameAttribute()
@@ -45,7 +47,8 @@ class Section extends Model
         $sections = Section::select('sections.id')
             ->SelectRaw(' pastorals.name || " - " || pescolars.name || " - " || curricula.name || " - " || levels.name || " - " || sections.name as name ')
             ->join('levels', 'levels.id', '=', 'sections.level_id')
-            ->join('curricula', 'curricula.id', '=', 'levels.curriculum_id')
+            ->join('lapses', 'lapses.id', '=', 'levels.lapse_id')
+            ->join('curricula', 'curricula.id', '=', 'lapses.curriculum_id')
             ->join('pescolars', 'pescolars.id', '=', 'curricula.pescolar_id')
             ->join('pastorals', 'pastorals.id', '=', 'pescolars.pastoral_id');
 
@@ -75,13 +78,23 @@ class Section extends Model
         $lapses = Section::select('lapses.id','lapses.name as lapseName')
         ->SelectRaw(' pastorals.name || " - " || pescolars.name || " - " || curricula.name || " - " || lapses.name as lapseFullName ')
         ->join('levels', 'levels.id', '=', 'sections.level_id')
-        ->join('curricula', 'curricula.id', '=', 'levels.curriculum_id')
-        ->join('lapses', 'curricula.id', '=', 'lapses.curriculum_id')
+        ->join('lapses', 'lapses.id', '=', 'levels.lapse_id')
+        ->join('curricula', 'curricula.id', '=', 'lapses.curriculum_id')
         ->join('pescolars', 'pescolars.id', '=', 'curricula.pescolar_id')
         ->join('pastorals', 'pastorals.id', '=', 'pescolars.pastoral_id')
         ->where('sections.id',$this->id)
         ->get(); //dd($lapses);
         return $lapses;
+    }
+
+    public function getStatusDeleteAttribute()
+    {
+        return $this->inscriptions->isEmpty();
+    }
+
+    public function getCountInscriptionsAttribute()
+    {
+        return $this->inscriptions->count();
     }
 }
 

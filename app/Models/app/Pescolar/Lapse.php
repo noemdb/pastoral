@@ -76,12 +76,12 @@ class Lapse extends Model
 
     public function getStatusDeleteAttribute()
     {
-        // return $this->levels->isEmpty();
+        return $this->levels->isEmpty();
     }
 
     public function getCountLevelsAttribute()
     {
-        // return $this->levels->count();
+        return $this->levels->count();
     }
 }
 
