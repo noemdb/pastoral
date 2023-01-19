@@ -90,6 +90,7 @@ class ListComponent extends Component
     {
         $this->validateOnly($propertyName);
     }
+
     public function updatingSearch()
     {
         $this->resetPage();

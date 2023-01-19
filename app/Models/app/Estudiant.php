@@ -12,7 +12,7 @@ class Estudiant extends Model
     use EstudiantRelations;
 
     protected $fillable = [
-        'user_id','representant_id','citype_id','ci','name','lastname','gender','date_birth','country_id','state_id','city_id','dir_address','phone','email','status_nacionality',
+        'user_id','representant_id','citype_id','ci','name','lastname','gender','date_birth','country_id','state_id','city_id','dir_address','phone','email','status_nacionality','laterality','christening_place','christening_date','extracathedra','institution','academic_level','academic_section'
     ];
 
     const COLUMN_COMMENTS = [
@@ -38,6 +38,8 @@ class Estudiant extends Model
         'institution'=>'Institución Educativa',
         'academic_level'=>'Año académico',
         'academic_section'=>'Sección',
+        /////////////////////////////////
+        'count_inscriptions'=>'N.Inscripciones',
     ];
 
     public function getFullNameAttribute()
@@ -45,19 +47,29 @@ class Estudiant extends Model
         return "{$this->name} {$this->lastname}";
     }
 
-    public static function estudiant_list_fullname() 
+    public static function estudiant_list_fullname()
     {
         $estudiants = Estudiant::select('estudiants.id')
             ->SelectRaw(' estudiants.ci  ||  estudiants.name || " - " || estudiants.lastname as name ')
             ->pluck('name','id');
         return $estudiants;
     }
+
+    public function getStatusDeleteAttribute()
+    {
+        return $this->inscriptions->isEmpty();
+    }
+
+    public function getCountInscriptionsAttribute()
+    {
+        return $this->inscriptions->count();
+    }
 }
 
 
 /*
 
-'user_id','representant_id','citype_id','ci','name','lastname','gender','date_birth','country_id','state_id','city_id','dir_address','phone','email','status_nacionality',
+'user_id','representant_id','citype_id','ci','name','lastname','gender','date_birth','country_id','state_id','city_id','dir_address','phone','email','status_nacionality','laterality','christening_place','christening_date','extracathedra','institution','academic_level','academic_section',
 
 user_id
 representant_id
@@ -74,7 +86,6 @@ dir_address
 phone
 email
 status_nacionality
-
 laterality
 christening_place
 christening_date
@@ -83,28 +94,6 @@ institution
 academic_level
 academic_section
 
-'laterality'=>'Lateralidad'
-'christening_place'=>'Lugar del bautizo'
-'christening_date'=>'Fecha del bautizo'
-'extracathedra'=>'Actividad Extracatedra'
-'institution'=>'Institución Educativa'
-'academic_level'=>'Año académico'
-'academic_section'=>'Sección'
 
-'user_id' => 'user_id'
-'representant_id' => 'representant_id'
-'citype_id' => 'citype_id'
-'ci' => 'ci'
-'name' => 'name'
-'lastname' => 'lastname'
-'gender' => 'gender'
-'date_birth' => 'date_birth'
-'country_id' => 'country_id'
-'state_id' => 'state_id'
-'city_id' => 'city_id'
-'dir_address' => 'dir_address'
-'phone' => 'phone'
-'email' => 'email'
-'status_nacionality' => 'status_nacionality'
 
 */

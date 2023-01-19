@@ -31,7 +31,7 @@ class ListComponent extends Component
 
     public Estudiant $estudiant;
 
-    public $estudiant_id,$country,$state,$city,$country_id,$state_id,$city_id;
+    public $estudiant_id,$country,$state,$city;
 
     public $search = ''; //'name'
 
@@ -41,15 +41,18 @@ class ListComponent extends Component
 
     public $status_last,$status_first,$saveInto;
 
-    public $representant_list,$citype_list,$genders_list,$country_list;
+    public $representant_list,$citype_list,$genders_list,$country_list,$state_list,$city_list;
 
     protected $listeners = [ 'remove' ];
+
+    //validate RealTime
+    public function updated($propertyName) { $this->validateOnly($propertyName);}
 
     public function mount()
     {
         $this->modeCreate = false;
         $this->modeEdit = false;
-        $this->list_comment = Estudiant::COLUMN_COMMENTS; 
+        $this->list_comment = Estudiant::COLUMN_COMMENTS;
         $this->representant_list = Representant::representant_list()->toArray(); //dd($this->testudiant_list);
         $this->citype_list = Citype::citype_list()->toArray();
         $this->genders_list = ['Masculino'=>'Masculino', 'Femenino'=>'Femenino'];
@@ -64,9 +67,9 @@ class ListComponent extends Component
 
     public function render()
     {
-        $search = $this->search; 
+        $search = $this->search;
 
-        $estudiants = Estudiant::select('estudiants.*');  
+        $estudiants = Estudiant::select('estudiants.*');
 
         $estudiants = (!empty($search)) ? $estudiants->orwhere(
             function($query) use ($search) {
@@ -74,11 +77,11 @@ class ListComponent extends Component
                     ->orWhere('name','like','%'.$search.'%')
                     ->orWhere('ci','like','%'.$search.'%')
                     ;
-            }) 
+            })
             : $estudiants ; //dd($estudiants);
 
         $estudiants = ($this->sortBy && $this->sortDirection) ? $estudiants->orderBy($this->sortBy,$this->sortDirection) : $estudiants;
-        
+
         $estudiants = $estudiants->paginate($this->paginate);
 
         return view('livewire.admin.competitor.estudiant.list-component', [
@@ -98,6 +101,10 @@ class ListComponent extends Component
     {
         $this->estudiant = Estudiant::find($id);
         $this->estudiant_id = ($this->estudiant) ? $this->estudiant->id:null;
+        $this->country_list = Country::all()->pluck('name','id')->toArray();
+        $this->updatedEstudiantCountryId();
+        $this->updatedEstudiantStateId();
+
         $this->modeEdit = true;
         $this->modeCreate = false;
     }
@@ -147,18 +154,31 @@ class ListComponent extends Component
         $this->alert('success', 'Los datos fueron eliminados satisfactoriamente!');
     }
 
-    public function loadState($id)
+    public function updatedEstudiantCountryId()
     {
-        $this->country = Country::find($id);
-        $this->country_id = ($this->country) ? $this->country->id : null ;
-        $this->state_list = ($this->country) ? State::where('country_id',$id)->orderBy('name')->pluck('name','id')->toArray() : null ;
+        $id = $this->estudiant->country_id;
+        if ($id) {
+            $this->country = Country::find($id);
+            $this->state_list = State::where('country_id',$id)->orderBy('name')->pluck('name','id')->toArray();
+        } else {
+            $this->state_list = Array();
+            $this->city_list = Array();
+            $this->state = null;
+            $this->estudiant->state_id = null;
+            $this->estudiant->city_id = null;
+        }
     }
 
-    public function loadCity($id)
+    public function updatedEstudiantStateId()
     {
-        $this->state = State::find($id);
-        $this->state_id = ($this->state) ? $this->state->id : null ;
-        $this->city_list = ($this->state) ? City::where('state_id',$id)->orderBy('name')->pluck('name','id')->toArray() : null ;
+        $id = $this->estudiant->state_id;
+        if ($id) {
+            $this->state = State::find($id);
+            $this->city_list = City::where('state_id',$id)->orderBy('name')->pluck('name','id')->toArray() ;
+        } else {
+            $this->city_list = Array();
+            $this->estudiant->city_id = null;
+        }
     }
 
 }

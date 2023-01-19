@@ -1,7 +1,7 @@
 {{-- 'user_id','citype_id','ci','name','phone','email','whatsapp','telegram','twitter','instagram','status_adviders' --}}
 
-<div class="grid grid-cols-2 gap-4">
-    
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
     <div class="mb-4">
         @php $name = 'citype_id'; $model = 'representant.'.$name; $key = Str::random(10); @endphp
         <x-jet-label for="{{$model}}" value="{{ $list_comment[$name] ?? null }}" />
