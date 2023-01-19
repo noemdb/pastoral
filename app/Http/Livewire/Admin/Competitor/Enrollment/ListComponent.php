@@ -38,10 +38,6 @@ class ListComponent extends Component
 
     public Enrollment $enrollment;
 
-    // public Representant $representant;
-    // public Estudiant $estudiant;
-    // public Inscription $inscription;
-
     public Array  $representant;
     public Array  $estudiant;
     public Array  $inscription;
@@ -283,16 +279,12 @@ class ListComponent extends Component
                 'ci' => 'required',
                 'name' => 'required',
                 'email' => 'required|email',
-                'email' => 'required|string',
+                'phone' => 'required|string',
             ])->validate();
-        // dd('Representant');
-
-        $representant = Representant::create($arr_representant);
 
         //Estudiant
         $arr_estudiant = [
             'user_id' => Auth::id(),
-            'representant_id' => $representant->id,
             'citype_id' => $this->estudiant['citype_id'],
             'ci' => $this->estudiant['ci'],
             'name' => $this->estudiant['name'],
@@ -310,7 +302,6 @@ class ListComponent extends Component
         $validator = Validator::make( $arr_estudiant,
             [
                 'user_id' => 'required|integer',
-                'representant_id' => 'required|integer',
                 'citype_id' => 'required|integer',
                 'ci' => 'required|string',
                 'name' => 'required|string',
@@ -323,36 +314,46 @@ class ListComponent extends Component
                 'dir_address' => 'nullable|string',
                 'email' => 'nullable|string',
                 'status_nacionality' => 'required|boolean',
-            ])->validate();
+            ],
+            [
+                'lastname.required' => 'El campo apellido es requerido',
+            ]
+        )->validate();
 
-        $estudiant = Estudiant::create($arr_estudiant); //dd($estudiant);
+         //dd($estudiant);
 
         $arr_inscription = [
             'tinscription_id' => $this->tinscription_id,
             'section_id' => $this->section_id,
-            'estudiant_id' => $estudiant->id,
             'observations' => $this->observations,
         ];
         $validator = Validator::make($arr_inscription,
             [
                 'tinscription_id' => 'required|integer',
                 'section_id' => 'required|integer',
-                'estudiant_id' => 'required|integer',
                 'observations' => 'nullable|string',
             ])->validate();
 
-        $inscription = Inscription::create($arr_inscription); //dd($inscription);
+        $representant = Representant::create($arr_representant);
+
+        $arr_estudiant['representant_id'] = $representant->id; //dd($arr_estudiant);
+
+        $estudiant = Estudiant::create($arr_estudiant);
+
+        $arr_inscription['estudiant_id'] = $estudiant->id; //dd($arr_inscription);
+
+        $inscription = Inscription::create($arr_inscription); 
 
         $this->alert('success', 'Los datos fueron almacenados satisfactoriamente!');
 
         $this->modeCreate = false;
         $this->modeEdit = false;
         $this->modeIncriptions = false;
-        $this->modeIndex = true;
-        $this->enrollment = new Enrollment;
-        $this->reset(['enrollment_id']);
-        $this->reset(['representant']);
-        $this->reset(['estudiant']);
+
+        // $this->enrollment = new Enrollment;
+        // $this->enrollment_id = null;
+        // $this->representant = null;
+        // $this->estudiant = null;
     }
 
 }

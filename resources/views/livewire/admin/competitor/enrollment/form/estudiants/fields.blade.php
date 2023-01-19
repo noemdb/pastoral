@@ -40,6 +40,7 @@
             <x-jet-label for="{{$model}}" value="{{ $list_comment_estudiant[$name] ?? null }}" />
             <x-input wire:key="{{$key}}" wire:model.defer="{{$model}}" name="{{$model}}" class="block mt-1 w-full" />
             @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
+            {{-- @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror --}}
         </div>
 
         <div class="mb-4">
