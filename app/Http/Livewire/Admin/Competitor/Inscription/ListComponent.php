@@ -100,6 +100,12 @@ class ListComponent extends Component
         $this->reset(['inscription_id']);
     }
 
+    public function close()
+    {
+        $this->inscription_id = false;
+        $this->modeEdit = false;
+        $this->modeCreate = false;
+    }
     public function closeEditMode()
     {
         $this->inscription_id = false;

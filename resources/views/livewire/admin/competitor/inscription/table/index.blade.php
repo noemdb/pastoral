@@ -5,6 +5,7 @@
     $class['section_id']="text-left px-4";
     $class['estudiant_id']="text-left px-4";
     $class['ci']="text-left px-4";
+    $class['count_pevaluations']="text-left px-4";
     $class['action']="text-left px-4";
     $table_id = 'table_id';
 @endphp
@@ -67,6 +68,7 @@
                         @endif
                     </div>
                 </th>
+                <th class="{{ $class['count_pevaluations'] ?? ''}}"><div> {{$list_comment['count_pevaluations'] ?? ''}} </div></th>
                 <th class="{{ $class['action'] ?? ''}}">Acciones</th>
             </tr>
 
@@ -102,6 +104,7 @@
 
                 <td class="{{ $class['estudiant_id'] ?? ''}}">{{$estudiant->fullname ?? ''}}</td>
                 <td class="{{ $class['estudiant_id'] ?? ''}}">{{$estudiant->ci ?? ''}}</td>
+                <td class="{{ $class['count_pevaluations'] ?? ''}}">{{$inscription->count_pevaluations ?? ''}}</td>
 
                 <td class="{{ $class['action'] ?? '' }}">
 
@@ -110,7 +113,7 @@
                             <x-elements.form.button-edit wire:key="inscription-edit-{{$inscription->id}}" wire:click="edit({{ $inscription->id }})" >
                                 <x-icon-pen class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-edit>
-                            <x-elements.form.button-del wire:key="inscription-delete-{{$inscription->id}}" wire:click="delete({{ $inscription->id }})" >
+                            <x-elements.form.button-del :disabled="!$inscription->status_delete" wire:key="inscription-delete-{{$inscription->id}}" wire:click="delete({{ $inscription->id }})" >
                                 <x-icon-trash-can class="w-4 h-4 mr-0.5" />
                             </x-elements.form.button-del>
                         </div>

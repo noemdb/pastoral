@@ -100,10 +100,10 @@ class ListComponent extends Component
     public function edit($id)
     {
         $this->estudiant = Estudiant::find($id);
-        $this->estudiant_id = ($this->estudiant) ? $this->estudiant->id:null;
+        $this->estudiant_id = ($this->estudiant) ? $this->estudiant->id : null;
         $this->country_list = Country::all()->pluck('name','id')->toArray();
-        $this->updatedEstudiantCountryId();
-        $this->updatedEstudiantStateId();
+        $this->state_list = State::listStatesCountryId($this->estudiant->country_id) ;
+        $this->city_list = City::listCitiesStateId($this->estudiant->state_id) ;
 
         $this->modeEdit = true;
         $this->modeCreate = false;
@@ -156,29 +156,15 @@ class ListComponent extends Component
 
     public function updatedEstudiantCountryId()
     {
-        $id = $this->estudiant->country_id;
-        if ($id) {
-            $this->country = Country::find($id);
-            $this->state_list = State::where('country_id',$id)->orderBy('name')->pluck('name','id')->toArray();
-        } else {
-            $this->state_list = Array();
-            $this->city_list = Array();
-            $this->state = null;
-            $this->estudiant->state_id = null;
-            $this->estudiant->city_id = null;
-        }
+        $this->state_list = State::listStatesCountryId($this->estudiant->country_id) ;
+        $this->estudiant->state_id = null;
+        $this->estudiant->city_id = null;
+        $this->city_list = Array();
     }
 
     public function updatedEstudiantStateId()
     {
-        $id = $this->estudiant->state_id;
-        if ($id) {
-            $this->state = State::find($id);
-            $this->city_list = City::where('state_id',$id)->orderBy('name')->pluck('name','id')->toArray() ;
-        } else {
-            $this->city_list = Array();
-            $this->estudiant->city_id = null;
-        }
+        $this->city_list = City::listCitiesStateId($this->estudiant->state_id);
     }
 
 }

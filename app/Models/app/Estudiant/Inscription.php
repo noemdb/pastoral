@@ -28,6 +28,8 @@ class Inscription extends Model
         'estudiant_id' => 'Estudiante',
         'ci' => 'CI',
         'observations' => 'Observaciones',
+        ////////////////////////////////////////
+        'count_pevaluations' => 'N.P.Evaluación',
     ];
 
     public function getFullNameAttribute()
@@ -46,6 +48,25 @@ class Inscription extends Model
         // $courses_list = ($level) ? Course::select('courses.id',DB::raw('courses.code || " - " || courses.name as name' ))->where('curriculum_id',$level->curriculum_id)->pluck('name','id') :  collect(); //dd($level_id,$level);
         // return $courses_list;
     }
+
+    public function getStatusDeleteAttribute()
+    {
+        return $this->pevaluations->isEmpty();
+    }
+
+    public function getCountPevaluationsAttribute()
+    {
+
+        return $this->pevaluations->count();
+    }
+
+    public function getPevaluationsAttribute()
+    { 
+        $pevaluations = ($this->section) ? $this->section->pevaluations : New Pevaluation;
+        return $pevaluations;
+    }
+
+
 }
 
 /*

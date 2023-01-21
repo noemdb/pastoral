@@ -53,7 +53,8 @@
             @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
         </div>
 
-        @if ($country)
+        {{-- @if (count($state_list)) --}}
+        @if ($estudiant->country_id)
             <div class="mb-4">
                 @php $name = 'state_id'; $model = 'estudiant.'.$name; $key = Str::random(10);@endphp
                 <x-jet-label for="{{$model}}" value="{{ __($list_comment[$name]) }}" />
@@ -62,7 +63,8 @@
                 @error($model) <span class="text-sm text-red-600">{{ $message }}</span> @enderror
             </div>
 
-            @if ($state)
+            {{-- @if (count($city_list)) --}}
+            @if ($estudiant->state_id)
                 <div class="mb-4">
                     @php $name = 'city_id'; $model = 'estudiant.'.$name; $key = Str::random(10);@endphp
                     <x-jet-label for="{{$model}}" value="{{ __($list_comment[$name]) }}" />

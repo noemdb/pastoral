@@ -45,7 +45,7 @@ class Section extends Model
     public static function section_list_fullname($pastoral_id = null, $pescolar_id = null, $curriculum_id = null)
     {
         $sections = Section::select('sections.id')
-            ->SelectRaw(' pastorals.name || " - " || pescolars.name || " - " || curricula.name || " - " || levels.name || " - " || sections.name as name ')
+            ->SelectRaw(' pastorals.name || " - " || pescolars.name || " - " || curricula.name || " - " || lapses.name || " - " || levels.name || " - " || sections.name as name ')
             ->join('levels', 'levels.id', '=', 'sections.level_id')
             ->join('lapses', 'lapses.id', '=', 'levels.lapse_id')
             ->join('curricula', 'curricula.id', '=', 'lapses.curriculum_id')

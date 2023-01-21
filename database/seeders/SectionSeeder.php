@@ -137,5 +137,130 @@ class SectionSeeder extends Seeder
                 'status' => true,
             ],
         );
+
+
+        DB::table('sections')->insert(
+            [
+                'level_id' => 5,
+                'code' => 'SecA',
+                'code_sm' => 'SA',
+                'name' => 'Grupo A',
+                'description' => 'Grupo A',
+                'observations' => 'Grupo A',
+                'color' => '#EECCAA',
+                'header'=>'1ra Agrupación',
+                'body'=>'1ra Agrupación',
+                'footer'=>'1ra Agrupación',
+                'status' => true,
+            ],
+        );
+        DB::table('sections')->insert(
+            [
+                'level_id' => 5,
+                'code' => 'SecB',
+                'code_sm' => 'SB',
+                'name' => 'Grupo B',
+                'description' => 'Grupo B',
+                'observations' => 'Grupo B',
+                'color' => '#EECCBB',
+                'header'=>'2da Agrupación',
+                'body'=>'2da Agrupación',
+                'footer'=>'2da Agrupación',
+                'status' => true,
+            ],
+        );
+
+        DB::table('sections')->insert(
+            [
+                'level_id' => 6,
+                'code' => 'SecA',
+                'code_sm' => 'SA',
+                'name' => 'Grupo A',
+                'description' => 'Grupo A',
+                'observations' => 'Grupo A',
+                'color' => '#EECCAA',
+                'header'=>'1ra Agrupación',
+                'body'=>'1ra Agrupación',
+                'footer'=>'1ra Agrupación',
+                'status' => true,
+            ],
+        );
+        DB::table('sections')->insert(
+            [
+                'level_id' => 6,
+                'code' => 'SecB',
+                'code_sm' => 'SB',
+                'name' => 'Grupo B',
+                'description' => 'Grupo B',
+                'observations' => 'Grupo B',
+                'color' => '#EECCBB',
+                'header'=>'2da Agrupación',
+                'body'=>'2da Agrupación',
+                'footer'=>'2da Agrupación',
+                'status' => true,
+            ],
+        );
+
+        DB::table('sections')->insert(
+            [
+                'level_id' => 7,
+                'code' => 'SecA',
+                'code_sm' => 'SA',
+                'name' => 'Grupo A',
+                'description' => 'Grupo A',
+                'observations' => 'Grupo A',
+                'color' => '#EECCAA',
+                'header'=>'1ra Agrupación',
+                'body'=>'1ra Agrupación',
+                'footer'=>'1ra Agrupación',
+                'status' => true,
+            ],
+        );
+        DB::table('sections')->insert(
+            [
+                'level_id' => 7,
+                'code' => 'SecB',
+                'code_sm' => 'SB',
+                'name' => 'Grupo B',
+                'description' => 'Grupo B',
+                'observations' => 'Grupo B',
+                'color' => '#EECCBB',
+                'header'=>'2da Agrupación',
+                'body'=>'2da Agrupación',
+                'footer'=>'2da Agrupación',
+                'status' => true,
+            ],
+        );
+
+        DB::table('sections')->insert(
+            [
+                'level_id' => 8,
+                'code' => 'SecA',
+                'code_sm' => 'SA',
+                'name' => 'Grupo A',
+                'description' => 'Grupo A',
+                'observations' => 'Grupo A',
+                'color' => '#EECCAA',
+                'header'=>'1ra Agrupación',
+                'body'=>'1ra Agrupación',
+                'footer'=>'1ra Agrupación',
+                'status' => true,
+            ],
+        );
+        DB::table('sections')->insert(
+            [
+                'level_id' => 8,
+                'code' => 'SecB',
+                'code_sm' => 'SB',
+                'name' => 'Grupo B',
+                'description' => 'Grupo B',
+                'observations' => 'Grupo B',
+                'color' => '#EECCBB',
+                'header'=>'2da Agrupación',
+                'body'=>'2da Agrupación',
+                'footer'=>'2da Agrupación',
+                'status' => true,
+            ],
+        );
     }
 }

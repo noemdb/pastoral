@@ -33,13 +33,20 @@
             @include('livewire.admin.competitor.inscription.form.create')
         </div>
 
+    @endif    
+
+    @if ($modeEdit)
+
+        <div class="mb-4 pb-4">
+            @include('livewire.admin.competitor.inscription.form.edit')
+        </div>
+
     @endif
 
 
 
     <div class="mx-4 px-4">
         @include('livewire.admin.competitor.inscription.table.index')
-        {{-- //views/livewire/admin/competitor/enrollment/table/index.blade.php --}}
     </div>
 
 

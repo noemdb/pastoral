@@ -22,6 +22,8 @@ trait EstudiantRules
         'estudiant.phone' => 'required|string',
         'estudiant.email' => 'required|string',
         'estudiant.status_nacionality' => 'required|string',
+        'estudiant.christening_place' => 'nullable|string',
+        'estudiant.christening_date' => 'nullable|date',
     ];
 
     protected function validationAttributes()
@@ -42,6 +44,8 @@ trait EstudiantRules
             'estudiant.phone' => $this->list_comment['phone'],
             'estudiant.email' => $this->list_comment['email'],
             'estudiant.status_nacionality' => $this->list_comment['status_nacionality'],
+            'estudiant.christening_place' => $this->list_comment['christening_place'],
+            'estudiant.christening_date' => $this->list_comment['christening_date'],
         ];
     }
 
